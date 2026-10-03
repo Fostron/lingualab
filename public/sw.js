@@ -8,17 +8,38 @@ const DATA = 'lingualab-data-v1';
 const AUDIO = 'lingualab-audio-v1';
 const AUDIO_MAX = 1500;
 
+// hashed JS/CSS bundles referenced by an index.html (so the app opens offline after the first visit)
+function bundlesOf(html) {
+  return [...html.matchAll(/(?:src|href)="\.?\/?(assets\/[^"]+)"/g)].map((m) => new URL(m[1], self.registration.scope).href);
+}
+
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(SHELL).then((c) => c.addAll(['./', './index.html', './manifest.webmanifest', './icon.svg'])).then(() => self.skipWaiting()));
+  e.waitUntil(
+    (async () => {
+      const cache = await caches.open(SHELL);
+      const res = await fetch('./index.html', { cache: 'no-cache' });
+      const html = await res.clone().text();
+      await cache.put('./index.html', res);
+      await cache.addAll(['./', './manifest.webmanifest', './icon.svg', ...bundlesOf(html)]);
+      await self.skipWaiting();
+    })(),
+  );
 });
 
 self.addEventListener('activate', (e) => {
   const keep = new Set([SHELL, DATA, AUDIO]);
   e.waitUntil(
-    caches
-      .keys()
-      .then((keys) => Promise.all(keys.filter((k) => !keep.has(k)).map((k) => caches.delete(k))))
-      .then(() => self.clients.claim()),
+    (async () => {
+      for (const k of await caches.keys()) if (!keep.has(k)) await caches.delete(k);
+      // drop bundles of previous builds
+      const cache = await caches.open(SHELL);
+      const index = await cache.match('./index.html');
+      if (index) {
+        const current = new Set(bundlesOf(await index.text()));
+        for (const r of await cache.keys()) if (r.url.includes('/assets/') && !current.has(r.url)) await cache.delete(r);
+      }
+      await self.clients.claim();
+    })(),
   );
 });
 
