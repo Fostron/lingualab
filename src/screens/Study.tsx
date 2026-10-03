@@ -250,6 +250,8 @@ export function LessonRun({ c, unitId, slug }: { c: LoadedCourse; unitId: string
       items={plan.items}
       requeue={!strict}
       hints={!strict}
+      exam={strict}
+      quit={strict ? 'test' : 'lesson'}
       retry={(ex, attempt) => retryFor(c, ex, attempt)}
       exitTo={`/unit/${unit.id}`}
       onComplete={async (s) => {
@@ -323,7 +325,7 @@ export function Review({ c }: { c: LoadedCourse }) {
         </button>
       </div>
     );
-  return <SessionRunner items={items} retry={(ex, a) => retryFor(c, ex, a)} exitTo="/" onComplete={(s) => setSummary(s)} />;
+  return <SessionRunner items={items} retry={(ex, a) => retryFor(c, ex, a)} quit="review" exitTo="/" onComplete={(s) => setSummary(s)} />;
 }
 
 /** Free practice modes. "weak" grades the cards it asks about; the others leave the schedule alone. */
@@ -418,5 +420,5 @@ export function Practice({ c, kind }: { c: LoadedCourse; kind: string }) {
         </button>
       </div>
     );
-  return <SessionRunner items={items} retry={(ex, a) => retryFor(c, ex, a)} exitTo="/practice" onComplete={setSummary} />;
+  return <SessionRunner items={items} retry={(ex, a) => retryFor(c, ex, a)} quit="practice" exitTo="/practice" onComplete={setSummary} />;
 }

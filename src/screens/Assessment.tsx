@@ -32,6 +32,7 @@ import {
   type PartId,
   type Resp,
   type Skill,
+  type Undo,
   type WritingItem,
 } from '../assessment';
 import { loadAssessBank } from '../content';
@@ -44,7 +45,7 @@ import { bump, getState } from '../store';
 import { scheduleSync } from '../sync';
 import { say, stopSpeech } from '../tts';
 import type { LoadedCourse } from '../types';
-import { Icon, Loading, Progress, TargetInput, tl } from '../ui/common';
+import { ConfirmDialog, Icon, Loading, Progress, TargetInput, tl } from '../ui/common';
 
 /** Examples shown in the part introductions, per target language. */
 const EX: Record<string, { real: [string, string]; fake: string; grammar: [string, string]; writing: [string, string]; ctest: [string, string] }> = {
@@ -52,8 +53,9 @@ const EX: Record<string, { real: [string, string]; fake: string; grammar: [strin
   fr: { real: ['maison', 'house'], fake: 'chorviette', grammar: ['Je ___ étudiante.', 'suis'], writing: ['Elle ___ (parler) français.', 'parle'], ctest: ['J’ai fa__ et je vais man___.', 'faim, manger'] },
 };
 
-const PART_NO: Record<PartId, number> = { self: 1, vocab: 2, verify: 2, grammar: 3, reading: 4, listening: 5, writing: 6, done: 6 };
-const NEXT: Record<PartId, PartId> = { self: 'vocab', vocab: 'verify', verify: 'grammar', grammar: 'reading', reading: 'listening', listening: 'writing', writing: 'done', done: 'done' };
+const PART_NO: Record<PartId, number> = { self: 1, vocab: 2, verify: 2, grammar: 3, reading: 4, listening: 5, writing: 6, finish: 6, done: 6 };
+const NEXT: Record<PartId, PartId> = { self: 'vocab', vocab: 'verify', verify: 'grammar', grammar: 'reading', reading: 'listening', listening: 'writing', writing: 'finish', finish: 'done', done: 'done' };
+const HAS_INTRO = new Set<PartId>(['self', 'vocab', 'grammar', 'reading', 'listening', 'writing']);
 
 interface RItem {
   lvl: number;
@@ -86,6 +88,7 @@ export function Assessment({ c }: { c: LoadedCourse }) {
   const [bank, setBank] = useState<AssessBank | null>(null);
   const [reports, setReports] = useState<AReport[] | null>(null);
   const [report, setReport] = useState<AReport | null>(null);
+  const [ask, setAsk] = useState<null | 'quit' | 'restart'>(null);
   const mark = useRef(Date.now());
 
   useEffect(() => {
@@ -106,7 +109,7 @@ export function Assessment({ c }: { c: LoadedCourse }) {
   /** Make sure the current part has its current question (adaptive choice happens here). */
   const prepare = (s: St) => {
     for (let guard = 0; guard < 10; guard++) {
-      if (s.intro || s.cur || s.part === 'done' || s.part === 'self' || s.part === 'vocab') return;
+      if (s.intro || s.cur || s.part === 'done' || s.part === 'finish' || s.part === 'self' || s.part === 'vocab') return;
       const used = new Set([...s.grammar, ...s.reading, ...s.listening, ...s.writing].map((r) => r.key));
       if (s.part === 'verify') {
         const v = s.verify.find((x) => x.ok === null);
@@ -190,7 +193,7 @@ export function Assessment({ c }: { c: LoadedCourse }) {
             return;
           }
         }
-        move(s, 'done');
+        move(s, 'finish');
         continue;
       }
       return;
@@ -199,7 +202,7 @@ export function Assessment({ c }: { c: LoadedCourse }) {
 
   const move = (s: St, part: PartId) => {
     s.part = part;
-    s.intro = part !== 'verify' && part !== 'done';
+    s.intro = HAS_INTRO.has(part);
     s.cur = undefined;
   };
 
@@ -215,6 +218,65 @@ export function Assessment({ c }: { c: LoadedCourse }) {
       return s;
     });
   };
+
+  /** Record an answer so that "Back" can take it back. */
+  const remember = (s: St, e: Undo) => {
+    s.undo = [...(s.undo || []), e].slice(-200);
+    s.prevAnswer = undefined;
+  };
+
+  /**
+   * Back: from the first question of a part to that part's introduction; otherwise take back the last
+   * answer and show its question again (with the earlier answer noted).
+   */
+  const back = () =>
+    update((s) => {
+      const u = s.undo || [];
+      const top = u[u.length - 1];
+      const topPart = top ? (top.part === 'verify' ? 'vocab' : top.part) : null;
+      const curPart = s.part === 'verify' ? 'vocab' : s.part;
+      if (!s.intro && HAS_INTRO.has(s.part) && topPart !== curPart && s.part !== 'verify') {
+        s.intro = true;
+        s.cur = undefined;
+        return;
+      }
+      if (!top) return;
+      u.pop();
+      s.undo = u;
+      s.intro = false;
+      // parts skipped after this point are offered again
+      const order: PartId[] = ['self', 'vocab', 'verify', 'grammar', 'reading', 'listening', 'writing'];
+      s.skipped = s.skipped.filter((p) => order.indexOf(p) < order.indexOf(top.part));
+      if (top.part === 'self') {
+        s.part = 'self';
+        s.cur = undefined;
+        s.prevAnswer = undefined;
+      } else if (top.part === 'vocab') {
+        s.part = 'vocab';
+        s.yesnoPos = top.pos;
+        const was = s.yesno[top.pos].known;
+        s.yesno[top.pos].known = null;
+        s.verify = [];
+        s.cur = undefined;
+        s.prevAnswer = was ? ta().know : ta().dontKnow;
+      } else if (top.part === 'verify') {
+        s.part = 'verify';
+        const v = s.verify.find((x) => x.id === top.id);
+        if (v) {
+          v.ok = null;
+          v.dk = undefined;
+        }
+        s.cur = top.cur as Cur;
+        s.prevAnswer = top.u;
+      } else {
+        s.part = top.part;
+        s[top.part].splice(-top.n, top.n);
+        s.cur = top.cur as Cur;
+        s.prevAnswer = top.u;
+      }
+    });
+
+  const canBack = !!st && (!!(st.undo && st.undo.length) || (!st.intro && HAS_INTRO.has(st.part)));
 
   // finished: build and keep the report
   useEffect(() => {
@@ -255,6 +317,7 @@ export function Assessment({ c }: { c: LoadedCourse }) {
           setSt(s);
           setEntered(true);
         }}
+        confirmRestart={!!st && st.part !== 'done'}
         onResume={() => {
           mark.current = Date.now();
           setEntered(true);
@@ -266,14 +329,7 @@ export function Assessment({ c }: { c: LoadedCourse }) {
   const n = PART_NO[st.part];
   const head = (progress: number, max: number) => (
     <div class="as-head">
-      <button
-        class="icon-btn"
-        title={t().quit}
-        onClick={() => {
-          stopSpeech();
-          setEntered(false);
-        }}
-      >
+      <button class="icon-btn" title={t().quit} onClick={() => setAsk('quit')}>
         <Icon name="close" />
       </button>
       <div class="as-steps">
@@ -285,6 +341,32 @@ export function Assessment({ c }: { c: LoadedCourse }) {
         {fmt(ta().partOf, { n })} · {ta().parts[st.part === 'verify' ? 'vocab' : st.part]?.[0]}
       </small>
       {max > 0 && <Progress value={progress} max={max} />}
+      {canBack && (
+        <button
+          class="back-btn as-back"
+          onClick={() => {
+            stopSpeech();
+            back();
+          }}
+        >
+          ← {ta().back}
+        </button>
+      )}
+      {st.prevAnswer !== undefined && !st.intro && <div class="prev-answer as-prev">{fmt(t().yourPrevAnswer, { a: st.prevAnswer || t().noAnswer })}</div>}
+      {ask === 'quit' && (
+        <ConfirmDialog
+          title={ta().quitTitle}
+          text={ta().quitText}
+          ok={ta().quitOk}
+          cancel={ta().keepGoing}
+          onOk={() => {
+            stopSpeech();
+            setAsk(null);
+            setEntered(false);
+          }}
+          onCancel={() => setAsk(null)}
+        />
+      )}
     </div>
   );
 
@@ -317,12 +399,36 @@ export function Assessment({ c }: { c: LoadedCourse }) {
       </div>
     );
 
+  if (st.part === 'finish')
+    return (
+      <div class="page assess">
+        {head(0, 0)}
+        <div class="finish-screen">
+          <h2>{ta().finishTitle}</h2>
+          <p>{ta().finishText}</p>
+          <div class="ex-actions center wrap">
+            <button
+              class="btn"
+              onClick={() => {
+                back();
+              }}
+            >
+              ← {ta().back}
+            </button>
+            <button class="btn primary big" onClick={() => update((s) => move(s, 'done'))}>
+              {ta().finishOk}
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+
   // ---- part screens ----
   if (st.part === 'self')
     return (
       <div class="page assess">
         {head(0, 0)}
-        <SelfAssess c={c} onDone={(self) => update((s) => ((s.self = self), move(s, 'vocab')))} />
+        <SelfAssess c={c} initial={st.self} onDone={(self) => update((s) => (remember(s, { part: 'self' }), (s.self = self), move(s, 'vocab')))} />
       </div>
     );
 
@@ -336,6 +442,7 @@ export function Assessment({ c }: { c: LoadedCourse }) {
           word={it.w}
           onAnswer={(k) =>
             update((s) => {
+              remember(s, { part: 'vocab', pos: s.yesnoPos });
               s.yesno[s.yesnoPos].known = k;
               s.yesnoPos++;
               if (s.yesnoPos >= s.yesno.length) {
@@ -353,6 +460,7 @@ export function Assessment({ c }: { c: LoadedCourse }) {
   if (!cur) return <Loading />;
   const answer = (part: 'grammar' | 'reading' | 'listening' | 'writing', resps: Resp[]) =>
     update((s) => {
+      remember(s, { part, n: resps.length, cur: s.cur, u: resps.map((r) => r.u || '').filter(Boolean).join(' · ') });
       s[part].push(...resps);
       s.cur = undefined;
     });
@@ -373,6 +481,7 @@ export function Assessment({ c }: { c: LoadedCourse }) {
           options={cur.options}
           onPick={(o) =>
             update((s) => {
+              remember(s, { part: 'verify', id: cur.id, cur: s.cur, u: o ?? '' });
               const v = s.verify.find((x) => x.id === cur.id)!;
               v.ok = o === cur.answer;
               v.dk = o === null;
@@ -517,17 +626,35 @@ export function Assessment({ c }: { c: LoadedCourse }) {
 
 // ---------- pieces ----------
 
-function AssessHome({ c, st, reports, onStart, onResume }: { c: LoadedCourse; st: AState | null; reports: AReport[]; onStart: () => void; onResume: () => void }) {
+function AssessHome({
+  c,
+  st,
+  reports,
+  onStart,
+  onResume,
+  confirmRestart,
+}: {
+  c: LoadedCourse;
+  st: AState | null;
+  reports: AReport[];
+  onStart: () => void;
+  onResume: () => void;
+  confirmRestart: boolean;
+}) {
   const T = ta();
+  const [ask, setAsk] = useState<null | 'restart' | 'zero'>(null);
   return (
     <div class="page assess-home">
+      <a href="#/" class="muted">
+        ← {t().home}
+      </a>
       <h2>{T.title}</h2>
       <p>{T.lead}</p>
       {st && st.part !== 'done' && (
         <div class="card resume">
           <p>{fmt(T.resumeNote, { n: PART_NO[st.part] })}</p>
           <div class="ex-actions">
-            <button class="btn" onClick={onStart}>
+            <button class="btn" onClick={() => (confirmRestart ? setAsk('restart') : onStart())}>
               {T.restart}
             </button>
             <button class="btn primary" onClick={onResume}>
@@ -563,18 +690,39 @@ function AssessHome({ c, st, reports, onStart, onResume }: { c: LoadedCourse; st
         )}
       </div>
       <p>
-        <button
-          class="btn ghost"
-          onClick={async () => {
-            await applyPlacement(c, 0, 'A0', 0, {});
-            bump();
-            go('/');
-          }}
-        >
+        <button class="btn ghost" onClick={() => setAsk('zero')}>
           {T.fromZero}
         </button>
       </p>
       {reports.length > 0 && <History c={c} reports={reports} />}
+      {ask === 'restart' && (
+        <ConfirmDialog
+          title={T.restartTitle}
+          text={T.restartText}
+          ok={T.restart}
+          cancel={t().back}
+          danger
+          onOk={() => {
+            setAsk(null);
+            onStart();
+          }}
+          onCancel={() => setAsk(null)}
+        />
+      )}
+      {ask === 'zero' && (
+        <ConfirmDialog
+          title={T.zeroTitle}
+          text={T.zeroText}
+          ok={T.zeroOk}
+          cancel={t().back}
+          onOk={async () => {
+            await applyPlacement(c, 0, 'A0', 0, {});
+            bump();
+            go('/');
+          }}
+          onCancel={() => setAsk(null)}
+        />
+      )}
     </div>
   );
 }
@@ -660,9 +808,9 @@ function PartIntro({ c, part, onStart, onSkip }: { c: LoadedCourse; part: PartId
   );
 }
 
-function SelfAssess({ c, onDone }: { c: LoadedCourse; onDone: (s: AState['self']) => void }) {
+function SelfAssess({ c, initial, onDone }: { c: LoadedCourse; initial?: AState['self']; onDone: (s: AState['self']) => void }) {
   const T = ta();
-  const [v, setV] = useState<AState['self']>({});
+  const [v, setV] = useState<AState['self']>(initial || {});
   const vars = langVars(c);
   const keys = ['listening', 'reading', 'writing'] as const;
   return (
@@ -675,7 +823,7 @@ function SelfAssess({ c, onDone }: { c: LoadedCourse; onDone: (s: AState['self']
           <div class="radio-list">
             {T.selfA[k].map((txt, i) => (
               <label class={`radio ${v[k] === i ? 'on' : ''}`}>
-                <input type="radio" name={k} checked={v[k] === i} onChange={() => setV({ ...v, [k]: i })} />
+                <input type="radio" name={k} checked={v[k] === i} onChange={() => setV((prev) => ({ ...prev, [k]: i }))} />
                 <span class="pill">{LEVEL_NAMES[i]}</span> {fmt(txt, vars)}
               </label>
             ))}
@@ -761,10 +909,19 @@ function Choices({ options, onPick, target }: { options: string[]; onPick: (o: s
 function Listen({ text, au, lang }: { text: string; au?: number; lang: string }) {
   const T = ta();
   const [left, setLeft] = useState(3);
-  const play = () => {
-    if (left <= 0) return;
-    setLeft((x) => x - 1);
-    void say(text, lang, au);
+  const [st, setSt] = useState<'idle' | 'loading' | 'ok' | 'blocked' | 'failed'>('idle');
+  const busy = useRef(false);
+  const play = async () => {
+    if (left <= 0 || busy.current) return;
+    busy.current = true;
+    setSt('loading');
+    const r = await say(text, lang, au);
+    busy.current = false;
+    // a play only counts if it actually sounded
+    if (r === 'played') {
+      setLeft((x) => x - 1);
+      setSt('ok');
+    } else setSt(r === 'blocked' ? 'blocked' : 'failed');
   };
   useEffect(() => {
     const id = setTimeout(play, 300);
@@ -775,10 +932,12 @@ function Listen({ text, au, lang }: { text: string; au?: number; lang: string })
   }, []);
   return (
     <div class="listen-big center">
-      <button class="btn big" disabled={left <= 0} onClick={play}>
-        <Icon name="speaker" /> {T.play}
+      <button class="btn big" disabled={left <= 0 || st === 'loading'} onClick={() => void play()}>
+        <Icon name="speaker" /> {st === 'loading' ? '…' : T.play}
       </button>
       <div class="muted small">{fmt(T.playsLeft, { n: left })}</div>
+      {st === 'blocked' && <div class="warn small">{T.tapToPlay}</div>}
+      {st === 'failed' && <div class="warn small">{T.playFailed}</div>}
     </div>
   );
 }
@@ -875,6 +1034,7 @@ export function ReportView({ c, r, fresh, onRetake }: { c: LoadedCourse; r: ARep
   const lvl = r.overall.level;
   const skills: Skill[] = ['vocab', 'grammar', 'reading', 'listening', 'writing'];
   const [showAll, setShowAll] = useState(false);
+  const [askApply, setAskApply] = useState<number | null>(null);
   const levelStartIdx = lvl > 0 ? c.units.findIndex((u) => u.level === LV[lvl - 1]) : 0;
   const apply = async (idx: number) => {
     await applyPlacement(c, idx, LEVEL_NAMES[lvl], r.vocab?.estimate || 0, Object.fromEntries(skills.filter((s) => r.skills[s]).map((s) => [s, Math.round(r.skills[s]!.theta * 100) / 100])));
@@ -1050,15 +1210,26 @@ export function ReportView({ c, r, fresh, onRetake }: { c: LoadedCourse; r: ARep
           <p class="muted small">{T.startNote}</p>
           <div class="ex-actions wrap">
             {levelStartIdx >= 0 && levelStartIdx < r.start && (
-              <button class="btn" onClick={() => void apply(levelStartIdx)}>
+              <button class="btn" onClick={() => setAskApply(levelStartIdx)}>
                 {T.applyLevelStart}
               </button>
             )}
-            <button class="btn primary" onClick={() => void apply(r.start)}>
+            <button class="btn primary" onClick={() => setAskApply(r.start)}>
               {T.apply}
             </button>
           </div>
         </div>
+      )}
+
+      {askApply !== null && c.units[askApply] && (
+        <ConfirmDialog
+          title={fmt(T.applyTitle, { n: c.units[askApply].n })}
+          text={askApply > 0 ? fmt(T.applyText, { m: c.units[askApply].n - 1 }) : T.applyTextZero}
+          ok={T.applyOk}
+          cancel={t().back}
+          onOk={() => void apply(askApply)}
+          onCancel={() => setAskApply(null)}
+        />
       )}
 
       <div class="card method">

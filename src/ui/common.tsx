@@ -218,6 +218,52 @@ export function WordLine({ w, onClick }: { w: Word; onClick?: () => void }) {
   );
 }
 
+/** A small modal asking to confirm a decision (Esc or the backdrop cancels). */
+export function ConfirmDialog({
+  title,
+  text,
+  ok,
+  cancel,
+  danger,
+  onOk,
+  onCancel,
+}: {
+  title: string;
+  text?: ComponentChildren;
+  ok: string;
+  cancel: string;
+  danger?: boolean;
+  onOk: () => void;
+  onCancel: () => void;
+}) {
+  return (
+    <div class="modal-back" onClick={onCancel}>
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        onClick={(e) => e.stopPropagation()}
+        onKeyDown={(e) => {
+          // keep exercise shortcuts (Enter, 1–4) from reacting behind the dialog
+          e.stopPropagation();
+          if (e.key === 'Escape') onCancel();
+        }}
+      >
+        <h3>{title}</h3>
+        {text && <p>{text}</p>}
+        <div class="ex-actions wrap">
+          <button class="btn" onClick={onCancel} autoFocus>
+            {cancel}
+          </button>
+          <button class={`btn ${danger ? 'danger' : 'primary'}`} onClick={onOk}>
+            {ok}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function Loading() {
   return <div class="loading">…</div>;
 }

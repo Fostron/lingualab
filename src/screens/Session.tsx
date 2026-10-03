@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { addActivity } from '../db';
 import { isGraded, type Ex } from '../exercises';
-import { t } from '../i18n';
+import { fmt, t } from '../i18n';
 import { go } from '../router';
 import { getState } from '../store';
 import { scheduleSync, sync } from '../sync';
 import { stopSpeech } from '../tts';
 import { ExerciseView, type ExResult } from '../ui/ExerciseView';
-import { Icon, Progress } from '../ui/common';
+import { ConfirmDialog, Icon, Progress } from '../ui/common';
 
 export interface SessionItem {
   ex: Ex;
@@ -40,12 +40,18 @@ const MAX_GAP = 90_000; // longer pauses don't count as study time
 /**
  * Runs a queue of exercises. A wrong answer (or one that needed a hint) comes back a few
  * questions later — after `retry` has re-taught it (word card, part of the rule, verb table).
+ * One can go back to the explanation / word card shown before the current question.
+ *
+ * exam: a test — no right/wrong while answering, any earlier question can be revisited and
+ * changed, and a confirmation comes before the result.
  */
 export function SessionRunner({
   items,
   requeue = true,
   retry,
   hints = true,
+  exam = false,
+  quit = 'lesson',
   onComplete,
   exitTo,
 }: {
@@ -53,20 +59,26 @@ export function SessionRunner({
   requeue?: boolean;
   retry?: (ex: Ex, attempt: number) => Ex[];
   hints?: boolean;
+  exam?: boolean;
+  quit?: 'lesson' | 'test' | 'review' | 'practice';
   onComplete: (s: SessionSummary) => void;
   exitTo: string;
 }) {
   const [queue, setQueue] = useState<Entry[]>(() => items.map((item, i) => ({ item, attempt: 0, key: i })));
   const [pos, setPos] = useState(0);
   const [, rerender] = useState(0);
+  const [askQuit, setAskQuit] = useState(false);
+  const [finishing, setFinishing] = useState(false); // exam: "finish the test?" screen
   const results = useRef<SessionResult[]>([]);
+  const answered = useRef(new Set<number>()); // entry keys already answered (skipped when moving forward again)
+  const examAnswers = useRef(new Map<number, ExResult>());
   const last = useRef<ExResult | null>(null);
   const keySeq = useRef(10000);
   const time = useRef({ active: 0, mark: Date.now(), finished: false });
   const advanced = useRef(-1); // key of the entry we already moved past (Enter + click must not advance twice)
   const [closing, setClosing] = useState(false);
   const graded = useMemo(() => items.filter((i) => isGraded(i.ex)).length, [items]);
-  const done = results.current.length;
+  const done = exam ? examAnswers.current.size : results.current.length;
   const course = getState().course?.meta.id;
 
   const tickTime = () => {
@@ -99,8 +111,34 @@ export function SessionRunner({
   if (!cur) return null;
   if (closing) return <div class="loading">…</div>;
 
+  const complete = (res: SessionResult[]) => {
+    time.current.finished = true;
+    const seconds = time.current.active / 1000;
+    if (course) void addActivity(course, seconds);
+    const score = res.length ? res.reduce((s, x) => s + x.score, 0) / res.length : 1;
+    setClosing(true); // results are being saved
+    onComplete({ total: res.length, correct: res.filter((x) => x.ok).length, score, results: res, seconds });
+  };
+
+  const finishExam = () => {
+    // answers are reported in question order, once, with the final choice for each question
+    const res: SessionResult[] = [];
+    for (const e of queue) {
+      if (!isGraded(e.item.ex)) continue;
+      const r: ExResult = examAnswers.current.get(e.key) || { ok: false, verdict: 'wrong', given: '' };
+      e.item.onResult?.(r, false);
+      res.push({ ex: e.item.ex, ok: r.ok, score: r.ok ? 1 : 0 });
+    }
+    complete(res);
+  };
+
   const onResult = (r: ExResult, override = false) => {
     tickTime();
+    if (exam) {
+      examAnswers.current.set(cur.key, r);
+      answered.current.add(cur.key);
+      return;
+    }
     if (cur.attempt === 0) {
       if (override) {
         const lastRes = results.current[results.current.length - 1];
@@ -110,9 +148,17 @@ export function SessionRunner({
         }
       } else results.current.push({ ex: cur.item.ex, ok: r.ok && !r.hinted, score: r.ok ? (r.hinted ? 0.5 : 1) : 0 });
       cur.item.onResult?.(r, override);
-      rerender((x) => x + 1);
     }
+    answered.current.add(cur.key);
     last.current = override ? { ...r, ok: true, hinted: false } : r;
+    rerender((x) => x + 1);
+  };
+
+  /** Next position, skipping questions already answered (after going back). */
+  const nextFrom = (q: Entry[], from: number) => {
+    let i = from + 1;
+    while (i < q.length && isGraded(q[i].item.ex) && answered.current.has(q[i].key)) i++;
+    return i;
   };
 
   const onNext = () => {
@@ -122,7 +168,7 @@ export function SessionRunner({
     tickTime();
     let q = queue;
     const r = last.current;
-    if (requeue && r && isGraded(cur.item.ex) && (!r.ok || r.hinted) && cur.attempt < 2) {
+    if (!exam && requeue && r && isGraded(cur.item.ex) && (!r.ok || r.hinted) && cur.attempt < 2) {
       const again = !r.ok && retry ? retry(cur.item.ex, cur.attempt + 1) : [cur.item.ex];
       const add = again.map((ex) => ({ item: { ex }, attempt: cur.attempt + 1, key: keySeq.current++ }));
       // come back after a couple of other questions, not immediately
@@ -131,22 +177,48 @@ export function SessionRunner({
       setQueue(q);
     }
     last.current = null;
-    if (pos + 1 >= q.length) {
-      time.current.finished = true;
-      const res = results.current;
-      const seconds = time.current.active / 1000;
-      if (course) void addActivity(course, seconds);
-      const score = res.length ? res.reduce((s, x) => s + x.score, 0) / res.length : 1;
-      setClosing(true); // results are being saved
-      onComplete({ total: res.length, correct: res.filter((x) => x.ok).length, score, results: res, seconds });
-    } else setPos(pos + 1);
+    // a test walks through questions in order; a lesson skips the ones answered before going back
+    const n = exam ? pos + 1 : nextFrom(q, pos);
+    if (n >= q.length) {
+      if (exam) {
+        setFinishing(true);
+        rerender((x) => x + 1);
+      } else complete(results.current);
+    } else setPos(n);
   };
 
+  const goTo = (i: number) => {
+    stopSpeech();
+    advanced.current = -1;
+    last.current = null;
+    setFinishing(false);
+    setPos(i);
+  };
+
+  // where "back" leads: in a test, the previous question; in a lesson, the last explanation or word card
+  let backTo = -1;
+  if (exam) backTo = finishing ? pos : pos - 1;
+  else if (!last.current)
+    for (let i = pos - 1; i >= 0; i--)
+      if (!isGraded(queue[i].item.ex)) {
+        backTo = i;
+        break;
+      }
+  const isRevisit = exam && examAnswers.current.has(cur.key) && !finishing;
+  const prev = exam && !finishing ? examAnswers.current.get(cur.key) : undefined;
+  const qt = {
+    lesson: [t().quitLessonTitle, t().quitLessonText],
+    test: [t().quitTestTitle, t().quitTestText],
+    review: [t().quitReviewTitle, t().quitReviewText],
+    practice: [t().quitPracticeTitle, t().quitPracticeText],
+  }[quit];
+
+  const dk = [...examAnswers.current.values()].filter((r) => !r.ok && !r.given).length;
   const left = queue.length - pos - 1;
   return (
     <div class="session">
       <div class="session-top">
-        <button class="icon-btn" title={t().quit} onClick={() => go(exitTo)}>
+        <button class="icon-btn" title={t().quit} onClick={() => setAskQuit(true)}>
           <Icon name="close" />
         </button>
         <Progress value={Math.min(done, graded)} max={graded || 1} />
@@ -154,8 +226,58 @@ export function SessionRunner({
           {Math.min(done, graded)}/{graded}
         </span>
       </div>
-      {cur.attempt > 0 && isGraded(cur.item.ex) && <div class="retry-tag">{t().onceMore}</div>}
-      <ExerciseView key={cur.key} ex={cur.item.ex} onResult={onResult} onNext={onNext} hints={hints} />
+      {(backTo >= 0 || isRevisit) && !finishing && (
+        <div class="session-nav">
+          {backTo >= 0 && (
+            <button class="back-btn" onClick={() => goTo(backTo)}>
+              ← {exam ? t().prevQuestion : t().backToExplanation}
+            </button>
+          )}
+          {isRevisit && (
+            <button class="back-btn" onClick={() => onNext()}>
+              {t().keepAnswer} →
+            </button>
+          )}
+        </div>
+      )}
+      {finishing ? (
+        <div class="finish-screen">
+          <h2>{t().finishTestTitle}</h2>
+          <p>{fmt(t().finishTestText, { a: examAnswers.current.size, n: graded, d: dk })}</p>
+          <div class="ex-actions center wrap">
+            <button class="btn" onClick={() => goTo(pos)}>
+              ← {t().backToQuestions}
+            </button>
+            <button class="btn primary big" onClick={finishExam}>
+              {t().finishTestOk}
+            </button>
+          </div>
+        </div>
+      ) : (
+        <>
+          {cur.attempt > 0 && isGraded(cur.item.ex) && <div class="retry-tag">{t().onceMore}</div>}
+          <ExerciseView
+            key={`${cur.key}-${pos}-${prev ? 'again' : 'new'}`}
+            ex={cur.item.ex}
+            onResult={onResult}
+            onNext={onNext}
+            hints={hints}
+            exam={exam}
+            prevAnswer={prev ? prev.given || '' : undefined}
+          />
+        </>
+      )}
+      {askQuit && (
+        <ConfirmDialog
+          title={qt[0]}
+          text={qt[1]}
+          ok={t().quitOk}
+          cancel={t().keepGoing}
+          danger={quit === 'lesson' || quit === 'test'}
+          onOk={() => go(exitTo)}
+          onCancel={() => setAskQuit(false)}
+        />
+      )}
     </div>
   );
 }

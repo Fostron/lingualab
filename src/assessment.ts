@@ -19,8 +19,8 @@ import type { LoadedCourse, Topic, Word } from './types';
 
 export const LV = ['A1', 'A2', 'B1', 'B2', 'C1'] as const;
 export const LEVEL_NAMES = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1'] as const; // index = θ band
-export type PartId = 'self' | 'vocab' | 'verify' | 'grammar' | 'reading' | 'listening' | 'writing' | 'done';
-export const PARTS: PartId[] = ['self', 'vocab', 'verify', 'grammar', 'reading', 'listening', 'writing', 'done'];
+export type PartId = 'self' | 'vocab' | 'verify' | 'grammar' | 'reading' | 'listening' | 'writing' | 'finish' | 'done';
+export const PARTS: PartId[] = ['self', 'vocab', 'verify', 'grammar', 'reading', 'listening', 'writing', 'finish', 'done'];
 export type Skill = 'vocab' | 'grammar' | 'reading' | 'listening' | 'writing';
 
 export const COUNTS = { grammar: 16, reading: 8, listening: 8, dictation: 2, writing: 7, ctest: 3, verify: 8 };
@@ -76,7 +76,18 @@ export interface AState {
   listening: Resp[];
   writing: Resp[];
   skipped: PartId[];
+  /** answers that "Back" can take back, newest last */
+  undo?: Undo[];
+  /** shown when the learner came back to a question */
+  prevAnswer?: string;
 }
+
+/** What one answer changed, so it can be undone. cur = the question as it was shown. */
+export type Undo =
+  | { part: 'self' }
+  | { part: 'vocab'; pos: number }
+  | { part: 'verify'; id: number; cur: unknown; u: string }
+  | { part: 'grammar' | 'reading' | 'listening' | 'writing'; n: number; cur: unknown; u: string };
 
 // ---------- scoring ----------
 

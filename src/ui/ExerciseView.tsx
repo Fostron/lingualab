@@ -21,11 +21,15 @@ interface Props {
   onNext: () => void;
   /** show the hint button (off in tests) */
   hints?: boolean;
+  /** test mode: no right/wrong after answering, go straight on */
+  exam?: boolean;
+  /** shown when coming back to a question already answered */
+  prevAnswer?: string;
 }
 
 let hintsOn = true;
 
-export function ExerciseView({ ex, onResult, onNext, hints = true }: Props) {
+export function ExerciseView({ ex, onResult, onNext, hints = true, exam = false, prevAnswer }: Props) {
   const [res, setRes] = useState<ExResult | null>(null);
   const [overridden, setOverridden] = useState(false);
   const [why, setWhy] = useState(false);
@@ -39,11 +43,12 @@ export function ExerciseView({ ex, onResult, onNext, hints = true }: Props) {
     if (res) return;
     setRes(r);
     onResult(r);
+    if (exam) onNext();
   };
 
   // global Enter -> next when answered
   useEffect(() => {
-    if (!res && ex.k !== 'intro' && ex.k !== 'teach') return;
+    if ((!res || exam) && ex.k !== 'intro' && ex.k !== 'teach') return;
     const f = (e: KeyboardEvent) => {
       if (e.key === 'Enter') {
         e.preventDefault();
@@ -57,13 +62,14 @@ export function ExerciseView({ ex, onResult, onNext, hints = true }: Props) {
     };
   }, [res, ex]);
 
-  const body = renderBody(ex, res, answer);
+  // in a test the options must not light up green/red
+  const body = renderBody(ex, exam ? null : res, answer);
   const correctText = correctTextOf(ex);
   const sentOf = 'sent' in ex && ex.sent ? (ex.sent as Sentence) : undefined;
 
   // after answering, speak the target answer
   useEffect(() => {
-    if (!res || !st.autoplay) return;
+    if (!res || !st.autoplay || exam) return;
     if (ex.k === 'mcq' && (ex.mode === 't2n' || ex.mode === 'listen' || ex.mode === 'sent')) return;
     const word = (ex.k === 'mcq' || ex.k === 'type') && !sentOf ? ex.word : undefined;
     if (word) {
@@ -89,8 +95,9 @@ export function ExerciseView({ ex, onResult, onNext, hints = true }: Props) {
 
   return (
     <div class="ex">
+      {prevAnswer !== undefined && <div class="prev-answer">{fmt(t().yourPrevAnswer, { a: prevAnswer || t().noAnswer })}</div>}
       {body}
-      {res && (
+      {res && !exam && (
         <div class={`feedback ${res.ok || overridden ? 'ok' : 'bad'}`}>
           <div class="fb-title">
             {overridden
@@ -409,7 +416,7 @@ function Mcq({ ex, res, answer }: P<'mcq'>) {
   const w = ex.word;
   useAutoSay(ex.mode === 'sent' && ex.sent ? sentText(ex.sent) : undefined, ex.sent?.au, [ex]);
   useAutoSayWord(ex.mode === 't2n' || ex.mode === 'listen' ? w : undefined, [ex]);
-  const onPick = (i: number) => answer({ ok: i === ex.answer, verdict: 'choice' });
+  const onPick = (i: number) => answer({ ok: i === ex.answer, verdict: 'choice', given: ex.options[i] });
   return (
     <div>
       <div class="ex-kicker">
@@ -695,7 +702,7 @@ function Read({ ex, res, answer }: P<'read'>) {
         <SentenceView s={ex.sent} big /> <SpeakBtn text={sentText(ex.sent)} audio={ex.sent.au} small />
         <div class="sub">{t().tapWord}</div>
       </div>
-      <Options options={ex.options} answerIdx={ex.answer} res={res} onPick={(i) => answer({ ok: i === ex.answer, verdict: 'choice' })} />
+      <Options options={ex.options} answerIdx={ex.answer} res={res} onPick={(i) => answer({ ok: i === ex.answer, verdict: 'choice', given: ex.options[i] })} />
     </div>
   );
 }
@@ -733,7 +740,7 @@ function DrillView({ ex, res, answer }: P<'drill'>) {
           options={opts}
           answerIdx={opts.findIndex((o) => normalize(o) === normalize(d.a[0]))}
           res={res}
-          onPick={(i) => answer({ ok: d.a.some((a) => normalize(a) === normalize(opts[i])), verdict: 'choice' })}
+          onPick={(i) => answer({ ok: d.a.some((a) => normalize(a) === normalize(opts[i])), verdict: 'choice', given: opts[i] })}
           target
         />
       ) : (
