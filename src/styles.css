@@ -2136,3 +2136,6 @@ input.search,
   flex: 1;
   min-width: 0;
 }
+.study-list .word-list {
+  margin: 6px 0;
+}

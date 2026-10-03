@@ -25,8 +25,8 @@ import { go } from '../router';
 import { Rating, review } from '../srs';
 import { bump, getState } from '../store';
 import { bestVoice } from '../tts';
-import type { LoadedCourse } from '../types';
-import { Loading } from '../ui/common';
+import type { LoadedCourse, Word } from '../types';
+import { Loading, WordLine } from '../ui/common';
 import { SessionDone, SessionRunner, type SessionItem, type SessionSummary } from './Session';
 
 function exOpts(diff: Diff = 'normal'): ExOpts {
@@ -117,7 +117,6 @@ export function LessonRun({ c, unitId, slug }: { c: LoadedCourse; unitId: string
         }
     } else if (lesson.kind === 'rule' && lesson.topic) exs = buildRuleLesson(c, lesson.topic);
     else if (lesson.kind === 'drill' && lesson.topic) {
-      for (const id of unit.words) unitKnown.add(id);
       exs = buildDrillLesson(c, lesson.topic, unitKnown, o);
     } else if (lesson.kind === 'review') {
       for (const id of unit.words) unitKnown.add(id);
@@ -226,10 +225,17 @@ export function LessonRun({ c, unitId, slug }: { c: LoadedCourse; unitId: string
         <h2>{lessonTitle(c, lesson)}</h2>
         <p>{lessonAbout(c, lesson)}</p>
         {lesson.kind === 'words' && (
-          <div class="chips">
-            {lesson.words.map((id) => (
-              <span class="chip">{c.wordById.get(id)?.w}</span>
-            ))}
+          <div class="card study-list">
+            <h4>{t().wordsToLearn}</h4>
+            <div class="word-list">
+              {lesson.words
+                .map((id) => c.wordById.get(id))
+                .filter((w): w is Word => !!w)
+                .map((w) => (
+                  <WordLine w={w} />
+                ))}
+            </div>
+            <small class="muted">{t().wordsToLearnNote}</small>
           </div>
         )}
         <p class="muted small">

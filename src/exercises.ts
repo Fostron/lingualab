@@ -4,7 +4,7 @@ import type { CardRec } from './db';
 import type { Drill, LoadedCourse, Sentence, Topic, Unit, Word } from './types';
 
 export type Ex =
-  | { k: 'intro'; word: Word }
+  | { k: 'intro'; word: Word; again?: boolean } // again: shown once more after a mistake
   | { k: 'teach'; title: string; md: string; topic?: Topic; step?: [number, number]; sents?: Sentence[] }
   | { k: 'mcq'; mode: 't2n' | 'n2t' | 'listen' | 'sent'; word: Word; sent?: Sentence; options: string[]; answer: number; cid: string }
   | { k: 'type'; mode: 'n2t' | 'listen'; word: Word; answers: string[]; partial: string[]; cid: string }
@@ -326,12 +326,10 @@ const onlyKnown =(s: Sentence, known: Set<number>) => s.tk.every(([, wid]) => !w
 export function buildWordsLesson(c: LoadedCourse, words: Word[], earlier: Word[], known: Set<number>, o: ExOpts): Ex[] {
   const out: Ex[] = [];
   const diff = o.diff || 'normal';
-  for (let i = 0; i < words.length; i += 3) {
-    const g = words.slice(i, i + 3);
-    for (const w of g) out.push({ k: 'intro', word: w });
-    for (const w of shuffle(g)) out.push(recog(c, w));
-    for (const w of shuffle(g)) out.push(diff === 'hard' || o.typingOnly ? prodType(c, w) : prodChoice(c, w));
-  }
+  // first every new word with its translation, audio and examples — only then questions
+  for (const w of words) out.push({ k: 'intro', word: w });
+  for (const w of shuffle(words)) out.push(recog(c, w));
+  for (const w of shuffle(words)) out.push(diff === 'hard' || o.typingOnly ? prodType(c, w) : prodChoice(c, w));
   const all = new Set([...known, ...words.map((w) => w.id)]);
   // recall round: every new word typed once (easy: half of them with choices)
   shuffle(words).forEach((w, i) => {
@@ -430,11 +428,11 @@ export function buildExam(c: LoadedCourse, units: Unit[], o: ExOpts): Ex[] {
 export function retryFor(c: LoadedCourse, ex: Ex, attempt: number): Ex[] {
   switch (ex.k) {
     case 'mcq':
-      return attempt === 1 ? [{ k: 'intro', word: ex.word }, { ...ex, ...mcq(ex.options[ex.answer], ex.options.filter((_, i) => i !== ex.answer)) }] : [ex];
+      return attempt === 1 ? [{ k: 'intro', word: ex.word, again: true }, { ...ex, ...mcq(ex.options[ex.answer], ex.options.filter((_, i) => i !== ex.answer)) }] : [ex];
     case 'type':
-      return attempt === 1 ? [{ k: 'intro', word: ex.word }, prodChoice(c, ex.word), ex] : [ex];
+      return attempt === 1 ? [{ k: 'intro', word: ex.word, again: true }, prodChoice(c, ex.word), ex] : [ex];
     case 'cloze': {
-      if (ex.word) return attempt === 1 ? [{ k: 'intro', word: ex.word }, ex] : [ex];
+      if (ex.word) return attempt === 1 ? [{ k: 'intro', word: ex.word, again: true }, ex] : [ex];
       const tp = ex.topic || (ex.cid?.startsWith('g:') ? c.topicById.get(ex.cid.slice(2)) : undefined);
       return attempt === 1 && tp ? [ruleHint(tp, ex.answers[0]), ex] : [ex];
     }

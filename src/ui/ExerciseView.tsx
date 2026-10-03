@@ -306,7 +306,7 @@ function Intro({ ex }: { ex: Extract<Ex, { k: 'intro' }> }) {
   const exs = (w.ex || []).map((id) => c.sents.get(id)).filter(Boolean).slice(0, 2) as Sentence[];
   return (
     <div class="intro">
-      <div class="ex-kicker">{t().newWord}</div>
+      <div class="ex-kicker">{ex.again ? t().reviewWord : t().newWord}</div>
       <div class="intro-word">
         <span class="big-word" {...tl()}>{displayWord(w, target)}</span>
         <SpeakBtn text={w.w} wa={w.wa} />
