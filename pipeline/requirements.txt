@@ -1,0 +1,6 @@
+spacy==3.8.16
+verbecc==2.0.3
+tzdata
+# models (install after spacy):
+#   python -m spacy download es_core_news_md
+#   python -m spacy download fr_core_news_md
