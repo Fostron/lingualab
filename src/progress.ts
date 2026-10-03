@@ -1,5 +1,25 @@
-import { allCards, getProgress, getUnit, getUnits, putCards, saveProgress, saveUnit, today, type CardRec, type UnitRec } from './db';
-import { knownCardRec, review, Rating } from './srs';
+import {
+  addActivity,
+  addLog,
+  allCards,
+  getCard,
+  getProgress,
+  getUnit,
+  getUnits,
+  logsFor,
+  putCards,
+  saveProgress,
+  saveUnit,
+  today,
+  type CardRec,
+  type CourseProgress,
+  type Difficulty,
+  type LogRec,
+  type UnitRec,
+} from './db';
+import type { Diff } from './exercises';
+import { lessonPassed, lessonsOf, nextLesson, PASS, unitComplete, type Lesson } from './lessons';
+import { knownCardRec, retrievability, review, Rating } from './srs';
 import type { LoadedCourse, Unit } from './types';
 
 export interface ProgressInfo {
@@ -9,9 +29,11 @@ export interface ProgressInfo {
   tenses: string[];
   current: Unit;
   currentIndex: number;
+  next: Lesson | null;
   cards: CardRec[];
   due: CardRec[];
   newToday: number;
+  prog: CourseProgress;
 }
 
 export async function loadProgress(c: LoadedCourse): Promise<ProgressInfo> {
@@ -19,24 +41,26 @@ export async function loadProgress(c: LoadedCourse): Promise<ProgressInfo> {
   const learned = new Set<number>();
   const known = new Set<number>();
   const tenses = new Set<string>();
-  let currentIndex = -1;
-  c.units.forEach((u, i) => {
+  c.units.forEach((u) => {
     const r = units.get(u.id);
-    if (r) {
-      for (const w of r.learned) {
-        learned.add(w);
-        known.add(w);
-      }
-      if (r.status === 'known' || r.status === 'done') for (const w of u.words) known.add(w);
-      if (r.status !== 'new') for (const tid of u.topics) for (const ts of c.topicById.get(tid)?.tenses || []) tenses.add(ts);
+    if (!r) return;
+    for (const w of r.learned) {
+      learned.add(w);
+      known.add(w);
     }
-    if (currentIndex < 0 && (!r || (r.status !== 'done' && r.status !== 'known'))) currentIndex = i;
+    if (r.status === 'known' || r.status === 'done') for (const w of u.words) known.add(w);
+    for (const tid of u.topics) {
+      const tp = c.topicById.get(tid);
+      if (tp && (r.status === 'known' || r.status === 'done' || r.topicsRead.includes(tid))) for (const ts of tp.tenses || []) tenses.add(ts);
+    }
   });
+  const next = nextLesson(c, units);
+  let currentIndex = next ? c.units.indexOf(next.unit) : c.units.findIndex((u) => !unitComplete(c, u, units.get(u.id)));
   if (currentIndex < 0) currentIndex = c.units.length - 1;
   const now = Date.now();
   const due = cards.filter((x) => x.due <= now).sort((a, b) => a.due - b.due);
   const newToday = prog.newToday && prog.newToday.day === today() ? prog.newToday.n : 0;
-  return { units, learned, known, tenses: [...tenses], current: c.units[currentIndex], currentIndex, cards, due, newToday };
+  return { units, learned, known, tenses: [...tenses], current: c.units[currentIndex], currentIndex, next, cards, due, newToday, prog };
 }
 
 export function wordsLeft(c: LoadedCourse, unit: Unit, info: ProgressInfo) {
@@ -52,50 +76,77 @@ export async function addNewToday(course: string, n: number) {
   await saveProgress(p);
 }
 
-/** Persist lesson results: first-attempt correctness per card id, plus words introduced. */
-export async function finishLesson(c: LoadedCourse, unit: Unit, introduced: number[], results: Map<string, boolean>) {
-  const id = c.meta.id;
-  for (const [cid, ok] of results) await review(id, cid, ok ? Rating.Good : Rating.Again, ok, 'lesson');
-  // words introduced but never exercised still get cards
-  for (const w of introduced) {
-    for (const k of ['wr', 'wp']) {
-      const cid = `${k}:${w}`;
-      if (!results.has(cid)) await review(id, cid, Rating.Good, true, 'lesson');
-    }
+/** First-attempt result of a graded exercise inside a lesson. score: 1 right, 0.5 with a hint, 0 wrong. */
+export interface Answer {
+  cid?: string;
+  ex: string; // exercise label for statistics, e.g. "type-listen"
+  score: number;
+}
+
+/** Make the unit record carry explicit lesson results (older progress only had learned words / read rules). */
+function withLessons(c: LoadedCourse, unit: Unit, u: UnitRec) {
+  if (!u.lessons) {
+    const legacy = { ...u };
+    u.lessons = {};
+    for (const l of lessonsOf(c, unit)) if (lessonPassed(l, legacy)) u.lessons[l.slug] = { best: 1, passed: true, tries: 0, ts: 0 };
   }
+  return u.lessons;
+}
+
+/** Save a finished lesson: grade the cards, open the next lesson if passed, complete the unit when everything is passed. */
+export async function finishLessonRun(c: LoadedCourse, lesson: Lesson, answers: Answer[], seconds: number) {
+  const id = c.meta.id;
+  const graded = answers.length;
+  const score = graded ? answers.reduce((s, a) => s + a.score, 0) / graded : 1;
+  const passed = score >= PASS[lesson.kind];
+  // spaced repetition: one grade per card (its first attempt in this lesson)
+  const seen = new Set<string>();
+  for (const a of answers) {
+    if (a.cid && !seen.has(a.cid)) {
+      seen.add(a.cid);
+      await review(id, a.cid, a.score >= 1 ? Rating.Good : a.score > 0 ? Rating.Hard : Rating.Again, a.score > 0, a.ex);
+    } else await addLog({ course: id, cid: a.cid || `x:${a.ex}`, rating: 0, ts: Date.now(), ok: a.score >= 1, ex: a.ex });
+  }
+  const unit = lesson.unit;
   const u = await getUnit(id, unit.id);
-  u.learned = [...new Set([...u.learned, ...introduced])];
-  if (u.status === 'new') u.status = 'learning';
+  const lessons = withLessons(c, unit, u);
+  const prev = lessons[lesson.slug];
+  lessons[lesson.slug] = { best: Math.max(prev?.best || 0, score), passed: !!prev?.passed || passed, tries: (prev?.tries || 0) + 1, ts: Date.now() };
+  if (passed) {
+    if (lesson.kind === 'words') {
+      const fresh = lesson.words.filter((w) => !u.learned.includes(w));
+      u.learned = [...u.learned, ...fresh];
+      // words that were introduced but never asked still get cards
+      for (const w of lesson.words)
+        for (const k of ['wr', 'wp']) if (!seen.has(`${k}:${w}`) && !(await getCard(id, `${k}:${w}`))) await review(id, `${k}:${w}`, Rating.Good, true, 'lesson');
+      if (fresh.length) await addNewToday(id, fresh.length);
+    }
+    if ((lesson.kind === 'rule' || lesson.kind === 'drill') && lesson.topic && !u.topicsRead.includes(lesson.topic.id)) u.topicsRead.push(lesson.topic.id);
+    if (lesson.kind === 'test') {
+      u.test = { score, ts: Date.now() };
+      // passing the test early = testing out of the unit's lessons
+      for (const l of lessonsOf(c, unit)) if (l.kind !== 'exam' && !lessons[l.slug]?.passed) lessons[l.slug] = { best: score, passed: true, tries: 0, ts: Date.now() };
+      const missing = unit.words.filter((w) => !u.learned.includes(w));
+      const recs: CardRec[] = [];
+      for (const w of missing) for (const k of ['wr', 'wp']) if (!(await getCard(id, `${k}:${w}`))) recs.push(knownCardRec(id, `${k}:${w}`));
+      for (const tid of unit.topics) if (!(await getCard(id, `g:${tid}`))) recs.push(knownCardRec(id, `g:${tid}`));
+      await putCards(recs);
+      u.learned = [...unit.words];
+      for (const tid of unit.topics) if (!u.topicsRead.includes(tid)) u.topicsRead.push(tid);
+    }
+  } else if (lesson.kind === 'test') u.test = { score: Math.max(score, u.test?.score || 0), ts: Date.now() };
+  const unitDone = lessonsOf(c, unit).every((l) => lessons[l.slug]?.passed);
+  if (unitDone) u.status = 'done';
+  else if (u.status === 'new') u.status = 'learning';
   await saveUnit(u);
-  if (introduced.length) await addNewToday(id, introduced.length);
+  await addActivity(id, seconds, passed ? 1 : 0);
+  return { score, passed, unitDone };
 }
 
 export async function markTopicRead(c: LoadedCourse, unit: Unit, topicId: string) {
   const u = await getUnit(c.meta.id, unit.id);
   if (!u.topicsRead.includes(topicId)) u.topicsRead.push(topicId);
   if (u.status === 'new') u.status = 'learning';
-  await saveUnit(u);
-}
-
-export async function finishUnitTest(c: LoadedCourse, unit: Unit, score: number) {
-  const u = await getUnit(c.meta.id, unit.id);
-  u.test = { score, ts: Date.now() };
-  if (score >= 0.8) {
-    // passing a test without having learned the words = testing out
-    const wasNew = u.learned.length < unit.words.length;
-    u.status = 'done';
-    if (wasNew) {
-      const missing = unit.words.filter((w) => !u.learned.includes(w));
-      const recs: CardRec[] = [];
-      for (const w of missing) {
-        recs.push(knownCardRec(c.meta.id, `wr:${w}`));
-        recs.push(knownCardRec(c.meta.id, `wp:${w}`));
-      }
-      for (const tid of unit.topics) recs.push(knownCardRec(c.meta.id, `g:${tid}`));
-      await putCards(recs);
-      u.learned = [...unit.words];
-    }
-  }
   await saveUnit(u);
 }
 
@@ -114,3 +165,62 @@ export async function applyPlacement(c: LoadedCourse, startIndex: number, level:
   p.placement = { level, vocab, ts: Date.now(), startUnit: startIndex, detail };
   await saveProgress(p);
 }
+
+// ---- adaptivity and weak spots ----
+
+/** Share of right first answers over the latest answers (null while there is too little data). */
+export function recentAccuracy(logs: LogRec[], n = 60): number | null {
+  const xs = logs.filter((l) => l.rating !== 0 || l.cid.startsWith('x:')).slice(-n);
+  if (xs.length < 20) return null;
+  return xs.filter((l) => l.ok).length / xs.length;
+}
+
+/** "auto" follows the learner: more choices while accuracy is low, more typing when it is high. */
+export function resolveDiff(setting: Difficulty, logs: LogRec[]): Diff {
+  if (setting !== 'auto') return setting;
+  const a = recentAccuracy(logs);
+  if (a === null) return 'normal';
+  return a < 0.7 ? 'easy' : a > 0.92 ? 'hard' : 'normal';
+}
+
+export interface TopicStat {
+  id: string;
+  n: number;
+  acc: number;
+  last: number;
+}
+
+/** Accuracy per grammar topic over its latest 15 graded answers. */
+export function topicStats(logs: LogRec[]): Map<string, TopicStat> {
+  const by = new Map<string, LogRec[]>();
+  for (const l of logs) {
+    if (!l.cid.startsWith('g:')) continue;
+    const k = l.cid.slice(2);
+    if (!by.has(k)) by.set(k, []);
+    by.get(k)!.push(l);
+  }
+  const out = new Map<string, TopicStat>();
+  for (const [k, ls] of by) {
+    const xs = ls.slice(-15);
+    out.set(k, { id: k, n: xs.length, acc: xs.filter((l) => l.ok).length / xs.length, last: xs[xs.length - 1].ts });
+  }
+  return out;
+}
+
+export function weakTopics(logs: LogRec[]): TopicStat[] {
+  return [...topicStats(logs).values()].filter((s) => s.n >= 4 && s.acc < 0.7).sort((a, b) => a.acc - b.acc);
+}
+
+/** Words that keep slipping: lapsed more than once, or forgotten again soon. */
+export function weakWords(cards: CardRec[]): CardRec[] {
+  const now = new Date();
+  return cards
+    .filter((x) => (x.kind === 'wp' || x.kind === 'wr') && (x.lapses >= 2 || (x.lapses >= 1 && retrievability(x, now) < 0.8)))
+    .sort((a, b) => b.lapses - a.lapses || a.stability - b.stability);
+}
+
+export async function loadLogs(c: LoadedCourse) {
+  return logsFor(c.meta.id);
+}
+
+export { unitComplete };

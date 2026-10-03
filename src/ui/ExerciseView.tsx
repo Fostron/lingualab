@@ -1,28 +1,36 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import { check, diff, normalize, stripAccents, type Verdict } from '../answer';
 import { displayWord, genderTag, sentText } from '../content';
-import type { Ex } from '../exercises';
+import { sectionFor, sectionForDrill, sectionsOf, type Ex } from '../exercises';
 import { fmt, t } from '../i18n';
 import { getState } from '../store';
 import { say, sayWord, speak } from '../tts';
-import type { Sentence } from '../types';
-import { SentenceView, SpeakBtn, TargetInput } from './common';
+import type { Sentence, Topic } from '../types';
+import { Markdown, SentenceView, SpeakBtn, TargetInput } from './common';
 
 export interface ExResult {
   ok: boolean;
   verdict: Verdict | 'choice' | 'self';
   given?: string;
+  hinted?: boolean; // answered right after revealing part of the answer
 }
 
 interface Props {
   ex: Ex;
   onResult: (r: ExResult, override?: boolean) => void;
   onNext: () => void;
+  /** show the hint button (off in tests) */
+  hints?: boolean;
 }
 
-export function ExerciseView({ ex, onResult, onNext }: Props) {
+let hintsOn = true;
+
+export function ExerciseView({ ex, onResult, onNext, hints = true }: Props) {
   const [res, setRes] = useState<ExResult | null>(null);
   const [overridden, setOverridden] = useState(false);
+  const [why, setWhy] = useState(false);
+  hintsOn = hints;
+  if (import.meta.env.DEV) (window as any).__ex = ex; // lets automated checks see the current exercise
   const c = getState().course!;
   const st = getState().settings;
   const lang = c.meta.tts;
@@ -35,7 +43,7 @@ export function ExerciseView({ ex, onResult, onNext }: Props) {
 
   // global Enter -> next when answered
   useEffect(() => {
-    if (!res && ex.k !== 'intro') return;
+    if (!res && ex.k !== 'intro' && ex.k !== 'teach') return;
     const f = (e: KeyboardEvent) => {
       if (e.key === 'Enter') {
         e.preventDefault();
@@ -66,7 +74,18 @@ export function ExerciseView({ ex, onResult, onNext }: Props) {
     if (text) void say(text, lang, sentOf?.au);
   }, [res]);
 
-  if (ex.k === 'intro') return <div class="ex">{body}<div class="ex-actions"><button class="btn primary" onClick={onNext}>{t().gotIt}</button></div></div>;
+  if (ex.k === 'intro' || ex.k === 'teach')
+    return (
+      <div class="ex">
+        {body}
+        <div class="ex-actions">
+          <button class="btn primary" onClick={onNext}>
+            {ex.k === 'teach' && ex.step && ex.step[0] < ex.step[1] ? t().next : t().gotIt}
+          </button>
+        </div>
+      </div>
+    );
+  const rule = ruleOf(ex);
 
   return (
     <div class="ex">
@@ -74,7 +93,21 @@ export function ExerciseView({ ex, onResult, onNext }: Props) {
       {res && (
         <div class={`feedback ${res.ok || overridden ? 'ok' : 'bad'}`}>
           <div class="fb-title">
-            {overridden ? t().correct : res.ok ? (res.verdict === 'typo' ? t().almost : res.verdict === 'accent' ? `${t().correct} ${t().accentNote}` : t().correct) : res.verdict === 'partial' ? t().partialArticle : res.verdict === 'accent' ? `${t().wrong}. ${t().accentNote}` : t().wrong}
+            {overridden
+              ? t().correct
+              : res.ok
+                ? res.hinted
+                  ? t().correctWithHint
+                  : res.verdict === 'typo'
+                    ? t().almost
+                    : res.verdict === 'accent'
+                      ? `${t().correct} ${t().accentNote}`
+                      : t().correct
+                : res.verdict === 'partial'
+                  ? t().partialArticle
+                  : res.verdict === 'accent'
+                    ? `${t().wrong}. ${t().accentNote}`
+                    : t().wrong}
           </div>
           {(!res.ok || res.verdict === 'typo' || res.verdict === 'accent' || res.verdict === 'partial') && correctText && (
             <div class="fb-answer">
@@ -96,8 +129,14 @@ export function ExerciseView({ ex, onResult, onNext }: Props) {
               <div class="tr">{sentOf.tr}</div>
             </div>
           )}
-          {ex.k === 'mcq' && <WordMini ex={ex} />}
+          {(ex.k === 'mcq' || ex.k === 'type') && <WordMini w={ex.word} />}
+          {why && rule && <RuleSheet {...rule} />}
           <div class="ex-actions">
+            {rule && !why && (!res.ok || res.hinted) && (
+              <button class="btn ghost" onClick={() => setWhy(true)}>
+                {t().why}
+              </button>
+            )}
             {!res.ok && !overridden && res.given && res.verdict !== 'choice' && (
               <button
                 class="btn ghost"
@@ -119,13 +158,60 @@ export function ExerciseView({ ex, onResult, onNext }: Props) {
   );
 }
 
-function WordMini({ ex }: { ex: Extract<Ex, { k: 'mcq' }> }) {
+function WordMini({ w }: { w: Extract<Ex, { k: 'mcq' }>['word'] }) {
   const c = getState().course!;
-  const w = ex.word;
   return (
     <div class="word-mini">
       <b>{displayWord(w, c.meta.target)}</b> {genderTag(w)} — {w.tr}
       {w.ipa && <span class="ipa"> {w.ipa}</span>}
+      {w.note && <div class="muted small">{w.note}</div>}
+    </div>
+  );
+}
+
+/** The grammar behind an exercise: the matching part of the topic's explanation, or the verb table. */
+function ruleOf(ex: Ex): { topic?: Topic; answer: string; verb?: string; tense?: string; sec?: number } | null {
+  const c = getState().course!;
+  if (ex.k === 'drill') return { topic: ex.topic, answer: ex.drill.a[0], sec: sectionForDrill(ex.topic, ex.drill) };
+  if (ex.k === 'cloze' && !ex.word) {
+    const tp = ex.topic || (ex.cid?.startsWith('g:') ? c.topicById.get(ex.cid.slice(2)) : undefined);
+    return tp ? { topic: tp, answer: ex.answers[0] } : null;
+  }
+  if (ex.k === 'conj') return { topic: ex.topic, answer: ex.answers[0], verb: ex.verb, tense: ex.tense };
+  return null;
+}
+
+function RuleSheet({ topic, answer, verb, tense, sec: secIdx }: { topic?: Topic; answer: string; verb?: string; tense?: string; sec?: number }) {
+  const c = getState().course!;
+  const forms = verb && tense ? c.conj[verb]?.[tense] : undefined;
+  const secs = topic ? sectionsOf(topic) : [];
+  const i = secIdx !== undefined && secIdx >= 0 ? secIdx : topic ? sectionFor(topic, answer) : -1;
+  const sec = secs[i >= 0 ? i : 0];
+  return (
+    <div class="rule-sheet">
+      {forms && (
+        <table class="conj-mini">
+          {forms.map((f, k) =>
+            f ? (
+              <tr>
+                <td class="muted">{c.meta.persons[k]}</td>
+                <td>
+                  <b>{f.replace(/\//g, ' / ')}</b>
+                </td>
+              </tr>
+            ) : null,
+          )}
+        </table>
+      )}
+      {topic && sec && (
+        <>
+          <b>{sec.title || topic.title}</b>
+          <Markdown md={sec.md} />
+          <a href={`#/topic/${topic.id}`} target="_blank" rel="noopener">
+            {t().fullRule}: {topic.title} ↗
+          </a>
+        </>
+      )}
     </div>
   );
 }
@@ -180,6 +266,8 @@ function renderBody(ex: Ex, res: ExResult | null, answer: (r: ExResult) => void)
   switch (ex.k) {
     case 'intro':
       return <Intro ex={ex} />;
+    case 'teach':
+      return <Teach ex={ex} />;
     case 'mcq':
       return <Mcq ex={ex} res={res} answer={answer} />;
     case 'type':
@@ -248,6 +336,36 @@ function Intro({ ex }: { ex: Extract<Ex, { k: 'intro' }> }) {
           ))}
         </div>
       )}
+    </div>
+  );
+}
+
+function Teach({ ex }: { ex: Extract<Ex, { k: 'teach' }> }) {
+  return (
+    <div class="teach">
+      <div class="ex-kicker">
+        {ex.sents ? t().examples : ex.topic ? t().rule : t().remember}
+        {ex.step && (
+          <span class="muted">
+            {' '}
+            · {ex.step[0]}/{ex.step[1]}
+          </span>
+        )}
+        {ex.topic && <span class="topic-tag">{ex.topic.title}</span>}
+      </div>
+      {ex.title && <h3 class="teach-title">{ex.title}</h3>}
+      {ex.md && <Markdown md={ex.md} />}
+      {ex.sents && (
+        <div class="sent-list">
+          {ex.sents.map((s) => (
+            <div class="ex-sent">
+              <SpeakBtn text={sentText(s)} audio={s.au} small /> <SentenceView s={s} />
+              <div class="tr">{s.tr}</div>
+            </div>
+          ))}
+        </div>
+      )}
+      {ex.md && ex.topic && <p class="muted small">{t().tapToHear}</p>}
     </div>
   );
 }
@@ -328,26 +446,64 @@ function Mcq({ ex, res, answer }: P<'mcq'>) {
   );
 }
 
-function TypeBox({ res, onSubmit, placeholder, lang, dontKnow = true }: { res: ExResult | null; onSubmit: (v: string) => void; placeholder: string; lang?: string; dontKnow?: boolean }) {
+/** Reveal the answer gradually: letter by letter for a word, word by word for a sentence. */
+function hintPrefix(answer: string, step: number) {
+  if (/\s/.test(answer.trim())) {
+    const ws = answer.trim().split(/\s+/);
+    return ws.slice(0, Math.min(step, ws.length - 1)).join(' ') + ' ';
+  }
+  return answer.slice(0, Math.min(step, Math.max(1, answer.length - 1)));
+}
+
+function TypeBox({
+  res,
+  onSubmit,
+  placeholder,
+  lang,
+  dontKnow = true,
+  hint,
+}: {
+  res: ExResult | null;
+  onSubmit: (v: string, hinted: boolean) => void;
+  placeholder: string;
+  lang?: string;
+  dontKnow?: boolean;
+  hint?: string;
+}) {
   const [v, setV] = useState('');
+  const [hints, setHints] = useState(0);
   const submitted = useRef(false);
   const submit = () => {
     if (res || submitted.current || !v.trim()) return;
     submitted.current = true;
-    onSubmit(v);
+    onSubmit(v, hints > 0);
   };
+  const canHint = !!hint && hintsOn && getState().settings.hints && !res;
   return (
     <div class="type-box">
       <TargetInput value={v} onInput={setV} onEnter={submit} placeholder={placeholder} disabled={!!res} lang={lang} />
       {!res && (
         <div class="ex-actions">
+          {canHint && (
+            <button
+              class="btn ghost"
+              title={t().hintTitle}
+              onClick={() => {
+                const n = hints + 1;
+                setHints(n);
+                setV(hintPrefix(hint!, n));
+              }}
+            >
+              {t().hint}
+            </button>
+          )}
           {dontKnow && (
             <button
               class="btn ghost"
               onClick={() => {
                 if (submitted.current) return;
                 submitted.current = true;
-                onSubmit('');
+                onSubmit('', false);
               }}
             >
               {t().dontKnow}
@@ -390,10 +546,11 @@ function TypeWord({ ex, res, answer }: P<'type'>) {
         res={res}
         lang={target}
         placeholder={fmt(t().typeHere, { lang: t().langName[target] })}
-        onSubmit={(v) => {
+        hint={ex.answers[0]}
+        onSubmit={(v, hinted) => {
           const answers = ex.mode === 'listen' ? [w.w, ...ex.answers] : ex.answers;
           const r = check(v, answers, { strictAccents: st.strictAccents, partial: ex.partial });
-          answer({ ok: r.ok, verdict: r.verdict, given: v });
+          answer({ ok: r.ok, verdict: r.verdict, given: v, hinted });
         }}
       />
     </div>
@@ -403,9 +560,8 @@ function TypeWord({ ex, res, answer }: P<'type'>) {
 function Cloze({ ex, res, answer }: P<'cloze'>) {
   const c = getState().course!;
   const st = getState().settings;
-  const [v, setV] = useState('');
   const done = useRef(false);
-  const submit = (val: string) => {
+  const submit = (val: string, hinted = false) => {
     if (done.current || res) return;
     done.current = true;
     if (ex.options) {
@@ -414,7 +570,7 @@ function Cloze({ ex, res, answer }: P<'cloze'>) {
       return;
     }
     const r = check(val, ex.answers, { strictAccents: st.strictAccents, strictForm: !ex.word });
-    answer({ ok: r.ok, verdict: r.verdict, given: val });
+    answer({ ok: r.ok, verdict: r.verdict, given: val, hinted });
   };
   const blankContent = res ? <b class={res.ok ? 'ok' : 'bad'}>{ex.answers[0]}</b> : ex.options ? '_____' : <span class="blank-hint">{ex.hint ? `(${ex.hint})` : '_____'}</span>;
   return (
@@ -434,19 +590,7 @@ function Cloze({ ex, res, answer }: P<'cloze'>) {
           target
         />
       ) : (
-        <div class="type-box">
-          <TargetInput value={v} onInput={setV} onEnter={() => v.trim() && submit(v)} disabled={!!res} lang={c.meta.target} placeholder="…" />
-          {!res && (
-            <div class="ex-actions">
-              <button class="btn ghost" onClick={() => submit('')}>
-                {t().dontKnow}
-              </button>
-              <button class="btn primary" disabled={!v.trim()} onClick={() => submit(v)}>
-                {t().check}
-              </button>
-            </div>
-          )}
-        </div>
+        <TypeBox res={res} lang={c.meta.target} placeholder="…" hint={ex.answers[0]} onSubmit={(val, hinted) => submit(val, hinted)} />
       )}
     </div>
   );
@@ -505,9 +649,10 @@ function Translate({ ex, res, answer }: P<'translate'>) {
         res={res}
         lang={target}
         placeholder={fmt(t().typeHere, { lang: t().langName[target] })}
-        onSubmit={(v) => {
+        hint={ref}
+        onSubmit={(v, hinted) => {
           const r = check(v, [ref], { strictAccents: st.strictAccents });
-          answer({ ok: r.ok, verdict: r.verdict, given: v });
+          answer({ ok: r.ok, verdict: r.verdict, given: v, hinted });
         }}
       />
     </div>
@@ -531,9 +676,10 @@ function Dictation({ ex, res, answer }: P<'dictation'>) {
         res={res}
         lang={c.meta.target}
         placeholder={fmt(t().typeHere, { lang: t().langName[c.meta.target] })}
-        onSubmit={(v) => {
+        hint={ref}
+        onSubmit={(v, hinted) => {
           const r = check(v, [ref], { strictAccents: st.strictAccents });
-          answer({ ok: r.ok, verdict: r.verdict, given: v });
+          answer({ ok: r.ok, verdict: r.verdict, given: v, hinted });
         }}
       />
     </div>
@@ -595,9 +741,10 @@ function DrillView({ ex, res, answer }: P<'drill'>) {
           res={res}
           lang={c.meta.target}
           placeholder="…"
-          onSubmit={(v) => {
+          hint={d.a[0]}
+          onSubmit={(v, hinted) => {
             const r = check(v, d.a, { strictAccents: st.strictAccents, strictForm: true });
-            answer({ ok: r.ok, verdict: r.verdict, given: v });
+            answer({ ok: r.ok, verdict: r.verdict, given: v, hinted });
           }}
         />
       )}
@@ -622,9 +769,10 @@ function Conj({ ex, res, answer }: P<'conj'>) {
         res={res}
         lang={c.meta.target}
         placeholder="…"
-        onSubmit={(v) => {
+        hint={ex.answers[0]}
+        onSubmit={(v, hinted) => {
           const r = check(v, ex.answers, { strictAccents: st.strictAccents, strictForm: true });
-          answer({ ok: r.ok, verdict: r.verdict, given: v });
+          answer({ ok: r.ok, verdict: r.verdict, given: v, hinted });
         }}
       />
     </div>

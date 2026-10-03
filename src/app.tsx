@@ -6,14 +6,14 @@ import { Icon, Loading } from './ui/common';
 import { Dictionary, GrammarList, Home, Path, PracticeMenu, TopicView, UnitView, Welcome, WordPage } from './screens/Main';
 import { SettingsPage, Stats } from './screens/Other';
 import { Placement } from './screens/Placement';
-import { Learn, Practice, Review, UnitTest } from './screens/Study';
+import { ContinueLesson, LessonRun, Practice, Review } from './screens/Study';
 
-const FULLSCREEN = new Set(['learn', 'review', 'test', 'practice-run']);
+const FULLSCREEN = new Set(['lesson', 'review', 'practice-run']);
 
 export function App() {
   const st = useStore();
   const route = useRoute();
-  const [head, a, b] = route;
+  const [head, a, b, extra] = route;
 
   if (head === 'courses' || (!st.info && !st.loading)) return <Shell nav={false}><Welcome /></Shell>;
   if (st.loading || (!st.course && !st.error)) return <Loading />;
@@ -49,26 +49,30 @@ export function App() {
     case 'topic':
       body = <TopicView c={c} topicId={a} unitId={b} />;
       break;
+    case 'lesson':
+      body = <LessonRun key={`${a}-${b}-${extra || ''}`} c={c} unitId={a} slug={b} />;
+      break;
+    case 'continue':
     case 'learn':
-      body = <Learn key={`${a}-${b || ''}`} c={c} unitId={a} force={b === 'more'} />;
+      body = <ContinueLesson c={c} />;
       break;
     case 'review':
       body = <Review c={c} />;
       break;
     case 'test':
-      body = <UnitTest key={a} c={c} unitId={a} />;
+      body = <LessonRun key={`${a}-t`} c={c} unitId={a} slug="t" />;
       break;
     case 'placement':
       body = <Placement c={c} />;
       break;
     case 'grammar':
-      body = <GrammarList c={c} />;
+      body = <GrammarList c={c} tick={tick} />;
       break;
     case 'dict':
-      body = <Dictionary c={c} />;
+      body = <Dictionary c={c} tick={tick} />;
       break;
     case 'word':
-      body = <WordPage c={c} id={Number(a)} />;
+      body = <WordPage c={c} id={Number(a)} tick={tick} />;
       break;
     case 'practice':
       body = a ? <Practice key={a} c={c} kind={a} /> : <PracticeMenu />;
@@ -132,7 +136,7 @@ function Shell({ nav, active, children }: { nav: boolean; active?: string; child
       <main>{children}</main>
       {nav && (
         <nav class="bottomnav">
-          {items.slice(0, 5).map(([k, href, label]) => (
+          {items.map(([k, href, label]) => (
             <a class={active === k ? 'active' : ''} href={href}>
               <Icon name={icons[k]} size={22} />
               <span>{label}</span>

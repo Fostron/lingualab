@@ -34,6 +34,14 @@ export interface LogRec {
 
 export type UnitStatus = 'new' | 'learning' | 'done' | 'known';
 
+/** Result of one lesson inside a unit (key = lesson slug, e.g. "w1", "r:es-ser", "t"). */
+export interface LessonRec {
+  best: number; // best first-attempt accuracy 0..1
+  passed: boolean;
+  tries: number;
+  ts: number;
+}
+
 export interface UnitRec {
   key: string; // `${course}|${unitId}`
   course: string;
@@ -42,6 +50,7 @@ export interface UnitRec {
   learned: number[]; // word ids introduced
   topicsRead: string[];
   test?: { score: number; ts: number };
+  lessons?: Record<string, LessonRec>;
   updated: number;
 }
 
@@ -51,11 +60,18 @@ export interface CourseProgress {
   placement?: { level: string; vocab: number; ts: number; startUnit: number; detail: Record<string, number> };
   days: string[]; // YYYY-MM-DD days with activity
   newToday?: { day: string; n: number };
+  time?: Record<string, number>; // seconds of active study per day
+  lessonsDone?: Record<string, number>; // lessons finished per day
 }
+
+export type Difficulty = 'auto' | 'easy' | 'normal' | 'hard';
 
 export interface Settings {
   newPerDay: number;
   wordsPerLesson: number;
+  difficulty: Difficulty; // auto = adapts to recent accuracy
+  dailyGoal: number; // lessons per day
+  hints: boolean;
   autoplay: boolean;
   rate: number;
   voice: Record<string, string>; // tts lang -> voice name
@@ -68,6 +84,9 @@ export interface Settings {
 export const DEFAULT_SETTINGS: Settings = {
   newPerDay: 15,
   wordsPerLesson: 7,
+  difficulty: 'auto',
+  dailyGoal: 3,
+  hints: true,
   autoplay: true,
   rate: 0.9,
   voice: {},
@@ -166,6 +185,20 @@ export async function logsFor(course: string): Promise<LogRec[]> {
 export function today(d = new Date()) {
   const z = (n: number) => String(n).padStart(2, '0');
   return `${d.getFullYear()}-${z(d.getMonth() + 1)}-${z(d.getDate())}`;
+}
+
+/** Add active study time (seconds) and optionally a finished lesson to today's totals. */
+export async function addActivity(course: string, seconds: number, lessons = 0) {
+  const p = await getProgress(course);
+  const d = today();
+  if (!p.days.includes(d)) p.days.push(d);
+  p.time = p.time || {};
+  p.time[d] = (p.time[d] || 0) + Math.round(seconds);
+  if (lessons) {
+    p.lessonsDone = p.lessonsDone || {};
+    p.lessonsDone[d] = (p.lessonsDone[d] || 0) + lessons;
+  }
+  await saveProgress(p);
 }
 
 export async function markActive(course: string) {

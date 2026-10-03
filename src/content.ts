@@ -34,6 +34,24 @@ export function warmOfflineCache() {
     for (const f of PACK_FILES) void fetch(`${import.meta.env.BASE_URL}content/${id}/${f}.json?v=${__BUILD__}`).catch(() => {});
 }
 
+/** Reference dictionary entry beyond the course vocabulary: [word, part of speech, translation]. */
+export type RefEntry = [string, string, string];
+
+const refCache = new Map<string, Promise<RefEntry[]>>();
+
+/** The big look-up dictionary (~70–100k entries) is only fetched when someone searches. */
+export function loadRefDict(id: string): Promise<RefEntry[]> {
+  let p = refCache.get(id);
+  if (!p) {
+    p = getJson<RefEntry[]>(`${import.meta.env.BASE_URL}content/${id}/dict.json`).catch(() => {
+      refCache.delete(id);
+      return [];
+    });
+    refCache.set(id, p);
+  }
+  return p;
+}
+
 export function loadCourse(id: string): Promise<LoadedCourse> {
   let p = cache.get(id);
   if (!p) {

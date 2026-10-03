@@ -1,80 +1,275 @@
 import { useEffect, useState } from 'preact/hooks';
-import { exportAll, importAll, logsFor, resetCourse, type LogRec } from '../db';
-import { t } from '../i18n';
-import { loadProgress, type ProgressInfo } from '../progress';
+import { exportAll, importAll, logsFor, resetCourse, today, type CardRec, type Difficulty, type LogRec } from '../db';
+import { fmt, t } from '../i18n';
+import { lessonPassed, lessonsOf } from '../lessons';
+import { loadProgress, topicStats, unitComplete, weakWords, type ProgressInfo } from '../progress';
 import { go } from '../router';
+import { retrievability } from '../srs';
 import { bump, getState, updateSettings } from '../store';
 import { speak, voicesFor } from '../tts';
-import type { LoadedCourse } from '../types';
+import { LEVELS, type LoadedCourse } from '../types';
 import { Loading } from '../ui/common';
+import { lessonsPassedCount, streakOf } from './Main';
+
+const DAY = 86400000;
+
+/** Exercise labels grouped into skills. */
+const SKILLS: [string, string[]][] = [
+  ['recognition', ['mcq-t2n', 'mcq-sent', 'read']],
+  ['recall', ['type-n2t', 'mcq-n2t', 'cloze-word', 'translate']],
+  ['listening', ['mcq-listen', 'type-listen', 'dictation']],
+  ['grammar', ['drill-gap', 'drill-choice', 'drill-transform', 'cloze']],
+  ['conjugation', ['conj']],
+  ['sentences', ['build']],
+];
+
+function bestStreak(days: string[]) {
+  const set = [...new Set(days)].sort();
+  let best = 0;
+  let run = 0;
+  let prev = 0;
+  for (const d of set) {
+    const ts = new Date(d + 'T12:00:00').getTime();
+    run = prev && Math.round((ts - prev) / DAY) === 1 ? run + 1 : 1;
+    best = Math.max(best, run);
+    prev = ts;
+  }
+  return best;
+}
+
+function hm(sec: number) {
+  const m = Math.round(sec / 60);
+  return m < 60 ? `${m} ${t().mins}` : `${Math.floor(m / 60)} ${t().hours} ${m % 60} ${t().mins}`;
+}
 
 export function Stats({ c }: { c: LoadedCourse }) {
   const [info, setInfo] = useState<ProgressInfo | null>(null);
   const [logs, setLogs] = useState<LogRec[] | null>(null);
+  const [allTopics, setAllTopics] = useState(false);
   useEffect(() => {
     void loadProgress(c).then(setInfo);
     void logsFor(c.meta.id).then(setLogs);
   }, [c]);
   if (!info || !logs) return <Loading />;
+  const prog = info.prog;
   const now = Date.now();
-  const day = 86400000;
-  const recent = logs.filter((l) => l.ts > now - 30 * day && l.ex !== 'lesson');
-  const retention = recent.length ? Math.round((100 * recent.filter((l) => l.ok).length) / recent.length) : null;
-  const perDay: number[] = [];
-  for (let i = 13; i >= 0; i--) {
-    const start = new Date();
-    start.setHours(0, 0, 0, 0);
-    const s = start.getTime() - i * day;
-    perDay.push(logs.filter((l) => l.ts >= s && l.ts < s + day).length);
+  const start0 = new Date();
+  start0.setHours(0, 0, 0, 0);
+  const todayStart = start0.getTime();
+
+  // totals
+  const totalSec = Object.values(prog.time || {}).reduce((a, b) => a + b, 0);
+  const recent = logs.filter((l) => l.ts > now - 30 * DAY);
+  const acc30 = recent.length ? Math.round((100 * recent.filter((l) => l.ok).length) / recent.length) : null;
+  const wordsCards = info.cards.filter((x) => x.kind === 'wp');
+  const mature = wordsCards.filter((x) => x.stability >= 21).length;
+  const topicsStudied = new Set<string>();
+  for (const u of c.units) {
+    const r = info.units.get(u.id);
+    if (r) for (const l of lessonsOf(c, u)) if (l.topic && lessonPassed(l, r)) topicsStudied.add(l.topic.id);
   }
+  const unitsDone = c.units.filter((u) => unitComplete(c, u, info.units.get(u.id))).length;
+
+  // activity heatmap: 20 weeks ending this week
+  const perDay = new Map<string, number>();
+  for (const l of logs) {
+    const k = today(new Date(l.ts));
+    perDay.set(k, (perDay.get(k) || 0) + 1);
+  }
+  const weeks = 20;
+  const end = new Date(todayStart);
+  end.setDate(end.getDate() + (6 - ((end.getDay() + 6) % 7))); // Sunday of this week
+  const cells: { key: string; n: number; future: boolean }[] = [];
+  for (let i = weeks * 7 - 1; i >= 0; i--) {
+    const d = new Date(end);
+    d.setDate(d.getDate() - i);
+    const key = today(d);
+    cells.push({ key, n: perDay.get(key) || 0, future: d.getTime() > now });
+  }
+  const maxDay = Math.max(1, ...cells.map((x) => x.n));
+  const heat = (n: number) => (n === 0 ? 0 : n < maxDay * 0.25 ? 1 : n < maxDay * 0.5 ? 2 : n < maxDay * 0.75 ? 3 : 4);
+
+  // last 14 days: minutes and answers
+  const days14: { label: string; min: number; n: number; acc: number | null }[] = [];
+  for (let i = 13; i >= 0; i--) {
+    const s = todayStart - i * DAY;
+    const d = new Date(s);
+    const ls = logs.filter((l) => l.ts >= s && l.ts < s + DAY);
+    days14.push({
+      label: String(d.getDate()),
+      min: Math.round((prog.time?.[today(d)] || 0) / 60),
+      n: ls.length,
+      acc: ls.length ? ls.filter((l) => l.ok).length / ls.length : null,
+    });
+  }
+  const maxMin = Math.max(1, ...days14.map((x) => x.min));
+
+  // skills
+  const skills = SKILLS.map(([k, labels]) => {
+    const ls = recent.filter((l) => labels.includes(l.ex));
+    return { k, n: ls.length, acc: ls.length ? ls.filter((l) => l.ok).length / ls.length : null };
+  });
+
+  // memory strength of words
+  const nowD = new Date();
+  const mem = { learning: 0, young: 0, mature: 0, fading: 0 };
+  for (const x of wordsCards) {
+    const r = retrievability(x, nowD);
+    if (r < 0.8 && x.reps > 1) mem.fading++;
+    else if (x.stability >= 21) mem.mature++;
+    else if (x.stability >= 3) mem.young++;
+    else mem.learning++;
+  }
+  const memTotal = Math.max(1, wordsCards.length);
+
+  // forecast
   const forecast: number[] = [];
   for (let i = 0; i < 7; i++) {
-    const end = new Date();
-    end.setHours(23, 59, 59, 999);
-    const e = end.getTime() + i * day;
-    const s = i === 0 ? 0 : e - day;
+    const e = todayStart + (i + 1) * DAY;
+    const s = i === 0 ? 0 : e - DAY;
     forecast.push(info.cards.filter((x) => x.due > s && x.due <= e).length);
   }
-  const maxD = Math.max(1, ...perDay);
   const maxF = Math.max(1, ...forecast);
-  const words = info.cards.filter((x) => x.kind === 'wp');
-  const mature = words.filter((x) => x.stability >= 21).length;
-  const young = words.length - mature;
-  const levelCounts = ['A1', 'A2', 'B1', 'B2', 'C1'].map((L) => {
-    const us = c.units.filter((u) => u.level === L);
-    const done = us.filter((u) => ['done', 'known'].includes(info.units.get(u.id)?.status || '')).length;
-    return { L, done, total: us.length };
-  });
+
+  // grammar topics
+  const ts = topicStats(logs);
+  const gcards = new Map(info.cards.filter((x) => x.kind === 'g').map((x) => [x.ref, x] as [string, CardRec]));
+  const topicRows = [...topicsStudied]
+    .map((id) => ({ id, tp: c.topicById.get(id)!, st: ts.get(id), card: gcards.get(id) }))
+    .filter((x) => x.tp)
+    .sort((a, b) => (a.st?.acc ?? 1) - (b.st?.acc ?? 1));
+  const hard = weakWords(info.cards).slice(0, 10);
+
   return (
     <div class="page stats">
       <h2>{t().stats}</h2>
       <div class="result-grid">
         <div class="stat">
+          <small>{t().streak}</small>
+          <b>{streakOf(prog.days)}</b>
+          <small class="muted">
+            {t().bestStreak}: {bestStreak(prog.days)}
+          </small>
+        </div>
+        <div class="stat">
+          <small>{t().studyTime}</small>
+          <b>{hm(totalSec)}</b>
+          <small class="muted">
+            {prog.days.length} {t().studyDaysShort}
+          </small>
+        </div>
+        <div class="stat">
+          <small>{t().lessonsDoneTotal}</small>
+          <b>{lessonsPassedCount(c, info)}</b>
+          <small class="muted">
+            {t().units}: {unitsDone}/{c.units.length}
+          </small>
+        </div>
+        <div class="stat">
           <small>{t().learnedWords}</small>
           <b>{info.learned.size}</b>
+          <small class="muted">
+            {t().wordsKnownShort}: {mature}
+          </small>
         </div>
         <div class="stat">
-          <small>{t().wordsKnown}</small>
-          <b>{mature}</b>
-          <small class="muted">+{young}</small>
+          <small>{t().grammar}</small>
+          <b>
+            {topicsStudied.size}/{c.topics.length}
+          </b>
+          <small class="muted">{t().topicsStudied}</small>
         </div>
         <div class="stat">
-          <small>{t().retention}</small>
-          <b>{retention === null ? '—' : `${retention}%`}</b>
-        </div>
-        <div class="stat">
-          <small>{t().reviewsTotal}</small>
-          <b>{logs.length}</b>
+          <small>{t().accuracy30}</small>
+          <b>{acc30 === null ? '—' : `${acc30}%`}</b>
+          <small class="muted">
+            {logs.length} {t().answers}
+          </small>
         </div>
       </div>
+
+      {prog.placement && prog.placement.level !== 'A0' && (
+        <p class="muted small">
+          {t().placementTitle}: {prog.placement.level} · {t().placementVocabSize} ≈ {prog.placement.vocab} · {new Date(prog.placement.ts).toLocaleDateString()}
+        </p>
+      )}
+
       <div class="card">
-        <h4>14 d</h4>
-        <div class="bars">
-          {perDay.map((n) => (
-            <div class="bar" style={{ height: `${(100 * n) / maxD}%` }} title={String(n)} />
+        <h4>{t().activity}</h4>
+        <div class="heatmap" style={{ gridTemplateColumns: `repeat(${weeks}, 1fr)` }}>
+          {Array.from({ length: weeks }, (_, w) => (
+            <div class="heat-col">
+              {cells.slice(w * 7, w * 7 + 7).map((x) => (
+                <i class={`h${x.future ? 'f' : heat(x.n)}`} title={`${x.key}: ${x.n}`} />
+              ))}
+            </div>
           ))}
         </div>
       </div>
+
+      <div class="card">
+        <h4>{t().minutesPerDay}</h4>
+        <div class="bars labeled">
+          {days14.map((d) => (
+            <div class="bar-wrap" title={`${d.min} ${t().mins} · ${d.n} ${t().answers}${d.acc !== null ? ` · ${Math.round(d.acc * 100)}%` : ''}`}>
+              <div class="bar" style={{ height: `${(100 * d.min) / maxMin}%` }}>
+                {d.min > 0 && <span>{d.min}</span>}
+              </div>
+              <small>{d.label}</small>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="card">
+        <h4>{t().skills}</h4>
+        {skills.map((s) => (
+          <div class="level-row wide">
+            <span>{t().skillNames[s.k]}</span>
+            <div class="progress">
+              <div class={s.acc !== null && s.acc < 0.7 ? 'low' : ''} style={{ width: `${s.acc === null ? 0 : s.acc * 100}%` }} />
+            </div>
+            <span>{s.acc === null ? '—' : `${Math.round(s.acc * 100)}%`}</span>
+          </div>
+        ))}
+        <small class="muted">{t().skillsNote}</small>
+      </div>
+
+      <div class="card">
+        <h4>{t().wordsByLevel}</h4>
+        {LEVELS.map((L) => {
+          const all = c.units.filter((u) => u.level === L).flatMap((u) => u.words);
+          const k = all.filter((id) => info.known.has(id)).length;
+          return (
+            <div class="level-row">
+              <span>{L}</span>
+              <div class="progress">
+                <div style={{ width: `${(100 * k) / Math.max(1, all.length)}%` }} />
+              </div>
+              <span>
+                {k}/{all.length}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+
+      <div class="card">
+        <h4>{t().memoryTitle}</h4>
+        <div class="stack">
+          {(['mature', 'young', 'learning', 'fading'] as const).map((k) => (
+            <div class={`seg ${k}`} style={{ width: `${(100 * mem[k]) / memTotal}%` }} />
+          ))}
+        </div>
+        <div class="legend">
+          {(['mature', 'young', 'learning', 'fading'] as const).map((k) => (
+            <span>
+              <i class={`dot ${k}`} /> {t().memNames[k]}: <b>{mem[k]}</b>
+            </span>
+          ))}
+        </div>
+      </div>
+
       <div class="card">
         <h4>{t().forecast}</h4>
         <div class="bars">
@@ -85,19 +280,50 @@ export function Stats({ c }: { c: LoadedCourse }) {
           ))}
         </div>
       </div>
-      <div class="card">
-        {levelCounts.map(({ L, done, total }) => (
-          <div class="level-row">
-            <span>{L}</span>
-            <div class="progress">
-              <div style={{ width: `${(100 * done) / Math.max(1, total)}%` }} />
+
+      {topicRows.length > 0 && (
+        <div class="card">
+          <h4>{t().grammarTopics}</h4>
+          <table class="topic-table">
+            {(allTopics ? topicRows : topicRows.slice(0, 8)).map((r) => (
+              <tr onClick={() => go(`/topic/${r.id}`)}>
+                <td>{r.tp.title}</td>
+                <td class={r.st && r.st.acc < 0.7 ? 'bad' : ''}>{r.st ? `${Math.round(r.st.acc * 100)}%` : '—'}</td>
+                <td class="muted">{r.card ? `${Math.round(retrievability(r.card) * 100)}%` : ''}</td>
+              </tr>
+            ))}
+          </table>
+          <small class="muted">{t().topicTableNote}</small>
+          {topicRows.length > 8 && !allTopics && (
+            <div>
+              <button class="btn small" onClick={() => setAllTopics(true)}>
+                {t().showMore}
+              </button>
             </div>
-            <span>
-              {done}/{total}
-            </span>
+          )}
+        </div>
+      )}
+
+      {hard.length > 0 && (
+        <div class="card">
+          <h4>{t().hardestWords}</h4>
+          <div class="chips">
+            {hard.map((x) => {
+              const w = c.wordById.get(Number(x.ref));
+              return (
+                w && (
+                  <a class="chip" href={`#/word/${w.id}`} title={w.tr}>
+                    {w.w} <small class="muted">×{x.lapses}</small>
+                  </a>
+                )
+              );
+            })}
           </div>
-        ))}
-      </div>
+          <a class="btn small" href="#/practice/weak">
+            {t().practiceWeak}
+          </a>
+        </div>
+      )}
     </div>
   );
 }
@@ -106,28 +332,33 @@ export function SettingsPage({ c }: { c: LoadedCourse | null }) {
   const s = getState().settings;
   const [msg, setMsg] = useState('');
   const voices = c ? voicesFor(c.meta.tts) : [];
-  const num = (k: 'newPerDay' | 'wordsPerLesson', min: number, max: number) => (
-    <input
-      type="number"
-      min={min}
-      max={max}
-      value={s[k]}
-      onChange={(e) => {
-        const v = Math.max(min, Math.min(max, Number((e.target as HTMLInputElement).value) || min));
-        void updateSettings({ [k]: v });
-      }}
-    />
-  );
   return (
     <div class="page settings">
       <h2>{t().settings}</h2>
       <label class="set-row">
-        <span>{t().settingsNewPerDay}</span>
-        {num('newPerDay', 0, 100)}
+        <span>
+          {t().settingsDifficulty}
+          <small class="muted">{t().diffHelp[s.difficulty]}</small>
+        </span>
+        <select value={s.difficulty} onChange={(e) => void updateSettings({ difficulty: (e.target as HTMLSelectElement).value as Difficulty })}>
+          {(['auto', 'easy', 'normal', 'hard'] as const).map((k) => (
+            <option value={k}>{t().diffNames[k]}</option>
+          ))}
+        </select>
       </label>
       <label class="set-row">
-        <span>{t().settingsWordsPerLesson}</span>
-        {num('wordsPerLesson', 3, 20)}
+        <span>{t().settingsGoal}</span>
+        <input
+          type="number"
+          min={1}
+          max={20}
+          value={s.dailyGoal}
+          onChange={(e) => void updateSettings({ dailyGoal: Math.max(1, Math.min(20, Number((e.target as HTMLInputElement).value) || 1)) })}
+        />
+      </label>
+      <label class="set-row">
+        <span>{t().settingsHints}</span>
+        <input type="checkbox" checked={s.hints} onChange={(e) => void updateSettings({ hints: (e.target as HTMLInputElement).checked })} />
       </label>
       <label class="set-row">
         <span>{t().settingsTyping}</span>
@@ -254,3 +485,5 @@ export function SettingsPage({ c }: { c: LoadedCourse | null }) {
     </div>
   );
 }
+
+export { fmt };
