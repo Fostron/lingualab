@@ -4,7 +4,7 @@ import { displayWord, genderTag, sentText } from '../content';
 import type { Ex } from '../exercises';
 import { fmt, t } from '../i18n';
 import { getState } from '../store';
-import { say, speak } from '../tts';
+import { say, sayWord, speak } from '../tts';
 import type { Sentence } from '../types';
 import { SentenceView, SpeakBtn, TargetInput } from './common';
 
@@ -57,6 +57,11 @@ export function ExerciseView({ ex, onResult, onNext }: Props) {
   useEffect(() => {
     if (!res || !st.autoplay) return;
     if (ex.k === 'mcq' && (ex.mode === 't2n' || ex.mode === 'listen' || ex.mode === 'sent')) return;
+    const word = (ex.k === 'mcq' || ex.k === 'type') && !sentOf ? ex.word : undefined;
+    if (word) {
+      void sayWord(word.w, lang, word.wa);
+      return;
+    }
     const text = sentOf ? sentText(sentOf) : ex.k === 'drill' ? ex.drill.q.replace(/_{2,}/, ex.drill.a[0]) : correctText;
     if (text) void say(text, lang, sentOf?.au);
   }, [res]);
@@ -69,7 +74,7 @@ export function ExerciseView({ ex, onResult, onNext }: Props) {
       {res && (
         <div class={`feedback ${res.ok || overridden ? 'ok' : 'bad'}`}>
           <div class="fb-title">
-            {overridden ? t().correct : res.ok ? (res.verdict === 'typo' ? t().almost : res.verdict === 'accent' ? `${t().correct} ${t().accentNote}` : t().correct) : res.verdict === 'partial' ? t().partialArticle : t().wrong}
+            {overridden ? t().correct : res.ok ? (res.verdict === 'typo' ? t().almost : res.verdict === 'accent' ? `${t().correct} ${t().accentNote}` : t().correct) : res.verdict === 'partial' ? t().partialArticle : res.verdict === 'accent' ? `${t().wrong}. ${t().accentNote}` : t().wrong}
           </div>
           {(!res.ok || res.verdict === 'typo' || res.verdict === 'accent' || res.verdict === 'partial') && correctText && (
             <div class="fb-answer">
@@ -149,6 +154,17 @@ function correctTextOf(ex: Ex): string {
   }
 }
 
+function useAutoSayWord(w: { w: string; wa?: string } | undefined, deps: unknown[] = []) {
+  const c = getState().course!;
+  const st = getState().settings;
+  useEffect(() => {
+    if (w && st.autoplay) {
+      const id = setTimeout(() => void sayWord(w.w, c.meta.tts, w.wa), 150);
+      return () => clearTimeout(id);
+    }
+  }, deps);
+}
+
 function useAutoSay(text: string | undefined, audio?: number, deps: unknown[] = []) {
   const c = getState().course!;
   const st = getState().settings;
@@ -191,14 +207,14 @@ function Intro({ ex }: { ex: Extract<Ex, { k: 'intro' }> }) {
   const c = getState().course!;
   const w = ex.word;
   const target = c.meta.target;
-  useAutoSay(w.w, undefined, [w.id]);
+  useAutoSayWord(w, [w.id]);
   const exs = (w.ex || []).map((id) => c.sents.get(id)).filter(Boolean).slice(0, 2) as Sentence[];
   return (
     <div class="intro">
       <div class="ex-kicker">{t().newWord}</div>
       <div class="intro-word">
         <span class="big-word">{displayWord(w, target)}</span>
-        <SpeakBtn text={w.w} />
+        <SpeakBtn text={w.w} wa={w.wa} />
         <SpeakBtn text={w.w} slow />
       </div>
       <div class="intro-meta">
@@ -273,8 +289,8 @@ function Mcq({ ex, res, answer }: P<'mcq'>) {
   const c = getState().course!;
   const target = c.meta.target;
   const w = ex.word;
-  const sayText = ex.mode === 'sent' && ex.sent ? sentText(ex.sent) : w.w;
-  useAutoSay(ex.mode === 'n2t' ? undefined : sayText, ex.sent?.au, [ex]);
+  useAutoSay(ex.mode === 'sent' && ex.sent ? sentText(ex.sent) : undefined, ex.sent?.au, [ex]);
+  useAutoSayWord(ex.mode === 't2n' || ex.mode === 'listen' ? w : undefined, [ex]);
   const onPick = (i: number) => answer({ ok: i === ex.answer, verdict: 'choice' });
   return (
     <div>
@@ -284,12 +300,12 @@ function Mcq({ ex, res, answer }: P<'mcq'>) {
       <div class="prompt">
         {ex.mode === 't2n' && (
           <>
-            <span class="big-word">{displayWord(w, target)}</span> <SpeakBtn text={w.w} />
+            <span class="big-word">{displayWord(w, target)}</span> <SpeakBtn text={w.w} wa={w.wa} />
           </>
         )}
         {ex.mode === 'listen' && (
           <div class="listen-big">
-            <SpeakBtn text={w.w} /> <SpeakBtn text={w.w} slow />
+            <SpeakBtn text={w.w} wa={w.wa} /> <SpeakBtn text={w.w} slow />
           </div>
         )}
         {ex.mode === 'n2t' && (
@@ -351,7 +367,7 @@ function TypeWord({ ex, res, answer }: P<'type'>) {
   const st = getState().settings;
   const target = c.meta.target;
   const w = ex.word;
-  useAutoSay(ex.mode === 'listen' ? w.w : undefined, undefined, [ex]);
+  useAutoSayWord(ex.mode === 'listen' ? w : undefined, [ex]);
   return (
     <div>
       <div class="ex-kicker">{ex.mode === 'listen' ? t().listenWrite : fmt(t().writeWord, { lang: t().langName[target] })}</div>
@@ -366,7 +382,7 @@ function TypeWord({ ex, res, answer }: P<'type'>) {
           </>
         ) : (
           <div class="listen-big">
-            <SpeakBtn text={w.w} /> <SpeakBtn text={w.w} slow />
+            <SpeakBtn text={w.w} wa={w.wa} /> <SpeakBtn text={w.w} slow />
           </div>
         )}
       </div>
@@ -392,8 +408,13 @@ function Cloze({ ex, res, answer }: P<'cloze'>) {
   const submit = (val: string) => {
     if (done.current || res) return;
     done.current = true;
-    const r = check(val, ex.answers, { strictAccents: st.strictAccents });
-    answer({ ok: r.ok, verdict: ex.options ? 'choice' : r.verdict, given: val });
+    if (ex.options) {
+      // a picked option is either the right one or not: no typo/accent tolerance (había vs habría, el vs él)
+      answer({ ok: ex.answers.some((a) => normalize(a) === normalize(val)), verdict: 'choice', given: val });
+      return;
+    }
+    const r = check(val, ex.answers, { strictAccents: st.strictAccents, strictForm: !ex.word });
+    answer({ ok: r.ok, verdict: r.verdict, given: val });
   };
   const blankContent = res ? <b class={res.ok ? 'ok' : 'bad'}>{ex.answers[0]}</b> : ex.options ? '_____' : <span class="blank-hint">{ex.hint ? `(${ex.hint})` : '_____'}</span>;
   return (
@@ -407,7 +428,7 @@ function Cloze({ ex, res, answer }: P<'cloze'>) {
       {ex.options ? (
         <Options
           options={ex.options}
-          answerIdx={ex.options.findIndex((o) => normalize(o) === normalize(ex.answers[0]))}
+          answerIdx={ex.options.findIndex((o) => ex.answers.some((a) => normalize(o) === normalize(a)))}
           res={res}
           onPick={(i) => submit(ex.options![i])}
           target
@@ -575,7 +596,7 @@ function DrillView({ ex, res, answer }: P<'drill'>) {
           lang={c.meta.target}
           placeholder="…"
           onSubmit={(v) => {
-            const r = check(v, d.a, { strictAccents: st.strictAccents });
+            const r = check(v, d.a, { strictAccents: st.strictAccents, strictForm: true });
             answer({ ok: r.ok, verdict: r.verdict, given: v });
           }}
         />
@@ -602,7 +623,7 @@ function Conj({ ex, res, answer }: P<'conj'>) {
         lang={c.meta.target}
         placeholder="…"
         onSubmit={(v) => {
-          const r = check(v, ex.answers, { strictAccents: st.strictAccents });
+          const r = check(v, ex.answers, { strictAccents: st.strictAccents, strictForm: true });
           answer({ ok: r.ok, verdict: r.verdict, given: v });
         }}
       />

@@ -121,7 +121,7 @@ const en = {
   resetCourse: 'Reset this course',
   resetConfirm: 'Delete all progress in this course?',
   importOk: 'Progress imported',
-  noVoice: 'No voice for this language is installed in your browser/OS. Install one in system settings for audio.',
+  noVoice: 'Words and most sentences use native recordings. For everything else, install a voice for this language in your system settings (or use Chrome / Edge).',
   mins: 'min',
   gender: { m: 'masculine', f: 'feminine', mf: 'masc./fem.' } as Record<string, string>,
   pos: {
@@ -277,7 +277,7 @@ const ru: Dict = {
   resetCourse: 'Сбросить этот курс',
   resetConfirm: 'Удалить весь прогресс по этому курсу?',
   importOk: 'Прогресс импортирован',
-  noVoice: 'В браузере/системе не установлен голос для этого языка. Установите его в настройках системы, чтобы слышать произношение.',
+  noVoice: 'Слова и большинство предложений озвучены носителями. Для остального установите голос этого языка в настройках системы (или откройте в Chrome / Edge).',
   mins: 'мин',
   gender: { m: 'мужской род', f: 'женский род', mf: 'м./ж. род' },
   pos: {

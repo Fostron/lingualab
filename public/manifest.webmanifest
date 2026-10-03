@@ -1,0 +1,14 @@
+{
+  "name": "LinguaLab — Spanish & French",
+  "short_name": "LinguaLab",
+  "description": "Learn Spanish and French for real: grammar, vocabulary with spaced repetition, native audio, placement test.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#14171c",
+  "theme_color": "#1f6f78",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

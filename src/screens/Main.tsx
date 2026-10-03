@@ -397,7 +397,7 @@ export function WordPage({ c, id }: { c: LoadedCourse; id: number }) {
         ← {t().dictionary}
       </a>
       <div class="intro-word">
-        <span class="big-word">{displayWord(w, c.meta.target)}</span> <SpeakBtn text={w.w} /> <SpeakBtn text={w.w} slow />
+        <span class="big-word">{displayWord(w, c.meta.target)}</span> <SpeakBtn text={w.w} wa={w.wa} /> <SpeakBtn text={w.w} slow />
       </div>
       <div class="intro-meta">
         {t().pos[w.pos] || w.pos} {genderTag(w)} {w.ipa && <span class="ipa">{w.ipa}</span>}

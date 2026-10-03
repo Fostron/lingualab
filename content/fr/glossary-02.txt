@@ -359,7 +359,7 @@ lorsque|conj|when|когда
 pute|noun|-|-
 fou|noun|madman|сумасшедший
 rouler|verb|to roll; to drive|катиться; ехать
-supporter|verb|to bear, stand|терпеть, выносить||false friend: to support = soutenir|ложный друг: поддерживать = soutenir
+supporter|verb|to bear, stand|терпеть, выносить|false friend: to support = soutenir|ложный друг: поддерживать = soutenir
 intérêt|noun|interest|интерес
 souhaiter|verb|to wish|желать
 poste|noun|post office (la poste); post, job (le poste)|почта (la poste); должность (le poste)

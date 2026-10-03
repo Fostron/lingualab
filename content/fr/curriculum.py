@@ -2,7 +2,7 @@
 
 Titles are dicts {en, ru}. Explanations: content/fr/grammar/<topic>.{en,ru}.md ; drills: content/fr/drills/<topic>.txt
 """
-from sel import ANY, COMP, M, NEED, RX, V, VC, VCOMP, VL, W
+from sel import ANY, COMP, M, NEED, NOQ, PARTITIVE, RX, V, VC, VCOMP, VL, W
 
 PRES = ["pres"]
 AUX = ("avoir", "être")
@@ -52,10 +52,10 @@ TOPICS = [
     dict(id="fr-modals", level="A1", title=T("Vouloir, pouvoir, devoir, savoir", "Vouloir, pouvoir, devoir, savoir"),
          auto=ANY(V(PRES, lemmas=["vouloir", "pouvoir", "devoir"]), VL("savoir", "connaître", PRES))),
     dict(id="fr-partitive", level="A1", title=T("The partitive: du, de la, des; quantities", "Частичный артикль du, de la, des; количество"),
-         auto=W(["du", "de la", "de l'", "des"], options=["du", "de la", "des", "de"])),
+         auto=PARTITIVE()),
     dict(id="fr-reflexive", level="A1", title=T("Pronominal (reflexive) verbs", "Возвратные (местоименные) глаголы"),
          auto=W(["me", "m'", "te", "t'", "se", "s'"], pos=["PRON"])),
-    dict(id="fr-imperative", level="A1", title=T("The imperative", "Повелительное наклонение"), auto=V(["imp"]), tenses=["imp"]),
+    dict(id="fr-imperative", level="A1", title=T("The imperative", "Повелительное наклонение"), auto=NOQ(V(["imp"], morph_req=("Mood=Imp",))), tenses=["imp"]),
     dict(id="fr-weather", level="A1", title=T("Weather and seasons", "Погода и времена года"),
          auto=NEED(W(["fait", "pleut", "neige", "faisait", "pleuvait"]), ["il"])),
     dict(id="fr-comparatives", level="A1", title=T("Comparisons: plus, moins, aussi … que", "Сравнение: plus, moins, aussi … que"),
@@ -66,14 +66,15 @@ TOPICS = [
     dict(id="fr-imparfait", level="A2", title=T("The imparfait", "Имперфект (imparfait)"), auto=V(["impf"]), tenses=["impf"]),
     dict(id="fr-pc-impf", level="A2", title=T("Passé composé or imparfait?", "Passé composé или imparfait?"), auto=VCOMP("impf", "pc", AUX)),
     dict(id="fr-cod", level="A2", title=T("Direct object pronouns (le, la, les)", "Местоимения — прямые дополнения (le, la, les)"),
-         auto=W(["le", "la", "les", "l'"], options=["le", "la", "les"], pos=["PRON"])),
+         auto=W(["le", "la", "les"], options=["le", "la", "les"], pos=["PRON"])),
     dict(id="fr-coi", level="A2", title=T("Indirect object pronouns (lui, leur); pronoun order", "Косвенные дополнения (lui, leur); порядок местоимений"),
          auto=W(["lui", "leur"], options=["lui", "leur", "le", "les"], pos=["PRON"])),
     dict(id="fr-y-en", level="A2", title=T("The pronouns y and en", "Местоимения y и en"), auto=W(["y", "en"], options=["y", "en"], pos=["PRON"])),
     dict(id="fr-futur", level="A2", title=T("The simple future", "Простое будущее время (futur simple)"), auto=V(["fut"]), tenses=["fut"]),
     dict(id="fr-conditionnel", level="A2", title=T("The present conditional", "Условное наклонение (conditionnel présent)"), auto=V(["cond"]), tenses=["cond"]),
     dict(id="fr-relatives", level="A2", title=T("Relative pronouns: qui, que, où, dont", "Относительные местоимения qui, que, où, dont"),
-         auto=W(["qui", "que", "qu'", "où", "dont"], options=["qui", "que", "où", "dont"], pos=["PRON", "ADV"])),
+         auto=NOQ(W(["qui", "que", "qu'", "où", "dont"], options=["qui", "que", "où", "dont"], pos=["PRON", "ADV"],
+                    prev_pos=["NOUN", "PROPN", "PRON"], not_after=("cas", "heure", "heures", "ans", "jours", "mois", "temps")))),
     dict(id="fr-superlatives", level="A2", title=T("Superlatives", "Превосходная степень"), auto=NEED(W(["plus", "moins", "meilleur", "meilleure", "mieux"]), ["le", "la", "les"])),
     dict(id="fr-adverbs", level="A2", title=T("Adverbs: -ment, bien/bon, position", "Наречия: -ment, bien/bon, место в предложении"), auto=RX(r".{3,}ment", pos=["ADV"])),
     dict(id="fr-indefinites", level="A2", title=T("Quelqu'un, quelque chose, personne, rien, tout", "Quelqu'un, quelque chose, personne, rien, tout"),
@@ -90,7 +91,7 @@ TOPICS = [
     dict(id="fr-subj-uses", level="B1", title=T("Subjunctive after wishes and feelings", "Subjonctif после желания и чувств"),
          auto=NEED(V(["subj"]), ["faut que", "veux que", "voudrais que", "souhaite que", "préfère que", "content que", "heureux que", "dommage que", "peur que", "aimerais que", "faut qu'", "veut que"])),
     dict(id="fr-subj-doubt", level="B1", title=T("Subjunctive after doubt; je pense que vs je ne pense pas que", "Subjonctif после сомнения; je pense que / je ne pense pas que"),
-         auto=NEED(VC("subj", "pres"), ["pense pas que", "crois pas que", "doute que", "possible que", "pas sûr que", "impossible que"])),
+         auto=NEED(VC("subj", "pres", only_a=True), ["pense pas que", "crois pas que", "doute que", "possible que", "pas sûr que", "impossible que"])),
     dict(id="fr-subj-conj", level="B1", title=T("Pour que, bien que, avant que, à condition que", "Pour que, bien que, avant que, à condition que"),
          auto=NEED(V(["subj"]), ["pour que", "pour qu'", "bien que", "avant que", "à condition que", "sans que", "jusqu' à ce que", "à moins que"])),
     dict(id="fr-pqp", level="B1", title=T("The plus-que-parfait", "Плюсквамперфект (plus-que-parfait)"), auto=COMP("pqp", aux=AUX), tenses=["pqp"]),

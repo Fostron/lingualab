@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from 'preact/hooks';
-import { sample, shuffle } from '../answer';
+import { shuffle } from '../answer';
 import { displayWord } from '../content';
 import { t } from '../i18n';
 import { applyPlacement } from '../progress';
@@ -213,7 +213,7 @@ export function Placement({ c }: { c: LoadedCourse }) {
         </div>
         <Progress value={vCount} max={24} />
         <div class="prompt">
-          <span class="big-word">{displayWord(vq.word, c.meta.target)}</span> <SpeakBtn text={vq.word.w} />
+          <span class="big-word">{displayWord(vq.word, c.meta.target)}</span> <SpeakBtn text={vq.word.w} wa={vq.word.wa} />
           <div class="sub">{t().placementWhatMeans}</div>
         </div>
         <div class="options">
@@ -325,4 +325,3 @@ export function Placement({ c }: { c: LoadedCourse }) {
   return null;
 }
 
-export { sample };

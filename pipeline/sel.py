@@ -14,20 +14,38 @@ def _forms(ctx, lemma, tense):
     return [[f.lower() for f in slot.split("/") if f] for slot in t]
 
 
-def _person_of(ctx, lemma, tense, text):
-    for p, slot in enumerate(_forms(ctx, lemma, tense)):
+def _morph_slot(morph):
+    """Person/Number from spaCy morphology -> conjugation slot index (0..5), or None."""
+    if not morph:
+        return None
+    feats = dict(f.split("=", 1) for f in morph.split("|") if "=" in f)
+    person, number = feats.get("Person"), feats.get("Number")
+    if person not in ("1", "2", "3") or number not in ("Sing", "Plur"):
+        return None
+    return int(person) - 1 + (3 if number == "Plur" else 0)
+
+
+def _person_of(ctx, lemma, tense, text, morph=None):
+    forms = _forms(ctx, lemma, tense)
+    pref = _morph_slot(morph)
+    if pref is not None and pref < len(forms) and text.lower() in forms[pref]:
+        return pref
+    for p, slot in enumerate(forms):
         if text.lower() in slot:
             return p
     return None
 
 
-def V(tenses, lemmas=None, hint="lemma", pos=("VERB", "AUX")):
-    """Single-token verb form in one of `tenses` (verified)."""
+def V(tenses, lemmas=None, hint="lemma", pos=("VERB", "AUX"), morph_req=()):
+    """Single-token verb form in one of `tenses` (verified against the conjugation table).
+    morph_req: spaCy features the token must also have (e.g. "Mood=Imp")."""
 
     def f(toks, ctx):
         out = []
         for i, (w, lem, up, morph, ws) in enumerate(toks):
             if up not in pos:
+                continue
+            if morph_req and not all(m in morph.split("|") for m in morph_req):
                 continue
             lem = lem.lower()
             if lemmas and lem not in lemmas:
@@ -41,8 +59,9 @@ def V(tenses, lemmas=None, hint="lemma", pos=("VERB", "AUX")):
     return f
 
 
-def VC(tense_a, tense_b, lemmas=None, pos=("VERB", "AUX")):
-    """Choice between the same person in two tenses (e.g. preterite vs imperfect)."""
+def VC(tense_a, tense_b, lemmas=None, pos=("VERB", "AUX"), only_a=False):
+    """Choice between the same person in two tenses (e.g. preterite vs imperfect).
+    only_a: blank only tokens that really are in tense_a (e.g. the subjunctive verb, not the main verb)."""
 
     def f(toks, ctx):
         out = []
@@ -52,8 +71,9 @@ def VC(tense_a, tense_b, lemmas=None, pos=("VERB", "AUX")):
             lem = lem.lower()
             if lemmas and lem not in lemmas:
                 continue
-            for ta, tb in ((tense_a, tense_b), (tense_b, tense_a)):
-                p = _person_of(ctx, lem, ta, w)
+            pairs = ((tense_a, tense_b),) if only_a else ((tense_a, tense_b), (tense_b, tense_a))
+            for ta, tb in pairs:
+                p = _person_of(ctx, lem, ta, w, morph)
                 if p is None:
                     continue
                 fa, fb = _forms(ctx, lem, ta)[p], _forms(ctx, lem, tb)[p]
@@ -78,7 +98,7 @@ def VL(lemma_a, lemma_b, tenses):
                 continue
             other = lemma_b if lem == lemma_a else lemma_a
             for t in tenses:
-                p = _person_of(ctx, lem, t, w)
+                p = _person_of(ctx, lem, t, w, morph)
                 if p is None:
                     continue
                 fo = _forms(ctx, other, t)[p] if _forms(ctx, other, t) else []
@@ -108,14 +128,20 @@ def COMP(tense, aux=("haber",)):
     return f
 
 
-def W(words, options=None, hint=None, pos=None):
-    """Token(s) whose text is in `words` (multi-word entries allowed)."""
+def W(words, options=None, hint=None, pos=None, prev_pos=None, not_after=()):
+    """Token(s) whose text is in `words` (multi-word entries allowed).
+    prev_pos: UPOS the preceding token must have (e.g. a relative pronoun needs an antecedent);
+    not_after: preceding words that rule the match out ("au cas où")."""
     seqs = [tuple(x.lower().split()) for x in words]
 
     def f(toks, ctx):
         out = []
         low = [t[0].lower() for t in toks]
         for i in range(len(toks)):
+            if prev_pos is not None and (i == 0 or toks[i - 1][2] not in prev_pos):
+                continue
+            if i and low[i - 1] in not_after:
+                continue
             for s in seqs:
                 n = len(s)
                 if tuple(low[i:i + n]) == s and (pos is None or toks[i][2] in pos):
@@ -200,5 +226,64 @@ def RX(pattern, pos=None, hint=None):
 
     def f(toks, ctx):
         return [(i, 1, hint, None) for i, t in enumerate(toks) if rx.fullmatch(t[0]) and (pos is None or t[2] in pos)]
+
+    return f
+
+
+def PARTITIVE(forms=("du", "de la", "de l'", "des", "de", "d'"), options=("du", "de la", "des", "de")):
+    """Partitive / quantity article between a verb (or a negation / quantity word) and a noun."""
+    seqs = [tuple(x.split()) for x in forms]
+    quant = {"pas", "beaucoup", "peu", "trop", "assez", "plus", "moins", "combien", "jamais"}
+
+    def f(toks, ctx):
+        out = []
+        low = [t[0].lower() for t in toks]
+        for i in range(1, len(toks)):
+            for sq in seqs:
+                n = len(sq)
+                if tuple(low[i:i + n]) != sq or i + n >= len(toks):
+                    continue
+                prev_ok = toks[i - 1][2] in ("VERB", "AUX") or low[i - 1] in quant
+                if prev_ok and toks[i + n][2] == "NOUN":
+                    out.append((i, n, None, list(options)))
+                break
+        return out
+
+    return f
+
+
+def NOQ(sel):
+    """Skip questions (useful for relative pronouns, which look like question words)."""
+
+    def f(toks, ctx):
+        if any(t[0] in ("?", "¿") for t in toks):
+            return []
+        return sel(toks, ctx)
+
+    return f
+
+
+def NEGIMP(tenses=("imp_neg",)):
+    """Negative command: 'no' (+ clitics) + subjunctive-form verb, sentence starting with the negation."""
+    clitics = {"me", "te", "se", "lo", "la", "le", "los", "las", "les", "nos", "os", "se lo"}
+
+    def f(toks, ctx):
+        low = [t[0].lower() for t in toks]
+        start = 1 if low and low[0] in ("¡", "¿") else 0
+        if len(low) <= start or low[start] != "no":
+            return []
+        j = start + 1
+        while j < len(toks) and low[j] in clitics:
+            j += 1
+        if j >= len(toks):
+            return []
+        w, lem, up, morph, ws = toks[j]
+        if up not in ("VERB", "AUX"):
+            return []
+        for t in tenses:
+            p = _person_of(ctx, lem.lower(), t, w, morph)
+            if p is not None and p in (1, 2, 4, 5):
+                return [(j, 1, lem.lower(), None)]
+        return []
 
     return f

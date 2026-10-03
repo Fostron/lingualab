@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { displayWord, genderTag } from '../content';
 import { t } from '../i18n';
 import { getState } from '../store';
-import { say, speak } from '../tts';
+import { say, sayWord, speak } from '../tts';
 import type { Sentence, Word } from '../types';
 
 export function Icon({ name, size = 20 }: { name: string; size?: number }) {
@@ -39,7 +39,7 @@ export function Icon({ name, size = 20 }: { name: string; size?: number }) {
   );
 }
 
-export function SpeakBtn({ text, audio, slow, small }: { text: string; audio?: number; slow?: boolean; small?: boolean }) {
+export function SpeakBtn({ text, audio, wa, slow, small }: { text: string; audio?: number; wa?: string; slow?: boolean; small?: boolean }) {
   const c = getState().course;
   if (!c) return null;
   return (
@@ -49,7 +49,8 @@ export function SpeakBtn({ text, audio, slow, small }: { text: string; audio?: n
       title={slow ? t().playSlow : 'Play'}
       onClick={(e) => {
         e.stopPropagation();
-        void say(text, c.meta.tts, audio, { slow });
+        if (wa) void sayWord(text, c.meta.tts, wa, { slow });
+        else void say(text, c.meta.tts, audio, { slow });
       }}
     >
       <Icon name={slow ? 'turtle' : 'speaker'} size={small ? 16 : 22} />
@@ -199,7 +200,7 @@ export function WordLine({ w, onClick }: { w: Word; onClick?: () => void }) {
   const c = getState().course!;
   return (
     <div class={`word-line ${onClick ? 'clickable' : ''}`} onClick={onClick}>
-      <SpeakBtn text={w.w} small />
+      <SpeakBtn text={w.w} wa={w.wa} small />
       <span class="wl-target">{displayWord(w, c.meta.target)}</span>
       <span class="wl-tr">{w.tr}</span>
     </div>

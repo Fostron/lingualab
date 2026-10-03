@@ -119,7 +119,8 @@ export function topicExercise(c: LoadedCourse, topic: Topic, known?: Set<number>
     const s = c.sents.get(a.s)!;
     const n = a.n || 1;
     const ans = s.tk.slice(a.i, a.i + n).map(([w, , sp], j) => w + (sp && j < n - 1 ? ' ' : '')).join('');
-    return { k: 'cloze', sent: s, i: a.i, n, answers: [ans], options: a.o ? shuffle(a.o) : undefined, hint: a.h, cid: `g:${topic.id}` };
+    const answers = a.x ? [ans, a.x] : [ans];
+    return { k: 'cloze', sent: s, i: a.i, n, answers, options: a.o ? shuffle(a.o) : undefined, hint: a.h, cid: `g:${topic.id}` };
   }
   if (!topic.drills.length) return null;
   return { k: 'drill', topic, drill: pick(topic.drills), cid: `g:${topic.id}` };

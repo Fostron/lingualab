@@ -18,6 +18,7 @@ export interface Word {
   r: number; // frequency rank (1 = most frequent)
   u?: number; // unit index where the word is taught (undefined = extra vocabulary)
   ex?: number[]; // example sentence ids
+  wa?: string; // native recording on Wikimedia Commons ("a/ab/File.wav")
 }
 
 /** Token: [surface text, word id or 0, trailing whitespace?] */
@@ -48,6 +49,7 @@ export interface AutoCloze {
   n?: number; // number of tokens to blank (default 1)
   h?: string; // hint, e.g. infinitive
   o?: string[]; // fixed choice set (e.g. ["por","para"])
+  x?: string; // option equivalent of an elided answer (qu' → que)
 }
 
 export interface Topic {

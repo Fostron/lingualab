@@ -3,7 +3,7 @@
 usage: python pipeline/p05_build.py es-en fr-en fr-ru
 """
 import csv, importlib.util, json, pickle, re, sys, time
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -241,6 +241,11 @@ def main(course):
         by_key[key] = entry
         words.append(entry)
     n_freq = sum(1 for e in words if "_custom" not in e)
+    wa_path = WORK / f"{lang}_wordaudio.json"
+    word_audio = json.load(open(wa_path, encoding="utf-8")) if wa_path.exists() else {}
+    for e in words:
+        if e["w"] in word_audio:
+            e["wa"] = word_audio[e["w"]]
     for i, e in enumerate(words):
         e["id"] = i + 1
         # custom entries (phrases, reflexives) get a mid-frequency rank for distractor selection
@@ -408,6 +413,7 @@ def main(course):
             cands = [p for p in pool if p["nw"] <= 14 and (p["cover"] <= tu + 8 or (p["cover"] >= INF and tu >= len(units) - 30))]
             cands.sort(key=lambda p: (max(0, p["cover"] - tu) if p["cover"] < INF else 30) * 0.4 - p["q"])
             seen_txt = set()
+            found = []  # (item, group key, surface form)
             for p in cands:
                 hits = sel(p["toks"], ctx)
                 if not hits:
@@ -418,15 +424,34 @@ def main(course):
                 seen_txt.add(key)
                 i, n, hint, opts = hits[0]
                 a = {"s": p["id"], "i": i}
+                form = " ".join(t[0] for t in p["toks"][i:i + n]).lower().replace("’", "'")
+                if opts:
+                    low_opts = [o.lower() for o in opts]
+                    if form not in low_opts:
+                        alias = form[:-1] + "e" if form.endswith("'") else None
+                        if alias and alias in low_opts:
+                            a["x"] = alias
+                        else:
+                            continue
                 if n > 1:
                     a["n"] = n
                 if hint:
                     a["h"] = hint
                 if opts:
                     a["o"] = opts
-                auto.append(a)
-                if len(auto) >= 120:
+                found.append((a, hint or a.get("x") or form, form))
+                if len(found) >= 1200:
                     break
+            # keep variety: the same verb (or the same answer) must not fill the whole set,
+            # while easy sentences (early in `cands`) still come first
+            rank_g, rank_f, scored = Counter(), Counter(), []
+            for idx, (a, g, form) in enumerate(found):
+                if rank_f[form] >= 16 and "h" in a:
+                    continue
+                scored.append((rank_g[g] / 8 + rank_f[form] / 4 + idx / 400, idx, a))
+                rank_g[g] += 1
+                rank_f[form] += 1
+            auto = [a for _, idx, a in sorted(scored, key=lambda x: x[:2])[:120]]
         md_path = CONTENT / lang / "grammar" / f"{tid}.{native}.md"
         md = md_path.read_text(encoding="utf-8") if md_path.exists() else f"*(explanation coming soon)*"
         drills = parse_drills(CONTENT / lang / "drills" / f"{tid}.txt")

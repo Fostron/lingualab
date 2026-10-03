@@ -69,7 +69,7 @@ examen|noun|exam|экзамен
 lunette|noun|(lunettes) glasses|(lunettes) очки
 amant|noun|lover|любовник
 tandis que|conj|while, whereas|в то время как
-prétendre|verb|to claim|утверждать||false friend: to pretend = faire semblant|ложный друг: притворяться = faire semblant
+prétendre|verb|to claim|утверждать|false friend: to pretend = faire semblant|ложный друг: притворяться = faire semblant
 adieu|noun|farewell|прощание
 code|noun|code|код
 don|noun|gift, talent; donation|дар, талант; пожертвование
@@ -177,7 +177,7 @@ demi|adj|half (et demie = half past)|половина (et demie = с полов�
 agréable|adj|pleasant|приятный
 lier|verb|to tie, link|связывать
 réel|adj|real|реальный
-large|adj|wide|широкий||false friend: large = grand|ложный друг: большой = grand
+large|adj|wide|широкий|false friend: large = grand|ложный друг: большой = grand
 ensemble|noun|whole; outfit (dans l'ensemble = on the whole)|целое (dans l'ensemble = в целом)
 veiller|verb|to stay up; to watch over|не спать; присматривать
 prononcer|verb|to pronounce|произносить
@@ -492,7 +492,7 @@ surface|noun|surface|поверхность
 mince|adj|thin, slim|худой, тонкий
 assurance|noun|insurance; confidence|страховка; уверенность
 cruel|adj|cruel|жестокий
-décevoir|verb|to disappoint|разочаровывать||false friend: to deceive = tromper|ложный друг: обманывать = tromper
+décevoir|verb|to disappoint|разочаровывать|false friend: to deceive = tromper|ложный друг: обманывать = tromper
 supérieur|adj|upper; superior|верхний; высший
 emploi|noun|job; use (emploi du temps = timetable)|работа; употребление (emploi du temps = расписание)
 prise|noun|socket; capture|розетка; взятие
@@ -535,7 +535,7 @@ angoisse|noun|anxiety|тревога, тоска
 chant|noun|singing; song|пение; песня
 pointe|noun|tip, point|острие, кончик
 directement|adv|directly|прямо, непосредственно
-sensible|adj|sensitive|чувствительный||false friend: sensible = raisonnable|ложный друг: разумный = raisonnable
+sensible|adj|sensitive|чувствительный|false friend: sensible = raisonnable|ложный друг: разумный = raisonnable
 ordinateur|noun|computer|компьютер
 tapis|noun|carpet, rug|ковёр
 franchir|verb|to cross|пересекать

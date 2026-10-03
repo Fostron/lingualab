@@ -84,21 +84,37 @@ export function speak(text: string, lang: string, opts: { slow?: boolean } = {})
 }
 
 export function audioUrl(audioId: number) {
-  return `https://tatoeba.org/audio/download/${audioId}`;
+  return `https://tatoeba.org/en/audio/download/${audioId}`;
+}
+
+/** Wikimedia Commons recording → mp3 URL (non-mp3 originals are served as mp3 transcodes). */
+export function commonsUrl(path: string) {
+  const base = 'https://upload.wikimedia.org/wikipedia/commons/';
+  if (/\.mp3$/i.test(path)) return base + path;
+  const file = path.slice(path.lastIndexOf('/') + 1);
+  return `${base}transcoded/${path}/${file}.mp3`;
+}
+
+function playUrl(url: string, fallback: () => Promise<void>): Promise<void> {
+  stopSpeech();
+  return new Promise((resolve) => {
+    const a = new Audio(url);
+    currentAudio = a;
+    a.onended = () => resolve();
+    a.onerror = () => fallback().then(resolve);
+    a.play().catch(() => fallback().then(resolve));
+  });
+}
+
+/** Say a single word: native recording if we have one, otherwise speech synthesis. */
+export function sayWord(text: string, lang: string, wa?: string, opts: { slow?: boolean } = {}): Promise<void> {
+  if (wa && !opts.slow) return playUrl(commonsUrl(wa), () => speak(text, lang, opts));
+  return speak(text, lang, opts);
 }
 
 /** Play a native recording if we have one, otherwise synthesize. */
 export function say(text: string, lang: string, audioId?: number, opts: { slow?: boolean } = {}): Promise<void> {
-  if (audioId && !opts.slow) {
-    stopSpeech();
-    return new Promise((resolve) => {
-      const a = new Audio(audioUrl(audioId));
-      currentAudio = a;
-      a.onended = () => resolve();
-      a.onerror = () => speak(text, lang, opts).then(resolve);
-      a.play().catch(() => speak(text, lang, opts).then(resolve));
-    });
-  }
+  if (audioId && !opts.slow) return playUrl(audioUrl(audioId), () => speak(text, lang, opts));
   return speak(text, lang, opts);
 }
 

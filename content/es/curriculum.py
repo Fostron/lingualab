@@ -4,7 +4,7 @@ Each topic: id, level, title, auto (selector producing gap exercises from real s
 Each unit: id, level, title, topics, words (theme vocabulary; the rest is filled by frequency), pack=True for vocabulary-only units.
 Explanations: content/es/grammar/<topic>.en.md ; drills: content/es/drills/<topic>.txt
 """
-from sel import ANY, COMP, M, NEED, V, VC, VL, W
+from sel import ANY, COMP, M, NEED, NEGIMP, NOQ, V, VC, VL, W
 
 PRES = ["pres"]
 
@@ -74,7 +74,7 @@ TOPICS = [
     dict(id="es-perfect", level="A2", title="Present perfect (he hablado)", auto=COMP("perf"), tenses=["perf", "part"]),
     dict(id="es-future", level="A2", title="The future tense", auto=V(["fut"]), tenses=["fut"]),
     dict(id="es-conditional", level="A2", title="The conditional", auto=V(["cond"]), tenses=["cond"]),
-    dict(id="es-imperative", level="A2", title="Commands: tú and usted (affirmative)", auto=V(["imp"]), tenses=["imp"]),
+    dict(id="es-imperative", level="A2", title="Commands: tú and usted (affirmative)", auto=NOQ(V(["imp"], morph_req=("Mood=Imp",))), tenses=["imp"]),
     dict(id="es-doler", level="A2", title="Doler, parecer, interesar: more verbs like gustar",
          auto=V(PRES + ["impf", "pret"], lemmas=["doler", "parecer", "interesar", "importar", "molestar", "encantar", "faltar", "quedar"])),
     dict(id="es-indefinites", level="A2", title="Algo, nada, alguien, nadie, alguno, ninguno",
@@ -84,7 +84,7 @@ TOPICS = [
     dict(id="es-superlatives", level="A2", title="Superlatives and -ísimo", auto=NEED(W(["más", "menos", "mejor", "peor"]), ["el", "la", "los", "las"])),
     dict(id="es-adverbs", level="A2", title="Adverbs: -mente, muy, mucho, bastante, demasiado",
          auto=ANY(M(["ADV"], [], hint=None), W(["muy", "mucho", "bastante", "demasiado"]))),
-    dict(id="es-relatives", level="A2", title="Relative pronouns: que, quien, donde, lo que", auto=W(["que", "quien", "quienes", "donde", "lo que"], pos=["PRON", "ADV"])),
+    dict(id="es-relatives", level="A2", title="Relative pronouns: que, quien, donde, lo que", auto=NOQ(W(["que", "quien", "quienes", "donde", "lo que"], pos=["PRON", "ADV"]))),
     dict(id="es-periphrases", level="A2", title="Verb phrases: tener que, hay que, acabar de, volver a, soler",
          auto=V(PRES + ["impf", "pret"], lemmas=["acabar", "volver", "soler", "tener", "deber", "empezar", "dejar"])),
     # ---------------- B1 ----------------
@@ -94,17 +94,17 @@ TOPICS = [
     dict(id="es-subj-emotion", level="B1", title="Subjunctive after emotions",
          auto=NEED(V(["subj"]), ["alegra que", "gusta que", "molesta que", "sorprende que", "siento que", "miedo de que", "pena que", "lástima que", "encanta que"])),
     dict(id="es-subj-doubt", level="B1", title="Subjunctive after doubt and denial",
-         auto=NEED(VC("subj", "pres"), ["no creo que", "dudo que", "no pienso que", "es posible que", "puede que", "no es verdad que", "no estoy seguro de que", "quizás", "tal vez"])),
+         auto=NEED(VC("subj", "pres", only_a=True), ["no creo que", "dudo que", "no pienso que", "es posible que", "puede que", "no es verdad que", "no estoy seguro de que", "quizás", "tal vez"])),
     dict(id="es-subj-impersonal", level="B1", title="Es importante que… impersonal expressions",
          auto=NEED(V(["subj"]), ["es importante que", "es necesario que", "es mejor que", "es posible que", "es normal que", "es raro que", "hace falta que"])),
     dict(id="es-subj-time", level="B1", title="Cuando, hasta que, antes de que + subjunctive",
-         auto=NEED(VC("subj", "pres"), ["cuando", "hasta que", "antes de que", "después de que", "en cuanto", "tan pronto como"])),
+         auto=NEED(VC("subj", "pres", only_a=True), ["cuando", "hasta que", "antes de que", "después de que", "en cuanto", "tan pronto como"])),
     dict(id="es-subj-purpose", level="B1", title="Para que, sin que, aunque",
          auto=NEED(V(["subj", "subj_impf"]), ["para que", "sin que", "aunque", "a fin de que"])),
     dict(id="es-subj-relative", level="B1", title="Subjunctive in relative clauses",
          auto=NEED(V(["subj"]), ["alguien que", "nadie que", "algo que", "nada que", "uno que", "una que", "alguno que", "ninguno que"])),
     dict(id="es-imperative-2", level="B1", title="Negative and formal commands; pronouns with commands",
-         auto=NEED(V(["imp_neg", "subj"]), ["no"]), tenses=["imp_neg"]),
+         auto=NEGIMP(), tenses=["imp_neg"]),
     dict(id="es-pluperfect", level="B1", title="Pluperfect (había hecho)", auto=COMP("plup"), tenses=["plup"]),
     dict(id="es-subj-impf", level="B1", title="Imperfect subjunctive", auto=V(["subj_impf"]), tenses=["subj_impf"]),
     dict(id="es-si", level="B1", title="If-clauses: real and hypothetical",
@@ -122,7 +122,7 @@ TOPICS = [
     dict(id="es-subj-perf", level="B2", title="Perfect subjunctive (haya hecho)", auto=COMP("subj_perf"), tenses=["subj_perf"]),
     dict(id="es-si-past", level="B2", title="If I had known…: pluperfect subjunctive and conditional perfect",
          auto=ANY(COMP("subj_plup"), COMP("cond_perf")), tenses=["subj_plup", "cond_perf"]),
-    dict(id="es-sequence", level="B2", title="Sequence of tenses", auto=NEED(VC("subj_impf", "subj"), ["que"])),
+    dict(id="es-sequence", level="B2", title="Sequence of tenses", auto=NEED(VC("subj_impf", "subj", only_a=True), ["que"])),
     dict(id="es-passive", level="B2", title="The passive: ser + participle, estar + participle",
          auto=NEED(V(["pres", "pret", "impf", "fut"], lemmas=["ser", "estar"]), ["por"])),
     dict(id="es-change", level="B2", title="Verbs of change: ponerse, volverse, hacerse, quedarse",

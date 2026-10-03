@@ -234,6 +234,10 @@ export function SettingsPage({ c }: { c: LoadedCourse | null }) {
           Sentences & recordings: <a href="https://tatoeba.org" target="_blank" rel="noopener">Tatoeba</a> (CC BY 2.0 FR; audio per contributor licence)
         </li>
         <li>
+          Word recordings: <a href="https://lingualibre.org" target="_blank" rel="noopener">Lingua Libre</a> /{' '}
+          <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a> (CC BY-SA, per file)
+        </li>
+        <li>
           Dictionary data: <a href="https://kaikki.org" target="_blank" rel="noopener">Wiktionary via kaikki.org</a>, <a href="https://www.wikdict.com" target="_blank" rel="noopener">WikDict</a> (CC BY-SA)
         </li>
         <li>

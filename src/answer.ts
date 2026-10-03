@@ -43,14 +43,15 @@ export function lev(a: string, b: string) {
   return prev[n];
 }
 
-export function check(input: string, answers: string[], opts: { strictAccents?: boolean; partial?: string[] } = {}): CheckResult {
+/** strictForm: grammar items, where one letter or accent is a different form (hablo/habló, había/habría). */
+export function check(input: string, answers: string[], opts: { strictAccents?: boolean; partial?: string[]; strictForm?: boolean } = {}): CheckResult {
   const ni = normalize(input);
   let best = answers[0] || '';
   if (!ni) return { ok: false, verdict: 'wrong', best };
   for (const a of answers) if (normalize(a) === ni) return { ok: true, verdict: 'exact', best: a };
   const si = stripAccents(ni);
   for (const a of answers) {
-    if (stripAccents(normalize(a)) === si) return { ok: !opts.strictAccents, verdict: 'accent', best: a };
+    if (stripAccents(normalize(a)) === si) return { ok: !opts.strictAccents && !opts.strictForm, verdict: 'accent', best: a };
   }
   for (const p of opts.partial || []) {
     if (stripAccents(normalize(p)) === si) return { ok: false, verdict: 'partial', best };
@@ -65,7 +66,7 @@ export function check(input: string, answers: string[], opts: { strictAccents?: 
     }
   }
   const len = stripAccents(normalize(best)).length;
-  const tol = len >= 12 ? 2 : len >= 5 ? 1 : 0;
+  const tol = opts.strictForm ? (len >= 15 ? 1 : 0) : len >= 12 ? 2 : len >= 5 ? 1 : 0;
   if (bestD <= tol) return { ok: true, verdict: 'typo', best };
   return { ok: false, verdict: 'wrong', best };
 }

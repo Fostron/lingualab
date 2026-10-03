@@ -169,7 +169,7 @@ mètre|noun|metre|метр
 secours|noun|help (au secours! = help!)|помощь (au secours! = помогите!)
 thé|noun|tea|чай
 centre|noun|centre|центр
-réaliser|verb|to carry out; to realise (a dream)|осуществлять||false friend: to realise (understand) = se rendre compte|ложный друг: понять = se rendre compte
+réaliser|verb|to carry out; to realise (a dream)|осуществлять|false friend: to realise (understand) = se rendre compte|ложный друг: понять = se rendre compte
 ange|noun|angel|ангел
 livrer|verb|to deliver|доставлять
 signifier|verb|to mean|означать

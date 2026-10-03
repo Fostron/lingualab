@@ -275,7 +275,7 @@ apparence|noun|appearance|внешность
 poudre|noun|powder|порошок
 aimable|adj|kind, friendly|любезный
 voter|verb|to vote|голосовать
-lecture|noun|reading|чтение||false friend: lecture = cours, conférence|ложный друг: лекция = cours, conférence
+lecture|noun|reading|чтение|false friend: lecture = cours, conférence|ложный друг: лекция = cours, conférence
 tasse|noun|cup|чашка
 patrie|noun|homeland|родина
 italien|noun|Italian (language)|итальянский язык; итальянец
