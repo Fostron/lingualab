@@ -1,0 +1,16 @@
+choice[en=Where do you live?]: ¿___ vives? => Dónde | Cuándo | Cómo
+choice[en=What's your name?]: ¿___ te llamas? => Cómo | Qué | Cuál
+choice[en=Who is that?]: ¿___ es? => Quién | Qué | Cuál
+choice[en=When do you work?]: ¿___ trabajas? => Cuándo | Cuánto | Dónde
+choice[en=How many brothers do you have?]: ¿___ hermanos tienes? => Cuántos | Cuántas | Cuánto
+choice[en=How much is it?]: ¿___ cuesta? => Cuánto | Cuántos | Cómo
+choice[en=What is your address?]: ¿___ es tu dirección? => Cuál | Qué | Quién
+choice[en=Why are you studying Spanish?]: ¿___ estudias español? => Por qué | Porque | Qué
+choice[en=Because I like it.]: ___ me gusta. => Porque | Por qué | Para
+gap[en=Where are you from?]: ¿De ___ eres? => dónde
+gap[en=Who do you live with?]: ¿Con ___ vives? => quién
+gap[en=I don't see anything.]: No veo ___. => nada
+gap[en=There's nobody here.]: No hay ___ aquí. => nadie
+gap[en=Me neither.]: Yo ___. => tampoco
+gap[en=Me too.]: Yo ___. => también
+transform[en=Make it negative]: Trabajo los sábados. => No trabajo los sábados.

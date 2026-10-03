@@ -1,0 +1,13 @@
+gap: Te lo explico para que lo ___ (entender, tú). => entiendas
+gap: Hablo despacio para que me ___ (entender, ellos). => entiendan
+gap: Salió sin que nadie lo ___ (ver). => viera | viese
+gap: Te doy dinero para que ___ (comprar, tú) pan. => compres
+gap: Lo hago para que ___ (estar, vosotros) contentos. => estéis
+choice: Estudio para ___ el examen. => aprobar | que apruebe | apruebo
+choice: Salió sin ___ nada. => decir | que diga | dice
+choice[en=Although it's raining (it is), I'm going out.]: Aunque ___, salgo. => llueve | llueva
+choice[en=Even if it rains, I'm going out.]: Aunque ___, saldré. => llueva | llueve
+choice[en=Even if it's expensive, I'll buy it.]: Aunque ___ caro, lo compraré. => sea | es
+choice: A pesar ___ frío, salimos. => del | de que | que
+choice: Trabajo mucho para que mis hijos ___ estudiar. => puedan | pueden | poder
+gap: No puedo salir sin que mi madre se ___ (enterar). => entere

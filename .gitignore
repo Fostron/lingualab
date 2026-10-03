@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.venv/
+data/raw/
+data/work/
+data/*.log
+*.pkl
+verbecc.log
+.claude/

@@ -1,0 +1,18 @@
+gap[en=subjunctive of hablar (tú)]: que tú ___ => hables
+gap[en=subjunctive of comer (él)]: que él ___ => coma
+gap[en=subjunctive of vivir (nosotros)]: que nosotros ___ => vivamos
+gap[en=subjunctive of tener (yo)]: que yo ___ => tenga
+gap[en=subjunctive of hacer (ellos)]: que ellos ___ => hagan
+gap[en=subjunctive of decir (tú)]: que tú ___ => digas
+gap[en=subjunctive of ser (ella)]: que ella ___ => sea
+gap[en=subjunctive of ir (nosotros)]: que nosotros ___ => vayamos
+gap[en=subjunctive of estar (yo)]: que yo ___ => esté
+gap[en=subjunctive of saber (vosotros)]: que vosotros ___ => sepáis
+gap[en=subjunctive of haber]: que ___ (there may be) => haya
+gap[en=subjunctive of dar (él)]: que él ___ => dé
+gap[en=subjunctive of poder (tú)]: que tú ___ => puedas
+gap[en=subjunctive of dormir (nosotros)]: que nosotros ___ => durmamos
+gap[en=subjunctive of pedir (ellos)]: que ellos ___ => pidan
+gap[en=subjunctive of buscar (yo)]: que yo ___ => busque
+gap[en=subjunctive of pagar (usted)]: que usted ___ => pague
+gap[en=subjunctive of conocer (tú)]: que tú ___ => conozcas

@@ -1,0 +1,524 @@
+# Spanish → English curated glossary, part 1 (ranks 1–400 + closed-class forms and phrases)
+# w|pos|en|ru|note_en|note_ru     — "!" = dictionary only (not taught in units), "-" = drop
+# ---- articles, pronouns and other surface forms (used for tap-to-translate) ----
+el|det|the (masc.)
+la|det|!the (fem.)
+los|det|!the (masc. pl.)
+las|det|!the (fem. pl.)
+un|det|a, an (masc.)
+una|det|a, an (fem.)
+unos|det|!some (masc.)
+unas|det|!some (fem.)
+lo|det|!the (neuter: lo bueno = the good thing)
+ella|pron|she; her
+ellos|pron|they (masc./mixed); them
+ellas|pron|they (fem.); them
+nosotros|pron|we (masc./mixed); us
+nosotras|pron|we (fem.); us
+vosotros|pron|you all (Spain, informal)|||
+ustedes|pron|you all (formal; all plural "you" in Latin America)
+me|pron|!me; myself
+te|pron|!you; yourself (informal)
+se|pron|!himself, herself, itself, themselves; (impersonal se)
+nos|pron|!us; ourselves
+os|pron|!you all; yourselves (Spain)
+lo|pron|!him; it (masc.)
+la|pron|!her; it (fem.)
+los|pron|!them (masc.)
+las|pron|!them (fem.)
+le|pron|!(to) him, her, you (formal)
+les|pron|!(to) them, you all
+mi|det|my
+mis|det|!my (pl.)
+tu|det|your (informal)
+tus|det|!your (pl., informal)
+sus|det|!his, her, its, their, your (pl.)
+nuestra|det|!our (fem.)
+esta|det|!this (fem.)
+estos|det|!these
+estas|det|!these (fem.)
+esa|det|!that (fem.)
+esos|det|!those
+esas|det|!those (fem.)
+aquella|det|!that over there (fem.)
+esto|pron|this (thing)
+eso|pron|that (thing)
+muy|adv|very
+cuándo|adv|when?
+cómo|adv|how?; what? (pardon?)
+dónde|adv|where?
+cuánto|det|how much?; how many?
+al|prep|!to the (a + el)
+del|prep|!of the; from the (de + el)
+# ---- phrases ----
+por favor|phrase|please
+buenos días|phrase|good morning; hello
+buenas tardes|phrase|good afternoon; good evening
+buenas noches|phrase|good evening; good night
+de nada|phrase|you're welcome
+lo siento|phrase|I'm sorry
+hasta luego|phrase|see you later
+hasta mañana|phrase|see you tomorrow
+mucho gusto|phrase|nice to meet you
+qué tal|phrase|how are you?; how's it going?
+por qué|phrase|why?
+a veces|phrase|sometimes
+de repente|phrase|suddenly
+alguna vez|phrase|ever (have you ever…?)
+sobre todo|phrase|above all; especially
+tener que|phrase|to have to (+ infinitive)
+hay que|phrase|one must; it is necessary to
+en cuanto|phrase|as soon as
+a pesar de|phrase|in spite of; despite
+como si|phrase|as if
+a lo mejor|phrase|maybe; perhaps
+sin embargo|phrase|however; nevertheless
+por eso|phrase|that's why; for that reason
+en cambio|phrase|on the other hand; instead
+es decir|phrase|that is (to say); i.e.
+no obstante|phrase|nevertheless; however (formal)
+o sea|phrase|I mean; in other words
+de hecho|phrase|in fact; actually
+por cierto|phrase|by the way
+tal vez|phrase|maybe; perhaps
+por lo tanto|phrase|therefore
+así que|phrase|so; therefore
+fin de semana|phrase|weekend
+# ---- reflexive verbs ----
+llamarse|verb|to be called (me llamo… = my name is…)
+levantarse|verb|to get up
+despertarse|verb|to wake up
+ducharse|verb|to have a shower
+vestirse|verb|to get dressed
+acostarse|verb|to go to bed
+lavarse|verb|to wash (oneself)
+sentarse|verb|to sit down
+sentirse|verb|to feel (+ adjective: me siento bien)
+quedarse|verb|to stay; to remain; (+ adj) to become
+irse|verb|to leave; to go away
+alegrarse|verb|to be glad
+preocuparse|verb|to worry
+olvidarse|verb|to forget
+acordarse|verb|to remember (acordarse de)
+callarse|verb|to be quiet; to shut up
+romperse|verb|to break (get broken)
+caerse|verb|to fall (down)
+perderse|verb|to get lost
+ocurrirse|verb|to occur to (se me ocurre = it occurs to me)
+ponerse|verb|to put on; to become (ponerse nervioso)
+volverse|verb|to become (lasting change: volverse loco)
+hacerse|verb|to become (by effort: hacerse rico)
+convertirse|verb|to turn into; to become (convertirse en)
+enamorarse|verb|to fall in love
+casarse|verb|to get married
+jubilarse|verb|to retire
+graduarse|verb|to graduate
+# ---- frequency ranks 1–400 ----
+de|prep|of; from; about
+él|pron|he; him; it
+ser|verb|to be (identity, origin, time, characteristics)||ser = what something is; estar = how/where it is
+no|adv|no; not
+que|conj|that; than
+uno|det|a, an; one
+a|prep|to; at
+yo|pron|I
+estar|verb|to be (location, state, condition)||estar = how/where something is right now
+y|conj|and
+en|prep|in; on; at
+tú|pron|you (informal)
+haber|verb|to have (auxiliary: he comido); hay = there is/are
+por|prep|by; for; through; because of
+que|pron|that; which; who
+tener|verb|to have
+ir|verb|to go
+poder|verb|can; to be able to
+hacer|verb|to do; to make
+qué|pron|what?
+con|prep|with
+para|prep|for; in order to
+su|det|his; her; its; their; your (formal)
+saber|verb|to know (facts); to know how to
+pero|conj|but
+si|conj|if; whether
+querer|verb|to want; to love
+decir|verb|to say; to tell
+ese|pron|that one
+este|det|this
+bien|adv|well; fine; OK
+ver|verb|to see; to watch
+aquí|adv|here
+este|pron|this one
+como|conj|like; as; since
+todo|det|all; every; the whole
+más|adv|more; most
+mucho|adv|a lot; much
+ese|det|that
+sí|intj|yes
+sí|adv|yes
+ya|adv|already; now; anymore (ya no)
+así|adv|like this; like that; so
+ahora|adv|now
+creer|verb|to believe; to think
+algo|pron|something; anything
+pasar|verb|to pass; to happen; to spend (time)
+qué|det|what; which; what a…!
+deber|verb|must; should; to owe
+bueno|adj|good
+cuando|conj|when
+vez|noun|time (occasion: una vez = once)
+todo|pron|everything; all
+o|conj|or
+hablar|verb|to speak; to talk
+nada|pron|nothing; not … anything
+dar|verb|to give
+sentir|verb|to feel; to be sorry
+pensar|verb|to think
+venir|verb|to come
+cosa|noun|thing
+tanto|adv|so much; so often
+esperar|verb|to wait (for); to hope; to expect
+día|noun|day
+nuestro|det|our
+necesitar|verb|to need
+dejar|verb|to leave; to let, allow
+usted|pron|you (formal)
+hombre|noun|man
+entonces|adv|then; so
+casa|noun|house; home
+hola|intj|hello; hi
+verdad|noun|truth; (¿verdad? = right?)
+quién|pron|who?
+tiempo|noun|time; weather
+otro|det|other; another
+dos|num|two
+nunca|adv|never
+año|noun|year
+favor|noun|favour
+alguno|det|some; any
+oh|intj|!oh
+volver|verb|to return, come back; (volver a + inf.) to do again
+mirar|verb|to look (at); to watch
+gustar|verb|to please (me gusta = I like)
+señor|noun|Mr; sir; gentleman
+uno|pron|one
+gracias|noun|thanks; thank you
+parecer|verb|to seem; to look like
+noche|noun|night; evening
+también|adv|also; too
+vida|noun|life
+sin|prep|without
+sobre|prep|on; about; over
+encontrar|verb|to find; to meet
+mejor|adj|better; best
+llamar|verb|to call
+mucho|det|a lot of; much; many
+nuevo|adj|new
+llevar|verb|to carry; to take; to wear
+alguien|pron|someone; anyone
+ahí|adv|there (near you)
+padre|noun|father
+salir|verb|to go out; to leave
+solo|adj|alone; lonely
+siempre|adv|always
+llegar|verb|to arrive
+amigo|noun|friend
+hasta|prep|until; up to; even
+tomar|verb|to take; to drink
+antes|adv|before; earlier
+seguir|verb|to follow; to continue
+trabajo|noun|work; job
+conocer|verb|to know (people, places); to meet
+gente|noun|people
+seguro|adj|sure; safe
+hijo|noun|son; child
+mujer|noun|woman; wife
+poner|verb|to put
+nadie|pron|nobody; no one
+entender|verb|to understand
+primero|adj|first
+después|adv|after; afterwards; later
+ni|conj|nor; not even (ni… ni = neither… nor)
+momento|noun|moment
+problema|noun|problem
+morir|verb|to die
+chico|noun|boy; guy
+quedar|verb|to remain; to be left; to meet up
+hora|noun|hour; time (¿qué hora es?)
+acuerdo|noun|agreement (de acuerdo = OK, agreed)
+mundo|noun|world
+lugar|noun|place
+desde|prep|from; since
+dinero|noun|money
+tipo|noun|type; kind; guy
+valer|verb|to be worth; (vale = OK)
+matar|verb|to kill
+escuchar|verb|to listen (to)
+vivir|verb|to live
+madre|noun|mother
+trabajar|verb|to work
+tratar|verb|to treat; to try (tratar de)
+acabar|verb|to finish; (acabar de + inf.) to have just
+buscar|verb|to look for; to search
+persona|noun|person
+donde|pron|where
+allí|adv|there
+otro|pron|another one; someone else
+parte|noun|part
+menos|adv|less; fewer; minus
+chica|noun|girl
+importar|verb|to matter; to import
+perder|verb|to lose; to miss (a train)
+papá|noun|dad
+nombre|noun|name
+mamá|noun|mum; mom
+luego|adv|later; then
+poco|adv|little; not much
+dios|noun|god
+niño|noun|child; boy
+tres|num|three
+hoy|adv|today
+solo|adv|only
+mano|noun|hand
+entrar|verb|to enter; to go in
+suponer|verb|to suppose; to assume
+mierda|noun|!shit (vulgar)
+último|adj|last; latest
+razón|noun|reason (tener razón = to be right)
+pequeño|adj|small; little
+realmente|adv|really; actually
+claro|adj|clear; light (colour)
+intentar|verb|to try
+idea|noun|idea
+aún|adv|still; yet
+empezar|verb|to begin; to start
+quien|pron|who; whom
+recordar|verb|to remember; to remind
+cada|det|each; every
+gracia|noun|grace; humour (hacer gracia = to be funny)
+pedir|verb|to ask for; to order (food)
+ninguno|det|no; not any; none
+único|adj|only; unique
+terminar|verb|to finish; to end
+policía|noun|police; police officer
+semana|noun|week
+usar|verb|to use
+eh|intj|!hey; eh
+conseguir|verb|to get; to achieve; to manage to
+minuto|noun|minute
+familia|noun|family
+ayudar|verb|to help
+hermano|noun|brother
+traer|verb|to bring
+cierto|adj|true; certain
+amor|noun|love
+junto|adj|together
+cambiar|verb|to change
+entre|prep|between; among
+mañana|adv|tomorrow
+demasiado|adv|too; too much
+forma|noun|form; shape; way
+viejo|adj|old
+amar|verb|to love
+grande|adj|big; large; great
+mío|pron|mine
+cabeza|noun|head
+cuenta|noun|bill; account (darse cuenta = to realize)
+todavía|adv|still; yet
+mismo|adj|same; (yo mismo = myself)
+caso|noun|case
+preguntar|verb|to ask
+lado|noun|side
+ganar|verb|to win; to earn
+malo|adj|bad
+loco|adj|crazy; mad
+poco|pron|a little; few
+señora|noun|Mrs; madam; lady
+sacar|verb|to take out; to get (a grade, a ticket)
+historia|noun|history; story
+listo|adj|ready (estar); clever (ser)
+muerto|adj|dead
+puerta|noun|door
+ah|intj|!ah
+cualquiera|det|any; anyone
+significar|verb|to mean
+genial|adj|great; brilliant
+jugar|verb|to play (games, sports)
+comer|verb|to eat; to have lunch
+mientras|conj|while
+cariño|noun|affection; darling, honey
+manera|noun|way; manner
+mal|adv|badly; wrong
+pagar|verb|to pay (for)
+fuera|adv|outside; out
+feliz|adj|happy
+camino|noun|way; path; road
+cuál|pron|which?; what?
+suceder|verb|to happen
+contar|verb|to count; to tell
+pregunta|noun|question
+pues|conj|well; so; then
+quizá|adv|maybe; perhaps
+ojo|noun|eye
+durante|prep|during; for
+tío|noun|uncle; (Spain, colloq.) guy
+ocurrir|verb|to happen; to occur
+mes|noun|month
+supuesto|noun|assumption (por supuesto = of course)
+palabra|noun|word
+leer|verb|to read
+arma|noun|weapon
+importante|adj|important
+hija|noun|daughter
+ciudad|noun|city; town
+casi|adv|almost
+dentro|adv|inside
+preocupar|verb|to worry
+rápido|adj|fast; quick
+tarde|adv|late
+maldito|adj|!damned; damn
+hacia|prep|towards
+dormir|verb|to sleep
+corazón|noun|heart
+muerte|noun|death
+suerte|noun|luck
+punto|noun|point; dot; full stop
+abrir|verb|to open
+funcionar|verb|to work (machines); to function
+ayuda|noun|help
+esposa|noun|wife
+agua|noun|water||feminine, but el agua (stressed a-)
+pasado|adj|past; last (el año pasado)
+jefe|noun|boss
+clase|noun|class; lesson; kind
+difícil|adj|difficult; hard
+hey|intj|-
+realidad|noun|reality (en realidad = actually)
+regresar|verb|to return; to come back
+miedo|noun|fear (tener miedo = to be afraid)
+comprar|verb|to buy
+tocar|verb|to touch; to play (an instrument)
+equipo|noun|team; equipment
+pronto|adv|soon; early
+suficiente|adj|enough; sufficient
+oír|verb|to hear
+coche|noun|car
+caer|verb|to fall
+enviar|verb|to send
+mantener|verb|to keep; to maintain
+alto|adj|tall; high; loud
+juego|noun|game
+cuerpo|noun|body
+adelante|adv|forward; (¡adelante! = come in!)
+tierra|noun|earth; land; ground
+vuelta|noun|return; turn; walk (dar una vuelta)
+olvidar|verb|to forget
+cinco|num|five
+escribir|verb|to write
+cara|noun|face
+cerca|adv|near; close
+doctor|noun|doctor
+mañana|noun|morning
+número|noun|number
+fiesta|noun|party; holiday
+auto|noun|car (Latin America)
+encantar|verb|to love, to delight (me encanta = I love it)
+guerra|noun|war
+segundo|adj|second
+fuerte|adj|strong; loud
+incluso|adv|even; including
+aunque|conj|although; even if
+hermana|noun|sister
+bueno|intj|well…; OK
+cuatro|num|four
+allá|adv|over there
+correr|verb|to run
+oportunidad|noun|opportunity; chance
+arriba|adv|up; above; upstairs
+comenzar|verb|to begin
+recibir|verb|to receive
+bebé|noun|baby
+teléfono|noun|telephone
+adiós|noun|goodbye
+adiós|intj|goodbye
+mayor|adj|older; bigger; main; elderly
+sangre|noun|blood
+luz|noun|light
+bastante|adv|quite; enough
+disparar|verb|to shoot; to fire
+claro|adv|of course; clearly
+posible|adj|possible
+e|conj|and (before i-/hi-)
+prueba|noun|test; proof; trial
+plan|noun|plan
+beber|verb|to drink
+escuela|noun|school
+contra|prep|against
+meter|verb|to put in; to insert
+robar|verb|to steal; to rob
+habitación|noun|room; bedroom
+capitán|noun|captain
+sonar|verb|to sound; to ring
+gracias|intj|thank you; thanks
+libro|noun|book
+desear|verb|to wish; to desire
+demonio|noun|!demon; devil
+fácil|adj|easy
+subir|verb|to go up; to climb; to raise
+comida|noun|food; meal; lunch
+exactamente|adv|exactly
+cielo|noun|sky; heaven
+echar|verb|to throw; to pour; (echar de menos = to miss)
+abajo|adv|down; below; downstairs
+correcto|adj|correct; right
+bonito|adj|pretty; nice
+decidir|verb|to decide
+foto|noun|photo||feminine: la foto (short for fotografía)
+diablo|noun|!devil
+negocio|noun|business; deal
+tuyo|pron|yours (informal)
+coger|verb|to take; to catch; to grab (Spain)||vulgar in much of Latin America — use tomar/agarrar there
+mover|verb|to move
+tanto|det|so much; so many
+oye|intj|hey!; listen!
+hermoso|adj|beautiful
+final|noun|end; ending; final
+perro|noun|dog
+pie|noun|foot (a pie = on foot)
+atrás|adv|back; behind; ago
+detener|verb|to stop; to arrest
+hecho|noun|fact; deed
+próximo|adj|next
+serio|adj|serious
+perfecto|adj|perfect
+película|noun|film; movie
+probablemente|adv|probably
+muchacho|noun|boy; young man
+bajo|prep|under; below
+par|noun|pair; couple (un par de = a couple of)
+millón|noun|million
+confiar|verb|to trust (confiar en)
+tampoco|adv|neither; not either
+niña|noun|girl; child
+culpa|noun|fault; blame; guilt
+mil|num|thousand
+noticia|noun|news (item)
+igual|adj|equal; same
+sueño|noun|sleep; dream (tener sueño = to be sleepy)
+sitio|noun|place; spot; site
+mostrar|verb|to show
+salvar|verb|to save; to rescue
+calle|noun|street
+ni|adv|not even
+convertir|verb|to convert; to turn into
+andar|verb|to walk; to go
+duro|adj|hard; tough
+querido|adj|dear; beloved
+acordar|verb|to agree (on)
+# ---- additions ----
+padres|noun|parents
+peor|adj|worse; worst
+quizás|adv|maybe; perhaps
+cualquier|det|any (before a noun: cualquier día)
+gafas|noun|glasses; spectacles
+fin|noun|end (por fin = at last; fin de semana = weekend)
+perdón|intj|sorry; excuse me; pardon?

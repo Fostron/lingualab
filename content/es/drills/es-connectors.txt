@@ -1,0 +1,14 @@
+choice: No es rojo, ___ azul. => sino | pero | aunque
+choice: Es caro, ___ me gusta. => pero | sino | por eso
+choice: Estaba cansado, ___ me acosté. => así que | aunque | sino
+choice: ___ no tenía dinero, no fui. => Como | Porque | Pero
+choice: Quería ir; sin ___, no pude. => embargo | cambio | eso
+choice: Yo soy bajo; mi hermano, en ___, es alto. => cambio | embargo | cuanto
+choice: No estudió; ___ suspendió. => por eso | sin embargo | aunque
+choice: No solo habla inglés, ___ también chino. => sino | pero | además
+gap[en=padre and hijo]: padre ___ hijo => e
+gap[en=that is (to say)]: Es mi suegra, es ___, la madre de mi mujer. => decir
+gap[en=besides]: Es barato y, ___, es bonito. => además
+gap[en=even]: Trabaja ___ los domingos. => incluso
+gap[en=since / given that]: Ya ___ estás aquí, ayúdame. => que
+gap[en=finally / lastly]: Por ___, añada la sal. => último

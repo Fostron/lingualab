@@ -1,0 +1,15 @@
+choice: Cuando era niño, ___ al parque todos los días. => iba | fui
+choice: Ayer ___ al parque con mi hermano. => fui | iba
+choice: ___ las nueve cuando empezó la película. => Eran | Fueron
+choice: Mientras yo ___, sonó el teléfono. => cocinaba | cociné
+choice: Mientras yo cocinaba, ___ el teléfono. => sonó | sonaba
+choice: El año pasado ___ a Perú. => viajé | viajaba
+choice: Antes ___ en Londres, ahora vivo en Madrid. => vivía | viví
+choice: ___ a mi novia en una fiesta en 2018. => Conocí | Conocía
+choice: La casa ___ grande y tenía un jardín. => era | fue
+choice: De repente ___ a llover. => empezó | empezaba
+choice: Estaba en la ducha cuando ___ mi madre. => llegó | llegaba
+choice: Cuando salí, ___ mucho. => llovía | llovió
+choice: Ayer ___ cansado todo el día. => estuve | estaba
+choice: Normalmente ___ el autobús, pero ese día tomé un taxi. => tomaba | tomé
+choice: Ella ___ la verdad ayer por la noche. => supo | sabía

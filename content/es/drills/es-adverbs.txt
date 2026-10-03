@@ -1,0 +1,16 @@
+gap[en=rápido → -ly]: Habla ___. => rápidamente
+gap[en=fácil → -ly]: Lo hice ___. => fácilmente
+gap[en=lento → -ly]: Camina ___. => lentamente
+gap[en=real → -ly]: ___ no sé qué decir. => Realmente
+gap[en=tranquilo → -ly]: Duerme ___. => tranquilamente
+choice: Es ___ caro. => muy | mucho | mucha
+choice: Tengo ___ trabajo. => mucho | muy | muchos
+choice: Hay ___ personas. => muchas | muchos | muy
+choice: Trabajas ___. => mucho | muy | muchos
+choice: Este es ___ mejor. => mucho | muy | más
+choice[en=It's too expensive.]: Es ___ caro. => demasiado | bastante | mucho
+choice[en=I'm a bit tired.]: Estoy ___ cansado. => un poco | poco | pocos
+gap[en=sometimes]: A ___ voy al teatro. => veces
+gap[en=from time to time]: Nos vemos de vez en ___. => cuando
+gap[en=almost never]: ___ nunca bebo café. => Casi
+transform[en=Turn the adjective into an adverb]: Es claro. Habla… => Habla claramente.

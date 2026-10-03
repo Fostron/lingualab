@@ -1,0 +1,14 @@
+choice: Tengo un amigo que ___ chino. => habla | hable
+choice: Busco a alguien que ___ chino. => hable | habla
+choice: Vivo en un piso que ___ terraza. => tiene | tenga
+choice: Quiero un piso que ___ terraza. => tenga | tiene
+choice: No hay nadie que lo ___. => sepa | sabe
+choice: ¿Hay alguien aquí que ___ cocinar? => sepa | sabe
+choice: Haz lo que ___. => quieras | quieres
+choice: Siempre hago lo que ___. => quiero | quiera
+choice: Necesitamos una persona que ___ experiencia. => tenga | tiene
+gap: No conozco a nadie que ___ (vivir) allí. => viva
+gap: Busco un libro que ___ (ser) fácil de leer. => sea
+gap: No hay nada que me ___ (gustar) en esta tienda. => guste
+gap: Puedes sentarte donde ___ (preferir, tú). => prefieras
+gap: Buscamos un candidato que ___ (saber) inglés. => sepa

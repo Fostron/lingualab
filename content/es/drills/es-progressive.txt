@@ -1,0 +1,15 @@
+gap[en=hablar]: Estoy ___ por teléfono. => hablando
+gap[en=comer]: Estamos ___. => comiendo
+gap[en=escribir]: Ella está ___ un correo. => escribiendo
+gap[en=leer]: ¿Estás ___ el periódico? => leyendo
+gap[en=dormir]: El bebé está ___. => durmiendo
+gap[en=hacer]: ¿Qué estás ___? => haciendo
+gap[en=pedir]: Están ___ la cuenta. => pidiendo
+gap[en=decir]: ¿Qué está ___? => diciendo
+gap[en=estar]: Nosotros ___ viendo una película. => estamos
+gap[en=estar]: Yo ___ trabajando. => estoy
+gap[en=llover]: Está ___. => lloviendo
+choice[en=I'm leaving tomorrow.]: ___ mañana. => Me voy | Me estoy yendo | Estoy ir
+choice: Sigo ___ español. => estudiando | estudiar | estudio
+transform[en=Use estar + gerund]: Leo un libro. => Estoy leyendo un libro.
+transform[en=Attach the pronoun]: Me estoy duchando. => Estoy duchándome.

@@ -1,0 +1,17 @@
+gap[en=I don't want anything.]: No quiero ___. => nada
+gap[en=Is anyone home?]: ¿Hay ___ en casa? => alguien
+gap[en=Nobody knows.]: ___ lo sabe. => Nadie
+gap[en=I never eat meat.]: ___ como carne. => Nunca
+gap[en=Do you want something?]: ¿Quieres ___? => algo
+gap[en=There's no problem.]: No hay ___ problema. => ningún
+gap[en=some day]: ___ día => algún
+gap[en=every day]: ___ los días => todos
+gap[en=all day]: ___ el día => todo
+gap[en=each week]: ___ semana => cada
+gap[en=another coffee]: ___ café => otro
+gap[en=I don't either.]: Yo ___. => tampoco
+choice: No viene ___. => nadie | alguien | nada
+choice: ¿Tienes ___ pregunta? => alguna | algún | ninguna
+choice: No tengo ___ idea. => ninguna | ningún | alguna
+transform[en=Make it negative]: Siempre como algo. => Nunca como nada.
+transform[en=Make it negative]: Hay alguien en la puerta. => No hay nadie en la puerta.

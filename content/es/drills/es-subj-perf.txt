@@ -1,0 +1,13 @@
+gap: Me alegro de que ___ (venir, tú). => hayas venido
+gap: No creo que ___ (terminar, él) todavía. => haya terminado
+gap: Es posible que se ___ (perder, ellos). => hayan perdido
+gap: Espero que lo ___ (pasar, vosotros) bien. => hayáis pasado
+gap: Siento que no te ___ (gustar) la comida. => haya gustado
+gap: Cuando ___ (terminar, tú), llámame. => hayas terminado
+gap: Busco a alguien que ___ (vivir) en Japón. => haya vivido
+gap: Dudo que ___ (decir, ella) eso. => haya dicho
+gap: Ojalá ___ (llegar, ellos) bien. => hayan llegado
+gap: No conozco a nadie que ___ (ver) esa película. => haya visto
+choice[en=I hope he came.]: Espero que ___. => haya venido | venga | viniera
+choice[en=I hope he comes.]: Espero que ___. => venga | haya venido | viniera
+choice: Me sorprende que no ___ todavía. => hayas llamado | has llamado | llamaste

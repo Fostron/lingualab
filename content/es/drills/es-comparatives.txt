@@ -1,0 +1,15 @@
+choice[en=Madrid is bigger than Toledo.]: Madrid es más grande ___ Toledo. => que | como | de
+choice[en=Ana is as tall as Eva.]: Ana es tan alta ___ Eva. => como | que | de
+choice[en=more than 100 people]: más ___ cien personas => de | que | como
+choice[en=This one is better.]: Este es ___. => mejor | más bueno | bueno
+choice[en=I feel worse.]: Me siento ___. => peor | más mal | malo
+choice[en=my older brother]: mi hermano ___ => mayor | más viejo | grande
+choice[en=I don't have as much money as you.]: No tengo ___ dinero como tú. => tanto | tan | tanta
+gap[en=more expensive than]: El hotel es ___ caro que la pensión. => más
+gap[en=less difficult than]: El español es ___ difícil que el chino. => menos
+gap[en=as … as]: Soy ___ alto como mi padre. => tan
+gap[en=as many people as]: Hay ___ personas como ayer. => tantas
+gap[en=younger]: Mi hermana es ___ que yo. => menor
+gap[en=taller than me]: Eres más alto que ___. => yo
+gap[en=better than]: Tu idea es ___ que la mía. => mejor
+transform[en=Compare: Pedro (1.80) / Juan (1.70)]: Pedro es alto. Juan es bajo. => Pedro es más alto que Juan.

@@ -1,0 +1,13 @@
+choice: Tengo ___ perro. => un | una | unos
+choice: Es ___ ciudad muy bonita. => una | un | unas
+choice: Hay ___ libros en la mesa. => unos | unas | un
+choice: Necesito ___ casas grandes. => unas | unos | un
+choice: Quiero ___ café, por favor. => un | una | unos
+choice[en=I am a doctor.]: Soy ___ médico. => (nothing) | un | una
+choice[en=Another coffee, please.]: ___ café, por favor. => Otro | Un otro | Uno otro
+choice: Hay ___ problema. => un | una | unos
+choice: Es ___ día muy bonito. => un | una | unos
+gap[en=I have a sister.]: Tengo ___ hermana. => una
+gap[en=There is a cat in the street.]: Hay ___ gato en la calle. => un
+gap[en=It's a very good book.]: Es ___ libro muy bueno. => un
+gap[en=about twenty people]: ___ veinte personas => unas

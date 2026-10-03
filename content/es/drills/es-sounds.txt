@@ -1,0 +1,15 @@
+choice[en=Which word means "dog"?]: ___ => perro | pero | pelo
+choice[en=Which word means "but"?]: ___ => pero | perro | para
+choice[en=Which one is spelled correctly (coffee)?]: ___ => café | cafe | cáfe
+choice[en=Which one is spelled correctly (song)?]: ___ => canción | cancion | cánción
+choice[en=Which one is spelled correctly (music)?]: ___ => música | musica | musíca
+choice[en=How do you say "Good morning"?]: ___ => Buenos días | Buenas noches | Hasta luego
+choice[en=You answer "Thank you" with…]: ___ => De nada | Por favor | Lo siento
+choice[en=Choose the right punctuation]: ___ => ¿Cómo estás? | ¿Cómo estás¿ | Cómo estás¿
+choice[en=Which letter is always silent?]: ___ => h | j | g
+choice[en="yes" is written…]: ___ => sí | si
+choice[en="you" (subject) is written…]: ___ => tú | tu
+choice[en="he" is written…]: ___ => él | el
+gap[en=Complete: "Nice to meet you."]: Mucho ___. => gusto
+gap[en=Complete: "See you later."]: Hasta ___. => luego
+gap[en=Complete: "Fine, thanks."]: Bien, ___. => gracias

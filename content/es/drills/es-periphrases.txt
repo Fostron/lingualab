@@ -1,0 +1,14 @@
+gap[en=I've just arrived.]: Acabo ___ llegar. => de
+gap[en=Call again.]: Vuelve ___ llamar. => a
+gap[en=I've quit smoking.]: He dejado ___ fumar. => de
+gap[en=It started to rain.]: Empezó ___ llover. => a
+gap[en=I usually have dinner at nine.]: ___ cenar a las nueve. => Suelo
+gap[en=You have to book (impersonal).]: ___ que reservar. => Hay
+gap[en=I have to leave.]: Tengo ___ irme. => que
+gap[en=It keeps raining.]: Sigue ___. => lloviendo
+gap[en=She burst into tears.]: Se puso ___ llorar. => a
+gap[en=I'm trying to learn.]: Trato ___ aprender. => de
+choice[en=We usually go out on Fridays.]: ___ salir los viernes. => Solemos | Volvemos | Acabamos
+choice[en=He has just left.]: ___ de salir. => Acaba | Deja | Vuelve
+choice[en=You should rest.]: ___ descansar. => Deberías | Hay que | Acabas de
+transform[en=Use "volver a"]: Lo hago otra vez. => Vuelvo a hacerlo. | Lo vuelvo a hacer.

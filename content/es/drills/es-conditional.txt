@@ -1,0 +1,15 @@
+gap: Me ___ (gustar) un café. => gustaría
+gap: ¿___ (poder, usted) ayudarme? => Podría
+gap: Tú ___ (deber) descansar. => deberías
+gap: Yo que tú, no lo ___ (hacer). => haría
+gap: Nosotros ___ (vivir) en la playa. => viviríamos
+gap: ¿Qué ___ (hacer, tú) con un millón? => harías
+gap: Ellos ___ (venir), pero están enfermos. => vendrían
+gap: Dijo que ___ (llamar) mañana. => llamaría
+gap: Me ___ (encantar) conocerte. => encantaría
+gap: ¿Te ___ (importar) cerrar la puerta? => importaría
+gap: Yo no ___ (saber) qué decir. => sabría
+gap: ___ (tener, nosotros) que hablar con él. => Tendríamos
+choice[en=When I was a child I would play outside.]: De niño ___ fuera. => jugaba | jugaría | jugué
+choice[en=He said he would come.]: Dijo que ___. => vendría | vendrá | viene
+transform[en=Make it more polite]: Quiero un té. => Querría un té. | Me gustaría un té.

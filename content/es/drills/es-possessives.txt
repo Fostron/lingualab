@@ -1,0 +1,16 @@
+gap[en=my]: ___ madre es profesora. => Mi
+gap[en=my]: ___ hermanos viven en Lima. => Mis
+gap[en=your (tú)]: ¿Dónde está ___ casa? => tu
+gap[en=your (tú)]: ___ amigos son simpáticos. => Tus
+gap[en=his]: ___ coche es rojo. => Su
+gap[en=their]: ___ hijos son pequeños. => Sus
+gap[en=our]: ___ casa es grande. => Nuestra
+gap[en=our]: ___ padres viven aquí. => Nuestros
+gap[en=our]: ___ perro se llama Toby. => Nuestro
+gap[en=your (vosotros)]: ¿Es ___ coche? => vuestro
+choice: Es ___ libro. => mi | mis | mí
+choice: Son ___ llaves. => mis | mi | mío
+choice[en=our flat]: ___ piso => nuestro | nuestra | nuestros
+choice[en=Pedro's book]: ___ => el libro de Pedro | el Pedro libro | Pedro's libro
+choice: Tú tienes ___ libro. => tu | tú | tus
+transform[en=Make it plural]: Mi hermano es alto. => Mis hermanos son altos.

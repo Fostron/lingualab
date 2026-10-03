@@ -1,0 +1,14 @@
+choice: Se ___ piso. (Flat for sale) => vende | venden
+choice: Se ___ pisos. (Flats for sale) => venden | vende
+choice: Aquí se ___ español. => habla | hablan
+choice: Se ___ camareros. => necesitan | necesita
+choice[en=How do you say "dog"?]: ¿Cómo se ___ "dog"? => dice | dicen | dices
+choice[en=I forgot the keys.]: Se me ___ las llaves. => olvidaron | olvidó | olvidé
+choice[en=He dropped the glass.]: Se ___ cayó el vaso. => le | lo | la
+choice[en=Our car broke down.]: Se ___ rompió el coche. => nos | os | les
+gap[en=I forgot (it).]: Se me ___. => olvidó
+gap[en=I lost my phone.]: Se me ___ el móvil. => perdió
+gap[en=An idea occurs to me.]: Se me ___ una idea. => ocurre
+gap[en=Smoking isn't allowed.]: No se ___ fumar. => puede
+gap[en=Bikes repaired here.]: Aquí se ___ bicicletas. => reparan
+transform[en=Use the accidental se]: Perdí las gafas. => Se me perdieron las gafas.

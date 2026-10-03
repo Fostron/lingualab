@@ -1,0 +1,16 @@
+choice: ¿Tienes el libro? — Sí, ___ tengo. => lo | la | le
+choice: ¿Ves la película? — Sí, ___ veo. => la | lo | las
+choice: ¿Compras los tomates? — Sí, ___ compro. => los | las | les
+choice: ¿Conoces a Ana y Eva? — Sí, ___ conozco. => las | los | les
+choice: ¿Me ayudas? — Sí, ___ ayudo. => te | me | lo
+choice: ¿Nos llamas mañana? — Sí, ___ llamo. => os | nos | les
+gap[en=I don't know (it).]: No ___ sé. => lo
+gap[en=I'm going to buy it (the car).]: Voy a ___. => comprarlo
+gap[en=Eat it! (la manzana)]: ¡___! => Cómela
+gap[en=I love you.]: ___ quiero. => Te
+choice[en=I see María.]: Veo ___ María. => a | (nothing) | la
+choice[en=I'm looking for a doctor.]: Busco ___ médico. => un | a un | al
+choice: No ___ veo. => la | ella | a ella
+transform[en=Replace the object with a pronoun]: Compro el pan. => Lo compro.
+transform[en=Replace the object with a pronoun]: Leo las cartas. => Las leo.
+transform[en=Replace the object with a pronoun]: Voy a llamar a Juan. => Voy a llamarlo. | Lo voy a llamar.

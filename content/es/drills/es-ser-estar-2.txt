@@ -1,0 +1,15 @@
+choice[en=He's clever.]: ___ muy listo. => Es | Está
+choice[en=Are you ready?]: ¿___ listo? => Estás | Eres
+choice[en=The film is boring.]: La película ___ aburrida. => es | está
+choice[en=I'm bored.]: ___ aburrido. => Estoy | Soy
+choice[en=The paella is delicious.]: La paella ___ muy rica. => está | es
+choice[en=They're a rich family.]: ___ una familia rica. => Son | Están
+choice[en=The banana is unripe.]: El plátano ___ verde. => está | es
+choice[en=Are you sure?]: ¿___ seguro? => Estás | Eres
+choice[en=This area is safe.]: Este barrio ___ seguro. => es | está
+choice[en=My grandfather is still alive.]: Mi abuelo todavía ___ vivo. => está | es
+choice[en=He's ill.]: ___ malo. => Está | Es
+choice[en=You look pretty today!]: ¡Qué guapa ___ hoy! => estás | eres
+choice[en=The concert is in the stadium.]: El concierto ___ en el estadio. => es | está
+choice[en=We're on holiday.]: ___ de vacaciones. => Estamos | Somos
+choice[en=I'm not in the mood for jokes.]: No ___ para bromas. => estoy | soy

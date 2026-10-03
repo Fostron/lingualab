@@ -1,0 +1,14 @@
+choice[en=It's cold.]: ___ frío. => Hace | Está | Es
+choice[en=I'm cold.]: ___ frío. => Tengo | Hace | Estoy
+choice[en=It's cloudy.]: ___ nublado. => Está | Hace | Hay
+choice[en=It's sunny.]: ___ sol. => Hace | Hay | Está
+choice[en=It's foggy.]: ___ niebla. => Hay | Hace | Está
+choice[en=It's very hot.]: Hace ___ calor. => mucho | muy | mucha
+choice[en=The water is cold.]: El agua ___ fría. => está | hace | tiene
+gap[en=It's raining (now).]: Está ___. => lloviendo
+gap[en=It rains a lot in London.]: En Londres ___ mucho. => llueve
+gap[en=It snows in winter.]: En invierno ___. => nieva
+gap[en=What's the weather like?]: ¿Qué ___ hace? => tiempo
+gap[en=The weather is good.]: Hace ___ tiempo. => buen
+gap[en=summer]: En ___ hace calor. => verano
+gap[en=It's 25 degrees.]: Hace veinticinco ___. => grados

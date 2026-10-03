@@ -1,0 +1,14 @@
+gap: Es importante que ___ (descansar, tú). => descanses
+gap: Es necesario que ___ (llegar, nosotros) a tiempo. => lleguemos
+gap: Es mejor que no ___ (decir, tú) nada. => digas
+gap: Es normal que ___ (estar, vosotros) nerviosos. => estéis
+gap: Es raro que no ___ (llamar, él). => llame
+gap: Hace falta que alguien nos ___ (ayudar). => ayude
+gap: Es increíble que ___ (costar) tanto. => cueste
+gap: Es una pena que no ___ (poder, ellos) venir. => puedan
+choice: Es importante ___ bien. => dormir | que duermas | que duermes
+choice: Es importante que ___ bien. => duermas | duermes | dormir
+choice: Está claro que ___ razón. => tienes | tengas
+choice: Es obvio que no ___ nada. => sabe | sepa
+choice: No es obvio que ___ la verdad. => sepa | sabe
+choice: Es preferible que ___ en tren. => vayamos | vamos | ir

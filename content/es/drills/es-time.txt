@@ -1,0 +1,16 @@
+choice[en=1:00]: ___ la una. => Es | Son | Está
+choice[en=3:00]: ___ las tres. => Son | Es | Están
+gap[en=4:30]: Son las cuatro y ___. => media
+gap[en=2:15]: Son las dos y ___. => cuarto
+gap[en=6:45]: Son las siete menos ___. => cuarto
+gap[en=at 10 o'clock]: La clase es ___ las diez. => a
+gap[en=What time is it?]: ¿Qué ___ es? => hora
+gap[en=in the morning]: Trabajo por la ___. => mañana
+gap[en=on Mondays]: ___ lunes voy al gimnasio. => Los
+gap[en=on Friday (this Friday)]: ___ viernes tengo una fiesta. => El
+gap[en=today]: ___ es martes. => Hoy
+gap[en=yesterday]: ___ fue domingo. => Ayer
+gap[en=the day after Tuesday]: martes, ___ => miércoles
+gap[en=the month after April]: abril, ___ => mayo
+choice[en=tomorrow morning]: ___ => mañana por la mañana | la mañana mañana | mañana de mañana
+choice[en=8 p.m.]: las ocho de la ___ => tarde | mañana | día

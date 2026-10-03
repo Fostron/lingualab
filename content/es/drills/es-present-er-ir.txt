@@ -1,0 +1,16 @@
+gap: Yo ___ (comer) a las dos. => como
+gap: ¿Dónde ___ (vivir) tú? => vives
+gap: Ella ___ (leer) mucho. => lee
+gap: Nosotros ___ (vivir) en Madrid. => vivimos
+gap: Nosotros ___ (comer) en casa. => comemos
+gap: Vosotros ___ (escribir) bien. => escribís
+gap: Vosotros ___ (beber) café. => bebéis
+gap: Ellos ___ (aprender) español. => aprenden
+gap: ¿Usted ___ (comprender)? => comprende
+gap: Yo no ___ (creer) eso. => creo
+gap: Mi hermano ___ (correr) cada mañana. => corre
+gap: Ellas ___ (abrir) la tienda a las nueve. => abren
+gap: Tú ___ (deber) estudiar más. => debes
+gap: Nosotros ___ (recibir) muchos correos. => recibimos
+choice: Mis padres ___ en el campo. => viven | vivís | vive
+choice: ¿Qué ___ (vosotros)? => bebéis | bebís | beben

@@ -1,0 +1,16 @@
+gap: Hoy yo ___ (trabajar) mucho. => he trabajado
+gap: ¿___ (estar, tú) en México? => Has estado
+gap: Nosotros ya ___ (comer). => hemos comido
+gap: Ella ___ (escribir) un libro. => ha escrito
+gap: ¿Qué ___ (hacer, vosotros) hoy? => habéis hecho
+gap: Ellos ___ (volver) de las vacaciones. => han vuelto
+gap: Yo nunca ___ (ver) esa película. => he visto
+gap: ¿Quién ___ (abrir) la ventana? => ha abierto
+gap: Todavía no te lo ___ (decir, yo). => he dicho
+gap: Se ___ (romper) el vaso. => ha roto
+gap: ¿Dónde ___ (poner, tú) mis gafas? => has puesto
+gap[en=participle of leer]: He ___ el periódico. => leído
+gap[en=I haven't finished yet.]: Todavía no ___ (terminar). => he terminado
+gap[en=Have you ever been to Peru?]: ¿___ (estar, tú) alguna vez en Perú? => Has estado
+choice[en=participle of romper]: He ___ el vaso. => roto | rompido | rompeado
+transform[en=Put it in the present perfect]: Como paella. => He comido paella.

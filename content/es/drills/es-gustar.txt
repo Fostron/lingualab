@@ -1,0 +1,15 @@
+choice: Me ___ el chocolate. => gusta | gustan | gusto
+choice: Me ___ los gatos. => gustan | gusta | gusto
+choice: ¿Te ___ bailar? => gusta | gustan | gustas
+choice: A Juan ___ gusta el fútbol. => le | lo | se
+choice: A nosotros ___ gusta viajar. => nos | os | les
+choice: A mis padres ___ gustan las películas. => les | le | los
+choice[en=I love Spain.]: Me ___ España. => encanta | encantan | encanto
+gap[en=I like music.]: Me ___ la música. => gusta
+gap[en=She likes cats.]: Le ___ los gatos. => gustan
+gap[en=Do you like fish? (tú)]: ¿___ gusta el pescado? => Te
+gap[en=We love your photos.]: Nos ___ tus fotos. => encantan
+gap[en=I don't like it at all.]: No me gusta ___. => nada
+gap[en=Me too.]: A mí ___. => también
+gap[en=Me neither.]: A mí ___. => tampoco
+transform[en=Make it plural: "I like the books."]: Me gusta el libro. => Me gustan los libros.

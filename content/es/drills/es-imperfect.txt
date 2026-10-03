@@ -1,0 +1,16 @@
+gap: De niño yo ___ (jugar) mucho. => jugaba
+gap: Antes nosotros ___ (vivir) en el campo. => vivíamos
+gap: Mi abuela ___ (cocinar) muy bien. => cocinaba
+gap: ¿Qué ___ (hacer) tú los veranos? => hacías
+gap: Ellos ___ (comer) juntos los domingos. => comían
+gap: Cuando yo ___ (ser) pequeño, ___ (tener) un perro. => era, tenía | era tenía
+gap: La casa ___ (ser) muy grande. => era
+gap: Nosotros ___ (ir) a la playa cada verano. => íbamos
+gap: Yo ___ (ver) la tele todas las noches. => veía
+gap: ___ (haber) mucha gente en la calle. => Había
+gap: ___ (hacer) mucho frío. => Hacía
+gap: Vosotros ___ (estudiar) en la misma escuela. => estudiabais
+gap: Mientras ella ___ (leer), yo ___ (dormir). => leía, dormía | leía dormía
+choice: Cuando era joven, ___ al tenis. => jugaba | jugué | juego
+choice: ___ las once de la noche. => Eran | Fueron | Son
+choice[en=I'd like a coffee, please.]: ___ un café, por favor. => Quería | Quise | Quiero

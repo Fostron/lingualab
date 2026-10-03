@@ -1,0 +1,15 @@
+gap[en=Tell it to me. (tú)]: ___ => Dímelo
+gap[en=Don't tell it to me. (tú)]: No ___ digas. => me lo
+gap[en=I want to tell it to you.]: Quiero ___. => decírtelo
+gap[en=I'm doing it.]: Estoy ___. => haciéndolo
+gap[en=I have seen it.]: ___ he visto. => Lo
+gap[en=I told it to him.]: ___ dije. => Se lo
+gap[en=I forgot (accidentally).]: Se ___ olvidó. => me
+gap[en=Let's sit down.]: ¡___! => Sentémonos
+gap[en=Sit down (vosotros)!]: ¡___! => Sentaos
+gap[en=Give it to her (usted, el libro).]: ___ => Déselo
+choice: ___ quiero decir algo. => Te | Ti | A ti
+choice: Lo estoy ___. => comprando | comprándolo | comprarlo
+choice: ¿Me lo das? — Sí, ___ doy. => te lo | lo te | se lo
+choice: He ___ el libro. => leído | leídolo | lo leído
+transform[en=Move the pronouns to the end]: Te lo voy a explicar. => Voy a explicártelo.

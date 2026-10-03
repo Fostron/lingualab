@@ -1,0 +1,16 @@
+gap: Ayer yo ___ (hablar) con mi madre. => hablé
+gap: ¿Tú ___ (comer) paella? => comiste
+gap: Ella ___ (vivir) en Roma. => vivió
+gap: Nosotros ___ (comprar) un coche. => compramos
+gap: Vosotros ___ (escribir) una carta. => escribisteis
+gap: Ellos ___ (llegar) tarde. => llegaron
+gap: Yo ___ (llegar) a las ocho. => llegué
+gap: Yo ___ (buscar) las llaves. => busqué
+gap: Yo ___ (empezar) a trabajar en 2010. => empecé
+gap: Mi padre ___ (leer) el periódico. => leyó
+gap: ¿Usted ___ (pagar) la cuenta? => pagó
+gap: Mis amigos ___ (beber) mucho. => bebieron
+gap: Yo ___ (nacer) en Madrid. => nací
+choice: Ayer ___ (él) a su hermano. => llamó | llamo | llamé
+choice: El año pasado ___ (nosotros) en Italia. => viajamos | viajábamos | viajemos
+transform[en=Put it in the preterite (ayer)]: Hoy trabajo mucho. => Ayer trabajé mucho.

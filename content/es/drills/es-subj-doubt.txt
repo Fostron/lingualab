@@ -1,0 +1,16 @@
+choice: Creo que ___ razón. => tienes | tengas
+choice: No creo que ___ razón. => tengas | tienes
+choice: Dudo que ___ a tiempo. => lleguen | llegan
+choice: Estoy seguro de que ___ mañana. => viene | venga
+choice: No estoy seguro de que ___ mañana. => venga | viene
+choice: Es verdad que ___ cansado. => estoy | esté
+choice: No es verdad que ___ cansado. => esté | estoy
+choice: Es posible que ___ esta tarde. => llueva | llueve
+choice: A lo mejor ___ esta tarde. => llueve | llueva
+choice: Puede que ___ razón. => tengas | tienes
+choice: Es evidente que no lo ___. => sabe | sepa
+choice: No pienso que ___ una buena idea. => sea | es
+choice: Es probable que ___ tarde. => lleguemos | llegamos
+gap: Dudo que ella ___ (saber) la respuesta. => sepa
+gap: No creo que ___ (haber) problemas. => haya
+gap: Quizás ___ (ir, nosotros) a la playa mañana. => vayamos | vamos

@@ -1,0 +1,12 @@
+choice: La casa en ___ vivo es antigua. => la que | el que | que la
+choice: El chico con ___ salgo es médico. => el que | la que | lo que
+choice: Los amigos de ___ te hablé vienen mañana. => los que | las que | lo que
+choice: Llegó tarde, ___ me molestó. => lo que | el que | que
+choice: El hombre ___ hija conoces es mi vecino. => cuya | cuyo | que su
+choice: Es una autora ___ libros me encantan. => cuyos | cuyas | cuya
+choice: ___ llegue primero, gana. => El que | Lo que | Cual
+choice: La razón por la ___ no vino es un misterio. => cual | que la | cuyo
+gap[en=the person with whom I spoke]: la persona con ___ hablé => quien | la que | la cual
+gap[en=the people who want to come]: Los ___ quieran venir, que levanten la mano. => que
+gap[en=a writer whose novels I've read]: un escritor ___ novelas he leído => cuyas
+gap[en=which (whole idea)]: No me llamó, lo ___ me sorprendió. => que | cual

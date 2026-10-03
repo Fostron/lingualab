@@ -1,0 +1,16 @@
+gap[en=alto]: La chica es ___. => alta
+gap[en=alto]: Los chicos son ___. => altos
+gap[en=pequeño]: Las casas son ___. => pequeñas
+gap[en=grande]: Las ciudades son ___. => grandes
+gap[en=fácil]: Los ejercicios son ___. => fáciles
+gap[en=español]: Ella es ___. => española
+gap[en=simpático]: Juan y María son ___. => simpáticos
+gap[en=nuevo]: Tengo una camisa ___. => nueva
+gap[en=bueno]: Es un ___ amigo. => buen
+gap[en=primero]: Es el ___ día. => primer
+choice: Tengo un coche ___. => rojo | roja | rojos
+choice: Es una ciudad ___. => bonita | bonito | bonitas
+choice[en=a great city]: Es una ___ ciudad. => gran | grande | grandes
+choice: Las chicas son muy ___. => simpáticas | simpáticos | simpática
+transform[en=Make it plural]: El libro es interesante. => Los libros son interesantes.
+transform[en=Make it feminine]: El niño es alto. => La niña es alta.

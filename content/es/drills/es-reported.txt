@@ -1,0 +1,14 @@
+gap[en="Estoy cansado."]: Dijo que ___ cansado. => estaba
+gap[en="Fui al cine."]: Dijo que ___ al cine. => había ido
+gap[en="Vendré mañana."]: Dijo que ___ al día siguiente. => vendría
+gap[en="Voy a llamar."]: Dijo que ___ a llamar. => iba
+gap[en="He terminado."]: Dijo que ___. => había terminado
+gap[en="¡Ven!"]: Me dijo que ___. => fuera | viniera | fuese | viniese
+gap[en="¿Tienes hambre?"]: Me preguntó ___ tenía hambre. => si
+gap[en="¿Dónde vives?"]: Me preguntó ___ vivía. => dónde
+gap[en="Te llamo mañana."]: Me dijo que me llamaría al día ___. => siguiente
+choice[en="Tengo frío." (he says now)]: Dice que ___ frío. => tiene | tenía | tendría
+choice[en="Compraré pan."]: Dijo que ___ pan. => compraría | comprará | compraba
+choice[en="Estudio inglés."]: Me contó que ___ inglés. => estudiaba | estudió | estudiara
+transform[en=Report it (Ana dijo que…)]: Ana: "Trabajo en un banco." => Ana dijo que trabajaba en un banco.
+transform[en=Report it (Me preguntó…)]: "¿Quieres café?" => Me preguntó si quería café.

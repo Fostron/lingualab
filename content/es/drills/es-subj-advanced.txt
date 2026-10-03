@@ -1,0 +1,13 @@
+gap[en=Whatever happens…]: ___ lo que pase, te apoyaré. => Pase
+gap[en=Whatever they say…]: Digan lo que ___, no cambiaré. => digan
+gap[en=wherever you go]: Vayas donde ___ => vayas
+gap[en=whatever it costs]: Cueste lo que ___ => cueste
+gap[en=It's not that I don't want to…]: No es que no ___ (querer), sino que no puedo. => quiera
+gap[en=If you don't come, I'll get angry.]: Como no ___ (venir, tú), me enfado. => vengas
+gap[en=As far as I know…]: Que yo ___, no ha venido. => sepa
+gap[en=however much you study]: Por mucho que ___ (estudiar, tú), no lo aprenderás todo. => estudies
+gap[en=whoever it is]: quienquiera que ___ => sea
+choice[en=I regret that you can't come.]: Siento que no ___ venir. => puedas | puedes
+choice[en=I sense that someone is watching me.]: Siento que alguien me ___. => mira | mire
+choice[en=I'm writing to tell you to come.]: Te escribo que ___. => vengas | vienes
+choice[en=The fact that he hasn't called worries me.]: El hecho de que no ___ me preocupa. => haya llamado | ha llamado | llamaría

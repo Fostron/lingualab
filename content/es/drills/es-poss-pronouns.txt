@@ -1,0 +1,15 @@
+gap[en=This book is mine.]: Este libro es ___. => mío
+gap[en=This bag is mine.]: Esta bolsa es ___. => mía
+gap[en=Are these keys yours? (tú)]: ¿Son ___ estas llaves? => tuyas
+gap[en=The glasses are hers.]: Las gafas son ___. => suyas
+gap[en=The house is ours.]: La casa es ___. => nuestra
+gap[en=Your car is red; mine is blue.]: Tu coche es rojo; el ___ es azul. => mío
+gap[en=My parents live here. And yours? (tú)]: Mis padres viven aquí. ¿Y los ___? => tuyos
+gap[en=a friend of mine]: un amigo ___ => mío
+gap[en=My God!]: ¡Dios ___! => mío
+choice: Esta maleta es ___. => mía | mío | mi
+choice: Esos zapatos son ___. => míos | mías | mis
+choice: Mi casa es grande, pero la ___ es más grande. => tuya | tuyo | tu
+choice[en=a cousin (fem.) of his]: una prima ___ => suya | suyo | su
+transform[en=Use a possessive pronoun]: Es mi libro. => Es mío.
+transform[en=Use a possessive pronoun]: Son tus llaves. => Son tuyas.

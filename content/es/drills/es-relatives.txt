@@ -1,0 +1,13 @@
+choice: El libro ___ leo es muy bueno. => que | quien | donde
+choice: La ciudad ___ nací es pequeña. => donde | que | quien
+choice: La persona con ___ hablé es mi jefa. => quien | que | donde
+choice: ___ necesito es dormir. => Lo que | Que | Qué
+choice: No entiendo ___ dices. => lo que | que | quien
+choice: La chica ___ vive aquí es mi prima. => que | quien | lo que
+choice[en=the house in which I live]: la casa en ___ vivo => la que | que la | lo que
+gap[en=the man (that) I saw]: el hombre ___ vi => que
+gap[en=Do what you want.]: Haz ___ quieras. => lo que
+gap[en=the restaurant where we ate]: el restaurante ___ comimos => donde
+gap[en=Whoever seeks, finds.]: ___ busca, encuentra. => Quien
+gap[en=the friends with whom I travel]: los amigos con ___ viajo => quienes
+transform[en=Join the sentences with "que"]: Tengo un perro. El perro es negro. => Tengo un perro que es negro. | El perro que tengo es negro.

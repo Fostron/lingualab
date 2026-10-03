@@ -1,0 +1,17 @@
+gap[en=tú: hablar]: ¡___ más despacio! => Habla
+gap[en=tú: comer]: ¡___ la sopa! => Come
+gap[en=tú: venir]: ¡___ aquí! => Ven
+gap[en=tú: hacer]: ___ los deberes. => Haz
+gap[en=tú: decir]: ___ la verdad. => Di
+gap[en=tú: poner]: ___ la mesa, por favor. => Pon
+gap[en=tú: salir]: ___ de aquí. => Sal
+gap[en=tú: tener]: ___ cuidado. => Ten
+gap[en=usted: girar]: ___ a la derecha. => Gire
+gap[en=usted: seguir]: ___ recto. => Siga
+gap[en=usted: tomar]: ___ la segunda calle. => Tome
+gap[en=ustedes: escribir]: ___ sus nombres. => Escriban
+gap[en=usted: sentarse]: ___, por favor. => Siéntese
+gap[en=tú: levantarse]: ¡___ ya! => Levántate
+gap[en=tú: decir + me + lo]: ¡___! => Dímelo
+choice[en=Go! (tú)]: ¡___! => Ve | Va | Vas
+choice[en=Be good! (tú)]: ¡___ bueno! => Sé | Se | Eres

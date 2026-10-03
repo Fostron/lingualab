@@ -1,0 +1,13 @@
+gap: Si ___ (estudiar, yo), habría aprobado. => hubiera estudiado | hubiese estudiado
+gap: Si me lo hubieras dicho, te ___ (ayudar, yo). => habría ayudado | hubiera ayudado
+gap: Si ___ (salir, nosotros) antes, no habríamos llegado tarde. => hubiéramos salido | hubiésemos salido
+gap: ¡Ojalá ___ (ir, yo) a la fiesta! => hubiera ido | hubiese ido
+gap: Me miró como si ___ (ver) un fantasma. => hubiera visto | hubiese visto
+gap: Si hubieras venido, te ___ (gustar). => habría gustado | hubiera gustado
+gap: Yo lo ___ (hacer) de otra manera. => habría hecho | hubiera hecho
+gap: Si ___ (saber, ellos) la verdad, no habrían venido. => hubieran sabido | hubiesen sabido
+gap: ___ haberlo sabido, no habría venido. => De
+choice: Si hubiera aceptado el trabajo, ahora ___ en Londres. => viviría | habría vivido | vivo
+choice: Si lo ___, te lo habría dicho. => hubiera sabido | habría sabido | sabría
+choice: Si ___ más tiempo, lo habría terminado. => hubiera tenido | tendría | tuve
+transform[en=Make it about the past]: Si tuviera dinero, compraría la casa. => Si hubiera tenido dinero, habría comprado la casa.

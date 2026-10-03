@@ -1,0 +1,18 @@
+gap[en=tú: don't speak]: ¡No ___! => hables
+gap[en=tú: don't touch]: ¡No ___ eso! => toques
+gap[en=tú: don't worry]: No te ___. => preocupes
+gap[en=tú: don't come]: No ___ mañana. => vengas
+gap[en=tú: don't do]: No ___ eso. => hagas
+gap[en=tú: don't say]: No ___ nada. => digas
+gap[en=tú: don't go]: No ___ allí. => vayas
+gap[en=tú: don't be]: No ___ tonto. => seas
+gap[en=vosotros: don't eat]: No ___ tanto. => comáis
+gap[en=ustedes: don't sit down]: No se ___. => sienten
+gap[en=Tell it to me. (tú)]: ___ => Dímelo
+gap[en=Don't tell it to me. (tú)]: No ___ digas. => me lo
+gap[en=Buy it. (tú, el libro)]: ___ => Cómpralo
+gap[en=Don't buy it. (tú, el libro)]: No ___ compres. => lo
+gap[en=Let's go!]: ¡___! => Vamos | Vámonos
+gap[en=Let's eat here.]: ___ aquí. => Comamos
+transform[en=Make it negative]: Cierra la puerta. => No cierres la puerta.
+transform[en=Make it negative]: Levántate. => No te levantes.

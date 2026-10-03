@@ -1,0 +1,15 @@
+choice[en=this book]: ___ libro => este | esta | esto
+choice[en=this house]: ___ casa => esta | este | esto
+choice[en=these shoes]: ___ zapatos => estos | estas | esos
+choice[en=those (near you) flowers]: ___ flores => esas | esos | aquellas
+choice[en=that mountain over there]: ___ montaña => aquella | aquel | esa
+choice[en=What is this?]: ¿Qué es ___? => esto | este | esta
+choice[en=That's true.]: ___ es verdad. => Eso | Ese | Esa
+gap[en=this week]: ___ semana => esta
+gap[en=tonight]: ___ noche => esta
+gap[en=this year]: ___ año => este
+gap[en=these days]: ___ días => estos
+gap[en=that car (near you)]: ___ coche => ese
+gap[en=in those days]: en ___ época => aquella
+gap[en=I want this one, not that one.]: Quiero este, no ___. => ese
+gap[en=That's why.]: Por ___. => eso

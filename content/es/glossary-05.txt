@@ -1,0 +1,551 @@
+# Spanish → English curated glossary, part 5 (ranks ~1750–2300)
+palacio|noun|palace
+patrón|noun|boss; pattern; patron saint
+ciudadano|noun|citizen
+original|adj|original
+cuadro|noun|painting; picture; square (a cuadros = checked)
+chiste|noun|joke
+básicamente|adv|basically
+galleta|noun|biscuit; cookie
+establecer|verb|to establish; to set up
+iniciar|verb|to start; to initiate
+desesperado|adj|desperate
+aprobar|verb|to pass (an exam); to approve
+condenar|verb|to condemn; to sentence
+arresto|noun|arrest
+ambulancia|noun|ambulance
+alarma|noun|alarm
+diamante|noun|diamond
+importancia|noun|importance
+personalmente|adv|personally
+hierba|noun|grass; herb
+negativo|adj|negative
+indicar|verb|to indicate; to show
+despacho|noun|office; study
+impresión|noun|impression; printing
+emocionado|adj|excited; moved
+seco|adj|dry
+cruel|adj|cruel
+celda|noun|cell (prison)
+fijar|verb|to fix; to set; (fijarse en) to notice
+charla|noun|chat; talk
+misterio|noun|mystery
+lord|noun|-
+identidad|noun|identity
+suicidio|noun|suicide
+impedir|verb|to prevent; to stop
+popular|adj|popular
+OK|intj|-
+contener|verb|to contain; to hold back
+madera|noun|wood
+marco|noun|frame; framework
+campeón|noun|champion
+ocho|noun|-
+completo|noun|-
+sección|noun|section; department
+divorcio|noun|divorce
+invierno|noun|winter
+agradar|verb|to please
+piscina|noun|swimming pool
+periodista|noun|journalist
+parecido|adj|similar; alike
+palo|noun|stick
+mental|adj|mental
+cristal|noun|glass; crystal
+tropa|noun|troops
+serpiente|noun|snake
+ganador|noun|winner
+suyo|pron|his; hers; theirs; yours (formal)
+combate|noun|combat; fight
+traducción|noun|translation
+cagar|verb|!to shit (vulgar)
+disponible|adj|available
+participar|verb|to take part; to participate
+cero|noun|zero
+circunstancia|noun|circumstance
+arena|noun|sand
+licencia|noun|licence; leave
+educación|noun|education; manners||false friend in part: also means good manners
+cruz|noun|cross
+positivo|adj|positive
+juguete|noun|toy
+versión|noun|version
+solitario|adj|lonely; solitary
+pene|noun|!penis
+solicitar|verb|to apply for; to request
+episodio|noun|episode
+guerrero|noun|warrior
+coño|noun|-
+cuanto|det|-
+plata|noun|silver; money (Latin America)
+título|noun|title; degree
+humanidad|noun|humanity
+luca|noun|-
+presionar|verb|to press; to pressure
+nube|noun|cloud
+bestia|noun|beast
+placa|noun|plate; badge
+vampiro|noun|vampire
+enamorar|verb|to make (someone) fall in love; (enamorarse de) to fall in love with
+comportamiento|noun|behaviour
+retroceder|verb|to go back; to back off
+responsable|adj|responsible
+ahorrar|verb|to save (money, time)
+zorra|noun|-
+elegante|adj|elegant; smart
+conferencia|noun|conference; lecture
+vega|noun|-
+extraordinario|adj|extraordinary
+sótano|noun|basement; cellar
+veinte|num|twenty
+deporte|noun|sport
+generación|noun|generation
+rastrear|verb|to track; to trace
+vestido|adj|dressed
+vela|noun|candle; sail
+oreja|noun|ear (outer)
+ciertamente|adv|certainly
+tráfico|noun|traffic; trafficking
+auténtico|adj|authentic; real
+término|noun|term; end
+gobernador|noun|governor
+lady|noun|-
+sesión|noun|session; showing
+sopa|noun|soup
+beneficio|noun|benefit; profit
+desconocido|adj|unknown
+pastilla|noun|pill; tablet; bar (of soap)
+preocupación|noun|worry; concern
+francés|noun|French (language); Frenchman
+conciencia|noun|conscience; awareness
+impuesto|noun|tax
+análisis|noun|analysis; (medical) test
+aéreo|adj|air (línea aérea = airline)
+azúcar|noun|sugar
+final|adj|final; last
+kilo|noun|kilo
+vomitar|verb|to vomit; to be sick
+violento|adj|violent
+enfermo|noun|patient; sick person
+indio|noun|Indian
+deshacer|verb|to undo; to unpack
+mortal|adj|deadly; mortal
+sagrado|adj|sacred; holy
+esclavo|noun|slave
+rock|noun|-
+cura|noun|cure (la cura); priest (el cura)
+consciente|adj|aware; conscious
+miel|noun|honey
+identificación|noun|identification; ID
+curiosidad|noun|curiosity
+desagradable|adj|unpleasant
+moderno|adj|modern
+tanque|noun|tank
+mínimo|adj|minimum; smallest
+círculo|noun|circle
+escrito|adj|written (por escrito = in writing)
+paciencia|noun|patience
+crisis|noun|crisis
+corriente|noun|current; draught
+patear|verb|to kick
+adulto|noun|adult
+anteriormente|adv|previously
+ordenador|noun|computer (Spain)
+vigilancia|noun|surveillance; watch
+describir|verb|to describe
+ejercicio|noun|exercise
+encerrado|adj|locked up; shut in
+fan|noun|fan
+consecuencia|noun|consequence
+audiencia|noun|audience; hearing (court)
+reserva|noun|reservation; booking; reserve
+encuentro|noun|meeting; encounter; match
+joya|noun|jewel; (joyas) jewellery
+conectar|verb|to connect; to plug in
+reducir|verb|to reduce
+océano|noun|ocean
+espía|noun|spy
+ofender|verb|to offend
+actitud|noun|attitude
+suicidar|verb|(suicidarse) to commit suicide
+puerto|noun|port; harbour
+ducha|noun|shower
+escritorio|noun|desk
+sorprendido|adj|surprised
+frase|noun|sentence; phrase
+jodido|adj|!screwed; damn (vulgar)
+terreno|noun|land; ground; field
+teta|noun|-
+vía|noun|way; track; route
+virgen|noun|virgin
+virus|noun|virus
+emperador|noun|emperor
+distrito|noun|district
+sofá|noun|sofa
+gigante|adj|giant; huge
+organización|noun|organisation
+pasión|noun|passion
+incidente|noun|incident
+castigo|noun|punishment
+sacerdote|noun|priest
+barra|noun|bar; counter; loaf (barra de pan)
+casualidad|noun|chance; coincidence (por casualidad = by chance)
+lágrima|noun|tear (from crying)
+seguido|adj|in a row (tres días seguidos); (en seguida) right away
+experto|noun|expert
+orgullo|noun|pride
+garganta|noun|throat
+experimento|noun|experiment
+león|noun|lion
+judío|noun|Jew
+veneno|noun|poison
+fácilmente|adv|easily
+humo|noun|smoke
+arder|verb|to burn
+adolescente|noun|teenager
+precisamente|adv|precisely; exactly
+desgraciado|adj|unfortunate; wretched
+camarada|noun|comrade
+eléctrico|adj|electric
+comentario|noun|comment
+emocionante|adj|exciting; moving
+muro|noun|wall (outside, thick)
+borrar|verb|to delete; to erase
+aviso|noun|notice; warning
+pavo|noun|turkey
+ex|adj|ex-; former
+recompensa|noun|reward
+brillar|verb|to shine
+recurso|noun|resource; appeal
+particular|noun|private individual
+terrorista|noun|terrorist
+malvado|adj|evil; wicked
+trozo|noun|piece; bit
+aterrizar|verb|to land
+delicioso|adj|delicious
+urgente|adj|urgent
+portar|verb|(portarse bien/mal) to behave well/badly
+costumbre|noun|custom; habit
+judío|adj|Jewish
+competencia|noun|competition; competence
+espacial|adj|space (nave espacial = spaceship)
+moto|noun|motorbike
+pescado|noun|fish (as food)
+mentiroso|noun|liar
+reacción|noun|reaction
+operar|verb|to operate
+biblioteca|noun|library||false friend: librería = bookshop
+violación|noun|violation; rape
+nuclear|adj|nuclear
+subtítulo|noun|subtitle
+pescar|verb|to fish; to catch
+interrogar|verb|to question; to interrogate
+dragón|noun|dragon
+trabajador|noun|worker
+docena|noun|dozen
+adorable|adj|adorable
+jo|intj|-
+salsa|noun|sauce; salsa (dance)
+encajar|verb|to fit
+saludo|noun|greeting; (saludos) regards
+alteza|noun|highness
+comité|noun|committee
+tono|noun|tone
+doce|num|twelve
+parada|noun|stop (bus stop)
+cultura|noun|culture
+instrucción|noun|instruction
+robot|noun|robot
+jueves|noun|Thursday
+medianoche|noun|midnight
+patio|noun|courtyard; playground; yard
+conejo|noun|rabbit
+dibujo|noun|drawing
+ensayo|noun|essay; rehearsal; test
+largo|noun|length
+escondido|adj|hidden
+sangrar|verb|to bleed
+primavera|noun|spring (season)
+científico|noun|scientist
+súper|adj|super; great
+martes|noun|Tuesday
+cinturón|noun|belt
+pantalla|noun|screen
+cristo|noun|-
+escritor|noun|writer
+reputación|noun|reputation
+metal|noun|metal
+misterioso|adj|mysterious
+desierto|noun|desert
+colina|noun|hill
+templo|noun|temple
+demanda|noun|demand; lawsuit
+cazador|noun|hunter
+amarillo|adj|yellow
+estupidez|noun|stupidity; stupid thing
+ayudante|noun|assistant
+prohibido|adj|forbidden; prohibited
+actual|adj|current; present-day||false friend: actual = real, verdadero
+bicicleta|noun|bicycle
+expulsar|verb|to expel; to send off
+noble|adj|noble
+bandera|noun|flag
+desarrollar|verb|to develop
+hundir|verb|to sink
+rescate|noun|rescue; ransom
+territorio|noun|territory
+ciar|verb|-
+ave|noun|bird; fowl||feminine, but el ave (stressed a-)
+ambiente|noun|atmosphere; environment (medio ambiente)
+fabuloso|adj|fabulous
+museo|noun|museum
+bota|noun|boot
+superficie|noun|surface; area
+discusión|noun|argument; discussion
+terapia|noun|therapy
+actuación|noun|performance
+almacén|noun|warehouse; store
+desafío|noun|challenge
+julio|noun|July
+helicóptero|noun|helicopter
+miss|noun|-
+violar|verb|to violate; to rape
+abrazar|verb|to hug; to embrace
+pánico|noun|panic
+relacionado|adj|related
+conde|noun|count (title)
+leyenda|noun|legend
+dormitorio|noun|bedroom
+harto|adj|fed up (estar harto de)
+transporte|noun|transport
+forzar|verb|to force
+incómodo|adj|uncomfortable; awkward
+internacional|adj|international
+clínica|noun|clinic
+arrojar|verb|to throw
+preciso|adj|precise; necessary
+máscara|noun|mask
+medio|adj|half (media hora = half an hour)
+pasta|noun|pasta; paste; (Spain, colloq.) money
+ron|noun|rum
+refugio|noun|shelter; refuge
+aclarar|verb|to clarify; to rinse
+grano|noun|grain; spot (pimple)
+telefónico|adj|telephone (llamada telefónica)
+saco|noun|sack; jacket (Latin America)
+activo|adj|active
+apreciar|verb|to appreciate
+valle|noun|valley
+raza|noun|race; breed
+ronda|noun|round
+anunciar|verb|to announce; to advertise
+anciano|noun|elderly person
+división|noun|division
+británico|adj|British
+encanto|noun|charm
+sabor|noun|taste; flavour
+enfadar|verb|to make angry; (enfadarse) to get angry
+práctica|noun|practice; work placement
+chef|noun|chef
+nuevamente|adv|again
+depósito|noun|deposit; tank
+valioso|adj|valuable
+grabación|noun|recording
+mismo|adv|right (ahora mismo = right now; aquí mismo = right here)
+llover|verb|to rain (llueve = it's raining)
+cañón|noun|cannon; canyon
+físico|adj|physical
+capacidad|noun|capacity; ability
+patético|adj|pathetic
+coincidir|verb|to coincide; to agree
+norma|noun|rule; norm
+uniforme|adj|uniform
+nocturno|adj|night; nocturnal
+paliza|noun|beating
+signo|noun|sign
+método|noun|method
+fiebre|noun|fever
+marina|noun|navy
+madame|noun|-
+inglés|adj|English
+toma|noun|taking; shot (film)
+desaparecido|adj|missing
+animar|verb|to cheer up; to encourage
+loca|noun|madwoman
+confundir|verb|to confuse; to mix up
+clásico|adj|classic; classical
+invitación|noun|invitation
+piano|noun|piano
+alerta|noun|alert
+atar|verb|to tie
+ceremonia|noun|ceremony
+extranjero|noun|foreigner; (en el extranjero) abroad
+acostumbrado|adj|used to (estar acostumbrado a)
+nuestro|pron|ours
+perdedor|noun|loser
+absurdo|adj|absurd
+cartel|noun|poster; cartel
+alejado|adj|remote; distant
+cansar|verb|to tire; (cansarse) to get tired
+rehén|noun|hostage
+literalmente|adv|literally
+aprecio|noun|esteem; appreciation
+condado|noun|county
+forense|adj|forensic
+librar|verb|to free; (librarse de) to get rid of
+sacrificio|noun|sacrifice
+man|noun|-
+tripulación|noun|crew
+revolución|noun|revolution
+traidor|noun|traitor
+destrozar|verb|to destroy; to wreck
+tele|noun|TV (colloq.)
+enojar|verb|to anger; (enojarse) to get angry (Lat. Am.)
+asco|noun|disgust (¡qué asco! = how disgusting!)
+guía|noun|guide; guidebook
+custodia|noun|custody
+apetecer|verb|to feel like (¿te apetece un café? = do you fancy a coffee?)
+cuán|adv|-
+político|noun|politician
+ma|noun|-
+separado|adj|separated
+alquiler|noun|rent; rental
+herramienta|noun|tool
+nacimiento|noun|birth
+concurso|noun|competition; contest; quiz show
+tranquilizar|verb|to calm down; to reassure
+abrazo|noun|hug
+función|noun|function; show, performance
+honestamente|adv|honestly
+convencido|adj|convinced
+comportar|verb|(comportarse) to behave
+temperatura|noun|temperature
+asalto|noun|assault; robbery
+sensible|adj|sensitive||false friend: sensible = sensato
+localizar|verb|to locate; to find
+alimento|noun|food
+adios|intj|-
+junta|noun|board; meeting
+busca|noun|search (en busca de = in search of)
+admirar|verb|to admire
+sándwich|noun|sandwich
+pasear|verb|to go for a walk; to walk (a dog)
+opinar|verb|to think; to give an opinion
+camiseta|noun|T-shirt
+generoso|adj|generous
+joder|verb|!to screw up; to annoy (vulgar)
+payaso|noun|clown
+dicho|adj|said; aforementioned (dicho y hecho)
+amén|intj|amen
+acusación|noun|accusation
+examinar|verb|to examine
+gasolina|noun|petrol; gasoline
+digno|adj|worthy; dignified
+industria|noun|industry
+personal|noun|staff; personnel
+surgir|verb|to arise; to come up
+ola|noun|wave
+collar|noun|necklace; collar (dog)
+paciente|adj|patient
+eterno|adj|eternal
+conservar|verb|to keep; to preserve
+batería|noun|battery; drums
+típico|adj|typical
+procedimiento|noun|procedure
+callado|adj|quiet; silent
+oculto|adj|hidden
+instante|noun|instant; moment
+recientemente|adv|recently
+fantasía|noun|fantasy
+pasajero|noun|passenger
+tina|noun|bathtub; vat
+boleto|noun|ticket (Latin America)
+onda|noun|wave; (¿qué onda? = what's up? Mex.)
+biblia|noun|bible
+ahogar|verb|to drown; to suffocate
+alegre|adj|cheerful; happy
+hamburguesa|noun|hamburger
+despedida|noun|farewell; goodbye
+personalidad|noun|personality
+caza|noun|hunting
+ascensor|noun|lift; elevator
+tonelada|noun|ton; tonne
+dispositivo|noun|device
+elemento|noun|element
+nieto|noun|grandson; grandchild
+plaza|noun|square; seat; place
+alrededor|noun|(alrededores) surroundings
+poseer|verb|to own; to possess
+nervio|noun|nerve
+burlar|verb|to get round; (burlarse de) to make fun of
+instinto|noun|instinct
+coño|intj|-
+crema|noun|cream
+decente|adj|decent
+mezclar|verb|to mix
+nueve|noun|-
+quejar|verb|(quejarse) to complain
+juntar|verb|to put together; to gather
+follar|verb|-
+cartera|noun|wallet; briefcase; school bag
+milímetro|noun|millimetre
+lata|noun|tin; can
+prácticamente|adv|practically
+apretar|verb|to press; to squeeze; to tighten
+lidiar|verb|to deal with; to fight (a bull)
+aceite|noun|oil
+golf|noun|golf
+imaginación|noun|imagination
+diseño|noun|design
+tradición|noun|tradition
+gallina|noun|hen
+tubo|noun|tube; pipe
+rescatar|verb|to rescue
+treinta|num|thirty
+tensión|noun|tension; stress; blood pressure
+comunicar|verb|to communicate
+salto|noun|jump
+do|noun|-
+apellido|noun|surname
+patata|noun|potato (Spain)
+novela|noun|novel
+pulso|noun|pulse
+celular|noun|mobile phone (Latin America)
+pasaporte|noun|passport
+japón|adj|-
+fruta|noun|fruit
+obligado|adj|obliged; forced
+arreglo|noun|arrangement; repair
+almorzar|verb|to have lunch
+unión|noun|union
+borde|noun|edge
+delicado|adj|delicate
+actriz|noun|actress
+parecer|noun|opinion (a mi parecer = in my opinion)
+combustible|noun|fuel
+efectivo|adj|effective; (en efectivo) in cash
+campana|noun|bell
+retener|verb|to keep; to hold back
+asistir|verb|to attend (asistir a)||false friend: to assist = ayudar
+cerebral|adj|brain; cerebral
+recomendar|verb|to recommend
+igualmente|adv|equally; likewise (¡igualmente! = same to you!)
+santa|noun|saint (female)
+túnel|noun|tunnel
+mancha|noun|stain; spot
+despierto|adj|awake
+japonés|adj|Japanese
+entendido|adj|understood
+conceder|verb|to grant
+razonable|adj|reasonable
+femenino|adj|feminine; female
+alcance|noun|reach; range (al alcance de = within reach of)
+plano|noun|plan; map (of a city)
+tender|verb|to hang out (washing); (tender a) to tend to
+niñera|noun|nanny; babysitter
+comisaría|noun|police station
+comprometer|verb|to compromise; (comprometerse) to commit oneself; to get engaged
+posiblemente|adv|possibly
+partida|noun|game (of cards, chess); departure
+secundario|adj|secondary
+confundido|adj|confused

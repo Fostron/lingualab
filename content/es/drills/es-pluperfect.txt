@@ -1,0 +1,13 @@
+gap: Cuando llegué, la película ya ___ (empezar). => había empezado
+gap: Nunca ___ (ver, yo) el mar. => había visto
+gap: Ya ___ (cenar, nosotros) cuando llamaste. => habíamos cenado
+gap: Me dijo que ___ (perder, él) las llaves. => había perdido
+gap: ¿___ (estar, tú) antes en Granada? => Habías estado
+gap: Ellos ya se ___ (ir) cuando llegamos. => habían ido
+gap: Cuando llegué a la estación, el tren ya ___ (salir). => había salido
+gap: Yo no ___ (hacer) los deberes. => había hecho
+gap: Ella me contó que ___ (escribir) un libro. => había escrito
+gap: Vosotros nunca ___ (decir) eso. => habíais dicho
+choice: Cuando llegamos, la tienda ya ___. => había cerrado | ha cerrado | cerraba
+choice[en="I have eaten," he said. → He said that he…]: Dijo que ___. => había comido | ha comido | comerá
+transform[en=Report it: "Fui a Roma."]: Dijo: "Fui a Roma." => Dijo que había ido a Roma.

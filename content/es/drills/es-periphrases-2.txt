@@ -1,0 +1,14 @@
+gap[en=I've been studying Spanish for three years.]: ___ tres años estudiando español. => Llevo
+gap[en=How long have you been waiting?]: ¿Cuánto tiempo llevas ___? => esperando
+gap[en=I haven't smoked for a month.]: Llevo un mes ___ fumar. => sin
+gap[en=It's still raining.]: ___ lloviendo. => Sigue
+gap[en=I'm gradually understanding more.]: ___ entendiendo más. => Voy
+gap[en=I ended up accepting.]: Acabé ___. => aceptando
+gap[en=She burst out laughing.]: Se echó ___ reír. => a
+gap[en=I was about to leave.]: Estaba a ___ de salir. => punto
+gap[en=Stop complaining.]: Deja ___ quejarte. => de
+gap[en=Don't do it again.]: No vuelvas ___ hacerlo. => a
+gap[en=He started to cry.]: Se ___ a llorar. => puso
+choice[en=I've been living here for two years.]: Llevo dos años ___ aquí. => viviendo | vivir | vivido
+choice[en=He went as far as insulting me.]: ___ a insultarme. => Llegó | Echó | Puso
+transform[en=Use llevar + gerund]: Hace una hora que espero. => Llevo una hora esperando.

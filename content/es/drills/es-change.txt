@@ -1,0 +1,14 @@
+choice[en=He went red.]: Se ___ rojo. => puso | volvió | hizo
+choice[en=He went mad.]: Se ___ loco. => volvió | puso | hizo
+choice[en=She became a doctor.]: Se ___ médica. => hizo | puso | volvió
+choice[en=We became friends.]: Nos ___ amigos. => hicimos | pusimos | volvimos
+choice[en=The water turned into ice.]: El agua se ___ en hielo. => convirtió | hizo | puso
+choice[en=He went blind.]: Se ___ ciego. => quedó | puso | hizo
+choice[en=She lost her job.]: Se ___ sin trabajo. => quedó | puso | volvió
+choice[en=I get nervous before exams.]: Me ___ nervioso antes de los exámenes. => pongo | vuelvo | hago
+choice[en=It's getting late.]: Se está ___ tarde. => haciendo | poniendo | volviendo
+choice[en=He became president.]: Llegó a ___ presidente. => ser | hacer | volver
+choice[en=He has become very selfish.]: Se ha ___ muy egoísta. => vuelto | puesto | quedado
+gap[en=to get angry]: No te ___ conmigo. => enfades
+gap[en=to fall in love (preterite, él)]: Se ___ de ella. => enamoró
+gap[en=to put on weight (preterite, yo)]: ___ cinco kilos. => Engordé

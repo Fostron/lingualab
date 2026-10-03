@@ -1,0 +1,14 @@
+choice[en=I give him the book.]: ___ doy el libro. => Le | Lo | Se
+choice[en=Can you lend me your pen?]: ¿___ prestas tu bolígrafo? => Me | Te | Le
+choice[en=I write to them.]: ___ escribo. => Les | Los | Le
+choice[en=I'll tell you the truth.]: ___ digo la verdad. => Te | Ti | Tú
+choice[en=I give it (the book) to him.]: ___ lo doy. => Se | Le | Lo
+choice[en=You give it to me.]: ___ lo das. => Me | Te | Se
+gap[en=I give the present to my mother.]: ___ doy el regalo a mi madre. => Le
+gap[en=We send them (las fotos) to you (tú).]: Te ___ mandamos. => las
+gap[en=He explains it (la regla) to us.]: Nos ___ explica. => la
+gap[en=I'm going to give it to her.]: Voy a ___. => dárselo | dársela
+transform[en=Replace both objects with pronouns]: Doy el libro a Pedro. => Se lo doy.
+transform[en=Replace both objects with pronouns]: Mando las cartas a mis padres. => Se las mando.
+transform[en=Replace both objects with pronouns]: Me das la llave. => Me la das.
+choice: ¿Le diste el dinero a Juan? — Sí, ___ di. => se lo | le lo | lo le

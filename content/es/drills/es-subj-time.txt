@@ -1,0 +1,14 @@
+choice: Cuando ___ a casa, te llamaré. => llegue | llego | llegaré
+choice: Cuando ___ a casa, siempre ceno. => llego | llegue | llegaré
+choice: Cuando ___ mayor, quiero ser piloto. => sea | soy | seré
+choice: Cuando ___ niño, vivía en Cádiz. => era | sea | fuera
+choice: Espera aquí hasta que yo ___. => vuelva | vuelvo | volveré
+choice: Te llamo en cuanto ___ algo. => sepa | sé | sabré
+choice: Vete antes de que ___. => llueva | llueve | llover
+choice: Me ducho antes de ___. => desayunar | que desayune | desayuno
+gap: Hablaremos después de que ___ (terminar) la reunión. => termine
+gap: Tan pronto como ___ (tener, yo) dinero, compraré un coche. => tenga
+gap: Mientras ___ (vivir, tú) aquí, harás tus tareas. => vivas
+gap: Cuando ___ (venir, vosotros), cenaremos juntos. => vengáis
+gap: No me iré hasta que me ___ (decir, tú) la verdad. => digas
+gap: Siempre que ___ (poder, tú), llámame. => puedas

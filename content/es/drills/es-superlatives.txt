@@ -1,0 +1,14 @@
+gap[en=the tallest in the class]: Es el chico más alto ___ la clase. => de
+gap[en=the most beautiful city]: Es la ciudad ___ bonita del país. => más
+gap[en=the best film]: Es la ___ película del año. => mejor
+gap[en=the worst day]: Fue el ___ día de mi vida. => peor
+gap[en=my older sister]: Mi hermana ___ vive en Roma. => mayor
+gap[en=very expensive (caro)]: El hotel es ___. => carísimo
+gap[en=really good (buena)]: La paella está ___. => buenísima
+gap[en=very easy (fácil)]: El examen fue ___. => facilísimo
+gap[en=thank you so much]: ___ gracias. => Muchísimas
+gap[en=really tasty (rico)]: El pastel está ___. => riquísimo
+choice: Es el restaurante ___ caro de la ciudad. => más | mejor | muy
+choice: Es ___ estudiante de la clase. => el mejor | el más bueno | mejor
+choice[en=the least interesting]: el libro ___ interesante => menos | más | peor
+transform[en=Use -ísimo]: La casa es muy grande. => La casa es grandísima.

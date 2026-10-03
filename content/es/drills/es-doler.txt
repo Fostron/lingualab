@@ -1,0 +1,15 @@
+choice: Me ___ la cabeza. => duele | duelen | dolo
+choice: Me ___ los pies. => duelen | duele | duelo
+choice: A Juan ___ duele la espalda. => le | lo | se
+choice: ¿Qué te ___ la idea? => parece | parecen | pareces
+choice: No me ___ el ruido. => molesta | molestan | molesto
+choice: Nos ___ dos días de vacaciones. => quedan | queda | quedamos
+choice[en=My hand hurts.]: Me duele ___ mano. => la | mi | su
+gap[en=I don't mind.]: No me ___. => importa
+gap[en=I have a headache.]: Tengo dolor de ___. => cabeza
+gap[en=I have a fever.]: Tengo ___. => fiebre
+gap[en=What's wrong (with you)?]: ¿Qué te ___? => pasa
+gap[en=Do you fancy a coffee?]: ¿Te ___ un café? => apetece
+gap[en=That shirt suits you.]: Esa camisa te ___ bien. => queda
+gap[en=I'm interested in art.]: Me ___ el arte. => interesa
+transform[en=Make it plural: my eyes]: Me duele el ojo. => Me duelen los ojos.

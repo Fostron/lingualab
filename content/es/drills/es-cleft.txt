@@ -1,0 +1,12 @@
+choice[en=It was Ana who told me.]: Fue Ana ___ me lo dijo. => quien | que | lo que
+choice[en=It's here that I live.]: Es aquí ___ vivo. => donde | que | cuando
+choice[en=It was then that I understood.]: Fue entonces ___ lo entendí. => cuando | que | donde
+choice[en=That's how it's done.]: Así es ___ se hace. => como | que | lo que
+choice[en=What I need is rest.]: ___ necesito es descansar. => Lo que | Que | El que
+choice[en=The thing is, I don't have time.]: Lo que ___ es que no tengo tiempo. => pasa | es | hay
+gap[en=The only thing I want is to sleep.]: Lo ___ que quiero es dormir. => único
+gap[en=He did it himself.]: Lo hizo él ___. => mismo
+gap[en=I've already read that book.]: Ese libro ya ___ he leído. => lo
+gap[en=Now this really is good.]: Esto sí ___ es bueno. => que
+transform[en=Emphasise "Pedro"]: Pedro rompió el vaso. => Fue Pedro quien rompió el vaso. | Fue Pedro el que rompió el vaso.
+transform[en=Emphasise the place]: Nos conocimos en Sevilla. => Fue en Sevilla donde nos conocimos.

@@ -1,0 +1,15 @@
+choice[en=Are you pulling my leg?]: ¿Me estás tomando el ___? => pelo | brazo | ojo
+choice[en=It cost an arm and a leg.]: Costó un ojo de la ___. => cara | mano | cabeza
+choice[en=Can you lend me a hand?]: ¿Me echas una ___? => mano | pierna | cara
+choice[en=I put my foot in it.]: Metí la ___. => pata | mano | pierna
+choice[en=It's a piece of cake.]: Es pan ___. => comido | blando | duro
+choice[en=He's crazy.]: Está como una ___. => cabra | vaca | oveja
+choice[en=I didn't sleep a wink.]: No pegué ___. => ojo | pestaña | nada
+choice[en=You hit the nail on the head.]: Has dado en el ___. => clavo | blanco | punto
+choice[en=Let's get to the point.]: Vamos al ___. => grano | punto | tema
+choice[en=I don't care at all.]: Me importa un ___. => pimiento | tomate | huevo frito
+choice[en=That was the last straw.]: Fue la gota que colmó el ___. => vaso | río | mar
+choice[en=Don't give up.]: No tires la ___. => toalla | piedra | mano
+choice[en=He went red.]: Se puso como un ___. => tomate | pimiento | pepino
+gap[en=better late than never]: Más vale tarde que ___. => nunca
+gap[en=I'll sleep on it.]: Lo consultaré con la ___. => almohada

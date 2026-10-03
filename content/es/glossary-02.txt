@@ -1,0 +1,401 @@
+# Spanish → English curated glossary, part 2 (ranks ~400–800)
+extraño|adj|strange; odd
+vender|verb|to sell
+joven|adj|young
+cerrar|verb|to close; to shut
+simplemente|adv|simply; just
+justo|adv|just; exactly; right
+asunto|noun|matter; issue; affair
+mejor|adv|better; best
+oficina|noun|office
+tarde|noun|afternoon; evening
+cama|noun|bed
+puta|noun|-
+odiar|verb|to hate
+tranquilo|adj|calm; quiet; relaxed
+sentido|noun|sense; meaning; direction
+lejos|adv|far (away)
+primero|adv|first; firstly
+agente|noun|agent; officer
+seguridad|noun|safety; security
+especial|adj|special
+diferente|adj|different
+romper|verb|to break
+seis|num|six
+país|noun|country
+estúpido|adj|stupid
+mío|det|my; of mine
+aprender|verb|to learn
+además|adv|besides; moreover; also
+servir|verb|to serve; to be useful (for)
+rey|noun|king
+alegrar|verb|to make happy, cheer up
+marido|noun|husband
+paz|noun|peace
+libre|adj|free (not busy; at liberty)
+probar|verb|to try; to taste; to test
+pueblo|noun|village; small town; people
+negro|adj|black
+raro|adj|strange; rare
+real|adj|real; royal
+prometer|verb|to promise
+imaginar|verb|to imagine
+aceptar|verb|to accept
+fuerza|noun|strength; force
+tal|det|such (a)
+hecho|adj|done; made
+tirar|verb|to throw; to throw away; to pull
+carta|noun|letter; menu (in a restaurant); playing card
+largo|adj|long||false friend: large = grande
+cuidado|noun|care (¡cuidado! = careful!; tener cuidado = to be careful)
+referir|verb|to refer (referirse a)
+blanco|adj|white
+cambio|noun|change; exchange
+resto|noun|rest; remainder
+bajar|verb|to go down; to lower; to get off
+viaje|noun|trip; journey
+mensaje|noun|message
+señorita|noun|Miss; young lady
+presentar|verb|to present; to introduce
+hospital|noun|hospital
+tal|pron|such (a thing); (¿qué tal? = how are you?)
+cual|pron|which (el cual, lo cual)
+fuego|noun|fire
+música|noun|music
+perdón|noun|sorry; excuse me; pardon
+anoche|adv|last night
+increíble|adj|incredible; unbelievable
+permitir|verb|to allow; to permit
+error|noun|mistake; error
+orden|noun|order (command: la orden; sequence: el orden)
+cuidar|verb|to look after; to take care of
+acerca|adv|about (acerca de)
+caballero|noun|gentleman; knight
+asesino|noun|murderer; killer
+paso|noun|step; pace; passage
+escapar|verb|to escape
+despertar|verb|to wake (someone) up
+temer|verb|to fear; to be afraid
+relación|noun|relationship; relation
+descubrir|verb|to discover; to find out
+ropa|noun|clothes; clothing
+verdadero|adj|true; real
+desaparecer|verb|to disappear
+medio|noun|middle; means; half
+secreto|noun|secret
+café|noun|coffee; café
+grupo|noun|group
+cuánto|pron|how much?; how many?
+divertido|adj|fun; funny; amusing
+vivo|adj|alive; lively; bright
+aparecer|verb|to appear; to show up
+molestar|verb|to bother; to annoy
+daño|noun|harm; damage (hacer daño = to hurt)
+bajo|adj|short (person); low
+mentir|verb|to lie (tell lies)
+derecho|noun|right; law
+diez|num|ten
+bastar|verb|to be enough (¡basta! = enough!)
+detrás|adv|behind
+lleno|adj|full
+idiota|noun|idiot
+afuera|adv|outside; out
+asesinato|noun|murder
+volar|verb|to fly; to blow up
+lista|noun|list
+parar|verb|to stop
+existir|verb|to exist
+abogado|noun|lawyer
+golpear|verb|to hit; to beat; to knock
+información|noun|information
+estado|noun|state; condition
+voz|noun|voice
+enseñar|verb|to teach; to show
+modo|noun|way; manner; mode
+siguiente|adj|next; following
+casar|verb|to marry (someone to someone); (casarse) to get married
+humano|adj|human
+luchar|verb|to fight; to struggle
+sentar|verb|to seat; (sentar bien/mal) to suit, agree with
+maravilloso|adj|wonderful; marvellous
+respuesta|noun|answer; reply
+control|noun|control
+ayer|adv|yesterday
+cantar|verb|to sing
+línea|noun|line
+sistema|noun|system
+cita|noun|appointment; date; quotation
+campo|noun|countryside; field
+cliente|noun|customer; client
+elegir|verb|to choose; to elect
+sexo|noun|sex
+caminar|verb|to walk
+caja|noun|box; checkout; till
+quitar|verb|to take away; to remove; to take off
+arreglar|verb|to fix; to repair; to arrange
+pena|noun|sorrow; pity (¡qué pena! = what a pity!); penalty
+dolor|noun|pain; ache
+explicar|verb|to explain
+atención|noun|attention
+llamada|noun|call; phone call
+novia|noun|girlfriend; bride; fiancée
+llorar|verb|to cry
+caballo|noun|horse
+canción|noun|song
+encima|adv|on top; above (encima de)
+uh|intj|-
+llave|noun|key; tap
+soler|verb|to usually do (suelo leer = I usually read)
+baño|noun|bathroom; bath
+alguno|pron|some; someone; any
+servicio|noun|service; toilet
+papel|noun|paper; role
+ley|noun|law
+oficial|adj|official
+cámara|noun|camera; chamber
+mente|noun|mind
+continuar|verb|to continue
+pobre|adj|poor
+bailar|verb|to dance
+compañía|noun|company
+sino|conj|but (rather) (no A sino B)
+boca|noun|mouth
+aire|noun|air
+decisión|noun|decision
+segundo|noun|second (unit of time)
+vuestro|det|your (plural, Spain)
+jamás|adv|never; ever
+levantar|verb|to lift; to raise
+crear|verb|to create
+víctima|noun|victim
+situación|noun|situation
+médico|noun|doctor
+destruir|verb|to destroy
+ninguno|pron|none; no one; neither
+estrella|noun|star
+tienda|noun|shop; store; tent
+hotel|noun|hotel
+futuro|noun|future
+edad|noun|age
+mandar|verb|to send; to order
+atacar|verb|to attack
+cortar|verb|to cut
+pelo|noun|hair
+ofrecer|verb|to offer
+compañero|noun|colleague; classmate; partner
+actuar|verb|to act; to perform
+regalo|noun|present; gift
+barco|noun|boat; ship
+normal|adj|normal; usual
+frente|noun|front (de frente); forehead (la frente)
+preparar|verb|to prepare
+accidente|noun|accident
+lograr|verb|to achieve; to manage to
+capaz|adj|capable; able
+ocupado|adj|busy; occupied
+cuarto|noun|room; quarter (y cuarto = quarter past)
+carrera|noun|race; career; degree course
+conducir|verb|to drive
+ay|intj|oh!; ouch!
+mal|adj|bad (before a masc. noun: un mal día)
+llamado|adj|called; so-called
+preferir|verb|to prefer
+reunión|noun|meeting
+montón|noun|pile; heap; (un montón de) loads of
+asesinar|verb|to murder
+novio|noun|boyfriend; groom; fiancé
+equivocado|adj|wrong; mistaken
+pelear|verb|to fight; to argue
+boda|noun|wedding
+responder|verb|to answer; to reply
+necesario|adj|necessary
+jurar|verb|to swear
+cargo|noun|post; position; charge
+perdonar|verb|to forgive; to excuse
+tras|prep|after; behind
+aquel|det|that (over there)
+brazo|noun|arm
+mesa|noun|table
+profesor|noun|teacher; professor
+dirección|noun|address; direction; management
+droga|noun|drug
+avión|noun|plane; aeroplane
+cena|noun|dinner; supper
+considerar|verb|to consider
+broma|noun|joke
+centro|noun|centre; city centre
+detective|noun|detective
+programa|noun|programme; program
+mitad|noun|half
+invitar|verb|to invite
+personal|adj|personal
+horrible|adj|horrible; awful
+atrapar|verb|to catch; to trap
+señal|noun|sign; signal
+peligroso|adj|dangerous
+través|noun|(a través de) through; across
+ataque|noun|attack
+lamentar|verb|to regret; to be sorry about
+gracioso|adj|funny
+suyo|det|his; her; their; your (formal) (after noun: un amigo suyo)
+general|noun|general
+soldado|noun|soldier
+obtener|verb|to obtain; to get
+disculpar|verb|to excuse; (disculparse) to apologise
+bromear|verb|to joke
+faltar|verb|to be missing; to lack (me falta tiempo = I lack time)
+dama|noun|lady
+sal|noun|salt
+interesante|adj|interesting
+sol|noun|sun
+alma|noun|soul||feminine, but el alma (stressed a-)
+gritar|verb|to shout; to scream
+nave|noun|ship; spaceship
+crecer|verb|to grow
+imposible|adj|impossible
+terrible|adj|terrible
+falta|noun|lack; mistake; foul (hacer falta = to be needed)
+crimen|noun|crime
+placer|noun|pleasure
+preparado|adj|ready; prepared
+pierna|noun|leg
+dirigir|verb|to direct; to manage; to lead
+hambre|noun|hunger (tener hambre = to be hungry)||feminine, but el hambre (stressed a-)
+contra|noun|-
+animal|noun|animal
+completamente|adv|completely
+vista|noun|view; sight
+resultar|verb|to turn out; to prove to be
+proteger|verb|to protect
+universidad|noun|university
+principio|noun|beginning; principle
+poder|noun|power
+totalmente|adv|totally
+amable|adj|kind; nice
+costar|verb|to cost
+preocupado|adj|worried
+antiguo|adj|old; ancient; former
+dulce|adj|sweet
+bien|noun|good; (bienes) goods
+sufrir|verb|to suffer
+sala|noun|room; hall; living room
+culo|noun|!arse; ass (vulgar)
+investigación|noun|investigation; research
+siete|num|seven
+justo|adj|fair; just
+asegurar|verb|to assure; to ensure; to insure
+traje|noun|suit; dress; costume
+contacto|noun|contact
+rico|adj|rich; delicious
+guardar|verb|to keep; to put away; to save
+disculpa|noun|apology; excuse
+recoger|verb|to pick up; to collect; to tidy up
+cansado|adj|tired
+consejo|noun|(piece of) advice; council
+averiguar|verb|to find out
+casado|adj|married
+disfrutar|verb|to enjoy
+acción|noun|action
+abierto|adj|open
+club|noun|club
+tren|noun|train
+duda|noun|doubt
+don|noun|Mr (respectful, before first names); gift, talent
+revisar|verb|to check; to review
+huir|verb|to flee; to run away
+alrededor|adv|around (alrededor de)
+cárcel|noun|prison; jail
+abuela|noun|grandmother
+gobierno|noun|government
+encargar|verb|to order; to entrust
+navidad|noun|Christmas
+maestro|noun|teacher (primary school); master
+embargo|noun|(sin embargo) however
+cualquiera|pron|anyone; anybody
+escena|noun|scene
+ejército|noun|army
+entregar|verb|to deliver; to hand in
+maldición|noun|curse
+parir|verb|to give birth
+evitar|verb|to avoid
+mentira|noun|lie
+acercar|verb|to bring closer; (acercarse) to approach
+regla|noun|rule; ruler
+acá|adv|here (esp. Latin America)
+merecer|verb|to deserve
+tema|noun|topic; theme
+doler|verb|to hurt (me duele la cabeza = my head hurts)
+silencio|noun|silence
+inteligente|adj|intelligent; clever
+edificio|noun|building
+triste|adj|sad
+cenar|verb|to have dinner
+ventana|noun|window
+carajo|noun|-
+piso|noun|flat; apartment (Spain); floor, storey
+rojo|adj|red
+fondo|noun|bottom; back; background; fund
+abuelo|noun|grandfather
+sorpresa|noun|surprise
+testigo|noun|witness
+abandonar|verb|to abandon; to leave
+recuperar|verb|to recover; to get back
+director|noun|director; headteacher
+locura|noun|madness
+matrimonio|noun|marriage; married couple
+cuánto|adv|how much
+saltar|verb|to jump
+devolver|verb|to give back; to return (something)
+construir|verb|to build
+espalda|noun|back (body)
+cerveza|noun|beer
+esposo|noun|husband
+peligro|noun|danger
+cerebro|noun|brain
+guardia|noun|guard
+marchar|verb|to go; to march; (marcharse) to leave
+precioso|adj|beautiful; lovely; precious
+banco|noun|bank; bench
+espacio|noun|space
+teniente|noun|lieutenant
+vino|noun|wine
+permiso|noun|permission; licence; leave
+enemigo|noun|enemy
+limpiar|verb|to clean
+delante|adv|in front (delante de)
+controlar|verb|to control
+simple|adj|simple
+basura|noun|rubbish; garbage
+pelea|noun|fight
+prisa|noun|hurry (tener prisa = to be in a hurry)
+utilizar|verb|to use
+color|noun|colour
+bar|noun|bar; café
+caliente|adj|hot (temperature)
+tía|noun|aunt; (Spain, colloq.) woman
+libertad|noun|freedom; liberty
+unido|adj|united; close
+tonto|adj|silly; stupid
+iglesia|noun|church
+pista|noun|clue; track; court
+honor|noun|honour
+interesar|verb|to interest
+agradable|adj|pleasant; nice
+opción|noun|option
+golpe|noun|blow; knock; hit
+rato|noun|while; short time (un rato)
+opinión|noun|opinion
+oro|noun|gold
+dedo|noun|finger; toe
+comprender|verb|to understand
+mar|noun|sea
+bomba|noun|bomb; pump
+infierno|noun|hell
+gusto|noun|taste; pleasure (mucho gusto = nice to meet you)
+baile|noun|dance
+departamento|noun|department; apartment (Latin America)
+cuidado|adj|-
+corte|noun|cut; haircut
+cumplir|verb|to fulfil; to turn (an age: cumplir 30 años)
+cometer|verb|to commit (a mistake, a crime)
+perdido|adj|lost

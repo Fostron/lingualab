@@ -1,0 +1,15 @@
+gap: Mañana yo ___ (hablar) con el jefe. => hablaré
+gap: ¿___ (venir, tú) a la fiesta? => Vendrás
+gap: El año que viene nosotros ___ (vivir) en Chile. => viviremos
+gap: Ella ___ (tener) un hijo en mayo. => tendrá
+gap: Yo te lo ___ (decir) mañana. => diré
+gap: ¿Qué ___ (hacer, vosotros) en verano? => haréis
+gap: Ellos ___ (salir) a las ocho. => saldrán
+gap: No ___ (poder, yo) ir. => podré
+gap: ___ (haber) mucha gente. => Habrá
+gap: Te ___ (llamar, yo) esta noche. => llamaré
+gap: Mañana ___ (llover). => lloverá
+gap: ¿Cuándo lo ___ (saber, nosotros)? => sabremos
+gap: Ustedes ___ (poner) la mesa. => pondrán
+gap[en=It must be 3 o'clock.]: ___ las tres. => Serán
+transform[en=Use the simple future]: Voy a estudiar mañana. => Estudiaré mañana.

@@ -1,0 +1,15 @@
+gap: Yo ___ levanto a las siete. => me
+gap: ¿A qué hora ___ acuestas? => te
+gap: Mi hermano ___ ducha por la mañana. => se
+gap: Nosotros ___ llamamos Ana y Luis. => nos
+gap: ¿Vosotros ___ quedáis en casa? => os
+gap: Ellos ___ visten rápido. => se
+gap[en=levantarse]: Yo me ___ temprano. => levanto
+gap[en=acostarse]: Tú te ___ muy tarde. => acuestas
+gap[en=despertarse]: Ella se ___ a las seis. => despierta
+gap[en=vestirse]: Me ___ en cinco minutos. => visto
+gap[en=I'm going to shower.]: Voy a ___. => ducharme
+choice[en=I wash my hands.]: Me lavo ___ manos. => las | mis | sus
+choice[en=I'm leaving now.]: Me ___ ahora. => voy | va | vas
+choice[en=What's your name?]: ¿Cómo ___ llamas? => te | se | me
+transform[en=Make it negative]: Me levanto temprano. => No me levanto temprano.

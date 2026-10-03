@@ -1,0 +1,13 @@
+gap[en=He's probably at home.]: ___ en casa. => Estará
+gap[en=It must be about five.]: ___ las cinco. => Serán
+gap[en=She must be about thirty.]: ___ unos treinta años. => Tendrá
+gap[en=It must have been ten o'clock.]: ___ las diez cuando llegó. => Serían
+gap[en=He must have missed the train.]: ___ perdido el tren. => Habrá
+gap[en=You must have been tired.]: ___ cansado. => Estarías
+gap[en=It must be very late.]: Debe ___ ser muy tarde. => de
+gap[en=I suppose you're right.]: ___ que tienes razón. => Supongo
+choice[en=Maybe he's ill.]: A lo mejor ___ enfermo. => está | esté | estaría
+choice[en=It may rain.]: Puede que ___. => llueva | llueve | lloverá
+choice[en=Who could be at the door?]: ¿Quién ___ a la puerta? => será | es | sea
+choice[en=Where could he have been yesterday?]: ¿Dónde ___ ayer? => estaría | estará | esté
+transform[en=Express it as a guess with the future]: Probablemente está en la oficina. => Estará en la oficina.

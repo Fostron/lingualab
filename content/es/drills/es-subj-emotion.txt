@@ -1,0 +1,14 @@
+gap: Me alegro de que ___ (estar, tú) aquí. => estés
+gap: Siento que no ___ (poder, tú) venir. => puedas
+gap: Me molesta que ___ (hablar, tú) tan alto. => hables
+gap: Me sorprende que no lo ___ (saber, ellos). => sepan
+gap: Tengo miedo de que ___ (llover) mañana. => llueva
+gap: Es una pena que te ___ (ir, tú). => vayas
+gap: Me encanta que me ___ (escribir, tú). => escribas
+gap: Estoy harto de que siempre ___ (llegar, vosotros) tarde. => lleguéis
+gap: A mi padre le preocupa que yo ___ (conducir) de noche. => conduzca
+gap: ¡Qué raro que no ___ (contestar, ella)! => conteste
+choice: Me alegro de ___ aquí. => estar | que esté | que estoy
+choice: Siento ___ tarde. (I'm sorry I'm late) => llegar | que llegue | que llego
+choice: Nos gusta que nos ___ (visitar, vosotros). => visitéis | visitáis | visitar
+choice: Es una lástima que no ___ tiempo. => tengas | tienes | tener

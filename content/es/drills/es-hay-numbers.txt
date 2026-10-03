@@ -1,0 +1,15 @@
+choice: ___ un banco en la calle. => Hay | Está | Es
+choice: El banco ___ en la calle. => está | hay | es
+choice: ___ tres libros en la mesa. => Hay | Están | Son
+choice[en=Is there any milk?]: ¿___ leche? => Hay | Está | Es
+choice: ¿Dónde ___ mis llaves? => están | hay | son
+gap[en=15]: Tengo ___ años. => quince
+gap[en=21 years]: Tiene ___ años. => veintiún | veintiun
+gap[en=30]: Hay ___ estudiantes. => treinta
+gap[en=45]: ___ euros => cuarenta y cinco
+gap[en=100]: ___ personas => cien
+gap[en=16]: ___ => dieciséis
+gap[en=How old are you?]: ¿___ años tienes? => Cuántos
+gap[en=How many people are there?]: ¿___ personas hay? => Cuántas
+gap[en=How much is it?]: ¿Cuánto ___? => cuesta
+choice[en=31 houses]: ___ casas => treinta y una | treinta y uno | treinta y un

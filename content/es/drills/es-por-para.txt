@@ -1,0 +1,17 @@
+choice: Este regalo es ___ ti. => para | por
+choice: Gracias ___ tu ayuda. => por | para
+choice: Estudio ___ ser médico. => para | por
+choice: Paseamos ___ el parque. => por | para
+choice: Lo compré ___ veinte euros. => por | para
+choice: Necesito el informe ___ el viernes. => para | por
+choice: Hablo con mi madre ___ teléfono. => por | para
+choice: Trabajo ___ la mañana. => por | para
+choice: ___ mí, el español es fácil. => Para | Por
+choice: El tren sale ___ Sevilla a las diez. => para | por
+choice: Voy a la farmacia ___ comprar aspirinas. => para | por
+choice: No fui a clase ___ la lluvia. => por | para
+choice: Corremos 10 km ___ hora. => por | para
+choice: El libro fue escrito ___ García Márquez. => por | para
+choice: ___ fin llegamos a casa. => Por | Para
+choice: ___ ser extranjero, hablas muy bien. => Para | Por
+choice: Voy al gimnasio tres veces ___ semana. => por | para

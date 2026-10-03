@@ -1,0 +1,17 @@
+gap: Yo ___ (querer) un café. => quiero
+gap: ¿___ (poder) tú ayudarme? => Puedes
+gap: Nosotros ___ (poder) ir mañana. => podemos
+gap: Ella ___ (dormir) ocho horas. => duerme
+gap: La clase ___ (empezar) a las nueve. => empieza
+gap: Yo no ___ (entender). => entiendo
+gap: ¿Cuánto ___ (costar) el libro? => cuesta
+gap: Ellos ___ (volver) el lunes. => vuelven
+gap: Yo ___ (pedir) una pizza. => pido
+gap: ¿Vosotros ___ (preferir) té o café? => preferís
+gap: Mi hijo ___ (jugar) al fútbol. => juega
+gap: Nosotros ___ (jugar) al tenis. => jugamos
+gap: ¿Qué ___ (pensar) tú? => piensas
+gap: El camarero ___ (servir) la comida. => sirve
+gap: Yo no ___ (recordar) su nombre. => recuerdo
+choice: ¿Me ___ repetir, por favor? => puede | pode | poda
+choice: Nosotros ___ en casa. => dormimos | duermimos | duermemos

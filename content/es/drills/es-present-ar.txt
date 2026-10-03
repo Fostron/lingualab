@@ -1,0 +1,16 @@
+gap: Yo ___ (hablar) español. => hablo
+gap: Tú ___ (trabajar) mucho. => trabajas
+gap: Ella ___ (estudiar) medicina. => estudia
+gap: Nosotros ___ (comprar) pan. => compramos
+gap: Vosotros ___ (cantar) muy bien. => cantáis
+gap: Ellos ___ (llegar) mañana. => llegan
+gap: ¿Usted ___ (necesitar) ayuda? => necesita
+gap: Mis padres ___ (viajar) mucho. => viajan
+gap: Yo ___ (escuchar) música. => escucho
+gap: ¿Qué ___ (buscar) tú? => buscas
+gap: Juan y yo ___ (bailar) salsa. => bailamos
+gap: Mi madre ___ (cocinar) muy bien. => cocina
+transform[en=Make it negative]: Hablo francés. => No hablo francés.
+transform[en=Change to "nosotros"]: Trabajo en una oficina. => Trabajamos en una oficina.
+choice: ¿___ (tú) inglés? => Hablas | Habla | Hablo
+choice: Ustedes ___ mucho dinero. => ganan | ganáis | gana

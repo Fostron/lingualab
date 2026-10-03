@@ -1,0 +1,18 @@
+choice: ___ casa es grande. => La | El | Los
+choice: ___ libro es interesante. => El | La | Las
+choice: ___ día es largo. => El | La | Los
+choice: ___ mano está fría. => La | El | Los
+choice: ___ problema es difícil. => El | La | Las
+choice: ___ ciudad es bonita. => La | El | Los
+choice: ___ canción es nueva. => La | El | Las
+choice: ___ agua está fría. => El | La | Lo
+choice: ___ perros son pequeños. => Los | Las | El
+choice: ___ mesas son nuevas. => Las | Los | La
+choice: ___ mapa es viejo. => El | La | Los
+choice: ___ foto es bonita. => La | El | Los
+gap[en=plural]: un libro → dos ___ => libros
+gap[en=plural]: una ciudad → dos ___ => ciudades
+gap[en=plural]: un lápiz → dos ___ => lápices
+gap[en=plural]: una canción → dos ___ => canciones
+gap[en=a + el]: Voy ___ parque. => al
+gap[en=de + el]: Es el coche ___ profesor. => del

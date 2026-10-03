@@ -1,0 +1,15 @@
+gap[en=imperfect subjunctive of hablar (yo)]: que yo ___ => hablara | hablase
+gap[en=imperfect subjunctive of tener (tú)]: que tú ___ => tuvieras | tuvieses
+gap[en=imperfect subjunctive of ser (él)]: que él ___ => fuera | fuese
+gap[en=imperfect subjunctive of hacer (nosotros)]: que nosotros ___ => hiciéramos | hiciésemos
+gap[en=imperfect subjunctive of decir (ellos)]: que ellos ___ => dijeran | dijesen
+gap[en=imperfect subjunctive of poder (yo)]: que yo ___ => pudiera | pudiese
+gap: Quería que ___ (venir, tú) a mi fiesta. => vinieras | vinieses
+gap: Me pidió que lo ___ (ayudar, yo). => ayudara | ayudase
+gap: No creía que ___ (ser) verdad. => fuera | fuese
+gap: Habla como si ___ (saber) todo. => supiera | supiese
+gap: ¡Ojalá ___ (tener, yo) más tiempo! => tuviera | tuviese
+gap: Era importante que lo ___ (saber, vosotros). => supierais | supieseis
+gap: Me alegré de que ___ (estar, tú) allí. => estuvieras | estuvieses
+choice: Quiero que vengas. → Quería que ___. => vinieras | vengas | vendrías
+choice[en=I would like a coffee (very polite).]: ___ un café, por favor. => Quisiera | Quiera | Quise

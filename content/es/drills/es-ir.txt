@@ -1,0 +1,15 @@
+gap: Yo ___ a la playa. => voy
+gap: ¿Adónde ___ tú? => vas
+gap: Ella ___ al trabajo en autobús. => va
+gap: Nosotros ___ al cine. => vamos
+gap: Vosotros ___ a Barcelona. => vais
+gap: Ellos ___ a casa. => van
+choice: Voy ___ parque. => al | a el | del
+choice: Vengo ___ supermercado. => del | de el | al
+choice: Vamos ___ playa. => a la | al | a el
+choice[en=by train]: Viajo ___ tren. => en | a | por
+choice[en=on foot]: Voy ___ pie. => a | en | de
+gap[en=I'm going to study.]: Voy a ___. => estudiar
+gap[en=What are you going to do?]: ¿Qué vas a ___? => hacer
+gap[en=It's going to rain.]: ___ a llover. => Va
+transform[en=Use "ir a" + infinitive]: Como en casa. => Voy a comer en casa.

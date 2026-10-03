@@ -1,0 +1,14 @@
+gap[en=escribir]: El libro fue ___ por Cervantes. => escrito
+gap[en=construir]: Las casas fueron ___ en 1900. => construidas
+gap[en=detener]: Los ladrones fueron ___ por la policía. => detenidos
+gap[en=descubrir]: América fue ___ en 1492. => descubierta
+gap[en=romper]: La ventana está ___. => rota
+gap[en=resolver]: El problema ya está ___. => resuelto
+choice[en=The door is closed (state).]: La puerta ___ cerrada. => está | es | fue
+choice[en=The door was closed at ten (action).]: La puerta ___ cerrada a las diez. => fue | estuvo | está
+choice: La cena ___ preparada. Podemos comer. => está | es | fue
+choice: El edificio ___ diseñado por Gaudí. => fue | estuvo | está
+choice[en=I fell asleep.]: Me ___ dormido. => quedé | estuve | fui
+choice[en=My wallet was stolen.]: Me ___ la cartera. => robaron | robó | fue robada
+transform[en=Make it passive with ser]: La policía detuvo al ladrón. => El ladrón fue detenido por la policía.
+transform[en=Use passive se]: Construyeron el puente en 1990. => Se construyó el puente en 1990.

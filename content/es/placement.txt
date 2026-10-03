@@ -1,0 +1,56 @@
+# level | question (___ = gap) | correct | wrong | wrong | wrong
+A1 | Yo ___ estudiante. | soy | estoy | es | eres
+A1 | ¿Dónde ___ el baño? | está | es | hay | están
+A1 | Mi hermana ___ veinte años. | tiene | es | está | hay
+A1 | ___ casa es muy grande. | La | El | Los | Un
+A1 | Nosotros ___ en Madrid. | vivimos | vivemos | viven | vivo
+A1 | Me ___ los perros. | gustan | gusta | gusto | gustas
+A1 | ¿___ te llamas? | Cómo | Qué | Cuál | Quién
+A1 | Hoy ___ mucho calor. | hace | está | es | tiene
+A1 | Ellos ___ a la playa los domingos. | van | vamos | va | ir
+A1 | Las chicas son muy ___. | simpáticas | simpáticos | simpática | simpático
+A1 | Yo no ___ la respuesta. | sé | conozco | sabo | sabe
+A1 | ___ un banco cerca de aquí. | Hay | Está | Es | Tiene
+A2 | Ayer ___ al cine con mis amigos. | fui | iba | voy | iré
+A2 | Cuando era niño, ___ al fútbol todos los días. | jugaba | jugué | juego | jugaré
+A2 | ¿Tienes el libro? — Sí, ___ tengo. | lo | le | la | se
+A2 | Este regalo es ___ ti. | para | por | a | de
+A2 | Le di el dinero a Juan. → ___ di. | Se lo | Le lo | Lo le | Se le
+A2 | Mañana ___ (yo) a mis padres. | visitaré | visité | visitaba | visitara
+A2 | ¿Has ___ la carta? | escrito | escribido | escribiendo | escribe
+A2 | Es la película ___ interesante del año. | más | muy | mejor | tan
+A2 | Mientras yo cocinaba, ___ el teléfono. | sonó | sonaba | suena | ha sonado
+A2 | Me gustaría ___ a Japón. | viajar | viajo | que viajo | viajaría
+A2 | No hay ___ en casa. | nadie | alguien | nada | ninguno
+B1 | Quiero que tú ___ conmigo. | vengas | vienes | venir | vendrás
+B1 | No creo que ___ razón. | tengas | tienes | tendrás | tener
+B1 | Cuando ___ a casa, te llamaré. | llegue | llego | llegaré | llegaba
+B1 | Si ___ dinero, compraría una casa. | tuviera | tengo | tendría | tenga
+B1 | Cuando llegué, la película ya ___. | había empezado | ha empezado | empezaba | empiece
+B1 | Busco a alguien que ___ chino. | hable | habla | hablará | hablaba
+B1 | Me dijo que ___ al día siguiente. | vendría | vendrá | viene | venga
+B1 | Se me ___ las llaves en casa. | olvidaron | olvidó | olvidé | olvidaba
+B1 | Es importante que ___ temprano. | lleguemos | llegamos | llegar nosotros | llegaremos
+B1 | ¿Qué hora es? — No sé, ___ las cinco. | serán | sean | fueron | serían
+B1 | El hombre ___ hija conoces es mi vecino. | cuya | cuyo | que su | quien
+B2 | Si lo ___, te lo habría dicho. | hubiera sabido | habría sabido | supiera | sabía
+B2 | Me alegro de que ___ venir. | hayas podido | has podido | pudiste | podrás
+B2 | Me gustaría que me ___. | ayudaras | ayudes | ayudas | ayudarías
+B2 | Llevo tres años ___ español. | estudiando | estudiar | estudiado | estudio
+B2 | Se ___ muy nervioso antes del examen. | puso | volvió | hizo | quedó
+B2 | El concierto ___ en el estadio. | es | está | hay | esté
+B2 | La paella ___ muy rica hoy. | está | es | hay | sea
+B2 | Te lo presto con tal de que me lo ___. | devuelvas | devuelves | devolverás | devolvías
+B2 | No sabes lo ___ que estoy. | cansada | cansado de | cansancio | cansar
+B2 | Depende ___ ti. | de | en | con | a
+B2 | El problema ya está ___. | resuelto | resolvido | resolviendo | resolver
+C1 | ___ lo que pase, te apoyaré. | Pase | Pasa | Pasará | Pasara
+C1 | No es que no ___, sino que no puedo. | quiera | quiero | querré | quise
+C1 | Fue aquí ___ nos conocimos. | donde | que | cuando | lo que
+C1 | Como no ___ antes, perderás el tren. | salgas | sales | saldrás | salir
+C1 | Por mucho que ___, no lo conseguirás. | insistas | insistes | insistirás | insistir
+C1 | Llovía mucho; de ahí que no ___. | saliéramos | salimos | saldríamos | salíamos
+C1 | Me tomó el ___: no era verdad. | pelo | brazo | ojo | dedo
+C1 | Quedo a la ___ de su respuesta. | espera | esperanza | esperar | esperado
+C1 | El hecho de que no ___ llamado me preocupa. | haya | ha | habría | había
+C1 | Me miró como si ___ visto un fantasma. | hubiera | habría | haya | había

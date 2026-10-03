@@ -1,0 +1,18 @@
+gap: Yo ___ en casa. => estoy
+gap: ¿Cómo ___ tú? => estás
+gap: Madrid ___ en España. => está
+gap: Nosotros ___ cansados. => estamos
+gap: Ellos ___ en el parque. => están
+gap: Vosotros ___ muy contentos. => estáis
+choice: Mi hermana ___ médica. => es | está
+choice: Mi hermana ___ en el hospital. => está | es
+choice: La sopa ___ fría. => está | es
+choice: Ana ___ alta y simpática. => es | está
+choice: La fiesta ___ en mi casa. => es | está
+choice: ¿Dónde ___ el baño? => está | es
+choice: Hoy ___ lunes. => es | está
+choice: Yo ___ de México. => soy | estoy
+choice[en=The children are bored.]: Los niños ___ aburridos. => están | son
+choice[en=The film is boring.]: La película ___ aburrida. => es | está
+choice: La tienda ___ cerrada. => está | es
+gap[en=Where is the station?]: ¿Dónde ___ la estación? => está

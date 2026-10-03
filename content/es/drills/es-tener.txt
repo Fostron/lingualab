@@ -1,0 +1,15 @@
+gap: Yo ___ dos hermanos. => tengo
+gap: ¿Cuántos años ___ (tú)? => tienes
+gap: Ella ___ un perro. => tiene
+gap: Nosotros ___ mucho trabajo. => tenemos
+gap: Ellos no ___ coche. => tienen
+gap: ¿___ vosotros hambre? => Tenéis
+gap[en=I'm 25.]: ___ veinticinco años. => Tengo
+gap[en=I'm very hungry.]: Tengo ___ hambre. => mucha
+gap[en=I'm very cold.]: Tengo ___ frío. => mucho
+choice[en=You are right.]: Tienes ___. => razón | prisa | suerte
+choice[en=I'm thirsty.]: Tengo ___. => sed | hambre | sueño
+choice[en=We're in a hurry.]: Tenemos ___. => prisa | miedo | calor
+choice[en=Be careful!]: ¡Ten ___! => cuidado | razón | suerte
+gap[en=I have to work.]: Tengo ___ trabajar. => que
+transform[en=Say it with "nosotros"]: Tengo que estudiar. => Tenemos que estudiar.

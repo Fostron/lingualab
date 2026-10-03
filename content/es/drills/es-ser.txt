@@ -1,0 +1,16 @@
+gap: Yo ___ estudiante. => soy
+gap: Tú ___ de Colombia. => eres
+gap: Ella ___ profesora. => es
+gap: Nosotros ___ amigos. => somos
+gap: Ellos ___ de Madrid. => son
+gap: Usted ___ muy amable. => es
+gap: Vosotros ___ españoles. => sois
+gap: Ustedes ___ médicos. => son
+choice: ___ eres de Inglaterra? => ¿Tú | ¿Yo | ¿Él
+choice: Mi madre ___ médica. => es | eres | soy
+choice: Juan y yo ___ hermanos. => somos | son | sois
+choice[en=Polite "you" (one person)]: ¿___ es el señor García? => Usted | Tú | Vosotros
+transform[en=Make it negative]: Soy profesor. => No soy profesor.
+transform[en=Make it negative]: Ellos son de Perú. => Ellos no son de Perú. | No son de Perú.
+gap[en=What's your name? — My name is Ana.]: ¿Cómo te llamas? — Me ___ Ana. => llamo
+gap[en=Where are you from?]: ¿De dónde ___? => eres

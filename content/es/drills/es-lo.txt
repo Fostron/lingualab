@@ -1,0 +1,13 @@
+gap[en=The good thing is…]: ___ bueno es que no llueve. => Lo
+gap[en=The important thing is to take part.]: Lo ___ es participar. => importante
+gap[en=What I like most is reading.]: Lo ___ más me gusta es leer. => que
+gap[en=You don't know how tired I am (fem.).]: No sabes lo ___ que estoy. => cansada
+gap[en=It surprised me how well he speaks.]: Me sorprendió lo ___ que habla. => bien
+gap[en=Look how big your kids are!]: ¡Mira lo ___ que están tus hijos! => grandes
+gap[en=Are you a doctor? — Yes, I am.]: ¿Eres médico? — Sí, ___ soy. => lo
+gap[en=as soon as possible]: ___ antes posible => lo
+gap[en=at least]: por ___ menos => lo
+choice[en=the same thing]: Siempre pides ___ mismo. => lo | el | la
+choice[en=What happened yesterday was a mistake.]: ___ de ayer fue un error. => Lo | El | Eso que
+choice[en=the best part of the trip]: ___ mejor del viaje => Lo | El | La
+choice: No entiendo ___ quieres decir. => lo que | que | el que

@@ -1,0 +1,14 @@
+choice[en=however (formal)]: El plan es bueno; ___, es caro. => no obstante | por lo tanto | es decir
+choice[en=therefore]: No tengo dinero; ___, no puedo ir. => por lo tanto | sin embargo | en cambio
+choice[en=or rather]: Llegaré a las tres, ___, a las tres y media. => mejor dicho | de hecho | por cierto
+choice[en=by the way]: ___, ¿has visto a Luis? => Por cierto | Por consiguiente | No obstante
+choice[en=in fact]: No es caro. ___, es bastante barato. => De hecho | En cambio | Así pues
+choice[en=even so]: Estaba cansado; ___, siguió trabajando. => aun así | o sea | por eso
+choice[en=anyway]: No sé si vendrá. De todas ___, lo esperaremos. => formas | maneras de | modos de
+choice[en=currently]: ___ vivo en Madrid. => Actualmente | En realidad | Eventualmente
+choice[en=actually]: Parece fácil, pero ___ es muy difícil. => en realidad | actualmente | eventualmente
+gap[en=hence (+ subj.)]: Llovía; de ___ que no saliéramos. => ahí
+gap[en=not even]: Ni ___ me saludó. => siquiera
+gap[en=in short]: En ___, fue un buen año. => resumen
+gap[en=on the one hand… on the other]: Por un lado es caro; por ___, es muy bueno. => otro
+gap[en=to be honest]: La ___ es que no me gusta. => verdad

@@ -1,0 +1,13 @@
+choice: Quiero que ___. => vengas | vinieras | hubieras venido
+choice: Quería que ___. => vinieras | vengas | vienes
+choice: Me gustaría que me ___. => ayudaras | ayudes | ayudas
+choice: Sería mejor que no ___ nada. => dijeras | digas | dices
+choice: Le diré que te ___. => llame | llamara | llamará
+choice: Le dije que te ___. => llamara | llame | llamará
+choice: Me alegro de que ___ (already). => hayas venido | hubieras venido | vinieras
+choice: Me alegré de que ___. => vinieras | vengas | hayas venido
+choice: No creía que lo ___ ellos (before). => hubieran hecho | hayan hecho | hagan
+gap: Te pido que me ___ (escuchar). => escuches
+gap: Te pedí que me ___ (escuchar). => escucharas | escuchases
+gap: Preferiría que ___ (venir, vosotros) mañana. => vinierais | vinieseis
+gap: Les he dicho que ___ (traer) comida. => traigan

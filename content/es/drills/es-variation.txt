@@ -1,0 +1,14 @@
+choice[en=car (Spain)]: ___ => el coche | el carro | el auto
+choice[en=computer (Latin America)]: ___ => la computadora | el ordenador | el móvil
+choice[en=mobile phone (Spain)]: ___ => el móvil | el celular | el teléfono fijo
+choice[en=juice (Spain)]: ___ => el zumo | el jugo | la leche
+choice[en=potato (Latin America)]: ___ => la papa | la patata | el papa
+choice[en=to drive (Latin America)]: ___ => manejar | conducir | coger
+choice[en=you all, friendly (Latin America)]: ¿___ vienen? => Ustedes | Vosotros | Vos
+choice[en=you all, friendly (Spain)]: ¿___ venís? => Vosotros | Ustedes | Vos
+gap[en=voseo: you are (ser)]: Vos ___ argentino. => sos
+gap[en=voseo: you want (querer)]: ¿Qué ___ vos? => querés
+gap[en=voseo: you speak (hablar)]: Vos ___ muy bien. => hablás
+gap[en=voseo: come! (venir)]: ¡___ acá! => Vení
+choice[en=cool! (Mexico)]: ¡Qué ___! => padre | guay | chévere
+choice[en=cool! (Spain)]: ¡___! => Guay | Chévere | Bárbaro

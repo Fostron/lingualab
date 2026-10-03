@@ -1,0 +1,12 @@
+choice[en=formal opening]: ___ señora García: => Estimada | Querida | Hola
+choice[en=formal closing]: ___, Juan Pérez => Atentamente | Besos | Un abrazo
+choice[en=I am writing to you to…]: Me ___ a ustedes para solicitar información. => dirijo | escribo a | hablo
+choice[en=I look forward to your reply.]: Quedo a la ___ de su respuesta. => espera | esperanza | esperar
+choice[en=Please find attached…]: ___ le envío el documento. => Adjunto | Junto | Pegado
+choice[en=formal "but"]: El proyecto es interesante; ___, es muy caro. => no obstante | pero | o sea
+choice[en=formal "so / therefore"]: No se presentó; ___, quedó eliminado. => por consiguiente | así que nada | total que
+gap[en=on his arrival]: A su ___, todos aplaudieron. => llegada
+gap[en=I would be grateful if you…]: Le ___ que me enviara el informe. => agradecería
+gap[en=with regard to]: Con ___ a su consulta… => respecto
+gap[en=Do not hesitate to contact me.]: No ___ en ponerse en contacto conmigo. => duden | dude
+gap[en=When in Rome… (future subj.)]: Adonde ___, haz lo que vieres. => fueres

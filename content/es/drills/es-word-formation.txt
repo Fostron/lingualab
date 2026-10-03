@@ -1,0 +1,16 @@
+gap[en=little house]: casa → ___ => casita
+gap[en=little coffee]: café → ___ => cafecito
+gap[en=a tiny bit]: poco → ___ => poquito
+gap[en=a shoe shop]: zapato → ___ => zapatería
+gap[en=a baker]: pan → ___ => panadero
+gap[en=happiness]: feliz → ___ => felicidad
+gap[en=beauty]: bello → ___ => belleza
+gap[en=dangerous]: peligro → ___ => peligroso
+gap[en=to undo]: hacer → ___ => deshacer
+gap[en=impossible]: posible → ___ => imposible
+gap[en=to reread]: leer → ___ => releer
+gap[en=believable]: creer → ___ => creíble
+choice[en=can opener]: el ___ => abrelatas | abrelata | abridor de latas
+choice[en=door slam]: un ___ => portazo | puertazo | portón
+choice[en=bookshop]: ___ => librería | biblioteca | librero
+choice[en=misunderstanding]: un ___ => malentendido | desentendido | inentendido

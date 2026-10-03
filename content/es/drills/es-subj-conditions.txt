@@ -1,0 +1,13 @@
+gap: Iré a menos que ___ (llover). => llueva
+gap: Te lo presto con tal de que me lo ___ (devolver, tú). => devuelvas
+gap: En caso de que no ___ (estar, yo), deja un mensaje. => esté
+gap: Puedes salir siempre que ___ (volver, tú) antes de las doce. => vuelvas
+gap: Vámonos antes de que ___ (empezar) a llover. => empiece
+gap: Entró sin que nadie lo ___ (ver). => viera | viese
+gap: No lo haré a no ser que me lo ___ (pedir, tú). => pidas
+gap: Como no ___ (estudiar, tú), suspenderás. => estudies
+gap: Dijo que vendría a menos que ___ (llover). => lloviera | lloviese
+choice[en=whenever he comes (habit)]: Siempre que ___, trae flores. => viene | venga
+choice[en=provided that you ask me]: Te ayudo siempre que me lo ___. => pidas | pides
+choice[en=I'd do anything to see you.]: Haría cualquier cosa con tal de ___. => verte | que te vea | te veo
+choice[en=In case of doubt, ask.]: En caso de ___, pregunta. => duda | que dudas | dudar que

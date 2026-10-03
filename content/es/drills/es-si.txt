@@ -1,0 +1,14 @@
+choice: Si ___, me quedo en casa. => llueve | llueva | lloviera
+choice: Si ___ dinero, viajaría. => tuviera | tengo | tendría
+choice: Si ___ tiempo, llámame. => tienes | tengas | tuvieras
+choice: Si estudias, ___. => aprobarás | aprobarías | aprobaras
+choice: Si yo fuera tú, ___ con ella. => hablaría | hablaré | hablara
+choice: ¿Qué harías si ___ la lotería? => ganaras | ganas | ganarías
+gap: Si ___ (ser, yo) rico, compraría una casa. => fuera | fuese
+gap: Si ___ (vivir, tú) más cerca, nos veríamos más. => vivieras | vivieses
+gap: Si no ___ (estar, yo) cansado, saldría. => estuviera | estuviese
+gap: Si tuviera tiempo, ___ (aprender, yo) japonés. => aprendería
+gap: Si mañana hace sol, ___ (ir, nosotros) a la playa. => iremos | vamos
+gap: Si ___ (poder, ellos), vendrían. => pudieran | pudiesen
+choice[en=I don't know whether he'll come.]: No sé si ___. => vendrá | venga | viniera
+transform[en=Make it hypothetical]: Si tengo dinero, compro un coche. => Si tuviera dinero, compraría un coche.

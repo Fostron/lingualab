@@ -1,0 +1,15 @@
+choice[en=It depends on you.]: Depende ___ ti. => de | en | con
+choice[en=I'm thinking about you.]: Pienso ___ ti. => en | de | con
+choice[en=Last night I dreamt about my grandmother.]: Anoche soñé ___ mi abuela. => con | en | de
+choice[en=She married Pedro.]: Se casó ___ Pedro. => con | a | de
+choice[en=He fell in love with her.]: Se enamoró ___ ella. => de | con | en
+choice[en=Do you remember me?]: ¿Te acuerdas ___ mí? => de | a | en
+choice[en=I trust you.]: Confío ___ ti. => en | de | a
+choice[en=It smells of coffee.]: Huele ___ café. => a | de | como
+choice[en=I'm looking for my keys.]: Busco ___ llaves. => mis | por mis | para mis
+choice[en=She looks like her mother.]: Se parece ___ su madre. => a | de | con
+choice[en=I'm counting on you.]: Cuento ___ vosotros. => con | en | de
+gap[en=I realised.]: Me di cuenta ___ eso. => de
+gap[en=He insists on paying.]: Insiste ___ pagar. => en
+gap[en=I'm learning to swim.]: Aprendo ___ nadar. => a
+gap[en=What does she do for a living?]: ¿A qué se ___? => dedica

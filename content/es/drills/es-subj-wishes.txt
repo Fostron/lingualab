@@ -1,0 +1,17 @@
+gap: Quiero que tú ___ (venir) a la fiesta. => vengas
+gap: Espero que ___ (estar, tú) bien. => estés
+gap: Mi madre quiere que yo ___ (estudiar) medicina. => estudie
+gap: Te pido que me ___ (ayudar). => ayudes
+gap: El médico me recomienda que ___ (hacer, yo) deporte. => haga
+gap: Necesito que me ___ (llamar, tú) mañana. => llames
+gap: Prefieren que no ___ (salir, nosotros) de noche. => salgamos
+gap: ¡Ojalá ___ (hacer) sol mañana! => haga
+gap: Mis padres no me permiten que ___ (llegar) tarde. => llegue
+gap: Os aconsejo que ___ (dormir) más. => durmáis
+choice: Quiero ___ al cine. => ir | que vaya | que voy
+choice: Quiero que tú ___ al cine. => vayas | vas | ir
+choice[en=He tells me he is coming.]: Me dice que ___. => viene | venga
+choice[en=He tells me to come.]: Me dice que ___. => venga | viene
+gap[en=Have fun!]: ¡Que te ___! => diviertas
+gap[en=Get well soon!]: ¡Que te ___! => mejores
+gap[en=Have a nice day!]: ¡Que ___ un buen día! => tengas
