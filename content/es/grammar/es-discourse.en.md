@@ -10,7 +10,7 @@ Discourse markers organise speech and writing and show your attitude. At B2 you 
 
 ## Cause and consequence
 
-[[por lo tanto]] / [[por consiguiente]] / [[en consecuencia]] — therefore · [[así pues]] · [[de ahí que]] + subj. — hence: [[Llovía mucho; de ahí que no saliéramos.]] · [[dado que]] / [[puesto que]] / [[ya que]] — given that
+[[por lo tanto]] / [[por consiguiente]] / [[en consecuencia]] — therefore · [[así pues]] — so, thus · [[de ahí que]] + subj. — hence: [[Llovía mucho; de ahí que no saliéramos.]] · [[dado que]] / [[puesto que]] / [[ya que]] — given that
 
 ## Reformulating and clarifying
 

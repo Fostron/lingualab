@@ -40,4 +40,4 @@ Questions with intonation: [[Tu es prêt ?]] or with *est-ce que*: [[Est-ce que 
 
 ## Introducing yourself
 
-[[Je m'appelle Paul.]] — My name is Paul. · [[Comment tu t'appelles ?]] / [[Comment vous appelez-vous ?]] · [[Je suis de Londres.]] / [[Je viens de Londres.]] · [[Je suis anglais / anglaise.]]
+[[Je m'appelle Paul.]] — My name is Paul. · [[Comment tu t'appelles ?]] / [[Comment vous appelez-vous ?]] — What's your name? (informal / formal) · [[Je suis de Londres.]] / [[Je viens de Londres.]] — I'm from London. · [[Je suis anglais / anglaise.]] — I'm English (man / woman).

@@ -1,6 +1,6 @@
 ## Days of the week
 
-[[lundi]] · [[mardi]] · [[mercredi]] · [[jeudi]] · [[vendredi]] · [[samedi]] · [[dimanche]] — lowercase, masculine.
+[[lundi]] — Monday · [[mardi]] — Tuesday · [[mercredi]] — Wednesday · [[jeudi]] — Thursday · [[vendredi]] — Friday · [[samedi]] — Saturday · [[dimanche]] — Sunday. They are written in lowercase and are masculine.
 
 - **no article** = this coming / last one: [[Je pars lundi.]] — I'm leaving on Monday.
 - **le** + day = every week: [[Le lundi, je travaille.]] — On Mondays I work.

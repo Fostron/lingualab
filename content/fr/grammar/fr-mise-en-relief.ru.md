@@ -8,7 +8,7 @@
 
 ## Ce qui / ce que … c'est — «что …, так это …»
 
-[[Ce qui m'énerve, c'est son attitude.]] — Что меня раздражает, так это его отношение. · [[Ce que j'aime, c'est voyager.]] — Что я люблю, так это путешествовать. · [[Ce dont j'ai besoin, c'est de repos.]]
+[[Ce qui m'énerve, c'est son attitude.]] — Что меня раздражает, так это его отношение. · [[Ce que j'aime, c'est voyager.]] — Что я люблю, так это путешествовать. · [[Ce dont j'ai besoin, c'est de repos.]] — Что мне нужно, так это отдых.
 
 ## Вынос (очень часто в разговорной речи)
 

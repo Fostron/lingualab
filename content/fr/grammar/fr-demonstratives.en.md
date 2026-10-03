@@ -15,7 +15,7 @@ Time: [[ce matin]] (this morning), [[cet après-midi]], [[ce soir]] (tonight), [
 ## Ça, ceci, cela
 
 For an unnamed thing or idea: **ça** (everyday), **cela** (formal), **ceci** (this, formal).
-[[Qu'est-ce que c'est, ça ?]] — What's that? · [[Ça va.]] · [[Ça coûte combien ?]] · [[Je n'aime pas ça.]]
+[[Qu'est-ce que c'est, ça ?]] — What's that? · [[Ça va.]] — I'm fine / It's OK. · [[Ça coûte combien ?]] — How much is it? · [[Je n'aime pas ça.]] — I don't like that.
 
 ## Prepositions of place
 

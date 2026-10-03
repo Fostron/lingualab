@@ -2,16 +2,16 @@ Pronominal verbs (with *se*) have four different meanings. Recognising them help
 
 ## 1. Reflexive — the subject acts on itself
 
-[[Je me lave.]] · [[Elle se regarde dans le miroir.]] · [[Il s'est coupé.]] — He cut himself.
+[[Je me lave.]] — I wash (myself). · [[Elle se regarde dans le miroir.]] — She looks at herself in the mirror. · [[Il s'est coupé.]] — He cut himself.
 
 ## 2. Reciprocal — each other (plural subjects)
 
-[[Ils s'aiment.]] — They love each other. · [[Nous nous écrivons souvent.]] · [[On se voit demain ?]] — See you tomorrow? · [[Ils se sont disputés.]] — They argued.
+[[Ils s'aiment.]] — They love each other. · [[Nous nous écrivons souvent.]] — We often write to each other. · [[On se voit demain ?]] — See you tomorrow? · [[Ils se sont disputés.]] — They argued.
 To avoid ambiguity add *l'un l'autre / mutuellement*: [[Ils se regardent l'un l'autre.]]
 
 ## 3. Passive meaning — general facts, rules, habits
 
-[[Ce plat se mange froid.]] — This dish is eaten cold. · [[Ça se voit.]] — It shows. · [[Le français se parle dans 30 pays.]] · [[Ça ne se fait pas.]] — That's not done.
+[[Ce plat se mange froid.]] — This dish is eaten cold. · [[Ça se voit.]] — It shows. · [[Le français se parle dans 30 pays.]] — French is spoken in 30 countries. · [[Ça ne se fait pas.]] — That's not done.
 
 ## 4. Essentially pronominal — only exist with se, or change meaning
 

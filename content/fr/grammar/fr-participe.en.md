@@ -23,7 +23,7 @@ Some *-ant* forms are also **adjectives** — then they agree and describe a qua
 
 ## Absolute participle clauses (formal)
 
-The participle can have its own subject: [[Le temps passant, il a oublié.]] — As time passed… · [[La nuit tombée, ils sont rentrés.]] — Once night had fallen… · [[Le travail terminé, nous sommes sortis.]]
+The participle can have its own subject: [[Le temps passant, il a oublié.]] — As time passed… · [[La nuit tombée, ils sont rentrés.]] — Once night had fallen… · [[Le travail terminé, nous sommes sortis.]] — With the work done, we went out.
 
 ## Past participle clauses
 

@@ -20,7 +20,7 @@ Formal and written French (reports, news, essays, administration) prefers **noun
 | **-ée** | arriver → [[l'arrivée]], entrer → [[l'entrée]] | f |
 | **-té, -eur, -esse** (from adjectives) | beau → [[la beauté]], long → [[la longueur]], jeune → [[la jeunesse]] | f |
 | **-ise** | franc → [[la franchise]] | f |
-| no suffix | marcher → [[la marche]], refuser → [[le refus]], choisir → [[le choix]] | |
+| no suffix | marcher → [[la marche]], refuser → [[le refus]], choisir → [[le choix]] | m / f |
 
 ## In headlines and instructions
 

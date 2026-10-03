@@ -33,4 +33,4 @@
 
 ## Семья
 
-[[le père]] — отец · [[la mère]] — мать · [[les parents]] — родители (и родственники) · [[le frère]] — брат · [[la sœur]] — сестра · [[le fils]] — сын · [[la fille]] — дочь · [[le grand-père]] / [[la grand-mère]] · [[l'oncle]] / [[la tante]] · [[le cousin]] / [[la cousine]] — двоюродный брат / сестра · [[le mari]] — муж · [[la femme]] — жена · [[l'enfant]] — ребёнок
+[[le père]] — отец · [[la mère]] — мать · [[les parents]] — родители (и родственники) · [[le frère]] — брат · [[la sœur]] — сестра · [[le fils]] — сын · [[la fille]] — дочь · [[le grand-père]] / [[la grand-mère]] — дедушка / бабушка · [[l'oncle]] / [[la tante]] — дядя / тётя · [[le cousin]] / [[la cousine]] — двоюродный брат / сестра · [[le mari]] — муж · [[la femme]] — жена · [[l'enfant]] — ребёнок

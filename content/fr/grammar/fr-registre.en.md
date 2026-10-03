@@ -26,5 +26,5 @@ Slang formed by **reversing syllables** (*l'envers* → *verlan*): [[louche]] �
 
 ## Formal letters and emails
 
-Opening: [[Madame, Monsieur,]] · [[Monsieur le Directeur,]] — Closing formulas are long and polite: [[Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.]] · Shorter (emails): [[Bien cordialement]], [[Cordialement]].
+Opening: [[Madame, Monsieur,]] — Dear Sir or Madam, · [[Monsieur le Directeur,]] — Dear Director, · Closing formulas are long and polite: [[Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.]] — Yours faithfully (literally: “please accept the expression of my distinguished greetings”) · Shorter, in emails: [[Bien cordialement]] — Kind regards · [[Cordialement]] — Regards.
 Useful phrases: [[Je me permets de vous écrire afin de…]] · [[Je vous serais reconnaissant de bien vouloir…]] (I would be grateful if you could…) · [[Dans l'attente de votre réponse…]]

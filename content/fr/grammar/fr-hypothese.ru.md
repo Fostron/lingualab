@@ -11,7 +11,7 @@
 | **en admettant que / en supposant que** | subjonctif | допустим, что | [[En supposant qu'il accepte, que faisons-nous ?]] |
 | **sinon** | — | иначе, а то | [[Dépêche-toi, sinon on va rater le train.]] |
 | **même si** | ind. | даже если | [[Même si c'est cher, je l'achète.]] |
-| **à condition de / à moins de** | + инф. (то же подлежащее) | | [[Tu réussiras à condition de travailler.]] |
+| **à condition de / à moins de** | + инф. (то же подлежащее) | при условии что / если только не | [[Tu réussiras à condition de travailler.]] |
 
 ## Деепричастие и существительные как условие
 

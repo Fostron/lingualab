@@ -51,4 +51,4 @@ French has no word stress: syllables are even, and the **last syllable of a phra
 
 ## Greetings
 
-[[Bonjour]] · [[Bonsoir]] · [[Salut]] (informal) · [[Au revoir]] · [[À bientôt]] · [[Merci]] / [[Merci beaucoup]] · [[De rien]] · [[S'il vous plaît]] / [[S'il te plaît]] · [[Pardon]] / [[Excusez-moi]] · [[Ça va ? — Ça va bien, merci.]] · [[Enchanté]] (nice to meet you)
+[[Bonjour]] — hello, good morning · [[Bonsoir]] — good evening · [[Salut]] — hi / bye (informal) · [[Au revoir]] — goodbye · [[À bientôt]] — see you soon · [[Merci]] — thank you · [[Merci beaucoup]] — thank you very much · [[De rien]] — you're welcome · [[S'il vous plaît]] / [[S'il te plaît]] — please (formal / informal) · [[Pardon]] / [[Excusez-moi]] — sorry, excuse me · [[Ça va ? — Ça va bien, merci.]] — How are you? — Fine, thanks. · [[Enchanté]] — nice to meet you

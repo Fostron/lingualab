@@ -35,5 +35,5 @@ Also: **pouvoir** → [[que je puisse]] · **savoir** → [[que je sache]] · **
 ## Il faut que — the most common trigger
 
 **il faut que + subjunctive** = someone must / needs to:
-[[Il faut que je parte.]] — I have to leave. · [[Il faut que tu fasses tes devoirs.]] · [[Il ne faut pas que vous soyez en retard.]] (you mustn't)
+[[Il faut que je parte.]] — I have to leave. · [[Il faut que tu fasses tes devoirs.]] — You have to do your homework. · [[Il ne faut pas que vous soyez en retard.]] — You mustn't be late.
 Compare: [[Il faut partir.]] (general — infinitive) / [[Il faut que tu partes.]] (specific person — subjunctive).

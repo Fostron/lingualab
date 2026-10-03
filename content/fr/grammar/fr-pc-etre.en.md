@@ -4,13 +4,13 @@ About 15 verbs — mostly verbs of **movement or change of state** — form the 
 
 | verb | participle | | verb | participle |
 |---|---|---|---|---|
-| aller | [[allé]] | | venir | [[venu]] |
-| arriver | [[arrivé]] | | partir | [[parti]] |
-| entrer | [[entré]] | | sortir | [[sorti]] |
-| monter | [[monté]] | | descendre | [[descendu]] |
-| naître | [[né]] | | mourir | [[mort]] |
-| rester | [[resté]] | | tomber | [[tombé]] |
-| retourner | [[retourné]] | | passer (par) | [[passé]] |
+| aller — go | [[allé]] | | venir — come | [[venu]] |
+| arriver — arrive | [[arrivé]] | | partir — leave | [[parti]] |
+| entrer — go in | [[entré]] | | sortir — go out | [[sorti]] |
+| monter — go up | [[monté]] | | descendre — go down | [[descendu]] |
+| naître — be born | [[né]] | | mourir — die | [[mort]] |
+| rester — stay | [[resté]] | | tomber — fall | [[tombé]] |
+| retourner — go back | [[retourné]] | | passer (par) — pass (by) | [[passé]] |
 
 and their compounds: **revenir, rentrer, devenir, repartir**…
 

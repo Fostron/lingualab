@@ -12,7 +12,7 @@
 > **depuis + настоящее время** — как в русском: «я **живу** здесь пять лет» = *j'habite ici depuis cinq ans*. (Англоговорящим это трудно, вам — легко.)
 > «Через неделю» — **dans** une semaine, а не *après* (*après* — после чего-то).
 
-Вопросы: [[Depuis quand tu apprends le français ?]] — С каких пор ты учишь французский? · [[Depuis combien de temps ?]] — Как долго? · [[Ça fait combien de temps que… ?]]
+Вопросы: [[Depuis quand tu apprends le français ?]] — С каких пор ты учишь французский? · [[Depuis combien de temps ?]] — Как долго? · [[Ça fait combien de temps que… ?]] — Сколько времени уже… ?
 Синонимы *depuis*: [[Ça fait deux ans que j'habite ici.]] = [[Il y a deux ans que j'habite ici.]] — Вот уже два года я живу здесь.
 
 ## До, после, пока не

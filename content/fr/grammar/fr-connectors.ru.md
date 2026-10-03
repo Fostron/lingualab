@@ -34,6 +34,6 @@
 
 ## Вывод
 
-[[bref]] — короче · [[en résumé]] — подводя итог · [[en conclusion]] · [[en fait]] — на самом деле · [[en effet]] — действительно (подтверждает сказанное)
+[[bref]] — короче · [[en résumé]] — подводя итог · [[en conclusion]] — в заключение · [[en fait]] — на самом деле · [[en effet]] — действительно (подтверждает сказанное)
 
 > **en fait** уточняет или исправляет («на самом деле»): [[Je pensais qu'il était français ; en fait, il est belge.]] **en effet** подтверждает («и действительно»): [[Il est fatigué. En effet, il a travaillé toute la nuit.]]

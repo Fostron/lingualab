@@ -30,6 +30,6 @@ Spanish has no *'s*: **the noun + de + owner**.
 
 ## Family vocabulary
 
-[[el padre]] / [[la madre]] — father / mother · [[los padres]] — parents · [[el hermano]] / [[la hermana]] · [[el hijo]] / [[la hija]] · [[el abuelo]] / [[la abuela]] · [[el tío]] / [[la tía]] · [[el primo]] / [[la prima]] · [[el esposo]] / [[la esposa]] · [[el novio]] / [[la novia]]
+[[el padre]] / [[la madre]] — father / mother · [[los padres]] — parents · [[el hermano]] / [[la hermana]] — brother / sister · [[el hijo]] / [[la hija]] — son / daughter · [[el abuelo]] / [[la abuela]] — grandfather / grandmother · [[el tío]] / [[la tía]] — uncle / aunt · [[el primo]] / [[la prima]] — cousin · [[el esposo]] / [[la esposa]] — husband / wife · [[el novio]] / [[la novia]] — boyfriend / girlfriend
 
 > Masculine plurals cover mixed groups: [[mis hermanos]] can mean "my brothers" or "my brothers and sisters".

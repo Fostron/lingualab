@@ -28,4 +28,4 @@
 
 ## Полезные прилагательные
 
-[[célèbre]] — знаменитый · [[important]] · [[intéressant]] · [[ennuyeux]] — скучный · [[drôle]] — смешной · [[riche]] / [[pauvre]] · [[dangereux]] — опасный · [[tranquille]] — спокойный, тихий · [[cher]] / [[bon marché]] — дорогой / дешёвый
+[[célèbre]] — знаменитый · [[important]] — важный · [[intéressant]] — интересный · [[ennuyeux]] — скучный · [[drôle]] — смешной · [[riche]] / [[pauvre]] — богатый / бедный · [[dangereux]] — опасный · [[tranquille]] — спокойный, тихий · [[cher]] / [[bon marché]] — дорогой / дешёвый

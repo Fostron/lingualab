@@ -42,4 +42,4 @@ Passé composé описывает **законченные действия в 
 Короткие наречия — между вспомогательным глаголом и причастием: [[J'ai déjà fini.]] — Я уже закончил. [[Tu as bien dormi ?]] [[Je n'ai pas encore lu ce livre.]]
 Местоимения-дополнения — перед вспомогательным: [[Je l'ai vu.]] — Я его видел.
 
-Слова-ориентиры: [[hier]] — вчера · [[avant-hier]] — позавчера · [[la semaine dernière]] — на прошлой неделе · [[l'année dernière]] · [[il y a deux jours]] — два дня назад · [[déjà]] — уже · [[ne … pas encore]] — ещё не · [[ne … jamais]] — никогда
+Слова-ориентиры: [[hier]] — вчера · [[avant-hier]] — позавчера · [[la semaine dernière]] — на прошлой неделе · [[l'année dernière]] — в прошлом году · [[il y a deux jours]] — два дня назад · [[déjà]] — уже · [[ne … pas encore]] — ещё не · [[ne … jamais]] — никогда

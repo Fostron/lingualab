@@ -53,4 +53,4 @@
 
 ## Приветствия
 
-[[Bonjour]] — здравствуйте · [[Bonsoir]] — добрый вечер · [[Salut]] — привет / пока · [[Au revoir]] — до свидания · [[À bientôt]] — до скорого · [[Merci]] / [[Merci beaucoup]] · [[De rien]] — не за что · [[S'il vous plaît]] / [[S'il te plaît]] — пожалуйста · [[Pardon]] / [[Excusez-moi]] — извините · [[Ça va ? — Ça va bien, merci.]] — Как дела? — Хорошо, спасибо. · [[Enchanté]] — очень приятно
+[[Bonjour]] — здравствуйте · [[Bonsoir]] — добрый вечер · [[Salut]] — привет / пока · [[Au revoir]] — до свидания · [[À bientôt]] — до скорого · [[Merci]] — спасибо · [[Merci beaucoup]] — большое спасибо · [[De rien]] — не за что · [[S'il vous plaît]] / [[S'il te plaît]] — пожалуйста (на «вы» / на «ты») · [[Pardon]] / [[Excusez-moi]] — извините · [[Ça va ? — Ça va bien, merci.]] — Как дела? — Хорошо, спасибо. · [[Enchanté]] — очень приятно

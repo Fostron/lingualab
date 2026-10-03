@@ -26,5 +26,5 @@
 
 ## Официальные письма
 
-Обращение: [[Madame, Monsieur,]] — Уважаемые дамы и господа · [[Monsieur le Directeur,]] — Заключительные формулы длинные и вежливые: [[Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.]] (≈ «С уважением») · Короче (в e-mail): [[Bien cordialement]], [[Cordialement]].
+Обращение: [[Madame, Monsieur,]] — Уважаемые дамы и господа · [[Monsieur le Directeur,]] — Уважаемый господин директор · Заключительные формулы длинные и вежливые: [[Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.]] — ≈ «С уважением» (дословно: «прошу принять выражение моих глубочайших приветствий») · Короче, в e-mail: [[Bien cordialement]] — С наилучшими пожеланиями · [[Cordialement]] — С уважением.
 Полезные фразы: [[Je me permets de vous écrire afin de…]] — Позволю себе обратиться к вам с целью… · [[Je vous serais reconnaissant de bien vouloir…]] — Буду признателен, если вы… · [[Dans l'attente de votre réponse…]] — В ожидании вашего ответа…

@@ -9,7 +9,7 @@ French word order is fairly fixed, so to **emphasise** an element you restructur
 
 ## Ce qui / ce que … c'est
 
-To announce what you're going to stress: [[Ce qui m'énerve, c'est son attitude.]] — What annoys me is his attitude. · [[Ce que j'aime, c'est voyager.]] · [[Ce dont j'ai besoin, c'est de repos.]]
+To announce what you're going to stress: [[Ce qui m'énerve, c'est son attitude.]] — What annoys me is his attitude. · [[Ce que j'aime, c'est voyager.]] — What I love is travelling. · [[Ce dont j'ai besoin, c'est de repos.]] — What I need is rest.
 
 ## Dislocation (very common in speech)
 

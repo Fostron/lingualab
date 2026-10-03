@@ -11,11 +11,11 @@ Beyond *si*, French has several ways to express conditions and hypotheses — ea
 | **en admettant que / en supposant que** | subjunctive | assuming that | [[En supposant qu'il accepte, que faisons-nous ?]] |
 | **sinon** | — | otherwise | [[Dépêche-toi, sinon on va rater le train.]] |
 | **même si** | ind. | even if | [[Même si c'est cher, je l'achète.]] |
-| **à condition de / à moins de** | + infinitive (same subject) | | [[Tu réussiras à condition de travailler.]] |
+| **à condition de / à moins de** | + infinitive (same subject) | on condition of / unless | [[Tu réussiras à condition de travailler.]] |
 
 ## Gerund and nouns as conditions
 
-[[En partant tôt, tu éviteras les bouchons.]] — If you leave early… · [[Avec un peu de chance, on gagnera.]] · [[Sans ton aide, je n'y serais pas arrivé.]] — Without your help I wouldn't have managed.
+[[En partant tôt, tu éviteras les bouchons.]] — If you leave early… · [[Avec un peu de chance, on gagnera.]] — With a bit of luck, we'll win. · [[Sans ton aide, je n'y serais pas arrivé.]] — Without your help I wouldn't have managed.
 
 ## Conditional for hypotheses without si
 

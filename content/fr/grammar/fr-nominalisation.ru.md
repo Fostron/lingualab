@@ -20,13 +20,13 @@
 | **-ée** | arriver → [[l'arrivée]], entrer → [[l'entrée]] | ж. |
 | **-té, -eur, -esse** (от прилагательных) | beau → [[la beauté]], long → [[la longueur]], jeune → [[la jeunesse]] | ж. |
 | **-ise** | franc → [[la franchise]] | ж. |
-| без суффикса | marcher → [[la marche]], refuser → [[le refus]], choisir → [[le choix]] | |
+| без суффикса | marcher → [[la marche]], refuser → [[le refus]], choisir → [[le choix]] | м / ж |
 
 > Род отглагольных существительных легко предсказать по суффиксу: **-ment, -age** — мужской, почти всё остальное — женский. Это отличается от русского («изменение» — средний род, а *le changement* — мужской).
 
 ## В заголовках и объявлениях
 
-Французские заголовки и объявления часто без глагола: [[Fermeture exceptionnelle du magasin]] — Магазин временно закрыт · [[Hausse du chômage en mai]] — Рост безработицы в мае · [[Interdiction de fumer]] — Курить запрещено · [[Réouverture le 3 septembre]]
+Французские заголовки и объявления часто без глагола: [[Fermeture exceptionnelle du magasin]] — Магазин временно закрыт · [[Hausse du chômage en mai]] — Рост безработицы в мае · [[Interdiction de fumer]] — Курить запрещено · [[Réouverture le 3 septembre]] — Снова открываемся 3 сентября
 
 ## Инфинитив как существительное
 

@@ -26,7 +26,7 @@
 
 ## Бельгия и Швейцария
 
-[[le déjeuner, le dîner, le souper]] — завтрак, обед, ужин (как в Квебеке) · Бельгия: [[une drache]] (ливень), [[s'il vous plaît]] при передаче предмета (= *voilà*, «вот, держите»), [[savoir]] вместо *pouvoir* (*je ne sais pas venir* = я не могу прийти) · Швейцария: [[un natel]] (мобильник), [[une panosse]] (швабра), [[septante]].
+[[le déjeuner, le dîner, le souper]] — завтрак, обед, ужин (как в Квебеке) · Бельгия: [[une drache]] (ливень), [[s'il vous plaît]] при передаче предмета (= *voilà*, «вот, держите»), [[savoir]] вместо *pouvoir* (*je ne sais pas venir* = я не могу прийти) · Швейцария: [[un natel]] (мобильник), [[une panosse]] (швабра), [[septante]] (семьдесят).
 
 ## Африка
 

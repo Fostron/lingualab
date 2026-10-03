@@ -15,7 +15,7 @@
 | [[Il fait nuit.]] / [[Il fait jour.]] | Темно / светло. |
 
 Глаголы погоды (только с *il*): [[Il pleut.]] — Идёт дождь (*pleuvoir*) · [[Il neige.]] — Идёт снег · [[Il gèle.]] — Морозит
-Ещё: [[Il y a du soleil.]] · [[Il y a du vent.]] · [[Il y a des nuages.]] — Облачно · [[Il y a du brouillard.]] — Туман · [[Le ciel est couvert.]] — Пасмурно · [[Il y a de l'orage.]] — Гроза
+Ещё: [[Il y a du soleil.]] — Солнечно · [[Il y a du vent.]] — Ветрено · [[Il y a des nuages.]] — Облачно · [[Il y a du brouillard.]] — Туман · [[Le ciel est couvert.]] — Пасмурно · [[Il y a de l'orage.]] — Гроза
 
 ## Погода, человек, предмет
 

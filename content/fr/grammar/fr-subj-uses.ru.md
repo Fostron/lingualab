@@ -24,9 +24,9 @@
 
 ## Необходимость и оценка (безличные обороты)
 
-[[il faut que]] — нужно, чтобы · [[il est important que]] — важно, чтобы · [[il est nécessaire que]] · [[il vaut mieux que]] — лучше, чтобы · [[il est possible que]] — возможно, что · [[il est normal que]]
+[[il faut que]] — нужно, чтобы · [[il est important que]] — важно, чтобы · [[il est nécessaire que]] — необходимо, чтобы · [[il vaut mieux que]] — лучше, чтобы · [[il est possible que]] — возможно, что · [[il est normal que]] — естественно, что
 [[Il vaut mieux que tu restes ici.]] — Тебе лучше остаться здесь. [[Il est important que tout le monde soit d'accord.]]
 
 ## Приказ и разрешение
 
-[[Je demande que vous sortiez.]] — Я прошу вас выйти. · [[Il interdit que…]] · [[Elle accepte que…]] · [[Laisse-moi faire.]] — Дай я сделаю (инфинитив).
+[[Je demande que vous sortiez.]] — Я прошу вас выйти. · [[Il interdit que…]] — Он запрещает, чтобы… · [[Elle accepte que…]] — Она соглашается, чтобы… · [[Laisse-moi faire.]] — Дай я сделаю (инфинитив).

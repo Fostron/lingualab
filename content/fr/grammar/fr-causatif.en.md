@@ -18,7 +18,7 @@ Something done **to** or **for** the subject: [[Je me suis fait couper les cheve
 
 ## Laisser + infinitive — to let
 
-[[Laisse-moi parler !]] — Let me speak! · [[Ils laissent les enfants jouer dehors.]] · [[Je me suis laissé convaincre.]] — I let myself be convinced.
+[[Laisse-moi parler !]] — Let me speak! · [[Ils laissent les enfants jouer dehors.]] — They let the children play outside. · [[Je me suis laissé convaincre.]] — I let myself be convinced.
 
 ## Common expressions with faire
 

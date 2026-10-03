@@ -17,7 +17,7 @@ At B2, you're expected to structure arguments and conversations with a range of 
 
 ## Conversation
 
-[[Bon]], [[ben]], [[bah]] (well…) · [[Enfin]] (well, I mean) · [[Quoi]] (at the end: *you know*) — [[C'était génial, quoi.]] · [[Du coup]] (so, as a result — very common) · [[En fait]] (actually) · [[Franchement]] (honestly) · [[Bref]] (anyway, in short) · [[Tu vois ?]] / [[Tu sais]] · [[Genre]] (like — slang) · [[Carrément]] (totally) · [[À la limite]] (if need be, at a push)
+[[Bon]], [[ben]], [[bah]] (well…) · [[Enfin]] (well, I mean) · [[Quoi]] (at the end: *you know*) — [[C'était génial, quoi.]] · [[Du coup]] (so, as a result — very common) · [[En fait]] (actually) · [[Franchement]] (honestly) · [[Bref]] (anyway, in short) · [[Tu vois ?]] / [[Tu sais]] (you see? / you know) · [[Genre]] (like — slang) · [[Carrément]] (totally) · [[À la limite]] (if need be, at a push)
 
 [[Du coup, on a décidé de rester.]] — So we decided to stay.
 

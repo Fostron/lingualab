@@ -32,4 +32,4 @@
 | [[Je suis en train de manger.]] | Я как раз ем. |
 | [[Je vais manger.]] | Я сейчас буду есть. |
 
-Слова: [[maintenant]] — сейчас · [[tout de suite]] — сразу · [[bientôt]] — скоро · [[tout à l'heure]] — скоро / недавно (сегодня) · [[ce soir]] · [[demain]] · [[déjà]] — уже
+Слова: [[maintenant]] — сейчас · [[tout de suite]] — сразу · [[bientôt]] — скоро · [[tout à l'heure]] — скоро / недавно (сегодня) · [[ce soir]] — сегодня вечером · [[demain]] — завтра · [[déjà]] — уже
