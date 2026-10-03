@@ -138,7 +138,7 @@ export function Stats({ c }: { c: LoadedCourse }) {
     .map((id) => ({ id, tp: c.topicById.get(id)!, st: ts.get(id), card: gcards.get(id) }))
     .filter((x) => x.tp)
     .sort((a, b) => (a.st?.acc ?? 1) - (b.st?.acc ?? 1));
-  const hard = weakWords(info.cards).slice(0, 10);
+  const hard = weakWords(info.cards, logs).slice(0, 10);
 
   return (
     <div class="page stats">
@@ -313,7 +313,7 @@ export function Stats({ c }: { c: LoadedCourse }) {
               return (
                 w && (
                   <a class="chip" href={`#/word/${w.id}`} title={w.tr}>
-                    {w.w} <small class="muted">×{x.lapses}</small>
+                    {w.w} {x.lapses > 0 && <small class="muted">×{x.lapses}</small>}
                   </a>
                 )
               );

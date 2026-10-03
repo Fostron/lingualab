@@ -129,7 +129,7 @@ export function Home({ c, tick }: { c: LoadedCourse; tick: number }) {
   const weakT = weakTopics(logs)
     .map((s) => c.topicById.get(s.id))
     .filter(Boolean);
-  const weakW = weakWords(info.cards);
+  const weakW = weakWords(info.cards, logs);
   const longTerm = info.cards.filter((x) => x.kind === 'wp' && x.stability >= 21).length;
   const many = info.due.length >= 40;
   return (

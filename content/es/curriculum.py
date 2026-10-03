@@ -300,5 +300,5 @@ UNITS = [
     U(89, "C1", "Word formation", ["es-word-formation"]),
     U(90, "C1", "Idioms and fixed expressions", ["es-idioms"]),
     U(91, "C1", "Spanish around the world", ["es-variation"]),
-    *[PACK(n, "C1") for n in range(92, 112)],
+    *[PACK(n, "C1") for n in range(92, 152)],
 ]

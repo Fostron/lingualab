@@ -165,7 +165,15 @@ export function SessionDone({
   pass?: number; // threshold to show passed / not passed
 }) {
   const pct = Math.round(100 * summary.score);
-  const wrong = summary.results.filter((r) => !r.ok);
+  const seen = new Set<string>();
+  const wrong = summary.results.filter((r) => {
+    if (r.ok) return false;
+    const e = r.ex;
+    const key = 'word' in e && e.word ? `w${e.word.id}` : 'sent' in e && e.sent ? `s${e.sent.id}` : e.k === 'drill' ? `d${e.drill.q}` : e.k === 'conj' ? `c${e.verb}${e.tense}${e.person}` : String(seen.size);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
   const passed = pass === undefined ? undefined : summary.score >= pass;
   const mins = Math.max(1, Math.round(summary.seconds / 60));
   return (

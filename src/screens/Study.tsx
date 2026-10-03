@@ -365,7 +365,7 @@ export function Practice({ c, kind }: { c: LoadedCourse; kind: string }) {
         if (e) exs.push({ ...e, cid: undefined } as Ex);
       }
     } else if (kind === 'weak') {
-      const weak = weakWords(info.cards).slice(0, 12);
+      const weak = weakWords(info.cards, logs).slice(0, 12);
       const planned = buildReview(c, weak, o, known, info.tenses);
       const topicItems: SessionItem[] = [];
       for (const ts of weakTopics(logs).slice(0, 3)) {

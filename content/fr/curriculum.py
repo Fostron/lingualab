@@ -261,5 +261,5 @@ UNITS = [
     U(83, "C1", T("Registers and slang", "Регистры и сленг"), ["fr-registre"]),
     U(84, "C1", T("Idioms", "Идиомы"), ["fr-idioms"]),
     U(85, "C1", T("French around the world", "Французский в мире"), ["fr-francophonie"]),
-    *[PACK(n, "C1") for n in range(86, 106)],
+    *[PACK(n, "C1") for n in range(86, 146)],
 ]

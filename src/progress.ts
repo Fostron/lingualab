@@ -211,12 +211,29 @@ export function weakTopics(logs: LogRec[]): TopicStat[] {
   return [...topicStats(logs).values()].filter((s) => s.n >= 4 && s.acc < 0.7).sort((a, b) => a.acc - b.acc);
 }
 
-/** Words that keep slipping: lapsed more than once, or forgotten again soon. */
-export function weakWords(cards: CardRec[]): CardRec[] {
+/**
+ * Words that keep slipping: forgotten after a long interval more than once, or missed
+ * repeatedly in the last three weeks (two wrong answers, or the latest answer wrong).
+ */
+export function weakWords(cards: CardRec[], logs: LogRec[] = []): CardRec[] {
   const now = new Date();
+  const since = Date.now() - 21 * 86400000;
+  const misses = new Map<string, { wrong: number; lastOk: boolean }>();
+  for (const l of logs) {
+    if (l.ts < since || !(l.cid.startsWith('wp:') || l.cid.startsWith('wr:'))) continue;
+    const m = misses.get(l.cid) || { wrong: 0, lastOk: true };
+    if (!l.ok) m.wrong++;
+    m.lastOk = l.ok;
+    misses.set(l.cid, m);
+  }
+  const score = (x: CardRec) => x.lapses * 2 + (misses.get(x.cid)?.wrong || 0);
   return cards
-    .filter((x) => (x.kind === 'wp' || x.kind === 'wr') && (x.lapses >= 2 || (x.lapses >= 1 && retrievability(x, now) < 0.8)))
-    .sort((a, b) => b.lapses - a.lapses || a.stability - b.stability);
+    .filter((x) => {
+      if (x.kind !== 'wp' && x.kind !== 'wr') return false;
+      const m = misses.get(x.cid);
+      return x.lapses >= 2 || (x.lapses >= 1 && retrievability(x, now) < 0.8) || (m && (m.wrong >= 2 || (m.wrong >= 1 && !m.lastOk)));
+    })
+    .sort((a, b) => score(b) - score(a) || a.stability - b.stability);
 }
 
 export async function loadLogs(c: LoadedCourse) {

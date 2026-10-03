@@ -2,11 +2,11 @@
 
 An app for really learning Spanish and French, from zero to C1. It is not a game: grammar is explained properly, vocabulary is scheduled with spaced repetition (FSRS), there is native-speaker audio, and you write, listen and build sentences. A placement test lets people who already know some of the language skip what they know.
 
-| Course | For speakers of | Units | Grammar topics | Words | Sentences |
-|---|---|---|---|---|---|
-| `es-en` Spanish | English | 111 (A1–C1) | 75 | 10 114 | 27 141 |
-| `fr-en` French | English | 105 (A1–C1) | 68 | 10 096 | 28 811 |
-| `fr-ru` French | Russian | 105 (A1–C1) | 68 (explanations in Russian) | 10 096 | 26 009 |
+| Course | For speakers of | Units | Lessons | Grammar topics | Words taught | Sentences | Reference dictionary |
+|---|---|---|---|---|---|---|---|
+| `es-en` Spanish | English | 151 (A1–C1) | 1 380 | 75 | 6 160 | 27 735 | 93 000 entries |
+| `fr-en` French | English | 145 (A1–C1) | 1 324 | 68 | 5 963 | 29 567 | 74 000 entries |
+| `fr-ru` French | Russian | 145 (A1–C1) | 1 324 | 68 (explanations in Russian) | 5 963 | 26 597 | 74 000 entries |
 
 Each grammar topic has a written explanation and hand-made drills (~1 000 per course). On top of that come up to 120 gap exercises per topic, generated from real Tatoeba sentences.
 
@@ -23,8 +23,22 @@ The app is fully static and runs in the browser. Progress lives in that browser'
 
 ## How learning works
 
-- **Placement test** (`src/screens/Placement.tsx`): an adaptive vocabulary check across frequency bands (with guessing correction) plus 4–6 grammar questions per level. The resulting level is the lower of the two. Units below it are marked as known; no review cards are created for them.
-- **Unit**: theme words plus frequency words (22 per unit at A1, rising to 45 at C1), one or more grammar topics, and sentences that use only known words. A unit test (≥ 80 %) lets the learner test out of a unit.
+- **Start**: a beginner starts at unit 1, lesson 1 (how the language sounds). Anyone else can take the **placement test** (`src/screens/Placement.tsx`): an adaptive vocabulary check across frequency bands (with guessing correction) plus 4–6 grammar questions per level. The resulting level is the lower of the two. Units below it are marked as known; no review cards are created for them.
+- **Unit**: theme words plus frequency words (22 per unit at A1, rising to 45 at C1, 50 in vocabulary-only units), one or more grammar topics, and sentences that use only known words.
+- **Lessons** (`src/lessons.ts`): each unit is split into small lessons that open one after another.
+  - *Words*: 5–8 new words, introduced three at a time, then recognised, picked, typed, heard and used in sentences, plus a few earlier words.
+  - *Rule*: the explanation step by step (split at its `##` headings), with the drills that belong to each step asked right after it.
+  - *Practice*: drills, gaps in real sentences, and conjugation of known verbs.
+  - *Putting it together*: listening, reading, building and translating the unit's sentences.
+  - *Unit test*: ≥ 80 %, typing only, no hints. It can be taken early to test out of the unit.
+  - *Level exam*: comes at the end of every level.
+
+  Lessons pass at 70 % of first answers (60 % for rule lessons). A unit opens when the previous one is complete.
+- **Help when stuck**:
+  - A hint button reveals the answer letter by letter (half credit).
+  - "Why?" shows the part of the rule behind a grammar question.
+  - A wrong answer comes back a few questions later, after re-teaching: the word card and an easier question, the rule step, or the verb table.
+  - Difficulty is adaptive by default: more choices while recent accuracy is low, more typing when it is high.
 - **Cards**:
   - `wr:<word>`: recognition.
   - `wp:<word>`: production, typed with accent and typo tolerance.
@@ -44,7 +58,7 @@ The app is fully static and runs in the browser. Progress lives in that browser'
 
 ## Content pipeline
 
-The app's data is in `public/content/<course>/{course,lexicon,sentences,conj}.json`. It is generated from open datasets plus the hand-written material in `content/`.
+The app's data is in `public/content/<course>/{course,lexicon,sentences,conj,dict}.json` (`dict.json`, the reference dictionary, is only fetched when someone searches). It is generated from open datasets plus the hand-written material in `content/`.
 
 ```bash
 python -m venv .venv
@@ -61,6 +75,7 @@ export PYTHONIOENCODING=utf-8
 .venv/Scripts/python pipeline/p06_word_audio.py    # word recordings listed in Wiktionary
 .venv/Scripts/python pipeline/p06b_commons_audio.py es   # + Commons categories (rate-limited, slow)
 .venv/Scripts/python pipeline/p05_build.py es-en fr-en fr-ru   # assemble the packs
+.venv/Scripts/python pipeline/p07_refdict.py es-en fr-en fr-ru # reference dictionary (after p05)
 ```
 
 Steps 01–06 write to `data/work/`. After editing anything in `content/`, only `p05_build.py` needs to be rerun (about 20 s per course).
@@ -90,8 +105,9 @@ Steps 01–06 write to `data/work/`. After editing anything in `content/`, only 
 | | |
 |---|---|
 | `src/content.ts` | course list, pack loading, articles/display forms |
-| `src/exercises.ts` | exercise generation for lessons, reviews, unit tests |
-| `src/progress.ts` | unit progress, lesson/test results, placement |
+| `src/lessons.ts` | lessons of a unit, unlocking, next lesson |
+| `src/exercises.ts` | exercise generation for each lesson type, reviews, tests; re-teaching after mistakes |
+| `src/progress.ts` | lesson results, test-out, placement, adaptive difficulty, weak spots |
 | `src/srs.ts` | FSRS wrapper |
 | `src/db.ts` | IndexedDB (cards, logs, units, settings), export/import |
 | `src/tts.ts` | native audio + speech synthesis |

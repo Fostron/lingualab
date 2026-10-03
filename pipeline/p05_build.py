@@ -76,7 +76,12 @@ def auto_gloss(item, native):
     if native == "ru":
         cands = [strip_stress(x) for x in item["gl"].get("ru", [])]
     else:
-        cands = list(item["gl"].get("en_kaikki", [])) + list(item["gl"].get("en", []))
+        # Wiktionary's first sense, then further senses only where the bilingual dictionary agrees
+        # (keeps "banana" from becoming "banana; an idiot; smartass"), then WikDict's own translations
+        kk = list(item["gl"].get("en_kaikki", []))
+        wd = list(item["gl"].get("en", []))
+        agreed = {x.lower() for x in wd}
+        cands = kk[:1] + [g for g in kk[1:] if g.lower() in agreed] + wd
     out = []
     for g in cands:
         g = g.strip(" ,.;")
