@@ -2127,3 +2127,12 @@ input.search,
 .as-prev {
   grid-column: 1 / -1;
 }
+.opt-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.opt-row .opt {
+  flex: 1;
+  min-width: 0;
+}

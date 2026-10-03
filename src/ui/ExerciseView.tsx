@@ -377,7 +377,22 @@ function Teach({ ex }: { ex: Extract<Ex, { k: 'teach' }> }) {
   );
 }
 
-function Options({ options, answerIdx, res, onPick, target }: { options: string[]; answerIdx: number; res: ExResult | null; onPick: (i: number) => void; target?: boolean }) {
+function Options({
+  options,
+  answerIdx,
+  res,
+  onPick,
+  target,
+  speakAs,
+}: {
+  options: string[];
+  answerIdx: number;
+  res: ExResult | null;
+  onPick: (i: number) => void;
+  target?: boolean;
+  /** after answering, a speaker next to each option says this text (e.g. the sentence with that option) */
+  speakAs?: (o: string) => string;
+}) {
   const [picked, setPicked] = useState<number | null>(null);
   useEffect(() => {
     const f = (e: KeyboardEvent) => {
@@ -394,17 +409,20 @@ function Options({ options, answerIdx, res, onPick, target }: { options: string[
   return (
     <div class="options">
       {options.map((o, i) => (
-        <button
-          class={`opt ${res ? (i === answerIdx ? 'right' : i === picked ? 'wrong' : 'dim') : ''} ${target ? 'tl-text' : ''}`}
-          disabled={!!res}
-          onClick={() => {
-            setPicked(i);
-            onPick(i);
-          }}
-        >
-          <span class="opt-n">{i + 1}</span>
-          {o}
-        </button>
+        <div class="opt-row">
+          <button
+            class={`opt ${res ? (i === answerIdx ? 'right' : i === picked ? 'wrong' : 'dim') : ''} ${target ? 'tl-text' : ''}`}
+            disabled={!!res}
+            onClick={() => {
+              setPicked(i);
+              onPick(i);
+            }}
+          >
+            <span class="opt-n">{i + 1}</span>
+            {o}
+          </button>
+          {res && speakAs && <SpeakBtn text={speakAs(o)} small />}
+        </div>
       ))}
     </div>
   );
@@ -448,7 +466,7 @@ function Mcq({ ex, res, answer }: P<'mcq'>) {
           </div>
         )}
       </div>
-      <Options options={ex.options} answerIdx={ex.answer} res={res} onPick={onPick} target={ex.mode === 'n2t'} />
+      <Options options={ex.options} answerIdx={ex.answer} res={res} onPick={onPick} target={ex.mode === 'n2t'} speakAs={ex.mode === 'n2t' ? (o) => o : undefined} />
     </div>
   );
 }
@@ -469,6 +487,7 @@ function TypeBox({
   lang,
   dontKnow = true,
   hint,
+  onChange,
 }: {
   res: ExResult | null;
   onSubmit: (v: string, hinted: boolean) => void;
@@ -476,8 +495,13 @@ function TypeBox({
   lang?: string;
   dontKnow?: boolean;
   hint?: string;
+  onChange?: (v: string) => void;
 }) {
-  const [v, setV] = useState('');
+  const [v, setValue] = useState('');
+  const setV = (x: string) => {
+    setValue(x);
+    onChange?.(x);
+  };
   const [hints, setHints] = useState(0);
   const submitted = useRef(false);
   const submit = () => {
@@ -564,10 +588,20 @@ function TypeWord({ ex, res, answer }: P<'type'>) {
   );
 }
 
+/** The sentence with `word` in the gap (a pause when empty). */
+function clozeText(ex: Extract<Ex, { k: 'cloze' }>, word: string) {
+  return ex.sent.tk
+    .map(([w, , sp], i) => (i === ex.i ? word || '…' : i > ex.i && i < ex.i + ex.n ? '' : w) + (sp ? ' ' : ''))
+    .join('')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function Cloze({ ex, res, answer }: P<'cloze'>) {
   const c = getState().course!;
   const st = getState().settings;
   const done = useRef(false);
+  const [typed, setTyped] = useState('');
   const submit = (val: string, hinted = false) => {
     if (done.current || res) return;
     done.current = true;
@@ -584,7 +618,8 @@ function Cloze({ ex, res, answer }: P<'cloze'>) {
     <div>
       <div class="ex-kicker">{ex.options ? t().chooseGap : t().fillGap}</div>
       <div class="prompt left">
-        <SentenceView s={ex.sent} blank={[ex.i, ex.n]} blankContent={blankContent} big />
+        <SentenceView s={ex.sent} blank={[ex.i, ex.n]} blankContent={blankContent} big />{' '}
+        {res ? <SpeakBtn text={sentText(ex.sent)} audio={ex.sent.au} small /> : <SpeakBtn text={clozeText(ex, typed.trim())} small />}
         <div class="tr">{ex.sent.tr}</div>
         {ex.hint && !res && <div class="sub">({ex.hint})</div>}
       </div>
@@ -595,9 +630,10 @@ function Cloze({ ex, res, answer }: P<'cloze'>) {
           res={res}
           onPick={(i) => submit(ex.options![i])}
           target
+          speakAs={(o) => clozeText(ex, o)}
         />
       ) : (
-        <TypeBox res={res} lang={c.meta.target} placeholder="…" hint={ex.answers[0]} onSubmit={(val, hinted) => submit(val, hinted)} />
+        <TypeBox res={res} lang={c.meta.target} placeholder="…" hint={ex.answers[0]} onChange={setTyped} onSubmit={(val, hinted) => submit(val, hinted)} />
       )}
     </div>
   );
@@ -715,6 +751,11 @@ function DrillView({ ex, res, answer }: P<'drill'>) {
   const parts = d.q.split(/_{2,}/);
   const kicker = d.t === 'choice' ? t().chooseGap : d.t === 'transform' ? t().transform : t().fillGap;
   const filled = res ? d.a[0] : null;
+  const [typed, setTyped] = useState('');
+  const gap = parts.length > 1;
+  const fill = (w: string) => (gap ? d.q.replace(/_{2,}/, w) : w);
+  // before answering: the sentence with what's typed (or a pause); after: with the right answer
+  const speakText = res ? fill(d.a[0]) : typed.trim() ? fill(typed.trim()) : gap ? d.q.replace(/_{2,}/, '…') : d.q;
   return (
     <div>
       <div class="ex-kicker">
@@ -732,7 +773,7 @@ function DrillView({ ex, res, answer }: P<'drill'>) {
           ) : (
             d.q
           )}{' '}
-          <SpeakBtn text={d.q.replace(/_{2,}/, '…')} small />
+          {/\p{L}/u.test(speakText) && <SpeakBtn text={speakText} small />}
         </div>
       </div>
       {d.t === 'choice' ? (
@@ -742,6 +783,7 @@ function DrillView({ ex, res, answer }: P<'drill'>) {
           res={res}
           onPick={(i) => answer({ ok: d.a.some((a) => normalize(a) === normalize(opts[i])), verdict: 'choice', given: opts[i] })}
           target
+          speakAs={fill}
         />
       ) : (
         <TypeBox
@@ -749,6 +791,7 @@ function DrillView({ ex, res, answer }: P<'drill'>) {
           lang={c.meta.target}
           placeholder="…"
           hint={d.a[0]}
+          onChange={setTyped}
           onSubmit={(v, hinted) => {
             const r = check(v, d.a, { strictAccents: st.strictAccents, strictForm: true });
             answer({ ok: r.ok, verdict: r.verdict, given: v, hinted });
