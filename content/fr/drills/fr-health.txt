@@ -1,0 +1,13 @@
+choice[en=I have a headache.|ru=У меня болит голова.]: J'ai mal ___ tête. => à la | au | aux
+choice[en=I have a stomach ache.|ru=У меня болит живот.]: J'ai mal ___ ventre. => au | à la | à le
+choice[en=My teeth hurt.|ru=У меня болят зубы.]: J'ai mal ___ dents. => aux | à les | au
+choice[en=My ear hurts.|ru=У меня болит ухо.]: J'ai mal ___ oreille. => à l' | au | à la
+choice[en=My back hurts.|ru=У меня болит спина.]: J'ai mal ___ dos. => au | à la | aux
+choice[en=I broke my leg.|ru=Я сломал ногу.]: Je me suis cassé ___ jambe. => la | ma | sa
+choice[en=She has blue eyes.|ru=У неё голубые глаза.]: Elle a ___ yeux bleus. => les | ses | des
+gap[en=Where does it hurt?|ru=Где болит?]: Où as-tu ___ ? => mal
+gap[en=It hurts.|ru=Больно.]: Ça fait ___. => mal
+gap[en=I have a temperature.|ru=У меня температура.]: J'ai de la ___. => fièvre
+gap[en=I don't feel well.|ru=Я плохо себя чувствую.]: Je ne me sens pas ___. => bien
+gap[en=eye → eyes|ru=глаз → глаза]: un œil → des ___ => yeux
+gap[en=Get well soon!|ru=Выздоравливай!]: Bon ___ ! => rétablissement

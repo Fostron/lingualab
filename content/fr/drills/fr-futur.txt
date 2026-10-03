@@ -1,0 +1,16 @@
+gap: Demain, je ___ (parler) au directeur. => parlerai
+gap: Nous ___ (finir) bientôt. => finirons
+gap: Ils ___ (prendre) le train. => prendront
+gap: Je ___ (être) là à huit heures. => serai
+gap: Tu ___ (avoir) le temps ? => auras
+gap: J'___ (aller) en France l'été prochain. => irai
+gap: Qu'est-ce que vous ___ (faire) ce week-end ? => ferez
+gap: Elle ___ (venir) avec nous. => viendra
+gap: On ___ (voir) bien. => verra
+gap: Je ne ___ (pouvoir) pas venir. => pourrai
+gap: Il ___ (falloir) partir tôt. => faudra
+gap: Demain, il ___ (pleuvoir). => pleuvra
+gap: J'___ (acheter) du pain. => achèterai
+gap: Quand je ___ (être) grand, je serai médecin. => serai
+choice[en=If you come, we'll go to the cinema.|ru=Если ты придёшь, мы пойдём в кино.]: Si tu ___, on ira au cinéma. => viens | viendras | venais
+transform[en=Put it in the futur simple|ru=Поставьте во futur simple]: Je vais téléphoner. => Je téléphonerai.

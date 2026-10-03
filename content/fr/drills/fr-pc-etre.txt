@@ -1,0 +1,16 @@
+gap: Je ___ (aller) au cinéma. => suis allé | suis allée
+gap: Marie ___ (arriver) hier. => est arrivée
+gap: Nous ___ (partir) tôt. => sommes partis | sommes parties
+gap: Elles ___ (rester) à la maison. => sont restées
+gap: Il ___ (tomber) dans la rue. => est tombé
+gap: Tu ___ (venir) avec qui ? => es venu | es venue
+gap: Ils ___ (sortir) hier soir. => sont sortis
+gap: Ma grand-mère ___ (naître) en 1940. => est née
+gap: Elle ___ (se lever) à six heures. => s'est levée
+gap: Nous nous ___ (se promener). => sommes promenés | sommes promenées
+choice: Elle ___ partie. => est | a | s'est
+choice: J'___ mangé. => ai | suis | me suis
+choice[en=I took the dog out.|ru=Я вывел собаку.]: J'___ sorti le chien. => ai | suis | me suis
+choice: Elles sont ___. => arrivées | arrivé | arrivés
+choice: Ils se sont ___ à Paris. => rencontrés | rencontré | rencontrées
+transform[en=Put it in the passé composé|ru=Поставьте в passé composé]: Elle va à Rome. => Elle est allée à Rome.

@@ -1,0 +1,14 @@
+choice: L'homme ___ parle est mon père. => qui | que | dont
+choice: Le livre ___ je lis est passionnant. => que | qui | où
+choice: La ville ___ j'habite est petite. => où | que | qui
+choice: Le film ___ je t'ai parlé est génial. => dont | que | où
+choice: La fille ___ il aime s'appelle Léa. => qu' | qui | dont
+choice: C'est l'outil ___ j'ai besoin. => dont | que | qui
+choice: Le jour ___ je suis né, il neigeait. => où | quand | que
+choice: Le train ___ part à midi est complet. => qui | que | où
+choice: L'homme ___ la femme est médecin. => dont | qui | que
+choice: Les gens ___ je connais sont sympas. => que | qui | dont
+choice: C'est moi ___ ai raison. => qui | que | dont
+gap[en=the person I work with|ru=человек, с которым я работаю]: la personne avec ___ je travaille => qui
+transform[en=Join with qui or que|ru=Соедините с помощью qui или que]: J'ai un ami. Il habite à Rome. => J'ai un ami qui habite à Rome.
+transform[en=Join with qui or que|ru=Соедините с помощью qui или que]: J'ai lu un livre. Tu me l'as donné. => J'ai lu le livre que tu m'as donné.

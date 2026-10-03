@@ -1,0 +1,15 @@
+gap: Quand j'étais petit, je ___ (jouer) au foot. => jouais
+gap: Nous ___ (habiter) à Lyon. => habitions
+gap: Il ___ (faire) beau. => faisait
+gap: Elle ___ (être) très triste. => était
+gap: J'___ (avoir) dix ans. => avais
+gap: Vous ___ (finir) tard ? => finissiez
+gap: Ils ___ (prendre) le bus tous les jours. => prenaient
+gap: Tu ___ (manger) beaucoup de bonbons. => mangeais
+gap: On ___ (aller) à la plage chaque été. => allait
+gap: Je ___ (lire) quand tu as appelé. => lisais
+gap: Nous ___ (être) fatigués. => étions
+gap[en=How about going to the cinema?|ru=А не сходить ли в кино?]: Et si on ___ (aller) au cinéma ? => allait
+choice[en=I wanted to ask you something.|ru=Я хотел вас кое о чём спросить.]: Je ___ vous demander quelque chose. => voulais | ai voulu | veux
+choice: Autrefois, il ___ beaucoup. => voyageait | a voyagé | voyage
+transform[en=Put it in the imparfait|ru=Поставьте в imparfait]: Je suis content. => J'étais content.

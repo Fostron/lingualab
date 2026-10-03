@@ -1,0 +1,13 @@
+choice[en=I've been living here for five years.|ru=Я живу здесь уже пять лет.]: J'habite ici ___ cinq ans. => depuis | pendant | il y a
+choice[en=I arrived two days ago.|ru=Я приехал два дня назад.]: Je suis arrivé ___ deux jours. => il y a | depuis | dans
+choice[en=I slept for eight hours.|ru=Я проспал восемь часов.]: J'ai dormi ___ huit heures. => pendant | depuis | il y a
+choice[en=The train leaves in ten minutes.|ru=Поезд уходит через десять минут.]: Le train part ___ dix minutes. => dans | en | après
+choice[en=I did it in five minutes.|ru=Я сделал это за пять минут.]: Je l'ai fait ___ cinq minutes. => en | dans | pendant
+choice[en=I'm leaving for a week.|ru=Я уезжаю на неделю.]: Je pars ___ une semaine. => pour | pendant | depuis
+choice[en=I've been waiting since noon.|ru=Я жду с полудня.]: Je t'attends ___ midi. => depuis | il y a | pendant
+choice[en=I've been studying French for a year.|ru=Я учу французский уже год.]: J'___ le français depuis un an. => apprends | ai appris | apprenais
+gap[en=until tomorrow|ru=до завтра]: ___ demain => jusqu'à
+gap[en=from Monday on|ru=начиная с понедельника]: à ___ de lundi => partir
+gap[en=around noon|ru=около полудня]: ___ midi => vers
+gap[en=before eating|ru=перед едой]: avant ___ manger => de
+gap[en=For how long?|ru=Как долго?]: Depuis combien de ___ ? => temps

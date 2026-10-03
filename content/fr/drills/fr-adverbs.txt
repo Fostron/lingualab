@@ -1,0 +1,14 @@
+gap[en=lent → adverb|ru=lent → наречие]: Il parle ___. => lentement
+gap[en=heureux → adverb|ru=heureux → наречие]: ___, il est venu. => Heureusement
+gap[en=vrai → adverb|ru=vrai → наречие]: C'est ___ bon. => vraiment
+gap[en=facile → adverb|ru=facile → наречие]: Il a gagné ___. => facilement
+gap[en=courant → adverb|ru=courant → наречие]: Elle parle ___ russe. => couramment
+gap[en=évident → adverb|ru=évident → наречие]: ___, tu as raison. => Évidemment
+gap[en=doux → adverb|ru=doux → наречие]: Parle ___, le bébé dort. => doucement
+choice: C'est un ___ livre. => bon | bien | bonne
+choice: Il parle très ___. => bien | bon | bonne
+choice: J'ai ___ dormi. => mal | mauvais | mauvaise
+choice: Il conduit ___. => vite | rapide | rapidement vite
+choice[en=I slept well.|ru=Я хорошо спал.]: J'ai ___. => bien dormi | dormi bien | bon dormi
+choice[en=He has already eaten.|ru=Он уже поел.]: Il a ___. => déjà mangé | mangé déjà | déjà a mangé
+gap[en=almost|ru=почти]: J'ai ___ fini. => presque

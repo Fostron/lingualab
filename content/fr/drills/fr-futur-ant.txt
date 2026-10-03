@@ -1,0 +1,11 @@
+gap: Quand tu arriveras, j'___ (finir). => aurai fini
+gap: À huit heures, nous ___ déjà ___ (partir). => serons, partis | serons partis
+gap: Je t'appellerai dès que j'___ (recevoir) les résultats. => aurai reçu
+gap: Une fois que tu ___ (lire) ce livre, tu comprendras. => auras lu
+gap: Il n'est pas là ? Il ___ (oublier). => aura oublié
+gap: Elle ___ (arriver) avant nous. => sera arrivée
+gap: Vous ___ (terminer) avant lundi ? => aurez terminé
+gap: Ils ___ (faire) leurs valises avant midi. => auront fait
+choice: Quand tu ___ tes devoirs, tu pourras jouer. => auras fini | finiras | as fini
+choice: Dès qu'il ___, on mangera. => sera arrivé | arrive | arrivera déjà
+choice[en=He must have missed the train.|ru=Наверное, он опоздал на поезд.]: Il ___ le train. => aura raté | a raté demain | ratera

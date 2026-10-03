@@ -1,0 +1,14 @@
+gap: Je veux que tu ___ (venir). => viennes
+gap: Mes parents souhaitent que je ___ (faire) des études. => fasse
+gap: Je préfère que vous ___ (partir) tôt. => partiez
+gap: Je suis content que tu ___ (être) là. => sois
+gap: C'est dommage que tu ne ___ (pouvoir) pas venir. => puisses
+gap: J'ai peur qu'il ___ (être) trop tard. => soit
+gap: Il vaut mieux que tu ___ (rester) ici. => restes
+gap: J'aimerais que tu m'___ (aider). => aides
+gap: Ça m'étonne qu'elle ne ___ (répondre) pas. => réponde
+gap: Il est important que nous ___ (avoir) le temps. => ayons
+choice[en=I hope you're well.|ru=Надеюсь, у тебя всё хорошо.]: J'espère que tu ___ bien. => vas | ailles | aller
+choice[en=I want to leave.|ru=Я хочу уйти.]: Je veux ___. => partir | que je parte | que je pars
+choice[en=I'm glad to be here.|ru=Я рад быть здесь.]: Je suis content ___ là. => d'être | que je sois | être
+choice[en=I want you to know.|ru=Я хочу, чтобы ты знал.]: Je veux que tu le ___. => saches | sais | savoir

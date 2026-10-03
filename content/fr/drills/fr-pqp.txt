@@ -1,0 +1,11 @@
+gap: Quand je suis arrivé, le film ___ déjà ___ (commencer). => avait, commencé | avait commencé
+gap: Il m'a dit qu'il ___ (perdre) ses clés. => avait perdu
+gap: Je n'___ jamais ___ (voir) la mer. => avais, vu | avais vu
+gap: Elle ___ (partir) quand tu as appelé. => était partie
+gap: Nous ___ (finir) avant midi. => avions fini
+gap: Ils ___ (arriver) la veille. => étaient arrivés
+gap: Tu ___ (faire) tes devoirs ? => avais fait
+gap[en=If only I had known!|ru=Если бы я только знал!]: Si seulement j'___ (savoir) ! => avais su
+choice: Quand nous sommes arrivés, le magasin ___. => avait fermé | a fermé | fermait
+choice[en="I've finished." → He said he…|ru=«Я закончил». → Он сказал, что…]: Il a dit qu'il ___. => avait fini | a fini | finira
+transform[en=Report it|ru=Передайте в косвенной речи]: Elle a dit : « J'ai vu ce film. » => Elle a dit qu'elle avait vu ce film.

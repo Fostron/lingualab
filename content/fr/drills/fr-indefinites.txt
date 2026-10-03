@@ -1,0 +1,15 @@
+gap[en=Is anyone there?|ru=Есть кто-нибудь?]: Il y a ___ ? => quelqu'un
+gap[en=There's nobody.|ru=Никого нет.]: Il n'y a ___. => personne
+gap[en=Do you want something?|ru=Хочешь что-нибудь?]: Tu veux ___ ? => quelque chose
+gap[en=I don't want anything.|ru=Я ничего не хочу.]: Je ne veux ___. => rien
+gap[en=Nobody came.|ru=Никто не пришёл.]: ___ n'est venu. => Personne
+gap[en=something good|ru=что-то вкусное]: quelque chose ___ bon => de
+gap[en=every day|ru=каждый день]: ___ les jours => tous
+gap[en=all day|ru=весь день]: ___ la journée => toute
+gap[en=I understood everything.|ru=Я всё понял.]: J'ai ___ compris. => tout
+gap[en=each time|ru=каждый раз]: ___ fois => chaque
+gap[en=several times|ru=несколько раз]: ___ fois => plusieurs
+gap[en=I have no idea.|ru=Понятия не имею.]: Je n'ai ___ idée. => aucune
+gap[en=nowhere|ru=нигде]: Je ne le trouve nulle ___. => part
+choice[en=another coffee|ru=ещё один кофе]: ___ café => un autre | un d'autre | autre un
+choice[en=Each one has his opinion.|ru=У каждого своё мнение.]: ___ a son avis. => Chacun | Chaque | Tout

@@ -1,0 +1,14 @@
+choice: Je parle à Marie. → Je ___ parle. => lui | la | leur
+choice: Il téléphone à ses parents. → Il ___ téléphone. => leur | leurs | les
+choice: J'écris à Paul. → Je ___ écris. => lui | le | l'
+choice: J'attends Paul. → Je ___ attends. => l' | lui | leur
+choice: J'aide mes amis. → Je ___ aide. => les | leur | lui
+choice[en=Can you phone me?|ru=Позвонишь мне?]: Tu ___ téléphones ? => me | moi | m'en
+choice[en=He gives it to me.|ru=Он мне это даёт.]: Il ___ donne. => me le | le me | moi le
+choice[en=I tell it to him.|ru=Я ему это говорю.]: Je ___ dis. => le lui | lui le | se le
+choice[en=Give it to me!|ru=Дай мне это!]: Donne-___ ! => le-moi | moi-le | me-le
+gap[en=I'm going to write to her.|ru=Я ей напишу.]: Je vais ___ écrire. => lui
+gap[en=I answered them.|ru=Я им ответил.]: Je ___ ai répondu. => leur
+gap[en=Answer him!|ru=Ответь ему!]: Réponds-___ ! => lui
+transform[en=Replace with a pronoun|ru=Замените местоимением]: Je donne le livre à Anne. => Je le lui donne.
+transform[en=Replace with a pronoun|ru=Замените местоимением]: Il offre des fleurs à sa mère. => Il lui offre des fleurs.

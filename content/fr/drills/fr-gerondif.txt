@@ -1,0 +1,13 @@
+gap[en=parler|ru=parler]: Il mange en ___. => parlant
+gap[en=prendre|ru=prendre]: Il chante en ___ sa douche. => prenant
+gap[en=pratiquer|ru=pratiquer]: On apprend en ___. => pratiquant
+gap[en=courir|ru=courir]: Il est entré en ___. => courant
+gap[en=faire|ru=faire]: Elle écoute de la musique en ___ le ménage. => faisant
+gap[en=finir|ru=finir]: En ___ tôt, on pourra sortir. => finissant
+gap[en=être|ru=être]: Tout en ___ riche, il vit simplement. => étant
+gap[en=avoir|ru=avoir]: En ___ du temps, je le ferai. => ayant
+gap[en=savoir|ru=savoir]: ___ la vérité, il s'est tu. => Sachant
+gap[en=arriver|ru=arriver]: En ___ à la gare, j'ai vu Paul. => arrivant
+gap[en=manger|ru=manger]: Ne parle pas en ___ ! => mangeant
+choice[en=He learned French by reading.|ru=Он выучил французский, читая.]: Il a appris le français ___ lisant. => en | par | pour
+transform[en=Use the gérondif|ru=Используйте gérondif]: Il travaille et il écoute la radio. => Il travaille en écoutant la radio.

@@ -1,0 +1,14 @@
+gap[en=I would like a coffee.|ru=Я бы хотел кофе.]: Je ___ (vouloir) un café. => voudrais
+gap[en=Could you help me?|ru=Не могли бы вы мне помочь?]: ___ (pouvoir)-vous m'aider ? => Pourriez
+gap[en=You should rest.|ru=Тебе стоило бы отдохнуть.]: Tu ___ (devoir) te reposer. => devrais
+gap[en=I'd love to travel.|ru=Я бы хотел путешествовать.]: J'___ (aimer) voyager. => aimerais
+gap[en=That would be great!|ru=Было бы здорово!]: Ce ___ (être) super ! => serait
+gap[en=If I were you, I'd leave.|ru=На твоём месте я бы уехал.]: À ta place, je ___ (partir). => partirais
+gap[en=We would go to the beach.|ru=Мы бы поехали на пляж.]: Nous ___ (aller) à la plage. => irions
+gap[en=He said he would come.|ru=Он сказал, что придёт.]: Il a dit qu'il ___ (venir). => viendrait
+gap[en=They would have time.|ru=У них было бы время.]: Ils ___ (avoir) le temps. => auraient
+gap[en=You (vous) would do it?|ru=Вы бы это сделали?]: Vous le ___ (faire) ? => feriez
+gap[en=It would be necessary to leave.|ru=Надо было бы уйти.]: Il ___ (falloir) partir. => faudrait
+choice[en=If I had money, I would buy a house.|ru=Если бы у меня были деньги, я бы купил дом.]: Si j'___ de l'argent, j'achèterais une maison. => avais | aurais | ai
+choice[en=When I was a child, I would play outside.|ru=В детстве я играл на улице.]: Quand j'étais petit, je ___ dehors. => jouais | jouerais | jouerai
+choice[en=future or conditional?|ru=будущее или условное?]: Demain, je ___ mes parents. (I will call) => téléphonerai | téléphonerais

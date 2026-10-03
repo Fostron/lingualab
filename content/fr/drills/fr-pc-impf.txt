@@ -1,0 +1,14 @@
+choice: Quand j'étais petit, je ___ au foot tous les jours. => jouais | ai joué
+choice: Hier, j'___ au foot avec mes amis. => ai joué | jouais
+choice: Je dormais quand le téléphone ___. => a sonné | sonnait
+choice: Je ___ quand le téléphone a sonné. => dormais | ai dormi
+choice: Il ___ froid et il neigeait. => faisait | a fait
+choice: Soudain, la porte ___. => s'est ouverte | s'ouvrait
+choice: J'___ à Paris pendant deux ans, puis je suis parti. => ai habité | habitais
+choice: D'habitude, nous ___ le bus. => prenions | avons pris
+choice: L'année dernière, nous ___ en Grèce. => sommes allés | allions
+choice: Quand je suis sorti, il ___. => pleuvait | a plu
+choice: J'___ Marie en 2015, à une fête. => ai connu | connaissais
+choice: Elle ___ dix ans quand elle a déménagé. => avait | a eu
+choice: Pendant que je travaillais, mon fils ___. => jouait | a joué
+choice: Tout à coup, il ___ à pleurer. => a commencé | commençait

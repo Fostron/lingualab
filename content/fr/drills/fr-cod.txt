@@ -1,0 +1,14 @@
+choice: Tu vois Paul ? — Oui, je ___ vois. => le | la | les
+choice: Tu aimes cette chanson ? — Oui, je ___ aime. => l' | la | le
+choice: Il prend les clés ? — Oui, il ___ prend. => les | le | leur
+choice: Tu connais Marie ? — Non, je ne ___ connais pas. => la | le | lui
+choice[en=I love you.|ru=Я тебя люблю.]: Je ___ aime. => t' | te | toi
+choice[en=Can you help me?|ru=Можешь мне помочь?]: Tu peux ___ aider ? => m' | me | moi
+gap[en=I'm going to do it.|ru=Я это сделаю.]: Je vais ___ faire. => le
+gap[en=I saw him.|ru=Я его видел.]: Je ___ ai vu. => l'
+gap[en=Take it! (le livre)|ru=Возьми её! (книгу)]: Prends-___ ! => le
+gap[en=Look at me!|ru=Посмотри на меня!]: Regarde-___ ! => moi
+gap[en=I know (it).|ru=Я знаю.]: Je ___ sais. => le
+transform[en=Replace the object with a pronoun|ru=Замените дополнение местоимением]: Je regarde la télé. => Je la regarde.
+transform[en=Replace the object with a pronoun|ru=Замените дополнение местоимением]: Je ne connais pas ces gens. => Je ne les connais pas.
+transform[en=Replace the object with a pronoun|ru=Замените дополнение местоимением]: J'ai vu le film. => Je l'ai vu.

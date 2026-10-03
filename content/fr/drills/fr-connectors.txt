@@ -1,0 +1,13 @@
+choice[en=He's rich, yet he isn't happy.|ru=Он богат, и всё же несчастлив.]: Il est riche, ___ il n'est pas heureux. => pourtant | donc | car
+choice[en=He's ill, so he isn't coming.|ru=Он болен, поэтому не придёт.]: Il est malade, ___ il ne vient pas. => donc | pourtant | bien que
+choice[en=As it was raining, we stayed.|ru=Так как шёл дождь, мы остались.]: ___ il pleuvait, nous sommes restés. => Comme | Car | Donc
+choice[en=Since you're here, help me.|ru=Раз уж ты здесь, помоги мне.]: ___ tu es là, aide-moi. => Puisque | Pourtant | Alors que
+choice[en=thanks to you|ru=благодаря тебе]: ___ toi, j'ai réussi. => Grâce à | À cause de | Malgré
+choice[en=because of the rain|ru=из-за дождя]: ___ la pluie, le match est annulé. => À cause de | Grâce à | Car
+choice[en=I like tea; on the other hand, I hate coffee.|ru=Я люблю чай, зато ненавижу кофе.]: J'aime le thé ; ___, je déteste le café. => par contre | donc | en effet
+choice[en=actually (correction)|ru=на самом деле (уточнение)]: Je pensais qu'il était français ; ___, il est belge. => en fait | en effet | donc
+choice[en=indeed (confirmation)|ru=действительно (подтверждение)]: Il est fatigué. ___, il a travaillé toute la nuit. => En effet | En fait | Pourtant
+gap[en=first|ru=сначала]: ___ abord, lisez le texte. => D'
+gap[en=despite the cold|ru=несмотря на холод]: ___ le froid, il est sorti. => Malgré
+gap[en=in short|ru=короче]: ___, c'était génial. => Bref
+gap[en=besides / moreover|ru=кроме того]: C'est cher et, de ___, c'est loin. => plus

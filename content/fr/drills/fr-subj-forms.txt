@@ -1,0 +1,16 @@
+gap: Il faut que je ___ (parler) au directeur. => parle
+gap: Il faut que tu ___ (finir) ton travail. => finisses
+gap: Il faut qu'il ___ (prendre) le bus. => prenne
+gap: Il faut que nous ___ (partir). => partions
+gap: Il faut que vous ___ (être) à l'heure. => soyez
+gap: Il faut que j'___ (avoir) de la patience. => aie
+gap: Il faut qu'elle ___ (aller) chez le médecin. => aille
+gap: Il faut que tu ___ (faire) attention. => fasses
+gap: Il faut que nous ___ (pouvoir) venir. => puissions
+gap: Il faut que vous ___ (savoir) la vérité. => sachiez
+gap: Il faut qu'ils ___ (venir) demain. => viennent
+gap: Il faut que je ___ (boire) de l'eau. => boive
+gap: Il faut qu'il ___ (être) content. => soit
+gap: Il faut que tu ___ (lire) ce livre. => lises
+choice[en=We have to leave (general).|ru=Надо уходить (вообще).]: Il faut ___. => partir | que partir | qu'on part
+choice[en=You must leave (you specifically).|ru=Тебе надо уйти.]: Il faut que tu ___. => partes | pars | partir

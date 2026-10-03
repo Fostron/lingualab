@@ -1,0 +1,14 @@
+choice: Je pense qu'il ___ raison. => a | ait
+choice: Je ne pense pas qu'il ___ raison. => ait | a
+choice: Je crois que c'___ vrai. => est | soit
+choice: Je ne crois pas que ce ___ vrai. => soit | est
+choice: Je doute qu'il ___ venir. => puisse | peut
+choice: Je suis sûr qu'elle ___. => viendra | vienne
+choice: Je ne suis pas sûr qu'elle ___. => vienne | viendra
+choice: Il est possible qu'il ___ demain. => pleuve | pleut
+choice: Il est probable qu'il ___ demain. => pleuvra | pleuve
+choice: Il est évident que tu ___ fatigué. => es | sois
+choice: Il viendra peut-être ; peut-être qu'il ___ en retard. => sera | soit
+gap: Il se peut qu'ils ___ (partir) demain. => partent
+gap: Je ne trouve pas que ce ___ (être) une bonne idée. => soit
+gap: Je doute que vous ___ (avoir) le temps. => ayez

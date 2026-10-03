@@ -1,0 +1,14 @@
+gap: Je parle lentement pour que tu ___ (comprendre). => comprennes
+gap: Bien qu'il ___ (être) malade, il travaille. => soit
+gap: Partons avant qu'il ne ___ (pleuvoir). => pleuve
+gap: Attends ici jusqu'à ce que je ___ (revenir). => revienne
+gap: Je viens à condition que tu m'___ (inviter). => invites
+gap: Il est parti sans que je le ___ (voir). => voie
+gap: On sortira, à moins qu'il ne ___ (faire) trop froid. => fasse
+gap: Je t'explique pour que tu ___ (savoir). => saches
+choice: Je travaille pour ___ de l'argent. => gagner | que je gagne | gagne
+choice: Je me lave les mains avant ___ manger. => de | que | —
+choice: Il est parti sans ___ au revoir. => dire | qu'il dise | dit
+choice: Même s'il ___, je sortirai. => pleut | pleuve | pleuvrait
+choice: Il est arrivé pendant que tu ___. => dormais | dormes | dormirais
+choice: Je reste parce que je ___ fatigué. => suis | sois | serai

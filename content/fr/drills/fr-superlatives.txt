@@ -1,0 +1,12 @@
+choice[en=the most beautiful city in the world|ru=самый красивый город в мире]: la plus belle ville ___ monde => du | dans le | en
+choice[en=the best restaurant|ru=лучший ресторан]: le ___ restaurant => meilleur | plus bon | mieux
+choice[en=She sings the best.|ru=Лучше всех поёт она.]: C'est elle qui chante le ___. => mieux | meilleur | plus bien
+choice[en=the worst day of my life|ru=худший день в моей жизни]: le ___ jour de ma vie => pire | plus pire | mauvais
+choice[en=the most interesting film|ru=самый интересный фильм]: le film ___ intéressant => le plus | plus | très
+gap[en=the biggest museum|ru=самый большой музей]: le ___ grand musée => plus
+gap[en=the least difficult|ru=наименее трудное]: l'exercice le ___ difficile => moins
+gap[en=the tallest in the class|ru=самый высокий в классе]: le plus grand ___ la classe => de
+gap[en=He works the most.|ru=Больше всех работает он.]: C'est lui qui travaille le ___. => plus
+gap[en=She has the most friends.|ru=У неё больше всех друзей.]: Elle a le plus ___ amis. => d'
+gap[en=the best (fem.)|ru=лучшая]: C'est la ___ idée. => meilleure
+transform[en=Make it superlative|ru=Поставьте в превосходную степень]: C'est une belle ville. => C'est la plus belle ville. | C'est la ville la plus belle.

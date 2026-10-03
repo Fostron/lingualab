@@ -1,0 +1,13 @@
+gap[en=« Je suis fatigué. »|ru=« Je suis fatigué. »]: Il a dit qu'il ___ fatigué. => était
+gap[en=« J'ai fini. »|ru=« J'ai fini. »]: Il a dit qu'il ___. => avait fini
+gap[en=« Je viendrai. »|ru=« Je viendrai. »]: Elle a dit qu'elle ___. => viendrait
+gap[en=« Je vais partir. »|ru=« Je vais partir. »]: Il a dit qu'il ___ partir. => allait
+gap[en=« Viens ! »|ru=« Viens ! »]: Il m'a dit ___ venir. => de
+gap[en=« Tu viens ? »|ru=« Tu viens ? »]: Il m'a demandé ___ je venais. => si
+gap[en=« Qu'est-ce que tu fais ? »|ru=« Qu'est-ce que tu fais ? »]: Il m'a demandé ___ je faisais. => ce que
+gap[en=« Qu'est-ce qui se passe ? »|ru=« Qu'est-ce qui se passe ? »]: Il a demandé ___ se passait. => ce qui
+gap[en=« Où vas-tu ? »|ru=« Où vas-tu ? »]: Il m'a demandé ___ j'allais. => où
+gap[en=demain → (reported)|ru=demain → (в косвенной речи)]: Il a dit qu'il partirait le ___. => lendemain
+choice[en=« J'ai froid. » (he says now)|ru=« J'ai froid. » (говорит сейчас)]: Il dit qu'il ___ froid. => a | avait | aurait
+transform[en=Report it (Elle a dit que…)|ru=Передайте (Elle a dit que…)]: « J'aime ce film. » => Elle a dit qu'elle aimait ce film.
+transform[en=Report it (Il m'a demandé…)|ru=Передайте (Il m'a demandé…)]: « Tu as faim ? » => Il m'a demandé si j'avais faim.

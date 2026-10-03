@@ -1,0 +1,14 @@
+choice: Tu vas à Paris ? — Oui, j'___ vais. => y | en | le
+choice: Tu veux du café ? — Oui, j'___ veux. => en | y | le
+choice: Tu as des frères ? — Oui, j'___ ai deux. => en | y | les
+choice: Tu penses à ton examen ? — Oui, j'___ pense. => y | en | lui
+choice: Tu viens de la gare ? — Oui, j'___ viens. => en | y | la
+choice: Tu as besoin de mon aide ? — Oui, j'___ ai besoin. => en | y | la
+choice: Il est chez lui ? — Oui, il ___ est. => y | en | le
+choice[en=Let's go!|ru=Пошли!]: Allons-___ ! => y | en | nous
+choice[en=I'm fed up.|ru=Мне надоело.]: J'___ ai marre. => en | y | le
+choice[en=Don't worry.|ru=Не волнуйся.]: Ne t'___ fais pas. => en | y | le
+gap[en=There are some.|ru=Есть (немного).]: Il y ___ a. => en
+gap[en=I have three (of them).|ru=У меня их три.]: J'___ ai trois. => en
+transform[en=Replace with y or en|ru=Замените на y или en]: Je mange des pommes. => J'en mange.
+transform[en=Replace with y or en|ru=Замените на y или en]: Nous allons au cinéma. => Nous y allons.

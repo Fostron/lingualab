@@ -1,0 +1,14 @@
+gap[en=Who did that? — Me!|ru=Кто это сделал? — Я!]: Qui a fait ça ? — ___ ! => Moi
+gap[en=with me|ru=со мной]: avec ___ => moi
+gap[en=for you (tu)|ru=для тебя]: pour ___ => toi
+gap[en=at his place|ru=у него дома]: chez ___ => lui
+gap[en=without them (m)|ru=без них]: sans ___ => eux
+gap[en=It's him.|ru=Это он.]: C'est ___. => lui
+gap[en=taller than me|ru=выше меня]: plus grand que ___ => moi
+gap[en=Me too.|ru=Я тоже.]: ___ aussi. => Moi
+gap[en=This book is mine.|ru=Эта книга моя.]: Ce livre est à ___. => moi
+gap[en=I'm thinking of you.|ru=Я думаю о тебе.]: Je pense à ___. => toi
+choice[en=My bike is blue, yours is red.|ru=Мой велосипед синий, твой — красный.]: Mon vélo est bleu, ___ est rouge. => le tien | la tienne | ton
+choice[en=It's not my suitcase, it's hers.|ru=Это не мой чемодан, а её.]: C'est la ___. => sienne | sien | sa
+choice[en=our house and theirs|ru=наш дом и их]: notre maison et la ___ => leur | leurs | sienne
+choice[en=mine (les clés)|ru=мои (ключи)]: Ce sont ___. => les miennes | les miens | mes

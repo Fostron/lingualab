@@ -1,0 +1,13 @@
+choice: ___ m'intéresse, c'est l'histoire. => Ce qui | Ce que | Qui
+choice: Je ne comprends pas ___ tu dis. => ce que | ce qui | que
+choice: C'est exactement ___ j'ai besoin. => ce dont | ce que | dont
+choice: Fais ___ tu veux. => ce que | que | ce qui
+choice: Le livre ___ je parle est génial. => dont | que | lequel
+choice: La raison pour ___ je suis venu. => laquelle | lequel | quoi
+choice: Le stylo avec ___ j'écris. => lequel | laquelle | qui
+choice: Le projet ___ je travaille. => auquel | à lequel | dont
+choice: J'ai trois sœurs, ___ deux sont mariées. => dont | que | desquelles
+choice: Dis-moi ___ se passe. => ce qui | ce que | qu'est-ce qui
+gap[en=All I want is to sleep.|ru=Всё, чего я хочу, — это спать.]: Tout ___ je veux, c'est dormir. => ce que
+gap[en=the work I'm proud of|ru=работа, которой я горжусь]: le travail ___ je suis fier => dont
+gap[en=the park near which I live|ru=парк, рядом с которым я живу]: le parc près ___ j'habite => duquel

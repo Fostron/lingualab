@@ -1,0 +1,12 @@
+gap[en=I'm having my car repaired.|ru=Мне ремонтируют машину.]: Je fais ___ ma voiture. => réparer
+gap[en=He makes me laugh.|ru=Он меня смешит.]: Il me fait ___. => rire
+gap[en=Don't keep me waiting!|ru=Не заставляй меня ждать!]: Ne me fais pas ___ ! => attendre
+gap[en=She's having a house built.|ru=Ей строят дом.]: Elle fait ___ une maison. => construire
+gap[en=I had my hair cut.|ru=Я подстригся.]: Je me suis fait ___ les cheveux. => couper
+gap[en=Let me speak!|ru=Дай мне сказать!]: ___-moi parler ! => Laisse
+gap[en=Be careful!|ru=Будь внимателен!]: Fais ___ ! => attention
+gap[en=He's pretending to sleep.|ru=Он притворяется, что спит.]: Il fait ___ de dormir. => semblant
+gap[en=It doesn't matter.|ru=Ничего страшного.]: Ça ne fait ___. => rien
+gap[en=I trust you.|ru=Я тебе доверяю.]: Je te fais ___. => confiance
+choice[en=I had it repaired (la voiture).|ru=Мне её отремонтировали.]: Je ___ réparer. => l'ai fait | l'ai faite | ai fait la
+choice[en=He got robbed.|ru=Его обокрали.]: Il s'est ___ voler. => fait | faite | été

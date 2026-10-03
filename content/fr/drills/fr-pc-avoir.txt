@@ -1,0 +1,16 @@
+gap: Hier, j'___ (travailler) beaucoup. => ai travaillé
+gap: Tu ___ (voir) ce film ? => as vu
+gap: Nous ___ (prendre) le train. => avons pris
+gap: Ils ___ (finir) leurs devoirs. => ont fini
+gap: Elle ___ (avoir) un accident. => a eu
+gap: J'___ (faire) mes courses. => ai fait
+gap: Vous ___ (dire) la vérité ? => avez dit
+gap: Il ___ (écrire) une lettre. => a écrit
+gap: J'___ (boire) un café. => ai bu
+gap: Elles ___ (lire) ce livre. => ont lu
+gap: Nous ___ (attendre) une heure. => avons attendu
+gap: On ___ (mettre) la table. => a mis
+gap[en=participle of pouvoir|ru=причастие pouvoir]: Je n'ai pas ___ venir. => pu
+choice[en=I haven't eaten.|ru=Я не ел.]: Je ___ mangé. => n'ai pas | ne pas ai | n'ai mangé
+choice[en=I've already finished.|ru=Я уже закончил.]: J'ai ___ fini. => déjà | fini déjà | été
+transform[en=Put it in the passé composé|ru=Поставьте в passé composé]: Je mange une pomme. => J'ai mangé une pomme.

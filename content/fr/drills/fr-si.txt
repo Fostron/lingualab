@@ -1,0 +1,14 @@
+choice: S'il ___, je reste à la maison. => pleut | pleuvra | pleuvrait
+choice: Si tu viens, on ___ au cinéma. => ira | irait | allait
+choice: Si j'___ de l'argent, je voyagerais. => avais | aurais | ai
+choice: Si j'avais de l'argent, je ___. => voyagerais | voyagerai | voyageais
+choice: Si j'étais toi, je lui ___. => parlerais | parlerai | parlais
+choice: Que ferais-tu si tu ___ au loto ? => gagnais | gagnerais | gagnes
+choice: Si tu es fatigué, ___-toi. => repose | reposes | reposerais
+gap: Si on ___ (avoir) plus de temps, on visiterait le musée. => avait
+gap: Si vous ___ (venir), je serais content. => veniez
+gap: S'ils ___ (être) là, ils nous aideraient. => étaient
+gap: Si tu travailles, tu ___ (réussir). => réussiras
+gap: Si elle pouvait, elle ___ (partir). => partirait
+gap[en=How about going to the restaurant?|ru=А не пойти ли в ресторан?]: Si on ___ (aller) au restaurant ? => allait
+choice[en=I don't know whether he'll come.|ru=Не знаю, придёт ли он.]: Je ne sais pas s'il ___. => viendra | vienne | venait

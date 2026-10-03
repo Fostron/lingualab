@@ -1,0 +1,13 @@
+gap[en=construire|ru=construire]: La maison est ___ par des ouvriers. => construite
+gap[en=écrire|ru=écrire]: La lettre a été ___ par Marie. => écrite
+gap[en=publier|ru=publier]: Les résultats seront ___ demain. => publiés
+gap[en=réparer|ru=réparer]: Les voitures ont été ___. => réparées
+gap[en=résoudre|ru=résoudre]: Ce problème doit être ___. => résolu
+gap[en=He is loved by everyone.|ru=Его все любят.]: Il est aimé ___ tous. => de
+gap[en=written BY Victor Hugo|ru=написан Виктором Гюго]: Ce livre a été écrit ___ Victor Hugo. => par
+choice[en=My bike was stolen.|ru=У меня украли велосипед.]: ___ a volé mon vélo. => On | Il | Se
+choice[en=This wine is drunk chilled.|ru=Это вино пьют охлаждённым.]: Ce vin ___ boit frais. => se | est | on
+choice[en=I had my hair cut.|ru=Я подстригся.]: Je me suis ___ couper les cheveux. => fait | faite | été
+choice[en=I was told that…|ru=Мне сказали, что…]: ___ que… => On m'a dit | J'ai été dit | Je suis dit
+transform[en=Make it passive|ru=Поставьте в пассив]: Le chat mange la souris. => La souris est mangée par le chat.
+transform[en=Make it passive|ru=Поставьте в пассив]: La police a arrêté le voleur. => Le voleur a été arrêté par la police.
