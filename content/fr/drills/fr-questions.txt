@@ -1,0 +1,15 @@
+choice[en=Where do you live?|ru=Где ты живёшь?]: Tu habites ___ ? => où | quand | qui
+choice[en=What are you doing?|ru=Что ты делаешь?]: ___ tu fais ? => Qu'est-ce que | Qui | Quoi
+choice[en=Who is that?|ru=Кто это?]: ___ est-ce ? => Qui | Que | Quel
+choice[en=When are you leaving?|ru=Когда ты уезжаешь?]: Tu pars ___ ? => quand | comment | où
+choice[en=How are you?|ru=Как поживаете?]: ___ allez-vous ? => Comment | Combien | Pourquoi
+choice[en=How much is it?|ru=Сколько это стоит?]: ___ ça coûte ? => Combien | Comment | Quel
+choice[en=Why? — Because…|ru=Почему? — Потому что…]: Pourquoi ? — ___ je suis fatigué. => Parce que | Pourquoi | Car que
+choice[en=What time is it?|ru=Который час?]: ___ heure est-il ? => Quelle | Quel | Quels
+choice[en=How old are you?|ru=Сколько тебе лет?]: ___ âge as-tu ? => Quel | Quelle | Combien
+choice[en=Does he have a brother? (inversion)|ru=У него есть брат? (инверсия)]: ___ un frère ? => A-t-il | A-il | Il a-t
+gap[en=What's happening?|ru=Что происходит?]: Qu'est-ce ___ se passe ? => qui
+gap[en=Is there a bank?|ru=Здесь есть банк?]: Est-ce ___ il y a une banque ? => qu'
+gap[en=You're doing what? (informal)|ru=Ты что делаешь? (разг.)]: Tu fais ___ ? => quoi
+transform[en=Ask with "est-ce que"|ru=Задайте вопрос с est-ce que]: Tu parles anglais. => Est-ce que tu parles anglais ?
+transform[en=Ask with inversion|ru=Задайте вопрос с инверсией]: Vous aimez le café. => Aimez-vous le café ?

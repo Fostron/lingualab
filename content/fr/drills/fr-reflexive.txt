@@ -1,0 +1,14 @@
+gap: Je ___ lève à sept heures. => me
+gap: Tu ___ couches tard ? => te
+gap: Il ___ habille. => s'
+gap: Nous ___ promenons. => nous
+gap: Vous ___ reposez ? => vous
+gap: Elles ___ amusent. => s'
+gap[en=My name is Léa.|ru=Меня зовут Леа.]: Je ___ appelle Léa. => m'
+gap[en=se lever|ru=se lever]: Je me ___ tôt. => lève
+gap[en=I'm going to bed.|ru=Я пойду спать.]: Je vais ___ coucher. => me
+gap[en=Get up! (tu)|ru=Вставай!]: Lève-___ ! => toi
+choice[en=I wash my hands.|ru=Я мою руки.]: Je me lave ___ mains. => les | mes | ses
+choice[en=I don't get up early.|ru=Я не встаю рано.]: Je ___ tôt. => ne me lève pas | me ne lève pas | ne lève me pas
+choice[en=Sit down (vous).|ru=Садитесь.]: ___ => Asseyez-vous | Vous asseyez | Asseyez-toi
+choice[en=They love each other.|ru=Они любят друг друга.]: Ils ___ aiment. => s' | se | les

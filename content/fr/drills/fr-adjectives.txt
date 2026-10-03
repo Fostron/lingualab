@@ -1,0 +1,16 @@
+gap[en=petit|ru=petit]: une ___ maison => petite
+gap[en=grand|ru=grand]: des maisons ___ => grandes
+gap[en=français|ru=français]: Elle est ___. => française
+gap[en=heureux|ru=heureux]: Elle est ___. => heureuse
+gap[en=bon|ru=bon]: une ___ idée => bonne
+gap[en=blanc|ru=blanc]: une robe ___ => blanche
+gap[en=beau|ru=beau]: un ___ homme => bel
+gap[en=nouveau|ru=nouveau]: un ___ ami => nouvel
+gap[en=vieux|ru=vieux]: une ___ dame => vieille
+gap[en=sportif|ru=sportif]: Ma sœur est très ___. => sportive
+gap[en=cher|ru=cher]: Ces chaussures sont ___. => chères
+choice: une voiture ___ => rouge | rouges | rougee
+choice[en=a little dog|ru=маленькая собака (m)]: un ___ => petit chien | chien petit | petite chien
+choice[en=an interesting book|ru=интересная книга]: un ___ => livre intéressant | intéressant livre | livre intéressante
+choice[en=a great man|ru=великий человек]: un ___ => grand homme | homme grand | grande homme
+transform[en=Make it feminine|ru=Поставьте в женский род]: Il est petit et gentil. => Elle est petite et gentille.

@@ -1,0 +1,15 @@
+choice[en=On Mondays I work.|ru=По понедельникам я работаю.]: ___ lundi, je travaille. => Le | En | À
+choice[en=I'm leaving on Friday (this Friday).|ru=Я уезжаю в пятницу.]: Je pars ___ vendredi. => — | le | en
+choice[en=in May|ru=в мае]: ___ mai => en | au | le
+choice[en=in summer|ru=летом]: ___ été => en | au | à
+choice[en=in spring|ru=весной]: ___ printemps => au | en | à
+choice[en=the 1st of January|ru=1 января]: le ___ janvier => premier | un | une
+choice[en=in 2020|ru=в 2020 году]: ___ 2020 => en | à | dans
+gap[en=the day after Monday|ru=день после понедельника]: lundi, ___ => mardi
+gap[en=the day before Sunday|ru=день перед воскресеньем]: ___, dimanche => samedi
+gap[en=the month after June|ru=месяц после июня]: juin, ___ => juillet
+gap[en=yesterday|ru=вчера]: ___, j'étais malade. => Hier
+gap[en=tomorrow|ru=завтра]: À ___ ! => demain
+gap[en=today|ru=сегодня]: ___, il fait beau. => Aujourd'hui
+gap[en=Have a nice evening!|ru=Хорошего вечера!]: Bonne ___ ! => soirée
+gap[en=all day long|ru=весь день]: toute la ___ => journée

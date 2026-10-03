@@ -1,0 +1,15 @@
+gap: Je ___ étudiant. => suis
+gap: Tu ___ français ? => es
+gap: Elle ___ médecin. => est
+gap: Nous ___ à Paris. => sommes
+gap: Vous ___ très gentil. => êtes
+gap: Ils ___ fatigués. => sont
+gap: On ___ en retard. => est
+choice[en=She is a teacher.|ru=Она учительница.]: Elle est ___ professeur. => — | une | la
+choice[en=It's a book.|ru=Это книга.]: ___ un livre. => C'est | Il est | Elle est
+choice[en=He is tall.|ru=Он высокий.]: ___ grand. => Il est | C'est | Il a
+choice[en=These are my friends.|ru=Это мои друзья.]: ___ mes amis. => Ce sont | C'est | Ils sont
+choice[en=you (polite, one person)|ru=вы (вежливо, одному человеку)]: ___ êtes de Lyon ? => Vous | Tu | Nous
+transform[en=Make it negative|ru=Поставьте в отрицательную форму]: Je suis fatigué. => Je ne suis pas fatigué.
+transform[en=Make it negative|ru=Поставьте в отрицательную форму]: C'est vrai. => Ce n'est pas vrai.
+gap[en=My name is Anne.|ru=Меня зовут Анна.]: Je m'___ Anne. => appelle

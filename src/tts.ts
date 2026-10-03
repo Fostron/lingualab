@@ -4,9 +4,18 @@ let voicesCache: SpeechSynthesisVoice[] = [];
 let rate = 0.9;
 let preferred: Record<string, string> = {};
 
+const voiceListeners = new Set<() => void>();
+
+export function onVoicesChanged(f: () => void) {
+  voiceListeners.add(f);
+  return () => voiceListeners.delete(f);
+}
+
 function loadVoices() {
   if (typeof speechSynthesis === 'undefined') return [];
+  const before = voicesCache.length;
   voicesCache = speechSynthesis.getVoices();
+  if (voicesCache.length !== before) for (const f of voiceListeners) f();
   return voicesCache;
 }
 if (typeof speechSynthesis !== 'undefined') {

@@ -1,0 +1,557 @@
+# French curated glossary, part 1 — w|pos|en|ru|note_en|note_ru
+# "!" = dictionary only (not taught as a card), "-" = drop
+# ---- surface forms of function words (tap-to-translate) ----
+les|det|!the (plural)|!определённый артикль мн. ч.
+une|det|a, an (fem.)|неопределённый артикль ж. р.
+des|det|!some (plural indefinite article)|!неопределённый артикль мн. ч.
+au|det|!to the, at the (à + le)|!à + le (в, к, на)
+aux|det|!to the, at the (à + les)|!à + les
+ma|det|my (fem.)|мой, моя (ж. р.)
+mes|det|my (plural)|мои
+ta|det|your (fem., informal)|твой, твоя (ж. р.)
+tes|det|your (plural, informal)|твои
+sa|det|his, her, its (fem. noun)|его, её (перед сущ. ж. р.)
+ses|det|his, her, its (plural)|его, её (мн. ч.)
+nos|det|our (plural)|наши
+vos|det|your (plural; formal)|ваши
+leurs|det|their (plural)|их (мн. ч.)
+cette|det|this, that (fem.)|эта, та
+ces|det|these, those|эти, те
+cet|det|this, that (masc. before vowel)|этот (перед гласной)
+eux|pron|them (stressed, masc.)|они, их (ударная форма)
+soi|pron|!oneself|!себя
+y|pron|there; it (à + thing)|там, туда; об этом||заменяет à + предмет / место
+en|pron|some, of it, from there|его, их (из этого); оттуда||заменяет de + сущ.
+leur|pron|(to) them|им
+lui|pron|(to) him, (to) her; him (stressed)|ему, ей; он (ударная форма)
+me|pron|!me, to me, myself|!меня, мне, себя
+te|pron|!you, to you, yourself|!тебя, тебе, себя
+se|pron|!himself, herself, themselves, each other|!себя, себе, друг друга
+le|pron|!him, it|!его (прямое дополнение)
+la|pron|!her, it|!её (прямое дополнение)
+les|pron|!them|!их (прямое дополнение)
+# ---- phrases ----
+s'il vous plaît|phrase|please (formal)|пожалуйста (вежливо, на «вы»)
+s'il te plaît|phrase|please (informal)|пожалуйста (на «ты»)
+merci beaucoup|phrase|thank you very much|большое спасибо
+de rien|phrase|you're welcome|не за что
+bonsoir|intj|good evening|добрый вечер
+bonne nuit|phrase|good night|спокойной ночи
+au revoir|phrase|goodbye|до свидания
+à bientôt|phrase|see you soon|до скорого
+à demain|phrase|see you tomorrow|до завтра
+enchanté|adj|nice to meet you|очень приятно (при знакомстве)
+ça va|phrase|how are you? / I'm fine|как дела? / нормально
+excusez-moi|phrase|excuse me (formal)|извините
+d'accord|phrase|OK, agreed|хорошо, согласен
+il y a|phrase|there is, there are; ago|есть, имеется; тому назад
+il faut|phrase|it is necessary, one must|нужно, надо
+est-ce que|phrase|(question marker)|(вопросительная частица)
+qu'est-ce que|phrase|what? (object)|что? (дополнение)
+aujourd'hui|adv|today|сегодня
+quelqu'un|pron|someone, somebody|кто-то, кто-нибудь
+quelque chose|pron|something|что-то, что-нибудь
+tout le monde|phrase|everybody|все (люди)
+tout de suite|phrase|right away, immediately|сразу, немедленно
+un peu|phrase|a little, a bit|немного
+beaucoup de|phrase|a lot of, many|много (+ сущ.)
+à côté de|phrase|next to|рядом с
+en face de|phrase|opposite|напротив
+près de|phrase|near|около, недалеко от
+loin de|phrase|far from|далеко от
+il fait beau|phrase|the weather is nice|хорошая погода
+il pleut|phrase|it's raining|идёт дождь
+avoir faim|phrase|to be hungry|хотеть есть, быть голодным
+avoir soif|phrase|to be thirsty|хотеть пить
+avoir froid|phrase|to be cold|мёрзнуть, (мне) холодно
+avoir chaud|phrase|to be hot|(мне) жарко
+avoir peur|phrase|to be afraid|бояться
+avoir raison|phrase|to be right|быть правым
+avoir tort|phrase|to be wrong|быть неправым, ошибаться
+avoir besoin de|phrase|to need|нуждаться в, нужно
+avoir envie de|phrase|to feel like|хотеть (чего-то)
+avoir sommeil|phrase|to be sleepy|хотеть спать
+week-end|noun|weekend|выходные
+ne ... pas|phrase|not|не (отрицание)
+ne ... jamais|phrase|never|никогда не
+ne ... rien|phrase|nothing|ничего не
+ne ... plus|phrase|no longer, not any more|больше не
+ne ... personne|phrase|nobody|никто не
+ne ... que|phrase|only|только
+# ---- pronominal verbs ----
+s'appeler|verb|to be called (je m'appelle… = my name is…)|называться, зваться (меня зовут…)
+se lever|verb|to get up|вставать
+se réveiller|verb|to wake up|просыпаться
+se coucher|verb|to go to bed|ложиться спать
+se laver|verb|to wash (oneself)|умываться, мыться
+s'habiller|verb|to get dressed|одеваться
+se doucher|verb|to shower|принимать душ
+se brosser|verb|to brush (one's teeth, hair)|чистить (зубы), расчёсывать (волосы)
+se promener|verb|to go for a walk|гулять
+s'asseoir|verb|to sit down|садиться
+se dépêcher|verb|to hurry|торопиться
+se reposer|verb|to rest|отдыхать
+s'amuser|verb|to have fun|развлекаться, веселиться
+s'occuper de|verb|to take care of, deal with|заниматься (чем-то), заботиться о
+se souvenir de|verb|to remember|помнить, вспоминать
+se sentir|verb|to feel (+ adj.)|чувствовать себя
+se trouver|verb|to be (located); to find oneself|находиться
+se passer|verb|to happen|происходить, случаться
+s'en aller|verb|to go away, leave|уходить
+se marier|verb|to get married|жениться, выходить замуж
+se rendre compte|verb|to realise|осознавать, понимать
+se tromper|verb|to make a mistake, be wrong|ошибаться
+se taire|verb|to be quiet|молчать, замолчать
+se battre|verb|to fight|драться
+s'inquiéter|verb|to worry|волноваться, беспокоиться
+s'arrêter|verb|to stop|останавливаться
+se mettre à|verb|to start (doing)|начинать, приниматься за
+s'intéresser à|verb|to be interested in|интересоваться
+s'excuser|verb|to apologise|извиняться
+se fâcher|verb|to get angry|сердиться
+# ---- frequency ranks 1–450 ----
+de|prep|of; from|из; от; (родительный падеж)
+je|pron|I|я
+avoir|verb|to have|иметь; (вспомогательный глагол)
+la|det|the (fem.)|определённый артикль ж. р.
+pas|adv|not|не (во 2-й части отрицания)
+et|conj|and|и; а
+le|det|the (masc.)|определённый артикль м. р.
+il|pron|he; it|он; оно
+à|prep|to; at; in|в; на; к
+un|det|a, an (masc.); one|неопределённый артикль м. р.; один
+tu|pron|you (informal)|ты
+vous|pron|you (formal / plural)|вы
+aller|verb|to go|идти, ехать
+faire|verb|to do; to make|делать
+on|pron|we (informal); one, people|мы (разг.); (неопр.-личн.) люди
+être|verb|to be|быть
+ça|pron|that; it|это
+pour|prep|for; in order to|для; чтобы
+en|prep|in; to; by (+ means)|в; на
+qui|pron|who; which, that|кто; который
+dire|verb|to say; to tell|говорить, сказать
+dans|prep|in; into|в
+elle|pron|she; it|она
+mais|conj|but|но
+du|det|some (partitive); of the|частичный артикль м. р.; = de + le
+pouvoir|verb|can; to be able to|мочь
+ce|pron|it; this, that (c'est = it is)|это (c'est = это)
+nous|pron|we; us|мы; нас, нам
+vouloir|verb|to want|хотеть
+plus|adv|more; (ne … plus) no longer|больше, более; (ne … plus) больше не
+savoir|verb|to know (facts, how to)|знать; уметь
+que|pron|that, which (object); what|который (дополнение); что
+bien|adv|well|хорошо
+avec|prep|with|с
+voir|verb|to see|видеть
+mon|det|my (masc.)|мой
+non|adv|no|нет
+moi|pron|me (stressed); I|я, меня (ударная форма)
+sur|prep|on; about|на; о, про
+ils|pron|they (masc.)|они
+tout|det|all; every; the whole|весь; каждый
+devoir|verb|must; to have to; to owe|быть должным; должен
+ce|det|this, that (masc.)|этот, тот
+oui|adv|yes|да
+comme|conj|like; as|как
+venir|verb|to come|приходить, приезжать
+son|det|his, her, its (masc. noun)|его, её (перед сущ. м. р.)
+par|prep|by; through; per|через; по; (кем-то)
+rien|pron|nothing|ничего
+toi|pron|you (stressed)|ты (ударная форма)
+ici|adv|here|здесь, сюда
+là|adv|there; here|там; здесь
+si|adv|so; yes (contradicting a negative)|так; да (в ответ на отрицание)
+suivre|verb|to follow|следовать, идти за
+prendre|verb|to take|брать
+ou|conj|or|или
+parler|verb|to speak; to talk|говорить, разговаривать
+quand|conj|when|когда
+chose|noun|thing|вещь, дело
+alors|adv|then; so|тогда; итак
+falloir|verb|to be necessary (il faut)|быть нужным (il faut = надо)
+votre|det|your (formal / plural)|ваш
+croire|verb|to believe; to think|верить; думать
+très|adv|very|очень
+aimer|verb|to love; to like|любить; нравиться
+passer|verb|to pass; to spend (time); to drop by|проходить; проводить (время); заходить
+ton|det|your (informal, masc.)|твой
+aussi|adv|also, too|тоже, также
+bon|adj|good|хороший
+penser|verb|to think|думать
+jamais|adv|never; ever|никогда; когда-либо
+sans|prep|without|без
+si|conj|if; whether|если; ли
+encore|adv|still; again; more|ещё; снова
+trouver|verb|to find|находить
+tout|pron|everything; all|всё
+laisser|verb|to leave; to let|оставлять; позволять
+petit|adj|small; little|маленький
+attendre|verb|to wait (for)|ждать
+tout|adv|quite; completely|совсем, совершенно
+homme|noun|man|мужчина; человек
+regarder|verb|to look at; to watch|смотреть
+donner|verb|to give|давать
+deux|num|two|два
+arriver|verb|to arrive; to happen|приезжать, прибывать; случаться
+jour|noun|day|день
+temps|noun|time; weather|время; погода
+pourquoi|adv|why|почему, зачем
+toujours|adv|always; still|всегда; всё ещё
+femme|noun|woman; wife|женщина; жена
+mettre|verb|to put; to put on (clothes)|класть, ставить; надевать
+même|adv|even|даже
+appeler|verb|to call|звать; звонить
+vie|noun|life|жизнь
+partir|verb|to leave, go away|уезжать, уходить
+rester|verb|to stay; to remain|оставаться
+fois|noun|time (occasion: une fois = once)|раз
+notre|det|our|наш
+demander|verb|to ask|спрашивать; просить
+peu|noun|-|-
+maintenant|adv|now|сейчас, теперь
+seul|adj|alone; only|один, одинокий; единственный
+connaître|verb|to know (people, places)|знать (людей, места), быть знакомым
+arrêter|verb|to stop; to arrest|останавливать, прекращать; арестовывать
+peut-être|adv|maybe, perhaps|может быть
+père|noun|father|отец
+trop|adv|too; too much|слишком
+comprendre|verb|to understand|понимать
+sortir|verb|to go out; to take out|выходить; выносить
+an|noun|year (with numbers: 20 ans)|год (с числами: 20 лет)
+sûr|adj|sure|уверенный
+monde|noun|world; people (tout le monde = everyone)|мир; люди
+quelque|det|some; a few (quelques)|какой-то; несколько (quelques)
+vraiment|adv|really|действительно, правда
+autre|adj|other; another|другой
+chez|prep|at the home of (chez moi = at my place)|у (кого-то), к (кому-то)
+quoi|pron|what|что
+mourir|verb|to die|умирать
+dieu|noun|god|бог
+fille|noun|girl; daughter|девочка, девушка; дочь
+grand|adj|big; tall; great|большой; высокий; великий
+heure|noun|hour; time (o'clock)|час; время
+tuer|verb|to kill|убивать
+comment|adv|how|как
+oh|intj|!oh|!о, ох
+enfant|noun|child|ребёнок
+merci|intj|thank you|спасибо
+entendre|verb|to hear|слышать
+vrai|adj|true; real|верный, правдивый; настоящий
+mère|noun|mother|мать
+déjà|adv|already|уже
+main|noun|hand|рука (кисть)
+beau|adj|beautiful; handsome; nice|красивый; хороший (о погоде)
+ami|noun|friend|друг
+besoin|noun|need (avoir besoin de = to need)|нужда, потребность
+chercher|verb|to look for; to fetch|искать; заходить за
+après|prep|after|после
+monsieur|noun|Mr; sir; gentleman|господин, месье
+voilà|prep|there is; here is|вот
+nuit|noun|night|ночь
+accord|noun|agreement (d'accord = OK)|согласие (d'accord = хорошо)
+maison|noun|house; home|дом
+mieux|adv|better|лучше
+revenir|verb|to come back|возвращаться
+beaucoup|adv|a lot; much|много; очень
+essayer|verb|to try; to try on|пытаться; примерять
+tête|noun|head|голова
+sentir|verb|to feel; to smell|чувствовать; пахнуть, нюхать
+soir|noun|evening|вечер
+quel|det|which; what|какой, который
+aider|verb|to help|помогать
+tenir|verb|to hold; to keep|держать
+coup|noun|blow, hit; (coup de téléphone) call|удар; (un coup de fil) звонок
+gens|noun|people|люди
+cela|pron|that|это, то
+juste|adj|fair; right; tight|справедливый; правильный; тесный
+avant|prep|before|до, перед
+moins|adv|less|меньше
+air|noun|air; look (avoir l'air = to seem)|воздух; вид (avoir l'air = выглядеть)
+nom|noun|name; noun|имя; фамилия; существительное
+finir|verb|to finish|заканчивать
+autre|pron|another one; other|другой
+jouer|verb|to play|играть
+personne|pron|nobody; anybody|никто
+ah|intj|!ah|!а, ах
+perdre|verb|to lose|терять
+un|pron|one|один
+peur|noun|fear (avoir peur = to be afraid)|страх
+rendre|verb|to give back; to make (+ adj.)|возвращать; делать (каким-то)
+plaire|verb|to please (ça me plaît = I like it)|нравиться
+vivre|verb|to live|жить
+parce que|conj|because|потому что
+depuis|prep|since; for (time)|с (какого-то времени); уже (в течение)
+même|adj|same; (moi-même) myself|тот же самый; сам
+moment|noun|moment|момент
+sous|prep|under|под
+entre|prep|between; among|между; среди
+rentrer|verb|to go home; to come back in|возвращаться (домой)
+elles|pron|they (fem.)|они (ж. р.)
+devenir|verb|to become|становиться
+vite|adv|quickly, fast|быстро
+mort|noun|death; dead person|смерть; мертвец
+bonjour|noun|hello; good morning|здравствуйте; добрый день
+maman|noun|mum, mom|мама
+amour|noun|love|любовь
+trois|num|three|три
+premier|adj|first|первый
+ni|conj|nor (ni… ni… = neither… nor)|ни (ni… ni… = ни… ни…)
+argent|noun|money; silver|деньги; серебро
+oublier|verb|to forget|забывать
+entrer|verb|to enter, go in|входить
+écouter|verb|to listen (to)|слушать
+commencer|verb|to begin, start|начинать
+ouvrir|verb|to open|открывать
+raison|noun|reason (avoir raison = to be right)|причина; разум (avoir raison = быть правым)
+mal|adv|badly|плохо
+fils|noun|son|сын
+bon|intj|well…; OK|ну ладно; хорошо
+dernier|adj|last|последний
+manger|verb|to eat|есть, кушать
+problème|noun|problem|проблема
+travailler|verb|to work|работать
+tomber|verb|to fall|падать
+assez|adv|enough; quite|достаточно; довольно
+tirer|verb|to pull; to shoot|тянуть; стрелять
+porte|noun|door|дверь
+fait|noun|fact|факт
+vers|prep|towards; around (time)|к, по направлению к; около
+voiture|noun|car|машина, автомобиль
+dont|pron|of which, whose|который (с de), чей
+tant|adv|so much; so many|столько; так
+question|noun|question|вопрос
+puis|conj|then|потом, затем
+contre|prep|against|против
+idée|noun|idea|идея, мысль
+changer|verb|to change|менять, изменять
+affaire|noun|matter; business; (affaires) things, belongings|дело; (affaires) вещи
+dormir|verb|to sleep|спать
+travail|noun|work; job|работа
+histoire|noun|story; history|история
+jeune|adj|young|молодой
+famille|noun|family|семья
+demain|adv|tomorrow|завтра
+hein|intj|!eh?; right?|!а?; да?
+porter|verb|to carry; to wear|нести, носить
+marcher|verb|to walk; to work (machine)|ходить, шагать; работать (о механизме)
+payer|verb|to pay|платить
+côté|noun|side (à côté de = next to)|сторона (à côté de = рядом с)
+frère|noun|brother|брат
+tard|adv|late|поздно
+foutre|verb|-|-
+tous|pron|all; everyone|все
+pendant|prep|during; for|во время; в течение
+mot|noun|word|слово
+eau|noun|water|вода
+place|noun|square; seat; space|площадь; место
+asseoir|verb|to sit (s'asseoir = to sit down)|сажать (s'asseoir = садиться)
+occuper|verb|to occupy (s'occuper de = to take care of)|занимать (s'occuper de = заниматься)
+eh|intj|!hey; well|!эй; ну
+vieux|adj|old|старый
+apprendre|verb|to learn; to teach|учить, изучать; учить (кого-то)
+terre|noun|earth; land; ground|земля
+année|noun|year|год
+combien|adv|how much; how many|сколько
+boire|verb|to drink|пить
+peu|adv|little, not much (un peu = a little)|мало (un peu = немного)
+retrouver|verb|to find (again); to meet up with|находить (вновь); встречаться
+excuser|verb|to excuse (excusez-moi = excuse me)|извинять (excusez-moi = извините)
+garder|verb|to keep|хранить, оставлять себе
+devant|prep|in front of|перед
+tout|noun|-|-
+envoyer|verb|to send|посылать, отправлять
+chambre|noun|bedroom; room|комната, спальня; номер (в отеле)
+leur|det|their|их
+montrer|verb|to show|показывать
+écrire|verb|to write|писать
+truc|noun|thing, thingy (colloq.)|штука (разг.)
+mois|noun|month|месяц
+minute|noun|minute|минута
+part|noun|share; part (à part = apart from)|часть, доля
+chance|noun|luck; chance|удача; шанс
+sembler|verb|to seem|казаться
+ville|noun|town; city|город
+monter|verb|to go up; to get in (a car)|подниматься; садиться (в транспорт)
+seulement|adv|only|только
+enfin|adv|finally; at last; well…|наконец; в общем
+servir|verb|to serve; to be useful|служить; подавать; пригодиться
+merci|noun|-|-
+corps|noun|body|тело
+matin|noun|morning|утро
+répondre|verb|to answer|отвечать
+longtemps|adv|a long time|долго
+type|noun|type; guy (colloq.)|тип; парень (разг.)
+mal|noun|pain; evil (avoir mal = to hurt)|боль; зло (avoir mal = болеть)
+loin|adv|far|далеко
+souvenir|verb|(se souvenir de) to remember|(se souvenir de) помнить
+lire|verb|to read|читать
+car|conj|because, for|так как, потому что
+gros|adj|big; fat|большой; толстый
+quitter|verb|to leave (a place, a person)|покидать, уходить из
+fou|adj|crazy, mad|сумасшедший
+madame|noun|Mrs; madam|госпожа, мадам
+sang|noun|blood|кровь
+pied|noun|foot (à pied = on foot)|нога, ступня (à pied = пешком)
+personne|noun|person|человек, личность
+suite|noun|continuation (tout de suite = right away)|продолжение (tout de suite = сразу)
+continuer|verb|to continue|продолжать
+prêt|adj|ready|готовый
+semaine|noun|week|неделя
+gagner|verb|to win; to earn|выигрывать; зарабатывать
+ainsi|adv|thus; like this|так, таким образом
+mec|noun|guy (colloq.)|парень, чувак (разг.)
+celui|pron|the one (that)|тот (который)
+cas|noun|case|случай
+prier|verb|to pray; to beg (je vous en prie = you're welcome / please)|молиться; просить (je vous en prie = пожалуйста)
+rappeler|verb|to call back; to remind|перезванивать; напоминать
+train|noun|train (être en train de = to be doing)|поезд (être en train de = быть в процессе)
+espérer|verb|to hope|надеяться
+poser|verb|to put down; to ask (a question)|класть; задавать (вопрос)
+acheter|verb|to buy|покупать
+retourner|verb|to go back; to turn over|возвращаться; переворачивать
+raconter|verb|to tell (a story)|рассказывать
+garçon|noun|boy|мальчик
+guerre|noun|war|война
+toucher|verb|to touch|трогать
+rue|noun|street|улица
+descendre|verb|to go down; to get off|спускаться; выходить (из транспорта)
+point|noun|point; full stop|точка; пункт
+presque|adv|almost|почти
+plein|adj|full|полный
+peine|noun|sorrow; penalty (ce n'est pas la peine = it's not worth it)|горе; наказание (ce n'est pas la peine = не стоит)
+nouveau|noun|-|-
+tourner|verb|to turn|поворачивать; вращать
+voix|noun|voice|голос
+façon|noun|way, manner|способ, манера
+manquer|verb|to miss; to be lacking (tu me manques = I miss you)|не хватать; пропускать (tu me manques = я скучаю по тебе)
+mauvais|adj|bad; wrong|плохой; неправильный
+importer|verb|to matter (n'importe quoi = anything)|иметь значение (n'importe quoi = что угодно)
+visage|noun|face|лицо
+fin|noun|end|конец
+gars|noun|guy, lad (colloq.)|парень (разг.)
+voici|prep|here is, here are|вот
+heureux|adj|happy|счастливый
+feu|noun|fire; traffic light|огонь; светофор
+emmener|verb|to take (someone somewhere)|уводить, отвозить (кого-то)
+désoler|verb|(être désolé) to be sorry|(être désolé) сожалеть
+mari|noun|husband|муж
+police|noun|police|полиция
+là-bas|adv|over there|там
+lever|verb|to raise (se lever = to get up)|поднимать (se lever = вставать)
+fermer|verb|to close|закрывать
+rencontrer|verb|to meet|встречать
+long|adj|long|длинный, долгий
+hé|intj|!hey|!эй
+ensemble|adv|together|вместе
+salut|noun|hi; bye (informal)|привет; пока
+bras|noun|arm|рука
+plutôt|adv|rather|скорее, довольно
+jeter|verb|to throw (away)|бросать, выбрасывать
+instant|noun|moment, instant|мгновение
+envie|noun|desire; envy (avoir envie de = to feel like)|желание; зависть (avoir envie de = хотеть)
+noir|adj|black; dark|чёрный; тёмный
+compter|verb|to count|считать
+valoir|verb|to be worth (il vaut mieux = it's better to)|стоить (il vaut mieux = лучше)
+ordre|noun|order|порядок; приказ
+tour|noun|turn; tour (la tour = tower)|очередь; круг (la tour = башня)
+lit|noun|bed|кровать
+juste|adv|just; exactly|только; точно
+livre|noun|book (la livre = pound)|книга (la livre = фунт)
+papa|noun|dad|папа
+désolé|adj|sorry|сожалеющий (désolé = извините)
+suffire|verb|to be enough (ça suffit = that's enough)|хватать, быть достаточным
+chien|noun|dog|собака
+cause|noun|cause (à cause de = because of)|причина (à cause de = из-за)
+sauver|verb|to save, rescue|спасать
+pays|noun|country|страна
+film|noun|film, movie|фильм
+petit|noun|little one; kid|малыш
+décider|verb|to decide|решать
+expliquer|verb|to explain|объяснять
+genre|noun|kind, type; gender|род, вид; жанр
+chef|noun|boss; chef|начальник; шеф-повар
+imaginer|verb|to imagine|представлять, воображать
+voler|verb|to fly; to steal|летать; красть
+nouveau|adj|new|новый
+reste|noun|rest, remainder|остаток
+possible|adj|possible|возможный
+joli|adj|pretty|красивый, милый
+lieu|noun|place (avoir lieu = to take place)|место (avoir lieu = проходить, состояться)
+agir|verb|to act (il s'agit de = it's about)|действовать (il s'agit de = речь идёт о)
+docteur|noun|doctor|доктор
+recevoir|verb|to receive|получать
+avant|adv|before, earlier|раньше
+endroit|noun|place, spot|место
+bouger|verb|to move|двигаться
+cacher|verb|to hide|прятать
+apporter|verb|to bring|приносить
+droit|noun|right; law|право
+paraître|verb|to seem, appear|казаться
+plaisir|noun|pleasure|удовольствие
+important|adj|important|важный
+force|noun|strength; force|сила
+battre|verb|to beat|бить
+partie|noun|part; game (of cards etc.)|часть; партия
+arme|noun|weapon|оружие
+route|noun|road|дорога
+hier|adv|yesterday|вчера
+école|noun|school|школа
+blanc|adj|white|белый
+bout|noun|end; bit, piece|конец; кусочек
+cher|adj|expensive; dear|дорогой
+verre|noun|glass|стакан; стекло
+jeu|noun|game|игра
+offrir|verb|to offer; to give (as a present)|предлагать; дарить
+coucher|verb|(se coucher) to go to bed|(se coucher) ложиться спать
+pleurer|verb|to cry|плакать
+marier|verb|(se marier) to get married|(se marier) жениться, выходить замуж
+parfois|adv|sometimes|иногда
+tiens|intj|here (you are); well!|на, держи; надо же!
+photo|noun|photo|фотография
+rire|verb|to laugh|смеяться
+surtout|adv|especially; above all|особенно; прежде всего
+bientôt|adv|soon|скоро
+fort|adv|loudly; hard; very|громко; сильно; очень
+quatre|num|four|четыре
+vérité|noun|truth|правда, истина
+après|adv|afterwards|потом, после
+vendre|verb|to sell|продавать
+pauvre|adj|poor|бедный
+tellement|adv|so; so much|так; настолько
+pièce|noun|room; coin; play|комната; монета; пьеса
+ciel|noun|sky; heaven|небо
+lettre|noun|letter|письмо; буква
+inquiéter|verb|to worry (s'inquiéter = to be worried)|беспокоить (s'inquiéter = волноваться)
+ailleurs|adv|elsewhere (d'ailleurs = besides)|в другом месте (d'ailleurs = впрочем)
+table|noun|table|стол
+parent|noun|parent; relative|родитель; родственник
+merde|noun|-|-
+dur|adj|hard|твёрдый; трудный
+merde|intj|!damn!; shit! (vulgar)|!чёрт! (груб.)
+service|noun|service; favour|услуга; служба
+aucun|det|no, not any|никакой
+reprendre|verb|to take back; to resume|брать обратно; возобновлять
+journée|noun|day (duration)|день (как отрезок времени)
+cinq|num|five|пять
+permettre|verb|to allow|позволять, разрешать
+pas|noun|step|шаг
+dès|prep|from, as early as|с, начиная с
+courir|verb|to run|бегать, бежать
+propre|adj|clean; own|чистый; собственный
+autant|adv|as much (autant que = as much as)|столько же
+soleil|noun|sun|солнце
+compte|noun|account (se rendre compte = to realise)|счёт (se rendre compte = осознать)
+fond|noun|bottom; back|дно; глубина
+souvent|adv|often|часто
+disparaître|verb|to disappear|исчезать
+
+# ---- additions ----
+sœur|noun|sister|сестра
+où|adv|where|где; куда
+chaque|det|each, every|каждый
+donc|conj|so, therefore|итак, значит, поэтому
+meilleur|adj|better; (le meilleur) the best|лучше; (le meilleur) лучший
+ne|adv|!not (first part of negation: ne … pas)|!не (первая часть отрицания ne … pas)
+non plus|phrase|either, neither (moi non plus = me neither)|тоже не (moi non plus = я тоже нет)

@@ -1,0 +1,16 @@
+gap: J'___ un frère. => ai
+gap: Tu ___ une voiture ? => as
+gap: Elle ___ deux enfants. => a
+gap: Nous ___ faim. => avons
+gap: Vous ___ raison. => avez
+gap: Ils ___ un chien. => ont
+gap[en=I'm 25.|ru=Мне 25 лет.]: J'ai vingt-cinq ___. => ans
+gap[en=I'm cold.|ru=Мне холодно.]: J'ai ___. => froid
+gap[en=I need help.|ru=Мне нужна помощь.]: J'ai ___ d'aide. => besoin
+gap[en=She's afraid of dogs.|ru=Она боится собак.]: Elle a ___ des chiens. => peur
+gap[en=There is a park.|ru=Есть парк.]: Il y ___ un parc. => a
+gap[en=two years ago|ru=два года назад]: il y a deux ___ => ans
+choice[en=They have…|ru=У них есть…]: Ils ___ une maison. => ont | sont | a
+choice[en=They are…|ru=Они…]: Ils ___ français. => sont | ont | est
+choice[en=You look tired.|ru=Ты выглядишь усталым.]: Tu as l'___ fatigué. => air | aire | ère
+transform[en=Make it negative|ru=Поставьте в отрицание]: Il y a du pain. => Il n'y a pas de pain.

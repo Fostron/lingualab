@@ -171,6 +171,12 @@ def main(course):
     lex = json.load(open(WORK / f"{lang}_lex.json", encoding="utf-8"))
     conj = json.load(open(WORK / f"{lang}_conj.json", encoding="utf-8"))
     glossary, gorder = read_glossary(lang)
+    _kaikki = {}
+
+    def kaikki_lemmas():
+        if not _kaikki:
+            _kaikki.update(pickle.load(open(WORK / f"{lang}_kaikki.pkl", "rb"))["lemmas"])
+        return _kaikki
     print(course, "loaded", f"{time.time() - t0:.0f}s")
 
     # ---------- lexicon ----------
@@ -219,7 +225,10 @@ def main(course):
         if not gl.get(native) or gl[native] == "-":
             continue
         w, pos = key
-        src = next((x for x in lex if x["w"] == w), None)
+        src = next((x for x in lex if x["w"] == w and x["pos"] == pos), None) or next((x for x in lex if x["w"] == w), None)
+        if not src and pos in ("noun", "adj", "verb", "adv", "det", "conj"):
+            kk = kaikki_lemmas().get(w) or []
+            src = next((x for x in kk if x["pos"] == pos), None)
         entry = {"id": 0, "w": w, "pos": pos, "tr": gl[native].lstrip("!"), "r": 0, "_cur": True, "_custom": True}
         if gl[native].startswith("!"):
             entry["_nofill"] = True
@@ -330,7 +339,7 @@ def main(course):
                 if e:
                     wid = e["id"]
                     # grammar-only forms (lo, la, me, se…) are taught by topics; they don't block coverage
-                    if not (e.get("_nofill") and e["pos"] in ("det", "pron", "prep", "conj")):
+                    if not (e.get("_nofill") and e["pos"] in ("det", "pron", "prep", "conj", "adv")):
                         cover = max(cover, unit_of.get(wid, INF))
                 elif up not in ("PROPN", "NUM") and re.search(r"\w", w):
                     ok = False
@@ -389,6 +398,7 @@ def main(course):
         for tid in u["topics"]:
             topic_unit.setdefault(tid, ui)
     topics = []
+    missing_content = []
     for tdef in cur.TOPICS:
         tid = tdef["id"]
         tu = topic_unit.get(tid, len(units))
@@ -433,7 +443,10 @@ def main(course):
             used.add(a["s"])
         topics.append(topic)
         if not md_path.exists() or not drills:
-            print(f"  topic {tid}: md={'ok' if md_path.exists() else 'MISSING'} drills={len(drills)} auto={len(auto)}")
+            missing_content.append(f"{tid}(md={'ok' if md_path.exists() else '-'},drills={len(drills)},auto={len(auto)})")
+
+    if missing_content:
+        print(course, "topics without full content:", len(missing_content), " ".join(missing_content[:6]), "…" if len(missing_content) > 6 else "")
 
     # ---------- output ----------
     pool_by_id = {p["id"]: p for p in pool}

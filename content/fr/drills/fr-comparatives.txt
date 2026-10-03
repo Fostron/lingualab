@@ -1,0 +1,13 @@
+choice[en=Paris is bigger than Lyon.|ru=Париж больше Лиона.]: Paris est plus grand ___ Lyon. => que | de | comme
+choice[en=as tall as|ru=такой же высокий, как]: Elle est ___ grande que sa mère. => aussi | autant | si
+choice[en=This cake is better.|ru=Этот торт лучше.]: Ce gâteau est ___. => meilleur | mieux | plus bon
+choice[en=She sings better than me.|ru=Она поёт лучше меня.]: Elle chante ___ que moi. => mieux | meilleur | plus bien
+choice[en=more books than you|ru=больше книг, чем у тебя]: J'ai plus ___ livres que toi. => de | des | que
+choice[en=as many friends as me|ru=столько же друзей, сколько у меня]: Il a ___ d'amis que moi. => autant | aussi | tant
+choice[en=than me|ru=чем я]: Il est plus âgé que ___. => moi | je | me
+gap[en=less expensive|ru=дешевле]: C'est ___ cher. => moins
+gap[en=He works more than me.|ru=Он работает больше меня.]: Il travaille ___ que moi. => plus
+gap[en=I feel better.|ru=Мне лучше.]: Je me sens ___. => mieux
+gap[en=It's worse.|ru=Это хуже.]: C'est ___. => pire
+gap[en=better (fem.)|ru=лучше (ж. р.)]: Cette idée est ___. => meilleure
+transform[en=Compare (Marc 1,80 m / Paul 1,70 m)|ru=Сравните (Марк 1,80 / Поль 1,70)]: Marc est grand. Paul est petit. => Marc est plus grand que Paul.

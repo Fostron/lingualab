@@ -1,0 +1,14 @@
+gap: Je ___ (vouloir) partir. => veux
+gap: Tu ___ (pouvoir) m'aider ? => peux
+gap: Nous ___ (devoir) travailler. => devons
+gap: Ils ___ (vouloir) venir. => veulent
+gap: Vous ___ (pouvoir) répéter ? => pouvez
+gap: Elle ___ (devoir) partir. => doit
+gap: Ils ___ (pouvoir) entrer. => peuvent
+gap[en=I would like a coffee.|ru=Я бы хотел кофе.]: Je ___ un café. => voudrais
+gap[en=We must leave.|ru=Надо уходить.]: Il ___ partir. => faut
+choice[en=I can swim.|ru=Я умею плавать.]: Je ___ nager. => sais | peux | connais
+choice[en=Do you know Marie?|ru=Ты знаешь Мари?]: Tu ___ Marie ? => connais | sais | peux
+choice[en=I know where he lives.|ru=Я знаю, где он живёт.]: Je ___ où il habite. => sais | connais | peux
+choice[en=Have you been to Paris? (know)|ru=Ты знаешь Париж?]: Vous ___ Paris ? => connaissez | savez | pouvez
+choice[en=He must be tired.|ru=Он, должно быть, устал.]: Il ___ être fatigué. => doit | faut | veut

@@ -1,0 +1,15 @@
+gap[en=17|ru=17]: ___ => dix-sept
+gap[en=21|ru=21]: ___ => vingt et un
+gap[en=70|ru=70]: ___ => soixante-dix
+gap[en=75|ru=75]: ___ => soixante-quinze
+gap[en=80|ru=80]: ___ => quatre-vingts
+gap[en=90|ru=90]: ___ => quatre-vingt-dix
+gap[en=99|ru=99]: ___ => quatre-vingt-dix-neuf
+gap[en=15|ru=15]: ___ => quinze
+choice[en=It's 4:30.|ru=Половина пятого.]: Il est quatre heures et ___. => demie | quart | trente
+choice[en=It's 6:45.|ru=Без четверти семь.]: Il est sept heures moins le ___. => quart | demi | quinze
+choice[en=It's one o'clock.|ru=Час дня.]: Il est une ___. => heure | heures | heur
+choice[en=at 8 o'clock|ru=в восемь часов]: ___ huit heures => à | en | dans
+choice[en=How much is it?|ru=Сколько это стоит?]: Ça coûte ___ ? => combien | comment | quel
+gap[en=What time is it?|ru=Который час?]: Quelle ___ est-il ? => heure
+gap[en=It's noon.|ru=Полдень.]: Il est ___. => midi

@@ -1,0 +1,15 @@
+choice: ___ livre est à moi. => Ce | Cet | Cette
+choice: ___ homme est grand. => Cet | Ce | Cette
+choice: ___ maison est belle. => Cette | Ce | Cet
+choice: ___ enfants jouent. => Ces | Ce | Cette
+choice: ___ arbre est vieux. => Cet | Ce | Cette
+choice[en=tonight|ru=сегодня вечером]: ___ soir => ce | cette | cet
+choice[en=this week|ru=на этой неделе]: ___ semaine => cette | ce | cet
+choice[en=What's that?|ru=Что это?]: Qu'est-ce que c'est, ___ ? => ça | ce | cette
+choice[en=The cat is under the table.|ru=Кот под столом.]: Le chat est ___ la table. => sous | sur | dans
+choice[en=next to the cinema|ru=рядом с кинотеатром]: à côté ___ cinéma => du | de | de le
+choice[en=opposite the hotel|ru=напротив гостиницы]: en face ___ hôtel => de l' | du | de la
+gap[en=behind the house|ru=за домом]: ___ la maison => derrière
+gap[en=between the bank and the post office|ru=между банком и почтой]: ___ la banque et la poste => entre
+gap[en=near the station|ru=около вокзала]: ___ de la gare => près
+gap[en=far from here|ru=далеко отсюда]: ___ d'ici => loin

@@ -1,0 +1,16 @@
+choice: ___ maison est grande. => La | Le | L'
+choice: ___ livre est intéressant. => Le | La | L'
+choice: ___ homme est grand. => L' | Le | La
+choice: ___ eau est froide. => L' | La | Le
+choice: ___ enfants jouent. => Les | Le | La
+choice: ___ voiture est rouge. => La | Le | Les
+choice: ___ problème est difficile. => Le | La | L'
+choice: ___ table est petite. => La | Le | L'
+choice: ___ question est simple. => La | Le | L'
+choice: J'aime ___ café. => le | du | un
+choice: Je vais ___ cinéma. => au | à le | à la
+choice: Je vais ___ plage. => à la | au | à le
+choice: Je vais ___ école. => à l' | au | à la
+choice: C'est le livre ___ professeur. => du | de le | de la
+choice: La fin ___ vacances. => des | de les | du
+choice: Il habite ___ États-Unis. => aux | à les | au

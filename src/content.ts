@@ -17,8 +17,10 @@ export const COURSES: CourseInfo[] = [
 
 const cache = new Map<string, Promise<LoadedCourse>>();
 
+declare const __BUILD__: string;
+
 async function getJson<T>(url: string): Promise<T> {
-  const r = await fetch(url);
+  const r = await fetch(`${url}?v=${__BUILD__}`);
   if (!r.ok) throw new Error(`${url}: ${r.status}`);
   return r.json();
 }

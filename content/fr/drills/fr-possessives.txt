@@ -1,0 +1,15 @@
+choice[en=my father|ru=мой отец]: ___ père => mon | ma | mes
+choice[en=my mother|ru=моя мать]: ___ mère => ma | mon | mes
+choice[en=my parents|ru=мои родители]: ___ parents => mes | mon | ma
+choice[en=your car (tu)|ru=твоя машина]: ___ voiture => ta | ton | tes
+choice[en=his sister|ru=его сестра]: ___ sœur => sa | son | ses
+choice[en=her brother|ru=её брат]: ___ frère => son | sa | ses
+choice[en=my (female) friend|ru=моя подруга]: ___ amie => mon | ma | m'
+choice[en=our children|ru=наши дети]: ___ enfants => nos | notre | nôtres
+choice[en=their house|ru=их дом]: ___ maison => leur | leurs | son
+choice[en=their children|ru=их дети]: ___ enfants => leurs | leur | ses
+gap[en=your address (vous)|ru=ваш адрес]: ___ adresse => votre
+gap[en=your friends (tu)|ru=твои друзья]: ___ amis => tes
+gap[en=his school|ru=его школа]: ___ école => son
+gap[en=Pierre's book|ru=книга Пьера]: le livre ___ Pierre => de
+transform[en=Use a possessive (je)|ru=Используйте притяжательное (je)]: C'est la voiture de moi. => C'est ma voiture.

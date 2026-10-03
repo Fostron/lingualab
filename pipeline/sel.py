@@ -164,3 +164,41 @@ def NEED(sel, words):
         return sel(toks, ctx)
 
     return f
+
+
+def VCOMP(simple, compound, aux):
+    """Choice between a simple tense (1 token, e.g. imparfait) and a compound one (aux + participle, e.g. passé composé)."""
+
+    def f(toks, ctx):
+        out = []
+        for i, (w, lem, up, morph, ws) in enumerate(toks):
+            # compound form at i, i+1
+            if lem.lower() in aux and i + 1 < len(toks) and toks[i + 1][2] in ("VERB", "AUX"):
+                lem2 = toks[i + 1][1].lower()
+                joined = f"{w} {toks[i + 1][0]}".lower()
+                p = _person_of(ctx, lem2, compound, joined)
+                if p is not None:
+                    alt = _forms(ctx, lem2, simple)
+                    if alt and alt[p]:
+                        out.append((i, 2, lem2, [f"{w} {toks[i + 1][0]}", alt[p][0]]))
+                        continue
+            if up in ("VERB", "AUX"):
+                p = _person_of(ctx, lem.lower(), simple, w)
+                if p is not None:
+                    alt = _forms(ctx, lem.lower(), compound)
+                    if alt and alt[p]:
+                        out.append((i, 1, lem.lower(), [w, alt[p][0]]))
+        return out
+
+    return f
+
+
+def RX(pattern, pos=None, hint=None):
+    """Token whose text matches a regex."""
+    import re as _re
+    rx = _re.compile(pattern, _re.I)
+
+    def f(toks, ctx):
+        return [(i, 1, hint, None) for i, t in enumerate(toks) if rx.fullmatch(t[0]) and (pos is None or t[2] in pos)]
+
+    return f

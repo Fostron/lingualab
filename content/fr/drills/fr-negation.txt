@@ -1,0 +1,15 @@
+transform[en=Make it negative|ru=Поставьте в отрицание]: Je parle allemand. => Je ne parle pas allemand.
+transform[en=Make it negative|ru=Поставьте в отрицание]: Il aime le fromage. => Il n'aime pas le fromage.
+transform[en=Make it negative|ru=Поставьте в отрицание]: J'ai une voiture. => Je n'ai pas de voiture.
+transform[en=Make it negative|ru=Поставьте в отрицание]: Elle boit du café. => Elle ne boit pas de café.
+gap[en=I never drink coffee.|ru=Я никогда не пью кофе.]: Je ne bois ___ de café. => jamais
+gap[en=I see nothing.|ru=Я ничего не вижу.]: Je ne vois ___. => rien
+gap[en=I don't know anybody.|ru=Я никого не знаю.]: Je ne connais ___. => personne
+gap[en=He no longer smokes.|ru=Он больше не курит.]: Il ne fume ___. => plus
+gap[en=I only have ten euros.|ru=У меня только десять евро.]: Je n'ai ___ dix euros. => que
+gap[en=Nobody knows.|ru=Никто не знает.]: ___ ne sait. => Personne
+gap[en=Me neither.|ru=Я тоже нет.]: Moi non ___. => plus
+choice[en=You're not coming? — Yes, I am!|ru=Ты не придёшь? — Да нет, приду!]: Tu ne viens pas ? — ___, je viens ! => Si | Oui | Non
+choice[en=I see nothing.|ru=Я ничего не вижу.]: Je ___ rien. => ne vois | ne vois pas | vois pas
+choice[en=I haven't eaten.|ru=Я не ел.]: Je ___ mangé. => n'ai pas | ne pas ai | n'ai mangé pas
+choice[en=I prefer not to answer.|ru=Я предпочитаю не отвечать.]: Je préfère ___ répondre. => ne pas | ne répondre pas | pas

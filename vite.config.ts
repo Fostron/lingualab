@@ -3,6 +3,7 @@ import preact from '@preact/preset-vite';
 
 export default defineConfig({
   plugins: [preact()],
+  define: { __BUILD__: JSON.stringify(Date.now().toString(36)) },
   server: { host: true, port: 5180 },
   build: { outDir: 'dist', emptyOutDir: true },
 });

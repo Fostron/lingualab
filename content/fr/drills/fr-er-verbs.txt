@@ -1,0 +1,16 @@
+gap: Je ___ (parler) français. => parle
+gap: Tu ___ (habiter) où ? => habites
+gap: Elle ___ (travailler) à Lyon. => travaille
+gap: Nous ___ (regarder) la télé. => regardons
+gap: Vous ___ (aimer) le café ? => aimez
+gap: Ils ___ (écouter) la radio. => écoutent
+gap: J'___ (aimer) voyager. => aime
+gap: Nous ___ (manger) à midi. => mangeons
+gap: Nous ___ (commencer) à huit heures. => commençons
+gap: J'___ (acheter) du pain. => achète
+gap: Je ___ (préférer) le thé. => préfère
+gap: Je m'___ (appeler) Marc. => appelle
+gap: Tu ___ (chercher) tes clés ? => cherches
+gap: On ___ (danser) ce soir ? => danse
+choice: Elles ___ beaucoup. => parlent | parlons | parlez
+choice: Vous ___ le français ? => étudiez | étudions | étudie

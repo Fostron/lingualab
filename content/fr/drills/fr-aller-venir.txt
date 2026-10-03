@@ -1,0 +1,17 @@
+gap: Je ___ au travail. => vais
+gap: Où ___-tu ? => vas
+gap: Nous ___ au cinéma. => allons
+gap: Ils ___ à la plage. => vont
+gap: Tu ___ avec nous ? => viens
+gap: Ils ___ de Lyon. => viennent
+gap: Vous ___ demain ? => venez
+choice: Je vais ___ cinéma. => au | à le | à la
+choice: Je vais ___ gare. => à la | au | en
+choice[en=I'm going to Paris.|ru=Я еду в Париж.]: Je vais ___ Paris. => à | en | au
+choice[en=She lives in France.|ru=Она живёт во Франции.]: Elle habite ___ France. => en | à | au
+choice[en=in Canada|ru=в Канаде]: ___ Canada => au | en | à
+choice[en=in the United States|ru=в США]: ___ États-Unis => aux | au | en
+choice[en=to Marie's place|ru=к Мари (домой)]: Je vais ___ Marie. => chez | à | de
+choice[en=by car|ru=на машине]: ___ voiture => en | à | par
+choice[en=on foot|ru=пешком]: ___ pied => à | en | par
+gap[en=I come from Russia.|ru=Я из России.]: Je viens ___ Russie. => de

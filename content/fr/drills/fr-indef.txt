@@ -1,0 +1,14 @@
+choice: J'ai ___ chien. => un | une | des
+choice: C'est ___ ville magnifique. => une | un | des
+choice: Il y a ___ livres sur la table. => des | un | les
+choice: Elle a ___ voiture rouge. => une | un | des
+choice[en=I don't have a car.|ru=У меня нет машины.]: Je n'ai pas ___ voiture. => de | une | la
+choice[en=There are no children.|ru=Детей нет.]: Il n'y a pas ___ enfants. => d' | des | les
+choice[en=It's not a book.|ru=Это не книга.]: Ce n'est pas ___ livre. => un | de | du
+choice[en=He is a doctor.|ru=Он врач.]: Il est ___ médecin. => — | un | le
+gap[en=plural|ru=мн. ч.]: un bateau → des ___ => bateaux
+gap[en=plural|ru=мн. ч.]: un journal → des ___ => journaux
+gap[en=plural|ru=мн. ч.]: un jeu → des ___ => jeux
+gap[en=plural|ru=мн. ч.]: un prix → des ___ => prix
+gap[en=plural|ru=мн. ч.]: un œil → des ___ => yeux
+transform[en=Make it negative|ru=Поставьте в отрицание]: J'ai des frères. => Je n'ai pas de frères.

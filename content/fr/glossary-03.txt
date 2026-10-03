@@ -1,0 +1,501 @@
+# French curated glossary, part 3 (ranks ~900–1400) — w|pos|en|ru
+derrière|adv|behind|позади, сзади
+puisque|conj|since (as)|поскольку, раз уж
+moitié|noun|half|половина
+rôle|noun|role|роль
+exact|adj|exact, correct|точный, верный
+passé|noun|past|прошлое
+baisser|verb|to lower; to go down|опускать; снижаться
+mille|num|thousand|тысяча
+poisson|noun|fish|рыба
+virer|verb|to fire (colloq.); to transfer (money)|увольнять (разг.); переводить (деньги)
+coûter|verb|to cost|стоить
+lieutenant|noun|lieutenant|лейтенант
+dîner|verb|to have dinner|ужинать
+danger|noun|danger|опасность
+idiot|noun|idiot|идиот
+ton|noun|tone|тон
+vol|noun|flight; theft|полёт, рейс; кража
+au-dessus|adv|above (au-dessus de)|над, выше
+course|noun|race; (courses) shopping|бег, гонка; (courses) покупки
+poursuivre|verb|to pursue; to continue|преследовать; продолжать
+est|noun|east|восток
+engager|verb|to hire; to commit|нанимать; обязывать
+fier|adj|proud|гордый
+but|noun|goal; aim|цель; гол
+magnifique|adj|magnificent|великолепный
+vert|adj|green|зелёный
+annoncer|verb|to announce|объявлять
+pote|noun|mate, buddy (colloq.)|приятель, кореш (разг.)
+action|noun|action; share (stock)|действие; акция
+plaisanter|verb|to joke|шутить
+mouvement|noun|movement|движение
+laver|verb|to wash|мыть, стирать
+celui-là|pron|that one|тот
+fil|noun|thread; wire (un coup de fil = a phone call)|нить; провод (un coup de fil = звонок)
+espoir|noun|hope|надежда
+radio|noun|radio; X-ray|радио; рентген
+morceau|noun|piece, bit|кусок
+profiter|verb|to take advantage; to enjoy (profiter de)|пользоваться; наслаждаться
+règle|noun|rule; ruler|правило; линейка
+dimanche|noun|Sunday|воскресенье
+ferme|noun|farm|ферма
+mémoire|noun|memory|память
+société|noun|society; company|общество; компания
+glace|noun|ice; ice cream; mirror|лёд; мороженое; зеркало
+droite|noun|right (à droite = on the right)|правая сторона (à droite = направо)
+avance|noun|advance (en avance = early)|аванс (en avance = заранее, рано)
+pitié|noun|pity|жалость
+inutile|adj|useless|бесполезный
+diriger|verb|to run, manage; to direct|руководить; направлять
+recherche|noun|research; search|исследование; поиск
+dossier|noun|file|папка, досье
+ennui|noun|boredom; (ennuis) trouble|скука; (ennuis) неприятности
+occasion|noun|opportunity; (d'occasion) second-hand|возможность, случай; (d'occasion) подержанный
+poche|noun|pocket|карман
+riche|adj|rich|богатый
+neuf|adj|(brand) new|новый (только что сделанный)
+neuf|num|nine|девять
+machine|noun|machine|машина, аппарат
+bière|noun|beer|пиво
+spécial|adj|special|особый
+marché|noun|market|рынок
+fatiguer|verb|to tire|утомлять
+mademoiselle|noun|Miss|мадемуазель, девушка
+vacance|noun|(vacances) holidays|(vacances) каникулы, отпуск
+genou|noun|knee|колено
+soin|noun|care (prendre soin de = to take care of)|забота, уход
+héros|noun|hero|герой
+sol|noun|ground; floor|земля; пол
+cri|noun|cry, scream|крик
+tendre|verb|to hold out; to tend to|протягивать; стремиться
+courage|noun|courage|смелость, мужество
+surprendre|verb|to surprise|удивлять; заставать врасплох
+apparaître|verb|to appear|появляться
+merveilleux|adj|wonderful|чудесный
+passage|noun|passage; visit|проход; пребывание
+système|noun|system|система
+île|noun|island|остров
+relation|noun|relationship|отношение, связь
+projet|noun|project; plan|проект; план
+chaussure|noun|shoe|ботинок, туфля
+apprécier|verb|to appreciate; to like|ценить; нравиться
+avouer|verb|to confess, admit|признаваться
+tas|noun|pile (un tas de = loads of)|куча
+libérer|verb|to free|освобождать
+allumer|verb|to switch on; to light|включать; зажигать
+expérience|noun|experience; experiment|опыт; эксперимент
+ventre|noun|stomach, belly|живот
+contact|noun|contact|контакт
+crever|verb|to burst; (colloq.) to be exhausted|лопнуть; (разг.) выдохнуться
+huit|num|eight|восемь
+champ|noun|field|поле
+nature|noun|nature|природа
+français|noun|French (language)|французский язык; француз
+adresse|noun|address|адрес
+front|noun|forehead; front|лоб; фронт
+sept|num|seven|семь
+calme|adj|calm|спокойный
+banque|noun|bank|банк
+étonner|verb|to surprise, astonish|удивлять
+témoin|noun|witness|свидетель
+vêtement|noun|piece of clothing; (vêtements) clothes|предмет одежды; (vêtements) одежда
+bouteille|noun|bottle|бутылка
+dedans|adv|inside|внутри
+arracher|verb|to pull out, tear off|вырывать, срывать
+prêter|verb|to lend|давать взаймы
+mêler|verb|to mix (se mêler de = to meddle)|смешивать (se mêler de = вмешиваться)
+secret|adj|secret|секретный
+commander|verb|to order|заказывать; командовать
+aucun|pron|none|ни один
+forcer|verb|to force|заставлять, принуждать
+rater|verb|to miss; to fail|пропустить, опоздать на; провалить
+vaisseau|noun|ship, vessel|корабль, судно
+cinéma|noun|cinema|кино, кинотеатр
+anniversaire|noun|birthday; anniversary|день рождения; годовщина
+parier|verb|to bet|спорить, держать пари
+excellent|adj|excellent|отличный
+combat|noun|fight, combat|бой, борьба
+montagne|noun|mountain|гора
+américain|adj|American|американский
+acteur|noun|actor|актёр
+moquer|verb|(se moquer de) to make fun of|(se moquer de) смеяться над
+compris|adj|understood; included|понятый; включённый
+note|noun|note; mark, grade; bill|заметка; оценка; счёт
+bar|noun|bar|бар
+sec|adj|dry|сухой
+larme|noun|tear|слеза
+sympa|adj|nice, friendly (colloq.)|симпатичный, милый (разг.)
+présence|noun|presence|присутствие
+siècle|noun|century|век, столетие
+remplir|verb|to fill; to fill in|наполнять; заполнять
+pur|adj|pure|чистый
+justement|adv|exactly, precisely|именно, как раз
+rire|noun|laugh|смех
+récupérer|verb|to get back; to pick up|забирать; восстанавливать
+hasard|noun|chance (par hasard = by chance)|случай (par hasard = случайно)
+énorme|adj|huge|огромный
+juger|verb|to judge|судить
+repartir|verb|to leave again|снова уходить
+malheur|noun|misfortune|несчастье
+causer|verb|to cause; to chat|причинять; болтать
+pauvre|noun|poor person|бедняк
+décision|noun|decision|решение
+tort|noun|wrong (avoir tort = to be wrong)|неправота (avoir tort = быть неправым)
+risque|noun|risk|риск
+trace|noun|trace, track|след
+maladie|noun|illness, disease|болезнь
+désirer|verb|to wish, desire|желать
+chéri|adj|dear, beloved|дорогой, любимый
+idiot|adj|stupid|глупый
+couler|verb|to flow; to sink|течь; тонуть
+entrée|noun|entrance; starter (food)|вход; закуска
+effort|noun|effort|усилие
+cent|num|hundred|сто
+pont|noun|bridge|мост
+placer|verb|to place, put|помещать
+coller|verb|to stick, glue|клеить
+devant|adv|in front|впереди
+construire|verb|to build|строить
+soudain|adv|suddenly|вдруг
+campagne|noun|countryside; campaign|деревня, сельская местность; кампания
+objet|noun|object|предмет
+élever|verb|to raise; to bring up|поднимать; воспитывать
+détail|noun|detail|деталь
+léger|adj|light|лёгкий
+opération|noun|operation|операция
+pluie|noun|rain|дождь
+mètre|noun|metre|метр
+secours|noun|help (au secours! = help!)|помощь (au secours! = помогите!)
+thé|noun|tea|чай
+centre|noun|centre|центр
+réaliser|verb|to carry out; to realise (a dream)|осуществлять||false friend: to realise (understand) = se rendre compte|ложный друг: понять = se rendre compte
+ange|noun|angel|ангел
+livrer|verb|to deliver|доставлять
+signifier|verb|to mean|означать
+écraser|verb|to crush; to run over|давить; сбить (машиной)
+plaindre|verb|to pity (se plaindre = to complain)|жалеть (se plaindre = жаловаться)
+accrocher|verb|to hang (up); to hook|вешать; цеплять
+incroyable|adj|incredible|невероятный
+taper|verb|to hit; to type|ударять; печатать
+chapeau|noun|hat|шляпа
+pleuvoir|verb|to rain (il pleut)|идти (о дожде) (il pleut = идёт дождь)
+éloigner|verb|to move away|отдалять
+là-dedans|adv|in there|там внутри
+ravir|verb|to delight (ravi = delighted)|восхищать (ravi = очень рад)
+lune|noun|moon|луна
+entraîner|verb|to train; to lead to|тренировать; влечь за собой
+position|noun|position|позиция, положение
+probablement|adv|probably|вероятно
+arrière|noun|back, rear (en arrière = backwards)|зад (en arrière = назад)
+téléphoner|verb|to phone|звонить по телефону
+là-haut|adv|up there|там наверху
+voisin|noun|neighbour|сосед
+désir|noun|desire|желание
+métier|noun|job, trade|профессия, ремесло
+éteindre|verb|to turn off; to put out|выключать; тушить
+magasin|noun|shop|магазин
+devoir|noun|duty; (devoirs) homework|долг; (devoirs) домашнее задание
+ennuyer|verb|to bore (s'ennuyer = to be bored)|надоедать (s'ennuyer = скучать)
+proche|adj|close, near|близкий
+importance|noun|importance|важность
+interdire|verb|to forbid|запрещать
+étudier|verb|to study|изучать, учиться
+stupide|adj|stupid|глупый
+frais|adj|fresh; cool|свежий; прохладный
+juge|noun|judge|судья
+enfermer|verb|to lock up|запирать
+ouvert|adj|open|открытый
+bosser|verb|to work (colloq.)|вкалывать (разг.)
+blague|noun|joke|шутка
+époux|noun|husband, spouse|супруг
+étranger|noun|foreigner (à l'étranger = abroad)|иностранец (à l'étranger = за границей)
+étoile|noun|star|звезда
+second|adj|second|второй
+officier|noun|officer|офицер
+gêner|verb|to bother, embarrass|мешать, смущать
+sommeil|noun|sleep|сон
+liste|noun|list|список
+appuyer|verb|to press; to lean|нажимать; опирать
+cou|noun|neck|шея
+réalité|noun|reality|реальность
+lait|noun|milk|молоко
+habiller|verb|to dress (s'habiller = to get dressed)|одевать (s'habiller = одеваться)
+laisse|noun|lead, leash|поводок
+grandir|verb|to grow up|расти, взрослеть
+présent|adj|present|присутствующий; настоящий
+taxi|noun|taxi|такси
+intéressant|adj|interesting|интересный
+saisir|verb|to grab, seize|хватать
+attirer|verb|to attract|привлекать
+direction|noun|direction; management|направление; руководство
+observer|verb|to observe|наблюдать
+voie|noun|way; lane; track|путь; полоса; рельсовый путь
+spectacle|noun|show|спектакль, зрелище
+tableau|noun|painting; board; table|картина; доска; таблица
+foi|noun|faith|вера
+relever|verb|to raise; to pick up|поднимать
+escalier|noun|stairs|лестница
+conversation|noun|conversation|разговор
+demande|noun|request|просьба, запрос
+allemand|noun|German (language)|немецкий язык; немец
+toilette|noun|(toilettes) toilet|(toilettes) туалет
+toit|noun|roof|крыша
+débarrasser|verb|to clear (se débarrasser de = to get rid of)|убирать (se débarrasser de = избавиться от)
+enfuir|verb|(s'enfuir) to run away|(s'enfuir) убежать
+directeur|noun|director; head teacher|директор
+personnel|adj|personal|личный
+bonne|noun|maid|служанка
+vingt|num|twenty|двадцать
+rapporter|verb|to bring back; to report|приносить обратно; сообщать
+inspecteur|noun|inspector|инспектор
+membre|noun|member|член
+chaise|noun|chair|стул
+respecter|verb|to respect|уважать
+étage|noun|floor, storey|этаж
+chasser|verb|to hunt; to chase away|охотиться; прогонять
+réparer|verb|to repair|чинить
+ridicule|adj|ridiculous|смешной, нелепый
+fixer|verb|to fix; to set|закреплять; назначать
+solution|noun|solution|решение
+terrain|noun|ground; pitch|участок; поле (спорт.)
+voleur|noun|thief|вор
+inventer|verb|to invent|изобретать; выдумывать
+anglais|noun|English (language)|английский язык; англичанин
+horrible|adj|horrible|ужасный
+camion|noun|lorry, truck|грузовик
+représenter|verb|to represent|представлять
+chier|verb|-|-
+plage|noun|beach|пляж
+condition|noun|condition (à condition que = provided that)|условие (à condition que = при условии, что)
+information|noun|information; (infos) news|информация; (infos) новости
+profond|adj|deep|глубокий
+marquer|verb|to mark; to score|отмечать; забивать (гол)
+page|noun|page|страница
+lendemain|noun|the next day|следующий день
+acte|noun|act|поступок; акт
+chaleur|noun|heat|жара, тепло
+couteau|noun|knife|нож
+club|noun|club|клуб
+court|adj|short|короткий
+mignon|adj|cute|милый
+briser|verb|to break|разбивать
+bombe|noun|bomb|бомба
+presser|verb|to squeeze (se presser = to hurry)|сжимать (se presser = торопиться)
+lentement|adv|slowly|медленно
+dommage|noun|damage (c'est dommage = it's a pity)|ущерб (c'est dommage = жаль)
+lourd|adj|heavy|тяжёлый
+destin|noun|destiny, fate|судьба
+long|noun|length (le long de = along)|длина (le long de = вдоль)
+certainement|adv|certainly|конечно, несомненно
+salope|noun|-|-
+reculer|verb|to move back|отступать, пятиться
+parti|noun|(political) party|партия
+former|verb|to form; to train|образовывать; обучать
+gauche|adj|left; clumsy|левый; неловкий
+accorder|verb|to grant|предоставлять
+militaire|adj|military|военный
+base|noun|base; basis|база; основа
+nécessaire|adj|necessary|необходимый
+enterrer|verb|to bury|хоронить
+contrôle|noun|check; control|проверка; контроль
+valise|noun|suitcase|чемодан
+nord|noun|north|север
+renvoyer|verb|to send back; to fire|отсылать; увольнять
+mesure|noun|measure (au fur et à mesure = as one goes along)|мера; размер
+survivre|verb|to survive|выживать
+déposer|verb|to put down; to drop off|класть; подвозить
+nourrir|verb|to feed|кормить
+parfait|adj|perfect|идеальный
+paquet|noun|parcel; packet|посылка; пачка
+intention|noun|intention|намерение
+mensonge|noun|lie|ложь
+repas|noun|meal|еда, приём пищи
+feuille|noun|leaf; sheet (of paper)|лист
+éclater|verb|to burst|взрываться, лопаться
+fer|noun|iron|железо
+dépendre|verb|to depend (ça dépend = it depends)|зависеть
+chemise|noun|shirt|рубашка
+attaque|noun|attack|нападение
+remplacer|verb|to replace|заменять
+résultat|noun|result|результат
+cerveau|noun|brain|мозг
+sur|adj|-|-
+monstre|noun|monster|чудовище
+convaincre|verb|to convince|убеждать
+folie|noun|madness|безумие
+refaire|verb|to do again|переделывать
+aussitôt|adv|immediately|тотчас
+produire|verb|to produce (se produire = to happen)|производить (se produire = происходить)
+sacré|adj|sacred; (colloq.) a hell of a|священный; (разг.) чертовский
+espace|noun|space|пространство
+sortie|noun|exit; outing|выход; прогулка
+nettoyer|verb|to clean|чистить, убирать
+herbe|noun|grass|трава
+rapide|adj|fast|быстрый
+commandant|noun|commander|командир
+endormir|verb|to put to sleep (s'endormir = to fall asleep)|усыплять (s'endormir = засыпать)
+sein|noun|breast; (au sein de) within|грудь; (au sein de) в рамках
+entendu|adj|agreed (bien entendu = of course)|понятный (bien entendu = разумеется)
+conscience|noun|conscience; consciousness|совесть; сознание
+soit|conj|either… or; that is|либо… либо; то есть
+général|adj|general (en général = generally)|общий (en général = в целом)
+parvenir|verb|to reach; to manage to (parvenir à)|достигать; удаваться
+salon|noun|living room|гостиная
+sombre|adj|dark|тёмный, мрачный
+volonté|noun|will|воля
+miracle|noun|miracle|чудо
+piquer|verb|to sting; (colloq.) to pinch, steal|колоть, жалить; (разг.) стащить
+déjeuner|noun|lunch|обед
+considérer|verb|to consider|считать, рассматривать
+différence|noun|difference|разница
+reine|noun|queen|королева
+immédiatement|adv|immediately|немедленно
+bête|adj|stupid, silly|глупый
+jeune|noun|young person|молодой человек
+forêt|noun|forest|лес
+côte|noun|coast; rib|побережье; ребро
+hiver|noun|winter|зима
+couple|noun|couple|пара
+joue|noun|cheek|щека
+ben|noun|-|-
+excuse|noun|excuse; (excuses) apology|оправдание; (excuses) извинения
+blanc|noun|white|белый цвет
+baiser|noun|kiss|поцелуй
+haut|adv|high; loudly|высоко; громко
+intelligent|adj|intelligent|умный
+costume|noun|suit; costume|костюм
+ranger|verb|to tidy, put away|убирать, раскладывать
+planète|noun|planet|планета
+allonger|verb|to lie down (s'allonger); to lengthen|ложиться (s'allonger); удлинять
+respect|noun|respect|уважение
+sexe|noun|sex|пол; секс
+admettre|verb|to admit|признавать; допускать
+son|noun|sound|звук
+mine|noun|look, appearance (avoir bonne mine = to look well); mine|вид (avoir bonne mine = хорошо выглядеть); шахта
+souci|noun|worry|забота, беспокойство
+tueur|noun|killer|убийца
+attacher|verb|to tie, fasten|привязывать, пристёгивать
+chair|noun|flesh|плоть
+gare|noun|(railway) station|вокзал
+celui-ci|pron|this one|этот
+contrôler|verb|to check; to control|проверять; контролировать
+posséder|verb|to own|владеть
+allemand|adj|German|немецкий
+promener|verb|to walk (a dog) (se promener = to go for a walk)|выгуливать (se promener = гулять)
+démon|noun|demon|демон
+pomme|noun|apple|яблоко
+arrêt|noun|stop|остановка
+horreur|noun|horror|ужас
+charmant|adj|charming|очаровательный
+parfaitement|adv|perfectly|прекрасно
+hésiter|verb|to hesitate|колебаться
+zone|noun|zone, area|зона
+arrivée|noun|arrival|прибытие
+défense|noun|defence (défense de fumer = no smoking)|защита (défense de fumer = курить запрещено)
+match|noun|match, game|матч
+unique|adj|unique; only|уникальный; единственный
+dépasser|verb|to overtake; to exceed|обгонять; превышать
+interroger|verb|to question|допрашивать, опрашивать
+ramasser|verb|to pick up|подбирать
+coincer|verb|to jam; to corner|заклинивать; загнать в угол
+haïr|verb|to hate|ненавидеть
+taille|noun|size; height; waist|размер; рост; талия
+gris|adj|grey|серый
+parfaire|verb|-|-
+château|noun|castle|замок
+chasse|noun|hunting|охота
+mieux|noun|-|-
+ministre|noun|minister|министр
+désormais|adv|from now on|отныне
+con|adj|!stupid (vulgar)|!глупый (груб.)
+menacer|verb|to threaten|угрожать
+saluer|verb|to greet|приветствовать
+fusil|noun|rifle, gun|ружьё
+réunion|noun|meeting|собрание
+prêtre|noun|priest|священник
+crise|noun|crisis; fit|кризис; приступ
+censé|adj|supposed (être censé = to be supposed to)|(être censé) должен, предполагается
+appareil|noun|device; camera (appareil photo)|прибор; фотоаппарат
+justice|noun|justice|правосудие, справедливость
+gâteau|noun|cake|торт, пирожное
+restaurant|noun|restaurant|ресторан
+accuser|verb|to accuse|обвинять
+patient|noun|patient|пациент
+cool|adj|cool|клёвый
+formidable|adj|great, terrific|потрясающий
+usine|noun|factory|завод, фабрика
+concerner|verb|to concern|касаться
+public|adj|public|общественный
+enquête|noun|investigation; survey|расследование; опрос
+nommer|verb|to name; to appoint|называть; назначать
+enfance|noun|childhood|детство
+phrase|noun|sentence|предложение, фраза
+piste|noun|track; trail|трасса; след
+national|adj|national|национальный
+supplier|verb|to beg|умолять
+cadavre|noun|corpse|труп
+environ|adv|about, approximately|около, примерно
+vache|noun|cow|корова
+pardon|noun|forgiveness|прощение
+marre|adv|(en avoir marre) to be fed up|(en avoir marre) надоело
+nombre|noun|number|число, количество
+pencher|verb|to lean, tilt|наклонять(ся)
+neige|noun|snow|снег
+méchant|adj|nasty, mean|злой
+finalement|adv|finally; in the end|наконец; в итоге
+déclarer|verb|to declare|объявлять, заявлять
+connaissance|noun|knowledge; acquaintance|знание; знакомство
+dire|noun|-|-
+moyen|adj|average, medium|средний
+étude|noun|study; (études) studies|изучение; (études) учёба
+un|num|one|один
+dessus|noun|top|верх
+drogue|noun|drug|наркотик
+beau|noun|-|-
+montre|noun|watch|часы (наручные)
+nombreux|adj|many, numerous|многочисленный
+titre|noun|title|заголовок, название
+troupe|noun|troop|отряд
+naturel|adj|natural|естественный
+sort|noun|fate; spell|судьба; заклинание
+honnête|adj|honest|честный
+confier|verb|to entrust; to confide|доверять
+trembler|verb|to tremble|дрожать
+insister|verb|to insist|настаивать
+poil|noun|hair (body)|волос (на теле), шерсть
+organiser|verb|to organise|организовывать
+juif|noun|Jew|еврей
+cependant|adv|however|однако
+dingue|adj|crazy (colloq.)|сумасшедший (разг.)
+théâtre|noun|theatre|театр
+danse|noun|dance|танец
+deuxième|adj|second|второй
+félicitation|noun|(félicitations) congratulations|(félicitations) поздравления
+foule|noun|crowd|толпа
+éprouver|verb|to feel, experience|испытывать
+assassin|noun|murderer|убийца
+source|noun|source; spring|источник; родник
+nerveux|adj|nervous|нервный
+poids|noun|weight|вес
+valeur|noun|value|ценность
+planter|verb|to plant|сажать
+exploser|verb|to explode|взрываться
+renoncer|verb|to give up (renoncer à)|отказываться (от)
+convenir|verb|to suit; to agree|подходить; соглашаться
+énerver|verb|to annoy (s'énerver = to get worked up)|раздражать (s'énerver = нервничать)
+soigner|verb|to treat; to take care of|лечить; ухаживать
+superbe|adj|superb|великолепный
+niveau|noun|level|уровень
+couloir|noun|corridor|коридор
+balancer|verb|to swing; (colloq.) to throw|качать; (разг.) швырнуть
+manteau|noun|coat|пальто
+pendre|verb|to hang|вешать, висеть
+transformer|verb|to transform|превращать
+trésor|noun|treasure|сокровище
+emmerder|verb|!to annoy (vulgar)|!доставать (груб.)
+rencontre|noun|meeting, encounter|встреча
+patte|noun|paw; leg (animal)|лапа
+peindre|verb|to paint|красить; рисовать (красками)
+tombe|noun|grave|могила
+adresser|verb|to address (s'adresser à = to speak to)|адресовать (s'adresser à = обращаться к)

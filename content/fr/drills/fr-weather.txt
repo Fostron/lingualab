@@ -1,0 +1,13 @@
+choice[en=It's cold.|ru=Холодно.]: Il ___ froid. => fait | est | a
+choice[en=I'm cold.|ru=Мне холодно.]: J'___ froid. => ai | suis | fais
+choice[en=The water is cold.|ru=Вода холодная.]: L'eau ___ froide. => est | fait | a
+choice[en=It's sunny.|ru=Солнечно.]: Il fait ___ soleil. => du | le | de
+choice[en=in winter|ru=зимой]: ___ hiver => en | au | à
+choice[en=in spring|ru=весной]: ___ printemps => au | en | à
+gap[en=It's raining.|ru=Идёт дождь.]: Il ___. => pleut
+gap[en=It's snowing.|ru=Идёт снег.]: Il ___. => neige
+gap[en=The weather is nice.|ru=Хорошая погода.]: Il fait ___. => beau
+gap[en=It's windy.|ru=Ветрено.]: Il fait du ___. => vent
+gap[en=It's 25 degrees.|ru=25 градусов.]: Il fait 25 ___. => degrés
+gap[en=What's the weather like?|ru=Какая погода?]: Quel ___ fait-il ? => temps
+gap[en=It rained yesterday.|ru=Вчера шёл дождь.]: Il a ___ hier. => plu

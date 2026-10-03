@@ -3,7 +3,7 @@ import { COURSES, loadCourse, type CourseInfo } from './content';
 import { DEFAULT_SETTINGS, getSettings, saveSettings, type Settings } from './db';
 import { setUi } from './i18n';
 import { setRetention } from './srs';
-import { configureTts } from './tts';
+import { configureTts, onVoicesChanged } from './tts';
 import type { LoadedCourse } from './types';
 
 interface State {
@@ -50,6 +50,7 @@ function applyTheme(theme: Settings['theme']) {
 }
 
 export async function initStore() {
+  onVoicesChanged(() => emit());
   state.settings = await getSettings();
   configureTts(state.settings.rate, state.settings.voice);
   setRetention(state.settings.retention);

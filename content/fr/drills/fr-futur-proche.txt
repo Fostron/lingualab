@@ -1,0 +1,12 @@
+gap[en=I'm going to eat.|ru=Я сейчас буду есть.]: Je ___ manger. => vais
+gap[en=It's going to rain.|ru=Сейчас пойдёт дождь.]: Il ___ pleuvoir. => va
+gap[en=We're going to visit Rome.|ru=Мы съездим в Рим.]: Nous ___ visiter Rome. => allons
+gap[en=They're going to arrive tomorrow.|ru=Они приедут завтра.]: Ils ___ arriver demain. => vont
+gap[en=I've just arrived.|ru=Я только что приехал.]: Je viens ___ arriver. => d'
+gap[en=She has just left.|ru=Она только что ушла.]: Elle ___ de partir. => vient
+gap[en=We've just eaten.|ru=Мы только что поели.]: Nous ___ de manger. => venons
+gap[en=I'm working right now.|ru=Я как раз работаю.]: Je suis en ___ de travailler. => train
+choice[en=I'm not going to go out.|ru=Я не пойду гулять.]: Je ___ sortir. => ne vais pas | vais ne pas | ne pas vais
+choice[en=I'm going to do it.|ru=Я это сделаю.]: Je vais ___. => le faire | faire le | le fais
+transform[en=Use the near future|ru=Поставьте в ближайшее будущее]: Je mange. => Je vais manger.
+transform[en=Use the recent past|ru=Поставьте в недавнее прошлое]: Il arrive. => Il vient d'arriver.

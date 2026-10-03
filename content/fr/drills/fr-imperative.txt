@@ -1,0 +1,15 @@
+gap[en=tu: parler|ru=tu: parler]: ___ plus fort ! => Parle
+gap[en=vous: écouter|ru=vous: écouter]: ___ bien ! => Écoutez
+gap[en=nous: aller|ru=nous: aller]: ___ au cinéma ! => Allons
+gap[en=tu: aller|ru=tu: aller]: ___ à l'école ! => Va
+gap[en=tu: finir|ru=tu: finir]: ___ ton assiette ! => Finis
+gap[en=tu: venir|ru=tu: venir]: ___ ici ! => Viens
+gap[en=tu: être|ru=tu: être]: ___ sage ! => Sois
+gap[en=vous: avoir|ru=vous: avoir]: N'___ pas peur. => ayez
+gap[en=vous: tourner|ru=vous: tourner]: ___ à gauche. => Tournez
+gap[en=tu: se lever|ru=tu: se lever]: ___ ! => Lève-toi
+gap[en=Look at me! (tu)|ru=Посмотри на меня!]: Regarde-___ ! => moi
+gap[en=Don't look at me! (tu)|ru=Не смотри на меня!]: Ne ___ regarde pas ! => me
+choice[en=Please wait (formal).|ru=Пожалуйста, подождите (офиц.).]: ___ patienter. => Veuillez | Voulez | Veux
+transform[en=Make it negative|ru=Поставьте в отрицание]: Parle ! => Ne parle pas !
+transform[en=Make it negative|ru=Поставьте в отрицание]: Lève-toi ! => Ne te lève pas !

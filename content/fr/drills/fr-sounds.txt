@@ -1,0 +1,13 @@
+choice[en=Which word means "you" (informal)?|ru=Какое слово значит «ты»?]: ___ => tu | tout | vous
+choice[en=Which word means "all"?|ru=Какое слово значит «всё»?]: ___ => tout | tu | toi
+choice[en=Choose the correct elision|ru=Выберите правильную элизию]: ___ homme => l' | le | la
+choice[en=Choose the correct elision|ru=Выберите правильную элизию]: ___ aime le chocolat. => J' | Je | Ja
+choice[en=Correct spelling: "it is"|ru=Как правильно: «это»]: ___ => c'est | ce est | s'est
+choice[en=Correct spelling: "French"|ru=Как правильно: «французский»]: ___ => français | francais | françois
+choice[en=How do you say "Good evening"?|ru=Как сказать «Добрый вечер»?]: ___ => Bonsoir | Bonjour | Bonne nuit
+choice[en=Reply to "Merci !"|ru=Ответ на «Merci !»]: ___ => De rien | S'il vous plaît | Pardon
+choice[en=Informal "hi / bye"|ru=Неформальное «привет / пока»]: ___ => Salut | Bonjour | Au revoir
+gap[en=Complete: "See you soon"|ru=Дополните: «До скорого»]: À ___ => bientôt
+gap[en=Complete: "Thank you very much"|ru=Дополните: «Большое спасибо»]: Merci ___ => beaucoup
+gap[en=Complete: "How are you?"|ru=Дополните: «Как дела?»]: Ça ___ ? => va
+gap[en=Please (formal)|ru=Пожалуйста (на «вы»)]: S'il vous ___ => plaît

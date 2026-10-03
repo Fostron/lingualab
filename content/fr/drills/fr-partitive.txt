@@ -1,0 +1,14 @@
+choice: Je mange ___ pain. => du | de la | le
+choice: Tu veux ___ eau ? => de l' | du | de la
+choice: Elle achète ___ viande. => de la | du | des
+choice: Il fait ___ sport. => du | de la | le
+choice: J'aime ___ fromage. => le | du | de
+choice: Je ne bois pas ___ café. => de | du | le
+choice: Il n'y a pas ___ eau. => d' | de l' | de la
+choice: Beaucoup ___ gens pensent ça. => de | des | du
+choice: Un peu ___ sucre, s'il vous plaît. => de | du | le
+choice: une bouteille ___ vin => de | du | le
+choice: Combien ___ frères as-tu ? => de | des | du
+choice: Il a ___ chance. => de la | du | la
+gap[en=I'm buying (some) pasta.|ru=Я покупаю макароны.]: J'achète ___ pâtes. => des
+transform[en=Make it negative|ru=Поставьте в отрицание]: Il mange de la viande. => Il ne mange pas de viande.
