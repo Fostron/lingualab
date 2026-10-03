@@ -30,7 +30,7 @@ const en = {
   placementIntro:
     'About 10 minutes. First vocabulary, then grammar. Questions adapt to your answers. Choose “I don’t know” instead of guessing — it makes the result accurate.',
   placementFromZero: 'I’m a complete beginner — start from zero',
-  placementTake: 'I know some — take the placement test',
+  placementTake: 'I know some — check my level (about 20 min)',
   placementVocab: 'Vocabulary',
   placementGrammar: 'Grammar',
   placementWhatMeans: 'What does this mean?',
@@ -162,7 +162,7 @@ const en = {
   ],
   whereStart: 'Where do you start?',
   fromZeroNote: 'Sounds, first words and the basics, one small step at a time.',
-  placementNote: 'About 10 minutes. Units you already know will be marked as done.',
+  placementNote: 'Vocabulary, grammar, reading, listening and writing, with a detailed report. Units you already know will be marked as done.',
   unitsOfLevel: '{a}/{b} units of {level}',
   dailyGoal: 'Daily goal',
   goalMet: 'Daily goal reached!',
@@ -293,6 +293,10 @@ const en = {
   } as Record<string, string>,
   settingsGoal: 'Daily goal (lessons)',
   settingsHints: 'Show the hint button',
+  oxfordLookup: 'Look it up in {title}',
+  oxfordNote: 'Every word page has a button that searches the word in',
+  oxfordLoan: 'opens on archive.org; this edition is a library loan, so sign in there and borrow it free for an hour',
+  oxfordFree: 'opens the scanned book on archive.org, free to read',
 };
 
 export type Dict = typeof en;
@@ -327,7 +331,7 @@ const ru: Dict = {
   placementIntro:
     'Около 10 минут: сначала словарный запас, потом грамматика. Вопросы подстраиваются под ваши ответы. Если не знаете — нажимайте «Не знаю», а не угадывайте: так результат будет точнее.',
   placementFromZero: 'Я начинаю с нуля',
-  placementTake: 'Я что-то знаю — пройти тест',
+  placementTake: 'Я что-то знаю — проверить уровень (≈20 мин)',
   placementVocab: 'Словарный запас',
   placementGrammar: 'Грамматика',
   placementWhatMeans: 'Что это значит?',
@@ -459,7 +463,7 @@ const ru: Dict = {
   ],
   whereStart: 'С чего начнём?',
   fromZeroNote: 'Звуки, первые слова и основы — маленькими шагами.',
-  placementNote: 'Около 10 минут. Уроки, которые вы уже знаете, будут отмечены как пройденные.',
+  placementNote: 'Словарный запас, грамматика, чтение, аудирование и письмо — с подробным отчётом. Уроки, которые вы уже знаете, будут отмечены как пройденные.',
   unitsOfLevel: '{a}/{b} уроков уровня {level}',
   dailyGoal: 'Цель на день',
   goalMet: 'Цель на сегодня выполнена!',
@@ -590,6 +594,10 @@ const ru: Dict = {
   },
   settingsGoal: 'Цель на день (занятий)',
   settingsHints: 'Показывать кнопку подсказки',
+  oxfordLookup: 'Найти в {title}',
+  oxfordNote: 'На странице каждого слова есть кнопка поиска этого слова в',
+  oxfordLoan: 'открывается на archive.org; это библиотечный экземпляр — войдите там и возьмите книгу бесплатно на час',
+  oxfordFree: 'открывается скан книги на archive.org, читать можно бесплатно',
 };
 
 let current: Dict = en;

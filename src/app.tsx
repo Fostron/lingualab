@@ -5,7 +5,7 @@ import { selectCourse, useStore } from './store';
 import { Icon, Loading } from './ui/common';
 import { Dictionary, GrammarList, Home, Path, PracticeMenu, TopicView, UnitView, Welcome, WordPage } from './screens/Main';
 import { SettingsPage, Stats } from './screens/Other';
-import { Placement } from './screens/Placement';
+import { Assessment, AssessmentReportPage } from './screens/Assessment';
 import { ContinueLesson, LessonRun, Practice, Review } from './screens/Study';
 
 const FULLSCREEN = new Set(['lesson', 'review', 'practice-run']);
@@ -63,7 +63,10 @@ export function App() {
       body = <LessonRun key={`${a}-t`} c={c} unitId={a} slug="t" />;
       break;
     case 'placement':
-      body = <Placement c={c} />;
+      body = <Assessment c={c} />;
+      break;
+    case 'assessment':
+      body = <AssessmentReportPage c={c} index={Number(a)} />;
       break;
     case 'grammar':
       body = <GrammarList c={c} tick={tick} />;

@@ -3,6 +3,8 @@
 usage: python pipeline/p05_build.py es-en fr-en fr-ru
 """
 import csv, importlib.util, json, pickle, re, sys, time
+
+import assess_bank
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -506,6 +508,12 @@ def main(course):
     }
     od = OUT / course
     od.mkdir(parents=True, exist_ok=True)
+    # level assessment item bank
+    kk = pickle.load(open(WORK / f"{lang}_kaikki.pkl", "rb"))
+    real_forms = {w.lower() for w in kk["lemmas"]} | {w.lower() for w in kk["forms"]}
+    del kk
+    counts, n_pseudo = assess_bank.build(lang, units, pool, words, real_forms, od)
+    print(course, "assessment bank", counts, "pseudowords", n_pseudo)
     json.dump({"meta": meta, "units": units, "topics": topics, "placement": placement},
               open(od / "course.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
     json.dump(words, open(od / "lexicon.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))

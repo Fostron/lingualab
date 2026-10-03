@@ -210,6 +210,16 @@ export async function markActive(course: string) {
   }
 }
 
+/** Finished level assessments of a course, newest last (kept: 20). */
+export async function getAssessments<T = unknown>(course: string): Promise<T[]> {
+  return ((await (await db()).get('kv', `assess|${course}`)) as T[] | undefined) || [];
+}
+
+export async function addAssessment<T>(course: string, r: T) {
+  const list = [...(await getAssessments<T>(course)), r].slice(-20);
+  await (await db()).put('kv', list, `assess|${course}`);
+}
+
 /** Full export of everything stored locally (for backup / moving between devices). */
 export async function exportAll() {
   const d = await db();

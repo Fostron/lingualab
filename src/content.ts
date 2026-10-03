@@ -34,6 +34,22 @@ export function warmOfflineCache() {
     for (const f of PACK_FILES) void fetch(`${import.meta.env.BASE_URL}content/${id}/${f}.json?v=${__BUILD__}`).catch(() => {});
 }
 
+/** Oxford dictionaries scanned on archive.org (opened with a search for the word; not copied into the app). */
+export const OXFORD: Record<string, { title: string; id: string; loan: boolean }> = {
+  es: { title: 'The Oxford Spanish Dictionary (1998)', id: 'oxfordspanishdic0000jarm_r2n5', loan: true },
+  fr: { title: 'The Concise Oxford French Dictionary (1940)', id: 'in.ernet.dli.2015.382740', loan: false },
+};
+
+export function oxfordUrl(target: string, word?: string) {
+  const b = OXFORD[target];
+  if (!b) return '';
+  return `https://archive.org/details/${b.id}/mode/2up${word ? `?q=${encodeURIComponent(word)}` : ''}`;
+}
+
+export function loadAssessBank<T>(id: string): Promise<T> {
+  return getJson<T>(`${import.meta.env.BASE_URL}content/${id}/assess.json`);
+}
+
 /** Reference dictionary entry beyond the course vocabulary: [word, part of speech, translation]. */
 export type RefEntry = [string, string, string];
 

@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'preact/hooks';
-import { exportAll, importAll, logsFor, resetCourse, today, type CardRec, type Difficulty, type LogRec } from '../db';
+import { exportAll, getAssessments, importAll, logsFor, resetCourse, today, type CardRec, type Difficulty, type LogRec } from '../db';
+import { LEVEL_NAMES, type AReport } from '../assessment';
+import { ta } from '../i18n-assess';
 import { fmt, t } from '../i18n';
 import { lessonPassed, lessonsOf } from '../lessons';
 import { loadProgress, topicStats, unitComplete, weakWords, type ProgressInfo } from '../progress';
@@ -46,9 +48,11 @@ export function Stats({ c }: { c: LoadedCourse }) {
   const [info, setInfo] = useState<ProgressInfo | null>(null);
   const [logs, setLogs] = useState<LogRec[] | null>(null);
   const [allTopics, setAllTopics] = useState(false);
+  const [assess, setAssess] = useState<AReport[]>([]);
   useEffect(() => {
     void loadProgress(c).then(setInfo);
     void logsFor(c.meta.id).then(setLogs);
+    void getAssessments<AReport>(c.meta.id).then(setAssess);
   }, [c]);
   if (!info || !logs) return <Loading />;
   const prog = info.prog;
@@ -188,11 +192,50 @@ export function Stats({ c }: { c: LoadedCourse }) {
         </div>
       </div>
 
-      {prog.placement && prog.placement.level !== 'A0' && (
-        <p class="muted small">
-          {t().placementTitle}: {prog.placement.level} · {t().placementVocabSize} ≈ {prog.placement.vocab} · {new Date(prog.placement.ts).toLocaleDateString()}
-        </p>
-      )}
+      <div class="card assess-card">
+        <h4>{ta().lastAssessment}</h4>
+        {assess.length ? (
+          (() => {
+            const r = assess[assess.length - 1];
+            return (
+              <>
+                <div class="row-between">
+                  <span>
+                    <b class="big-level small-level">{LEVEL_NAMES[r.overall.level]}</b>{' '}
+                    {r.vocab && <span class="muted">· ≈ {r.vocab.estimate.toLocaleString()} {t().words.toLowerCase()}</span>}
+                  </span>
+                  <small class="muted">{new Date(r.ts).toLocaleDateString()}</small>
+                </div>
+                <div class="chips">
+                  {(['vocab', 'grammar', 'reading', 'listening', 'writing'] as const).map(
+                    (k) =>
+                      r.skills[k] && (
+                        <span class="chip">
+                          {ta().skillNames[k]}: <b>{LEVEL_NAMES[r.skills[k]!.level]}</b>
+                        </span>
+                      ),
+                  )}
+                </div>
+                <div class="ex-actions">
+                  <a class="btn small" href={`#/assessment/${assess.length - 1}`}>
+                    {ta().openReport}
+                  </a>
+                  <a class="btn small" href="#/placement">
+                    {ta().retake}
+                  </a>
+                </div>
+              </>
+            );
+          })()
+        ) : (
+          <>
+            <p class="muted small">{ta().lead}</p>
+            <a class="btn small primary" href="#/placement">
+              {ta().start}
+            </a>
+          </>
+        )}
+      </div>
 
       <div class="card">
         <h4>{t().activity}</h4>

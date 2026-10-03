@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'preact/hooks';
-import { COURSES, displayWord, genderTag, loadRefDict, sentText, type RefEntry } from '../content';
+import { COURSES, displayWord, genderTag, loadRefDict, OXFORD, oxfordUrl, sentText, type RefEntry } from '../content';
 import { today, type CardRec, type LogRec, type UnitRec } from '../db';
 import { fmt, t } from '../i18n';
 import { lessonPassed, lessonsOf, lessonUnlocked, unitComplete, unitUnlocked } from '../lessons';
@@ -11,6 +11,7 @@ import { bestVoice, speak, ttsAvailable } from '../tts';
 import { LEVELS, type LoadedCourse, type Unit, type Word } from '../types';
 import { Icon, Loading, Markdown, Progress, SentenceView, SpeakBtn, WordLine } from '../ui/common';
 import { lessonTitle } from './Study';
+import { ta } from '../i18n-assess';
 
 export function Welcome() {
   return (
@@ -239,7 +240,7 @@ export function Path({ c, tick }: { c: LoadedCourse; tick: number }) {
       <div class="row-between">
         <h2>{t().units}</h2>
         <a class="btn small" href="#/placement">
-          {t().placementTitle}
+          {ta().title}
         </a>
       </div>
       <p class="muted small">{t().pathNote}</p>
@@ -607,6 +608,15 @@ export function Dictionary({ c, tick }: { c: LoadedCourse; tick: number }) {
           })}
         </div>
       </div>
+      {OXFORD[c.meta.target] && (
+        <p class="muted small">
+          {t().oxfordNote}{' '}
+          <a href={oxfordUrl(c.meta.target)} target="_blank" rel="noopener">
+            {OXFORD[c.meta.target].title} ↗
+          </a>
+          {OXFORD[c.meta.target].loan ? ` — ${t().oxfordLoan}` : ` — ${t().oxfordFree}`}
+        </p>
+      )}
       <div class="tabs">
         <button class={tab === 'mine' ? 'on' : ''} onClick={() => setTab('mine')}>
           {t().myWords} ({mine.length})
@@ -681,6 +691,11 @@ export function Dictionary({ c, tick }: { c: LoadedCourse; tick: number }) {
                           <span class="wl-target">{e[0]}</span>
                           <span class="wl-tr">
                             <small class="muted">{t().pos[e[1]] || e[1]}</small> {openRef === e[0] + e[1] ? e[2] : e[2].split(/;\s*/).slice(0, 2).join('; ')}
+                            {openRef === e[0] + e[1] && (
+                              <div onClick={(ev) => ev.stopPropagation()}>
+                                <OxfordLink target={c.meta.target} word={e[0]} />
+                              </div>
+                            )}
                           </span>
                         </div>
                       ))}
@@ -694,6 +709,16 @@ export function Dictionary({ c, tick }: { c: LoadedCourse; tick: number }) {
         </>
       )}
     </div>
+  );
+}
+
+export function OxfordLink({ target, word }: { target: string; word: string }) {
+  const b = OXFORD[target];
+  if (!b) return null;
+  return (
+    <a class="oxford-link" href={oxfordUrl(target, word)} target="_blank" rel="noopener" title={b.loan ? t().oxfordLoan : t().oxfordFree}>
+      📖 {fmt(t().oxfordLookup, { title: b.title })} ↗
+    </a>
   );
 }
 
@@ -726,6 +751,7 @@ export function WordPage({ c, id, tick }: { c: LoadedCourse; id: number; tick: n
       </div>
       <div class="intro-tr">{w.tr}</div>
       {w.alt && w.alt.length > 0 && <div class="muted">{w.alt.join('; ')}</div>}
+      <OxfordLink target={c.meta.target} word={w.w} />
       {info && (
         <div class="word-status card">
           {known ? (
