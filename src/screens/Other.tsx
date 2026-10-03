@@ -372,6 +372,9 @@ export function Stats({ c }: { c: LoadedCourse }) {
   );
 }
 
+declare const __BUILT_AT__: number;
+declare const __COMMIT__: string;
+
 export function SettingsPage({ c }: { c: LoadedCourse | null }) {
   const s = getState().settings;
   const [msg, setMsg] = useState('');
@@ -527,6 +530,15 @@ export function SettingsPage({ c }: { c: LoadedCourse | null }) {
           Scheduling: <a href="https://github.com/open-spaced-repetition/ts-fsrs" target="_blank" rel="noopener">FSRS (ts-fsrs)</a>
         </li>
       </ul>
+      <p class="version muted small">
+        {t().appVersion}: {new Date(__BUILT_AT__).toLocaleString([], { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })} · {__COMMIT__}
+        {c && (
+          <>
+            <br />
+            {t().dataVersion}: {c.meta.version}
+          </>
+        )}
+      </p>
     </div>
   );
 }
