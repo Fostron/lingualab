@@ -1,0 +1,9 @@
+choice[en=Modern equivalent: « qu'il partît »|ru=Современный эквивалент: « qu'il partît »]: qu'il partît = ___ => qu'il parte | qu'il part | qu'il partira
+choice[en=Modern equivalent: « il eût fait »|ru=Современный эквивалент: « il eût fait »]: il eût fait = ___ => il aurait fait | il a fait | il fait
+choice[en=Modern equivalent: « qu'il fût »|ru=Современный эквивалент: « qu'il fût »]: qu'il fût = ___ => qu'il soit | qu'il fasse | qu'il fut
+choice[en=Modern equivalent: « Quand il eut fini »|ru=Современный эквивалент: « Quand il eut fini »]: Quand il eut fini, il sortit. = ___ => Quand il a eu fini, il est sorti. | Quand il finira, il sortira. | Quand il finissait, il sortait.
+choice[en=Literary inversion|ru=Книжная инверсия]: Peut-être ___. => viendra-t-il | il viendra-t-il | vient-il pas
+choice[en=I couldn't tell you. (formal)|ru=Не могу вам сказать. (книжн.)]: Je ne ___ vous dire. => saurais | sais pas | saurai
+choice[en=It keeps raining. (literary)|ru=Дождь не прекращается. (книжн.)]: Il ne ___ de pleuvoir. => cesse | cesse pas | cessait pas
+gap[en=One would have said… (literary)|ru=Можно было подумать… (книжн.)]: On ___ dit un fantôme. => eût
+gap[en=Scarcely had he arrived…|ru=Едва он приехал…]: À peine ___-il arrivé qu'il repartit. => fut

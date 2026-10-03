@@ -1,0 +1,12 @@
+choice[en=It was Paul who broke the vase.|ru=Это Поль разбил вазу.]: C'est Paul ___ a cassé le vase. => qui | que | dont
+choice[en=It's this book that I want.|ru=Я хочу именно эту книгу.]: C'est ce livre ___ je veux. => que | qui | dont
+choice[en=It's in Paris that they met.|ru=Познакомились они в Париже.]: C'est à Paris ___ ils se sont rencontrés. => qu' | où | qui
+choice[en=I'm the one who pays.|ru=Плачу я.]: C'est moi qui ___. => paie | paye-t-il | paient
+choice[en=We're the ones who did it.|ru=Это мы сделали.]: C'est nous qui l'___ fait. => avons | ont | a
+choice[en=What annoys me is his attitude.|ru=Что меня раздражает, так это его отношение.]: ___ m'énerve, c'est son attitude. => Ce qui | Ce que | Qui
+choice[en=What I love is travelling.|ru=Что я люблю — так это путешествовать.]: ___ j'aime, c'est voyager. => Ce que | Ce qui | Que
+choice[en=What I need is rest.|ru=Что мне нужно — так это отдых.]: ___ j'ai besoin, c'est de repos. => Ce dont | Ce que | Dont
+gap[en=That film, I loved it.|ru=Этот фильм мне очень понравился.]: Ce film, je ___ ai adoré. => l'
+gap[en=That's why I'm late.|ru=Вот почему я опоздал.]: ___ pourquoi je suis en retard. => Voilà
+transform[en=Stress "demain"|ru=Выделите «demain»]: Je pars demain. => C'est demain que je pars.
+transform[en=Stress "Marie"|ru=Выделите «Marie»]: Marie a gagné. => C'est Marie qui a gagné.

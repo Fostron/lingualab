@@ -1,0 +1,12 @@
+choice[en=colloquial for "voiture"|ru=разговорное слово для «voiture»]: ___ => bagnole | véhicule | automobile
+choice[en=colloquial for "argent"|ru=разговорное слово для «argent»]: ___ => fric | monnaie | devise
+choice[en=colloquial for "travailler"|ru=разговорное слово для «travailler»]: ___ => bosser | œuvrer | ouvrer
+choice[en=colloquial for "livre"|ru=разговорное слово для «livre»]: ___ => bouquin | ouvrage | tome
+choice[en=colloquial for "fatigué"|ru=разговорное слово для «fatigué»]: Je suis ___. => crevé | épuisé | las
+choice[en=verlan for "fou"|ru=верлан для «fou»]: ___ => ouf | foufou | uof
+choice[en=verlan for "femme"|ru=верлан для «femme»]: ___ => meuf | mefa | fem
+choice[en=verlan for "louche" (weird)|ru=верлан для «louche» (странный)]: ___ => chelou | louchelou | cheloub
+choice[en=formal "please wait"|ru=официальное «пожалуйста, подождите»]: ___ patienter. => Veuillez | Attends | Faut
+choice[en=formal email closing|ru=официальное завершение письма]: Bien ___ => cordialement | amicalement à toi | bisous
+gap[en=I would be grateful if you could…|ru=Буду признателен, если вы…]: Je vous serais ___ de bien vouloir… => reconnaissant
+gap[en=spoken: "il y a"|ru=разговорное «il y a»]: ___ a personne. => Y

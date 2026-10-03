@@ -1,0 +1,13 @@
+choice[en=She stood me up.|ru=Она меня продинамила.]: Elle m'a posé un ___. => lapin | chat | canard
+choice[en=It costs an arm and a leg.|ru=Это стоит бешеных денег.]: Ça coûte les yeux de la ___. => tête | main | bouche
+choice[en=I'm feeling down.|ru=Мне грустно.]: J'ai le ___. => cafard | lapin | moral
+choice[en=It's freezing cold.|ru=Собачий холод.]: Il fait un froid de ___. => canard | loup | chien
+choice[en=when pigs fly|ru=когда рак на горе свистнет]: quand les poules auront des ___ => dents | ailes | cornes
+choice[en=It's not easy.|ru=Это непросто.]: Ce n'est pas de la ___. => tarte | soupe | crème
+choice[en=She fainted.|ru=Она упала в обморок.]: Elle est tombée dans les ___. => pommes | poires | choux
+choice[en=He's lazy.|ru=Он лентяй.]: Il a un poil dans la ___. => main | tête | barbe
+choice[en=You're annoying me!|ru=Ты меня достал!]: Tu me casses les ___ ! => pieds | bras | dents
+choice[en=let's get back to the point|ru=вернёмся к нашим баранам]: Revenons à nos ___. => moutons | chèvres | vaches
+choice[en=I give up (guessing).|ru=Сдаюсь.]: Je donne ma langue au ___. => chat | chien | lapin
+choice[en=It's a piece of cake.|ru=Проще простого.]: C'est du ___. => gâteau | pain | fromage
+gap[en=love at first sight|ru=любовь с первого взгляда]: avoir le coup de ___ => foudre

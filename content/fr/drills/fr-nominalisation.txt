@@ -1,0 +1,14 @@
+gap[en=arriver → noun|ru=arriver → сущ.]: À son ___, tout le monde a applaudi. => arrivée
+gap[en=décider → noun|ru=décider → сущ.]: la ___ du gouvernement => décision
+gap[en=augmenter → noun|ru=augmenter → сущ.]: l'___ des prix => augmentation
+gap[en=fermer → noun|ru=fermer → сущ.]: la ___ du magasin => fermeture
+gap[en=ouvrir → noun|ru=ouvrir → сущ.]: l'___ du musée => ouverture
+gap[en=changer → noun|ru=changer → сущ.]: un ___ de programme => changement
+gap[en=choisir → noun|ru=choisir → сущ.]: un ___ difficile => choix
+gap[en=naître → noun|ru=naître → сущ.]: la ___ de mon fils => naissance
+gap[en=beau → noun|ru=beau → сущ.]: la ___ du paysage => beauté
+gap[en=nettoyer → noun|ru=nettoyer → сущ.]: le ___ des rues => nettoyage
+gap[en=refuser → noun|ru=refuser → сущ.]: un ___ catégorique => refus
+choice[en=gender|ru=род]: ___ développement => le | la
+choice[en=gender|ru=род]: ___ réduction => la | le
+choice[en=formal: because the weather was bad|ru=офиц.: из-за плохой погоды]: ___ du mauvais temps => en raison | parce que | car

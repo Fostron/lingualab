@@ -1,0 +1,13 @@
+choice[en=passé simple of faire (il)|ru=passé simple от faire (il)]: il ___ => fit | fut | fait
+choice[en=passé simple of être (il)|ru=passé simple от être (il)]: il ___ => fut | fit | été
+choice[en=passé simple of avoir (il)|ru=passé simple от avoir (il)]: il ___ => eut | eût | a eu
+choice[en=passé simple of venir (il)|ru=passé simple от venir (il)]: il ___ => vint | vena | venit
+choice[en=passé simple of naître (il)|ru=passé simple от naître (il)]: il ___ => naquit | naissa | naît
+choice[en=passé simple of prendre (ils)|ru=passé simple от prendre (ils)]: ils ___ => prirent | prenèrent | prendirent
+choice[en=passé simple of parler (ils)|ru=passé simple от parler (ils)]: ils ___ => parlèrent | parlirent | parlurent
+gap[en=Which infinitive? "il vit" (in a story)|ru=Какой инфинитив? «il vit» (в рассказе)]: il vit → ___ => voir
+gap[en=Which infinitive? "ils dirent"|ru=Какой инфинитив? «ils dirent»]: ils dirent → ___ => dire
+gap[en=Which infinitive? "il mourut"|ru=Какой инфинитив? «il mourut»]: il mourut → ___ => mourir
+gap[en=Which infinitive? "il put"|ru=Какой инфинитив? «il put»]: il put → ___ => pouvoir
+gap[en=Which infinitive? "il sut"|ru=Какой инфинитив? «il sut»]: il sut → ___ => savoir
+transform[en=Put it in the passé composé|ru=Поставьте в passé composé]: Il entra et s'assit. => Il est entré et s'est assis.

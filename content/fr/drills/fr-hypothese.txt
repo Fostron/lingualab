@@ -1,0 +1,11 @@
+choice[en=in case it rains|ru=на случай, если пойдёт дождь]: Prends un parapluie au cas où il ___. => pleuvrait | pleuve | pleut
+choice[en=provided that you are there|ru=при условии, что ты там будешь]: Je viendrai à condition que tu ___ là. => sois | es | seras
+choice[en=Let's hope the weather is nice!|ru=Хоть бы была хорошая погода!]: Pourvu qu'il ___ beau ! => fasse | fait | fera
+choice[en=unless it rains|ru=если только не будет дождя]: Je viendrai, à moins qu'il ne ___. => pleuve | pleut | pleuvrait
+choice[en=Hurry up, otherwise we'll miss the train.|ru=Торопись, а то опоздаем на поезд.]: Dépêche-toi, ___ on va rater le train. => sinon | si | sauf
+choice[en=in case of emergency|ru=в экстренном случае]: En cas ___ urgence, appelez le 112. => d' | de l' | où
+choice[en=assuming he accepts|ru=допустим, он согласится]: En supposant qu'il ___… => accepte | accepterait | acceptera
+choice[en=even if it's expensive|ru=даже если это дорого]: Même si c'___ cher, je l'achète. => est | soit | serait
+gap[en=You'll succeed provided you work.|ru=Ты добьёшься успеха, если будешь работать.]: Tu réussiras à condition ___ travailler. => de
+gap[en=Without your help…|ru=Без твоей помощи…]: ___ ton aide, je n'y serais pas arrivé. => Sans
+gap[en=If you leave early…|ru=Если выедешь рано…]: En ___ (partir) tôt, tu éviteras les bouchons. => partant

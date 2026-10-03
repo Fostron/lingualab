@@ -1,0 +1,57 @@
+# level | question (___ = gap) | correct | wrong | wrong | wrong
+A1 | Je ___ étudiant. | suis | ai | es | est
+A1 | Tu ___ quel âge ? | as | es | a | ai
+A1 | ___ maison est grande. | La | Le | L' | Les
+A1 | Nous ___ français. | parlons | parlez | parle | parlent
+A1 | Elle n'a pas ___ voiture. | de | une | la | des
+A1 | J'aime ___ chocolat. | le | du | de | un
+A1 | Je vais ___ cinéma. | au | à le | à la | en
+A1 | C'est ___ sœur. | ma | mon | mes | me
+A1 | ___ heure est-il ? | Quelle | Quel | Quels | Qu'
+A1 | Ils ___ au parc. | vont | vais | allons | va
+A1 | Il fait ___ aujourd'hui. | froid | faim | chaude | peur
+A1 | Je me ___ à sept heures. | lève | lèves | lever | levé
+A2 | Hier, nous ___ au restaurant. | avons mangé | mangeons | mangerons | mangions demain
+A2 | Elle est ___ à Paris l'année dernière. | allée | allé | aller | va
+A2 | Quand j'étais petit, je ___ au foot. | jouais | ai joué | jouerai | joue
+A2 | Tu connais Paul ? — Oui, je ___ connais. | le | lui | la | leur
+A2 | Tu as parlé à Marie ? — Oui, je ___ ai parlé. | lui | la | l' | leur
+A2 | Tu vas à Lyon ? — Oui, j'___ vais demain. | y | en | le | lui
+A2 | Demain, il ___ beau. | fera | fait | faisait | a fait
+A2 | Je ___ un café, s'il vous plaît. | voudrais | voudrai | veux bien que | voulais que
+A2 | Le livre ___ je lis est passionnant. | que | qui | dont | où
+A2 | C'est le ___ restaurant de la ville. | meilleur | mieux | plus bon | plus bien
+A2 | J'habite ici ___ cinq ans. | depuis | pendant | il y a | dans
+A2 | Il parle très ___. | bien | bon | bonne | meilleur
+B1 | Il faut que tu ___ tes devoirs. | fasses | fais | feras | faire
+B1 | Je ne pense pas qu'il ___ raison. | ait | a | aura | avoir
+B1 | Si j'avais de l'argent, je ___ une maison. | achèterais | achèterai | achetais | achète
+B1 | Quand je suis arrivé, le film ___ déjà commencé. | avait | a | aura | était
+B1 | Il m'a dit qu'il ___ le lendemain. | viendrait | viendra | vient | vienne
+B1 | C'est exactement ___ j'ai besoin. | ce dont | ce que | dont | que
+B1 | Je l'ai vu ___ du cinéma. | en sortant | sortant de | à sortir | pour sortir
+B1 | Bien qu'il ___ malade, il travaille. | soit | est | sera | était
+B1 | Ce livre a été écrit ___ Victor Hugo. | par | de | pour | avec
+B1 | Je t'appellerai dès que j'___ les résultats. | aurai reçu | ai reçu | reçois | recevrais
+B1 | Je fais ___ ma voiture. | réparer | réparée | réparé | à réparer
+B1 | Il est malade, ___ il ne vient pas. | donc | car | pourtant | puisque
+B2 | Si j'avais su, je ___. | serais venu | viendrais | serai venu | étais venu
+B2 | Je suis content que tu ___ hier. | sois venu | viennes | es venu | étais venu
+B2 | La lettre ? Je l'ai ___ ce matin. | écrite | écrit | écrits | écrire
+B2 | C'est à Paris ___ ils se sont rencontrés. | qu' | où | qui | dont
+B2 | J'ai ___ chercher, je ne trouve pas mes clés. | beau | bien | même | tant
+B2 | Prends un parapluie au cas où il ___. | pleuvrait | pleuve | pleut | pleuvra
+B2 | ___ la grève, le train est annulé. | À cause de | Grâce à | Puisque | Car
+B2 | Elle s'est ___ les mains. | lavé | lavée | lavés | laver
+B2 | Ils se sont ___ hier soir. | disputés | disputé | disputées | disputer
+B2 | ___ qu'il arrive, reste calme. | Quoi | Quoique | Quel | Que
+B2 | Il voulait partir. ___, il n'avait pas d'argent. | Or | Car | Donc | Ainsi
+C1 | Victor Hugo ___ en 1802. | naquit | naissa | naquis | naîtra
+C1 | J'ai peur qu'il ne ___ trop tard. | soit | soit pas | est | serait
+C1 | Il ne mange ___ : il est malade. | guère | point de | nullement de | jamais rien pas
+C1 | Peut-être ___ demain. | viendra-t-il | il viendra-t-il | vient-il pas | viendrait-il pas
+C1 | Il est plus intelligent qu'on ne le ___. | croit | croie | croirait | croyait pas
+C1 | Elle m'a posé un ___ : elle n'est jamais venue. | lapin | chat | canard | poisson
+C1 | Je vous serais ___ de bien vouloir me répondre. | reconnaissant | reconnu | connaissant | redevable de
+C1 | Il ne cesse ___ pleuvoir depuis lundi. | de | à | — | pas de
+C1 | Quand il ___ fini, il sortit. | eut | eût | a | avait eu

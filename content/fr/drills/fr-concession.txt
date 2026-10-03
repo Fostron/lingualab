@@ -1,0 +1,12 @@
+choice: Bien qu'il ___ fatigué, il continue. => soit | est | sera
+choice: Même s'il ___, je sortirai. => pleut | pleuve | pleuvra
+choice: ___ la pluie, nous sommes sortis. => Malgré | Bien que | Même si
+choice[en=However hard I look, I can't find my keys.|ru=Сколько ни ищу, не могу найти ключи.]: J'ai ___ chercher, je ne trouve pas mes clés. => beau | bien | même
+choice[en=It's raining, but I'm going out anyway.|ru=Идёт дождь, но я всё равно выйду.]: Il pleut, mais je sors ___. => quand même | pourtant que | malgré
+choice[en=Whatever happens, stay calm.|ru=Что бы ни случилось, сохраняй спокойствие.]: ___ qu'il arrive, reste calme. => Quoi | Quoique | Quel
+choice[en=Whatever your decision…|ru=Каким бы ни было твоё решение…]: ___ que soit ta décision… => Quelle | Quel | Quoi
+choice[en=He works, whereas I rest.|ru=Он работает, а я отдыхаю.]: Il travaille, ___ moi, je me repose. => alors que | bien que | malgré
+choice[en=instead of watching TV|ru=вместо того чтобы смотреть телевизор]: ___ regarder la télé => Au lieu de | Malgré | Contrairement à
+choice[en=on the other hand (written)|ru=зато (книжн.)]: C'est cher ; ___, c'est excellent. => en revanche | en effet | donc
+gap[en=unlike his brother|ru=в отличие от брата]: Contrairement ___ son frère, il est timide. => à
+gap: Quoiqu'il ___ (être) malade, il est venu. => soit

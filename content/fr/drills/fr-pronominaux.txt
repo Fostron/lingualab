@@ -1,0 +1,13 @@
+choice[en=They love each other.|ru=Они любят друг друга.]: Ils ___ aiment. => s' | se | les
+choice[en=See you tomorrow?|ru=Увидимся завтра?]: On ___ voit demain ? => se | nous | s'
+choice[en=This dish is eaten cold.|ru=Это блюдо едят холодным.]: Ce plat ___ mange froid. => se | est | on
+choice[en=That's not done.|ru=Так не делают.]: Ça ne ___ fait pas. => se | s'est | le
+choice[en=I didn't expect that.|ru=Я этого не ожидал.]: Je ne ___ attendais pas à ça. => m' | me | l'
+choice[en=I suspected it.|ru=Я так и думал.]: Je m'en ___. => doutais | doute pas | doutait
+choice[en=What's happening?|ru=Что происходит?]: Qu'est-ce qui se ___ ? => passe | pass | passent
+choice[en=I can do without coffee.|ru=Я могу обойтись без кофе.]: Je peux me passer ___ café. => de | du | le
+choice[en=He got arrested.|ru=Его арестовали.]: Il s'est ___ arrêter. => fait | faite | été
+choice[en=He was refused entry.|ru=Ему отказали во входе.]: Il s'est ___ refuser l'entrée. => vu | vue | fait voir
+gap[en=They argued.|ru=Они поссорились.]: Ils se sont ___. => disputés
+gap[en=She fainted.|ru=Она упала в обморок.]: Elle s'est ___. => évanouie
+gap[en=Don't make fun of me!|ru=Не смейся надо мной!]: Ne te moque pas ___ moi ! => de

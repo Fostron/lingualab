@@ -1,0 +1,14 @@
+gap[en=partir|ru=partir]: Elle est ___. => partie
+gap[en=écrire|ru=écrire]: La lettre ? Je l'ai ___. => écrite
+gap[en=prendre|ru=prendre]: Ces photos, je les ai ___ hier. => prises
+gap[en=acheter|ru=acheter]: la robe que j'ai ___ => achetée
+gap[en=voir|ru=voir]: les films que nous avons ___ => vus
+gap[en=choisir|ru=choisir]: Quelle voiture as-tu ___ ? => choisie
+gap[en=laver|ru=laver]: Elle s'est ___. => lavée
+gap[en=laver|ru=laver]: Elle s'est ___ les mains. => lavé
+gap[en=rencontrer|ru=rencontrer]: Ils se sont ___ à Paris. => rencontrés
+gap[en=parler|ru=parler]: Ils se sont ___ hier. => parlé
+gap[en=manger|ru=manger]: Des pommes ? J'en ai ___. => mangé
+gap[en=écrire|ru=écrire]: J'ai ___ une lettre. => écrit
+gap[en=ouvrir|ru=ouvrir]: La porte ? Je l'ai ___. => ouverte
+choice[en=She had her hair cut.|ru=Она подстриглась.]: Elle s'est ___ couper les cheveux. => fait | faite | faits

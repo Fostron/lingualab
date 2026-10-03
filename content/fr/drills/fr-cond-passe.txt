@@ -1,0 +1,12 @@
+gap: Si j'avais su, je ___ (venir). => serais venu | serais venue
+gap: Si tu m'avais appelé, je t'___ (aider). => aurais aidé
+gap: Nous ___ (gagner) si nous avions mieux joué. => aurions gagné
+gap: Si elle ___ (partir) plus tôt, elle n'aurait pas raté le train. => était partie
+gap: Si vous ___ (étudier), vous auriez réussi. => aviez étudié
+gap[en=I should have left earlier.|ru=Мне надо было уйти раньше.]: J'___ (devoir) partir plus tôt. => aurais dû
+gap[en=You could have warned me!|ru=Мог бы и предупредить!]: Tu ___ (pouvoir) me prévenir ! => aurais pu
+gap[en=I would have liked to see you.|ru=Я бы хотел тебя увидеть.]: J'___ (aimer) te voir. => aurais aimé
+choice: Si j'avais accepté ce travail, je ___ à Paris maintenant. => vivrais | aurais vécu | vivais
+choice: Si j'___ le temps, je l'aurais fait. => avais eu | aurais eu | avais
+choice[en=The fire reportedly started at night.|ru=По имеющимся данным, пожар начался ночью.]: L'incendie ___ commencé la nuit. => aurait | avait | a
+transform[en=Make it about the past|ru=Перенесите в прошлое]: Si je savais, je viendrais. => Si j'avais su, je serais venu.

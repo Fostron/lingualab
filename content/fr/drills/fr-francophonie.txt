@@ -1,0 +1,10 @@
+choice[en=70 in Belgium|ru=70 в Бельгии]: ___ => septante | soixante-dix | setante
+choice[en=90 in Switzerland|ru=90 в Швейцарии]: ___ => nonante | quatre-vingt-dix | neufante
+choice[en=80 in some Swiss cantons|ru=80 в некоторых кантонах Швейцарии]: ___ => huitante | octante | quatre-vingts dix
+choice[en=weekend (Québec)|ru=выходные (Квебек)]: ___ => la fin de semaine | le week-end | le samedi-dimanche
+choice[en=email (Québec)|ru=электронное письмо (Квебек)]: un ___ => courriel | mail | email
+choice[en=to go shopping (Québec)|ru=ходить по магазинам (Квебек)]: ___ => magasiner | shopper | faire du shopping
+choice[en=dinner (Québec, Belgium)|ru=ужин (Квебек, Бельгия)]: le ___ => souper | dîner | goûter
+choice[en=my girlfriend (Québec)|ru=моя девушка (Квебек)]: ma ___ => blonde | copine | brune
+choice[en=mobile phone (Switzerland)|ru=мобильник (Швейцария)]: un ___ => natel | portable | cellulaire
+choice[en=Are you coming? (Québec)|ru=Ты придёшь? (Квебек)]: Tu viens-___ ? => tu | il | pas

@@ -1,0 +1,12 @@
+choice[en=on the one hand… on the other hand|ru=с одной стороны… с другой]: D'une part…, d'___ part… => autre | une | l'autre
+choice[en=moreover (formal)|ru=кроме того (книжн.)]: Le projet est utile. En ___, il est peu coûteux. => outre | effet | fait
+choice[en=Admittedly…, but…|ru=Конечно…, но…]: ___, c'est cher, mais c'est utile. => Certes | Or | Donc
+choice[en=He wanted to leave. Yet he had no money.|ru=Он хотел уехать. Однако денег не было.]: Il voulait partir. ___, il n'avait pas d'argent. => Or | Car | Ainsi
+choice[en=in other words|ru=иначе говоря]: ___ dit, c'est impossible. => Autrement | Ainsi | Bref
+choice[en=namely|ru=а именно]: trois pays, à ___ la France, l'Italie et l'Espagne => savoir | dire | voir
+choice[en=be that as it may|ru=как бы то ни было]: Quoi qu'il en ___, nous partirons. => soit | est | sera
+choice[en=so, as a result (spoken)|ru=в итоге (разг.)]: Il pleuvait. Du ___, on est restés. => coup | fait | moins
+choice[en=in particular|ru=в частности]: Il aime le sport, ___ le tennis. => notamment | néanmoins | nonobstant
+gap[en=that is (to say)|ru=то есть]: C'est-___-dire => à
+gap[en=nevertheless (formal)|ru=тем не менее]: ___, il faut reconnaître ses efforts. => Néanmoins | Toutefois
+gap[en=to conclude|ru=в заключение]: Pour ___, je dirais que… => conclure

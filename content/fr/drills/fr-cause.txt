@@ -1,0 +1,12 @@
+choice[en=since you insist (known reason)|ru=раз ты настаиваешь]: ___ tu insistes, je viens. => Puisque | Car | Parce que
+choice[en=As the weather was nice, we went out.|ru=Так как погода была хорошая, мы вышли.]: ___ il faisait beau, on est sortis. => Comme | Car | Donc
+choice[en=thanks to you|ru=благодаря тебе]: ___ toi, j'ai réussi. => Grâce à | À cause de | Faute de
+choice[en=because of the strike|ru=из-за забастовки]: ___ la grève, le train est annulé. => À cause de | Grâce à | Puisque
+choice[en=for lack of time|ru=из-за нехватки времени]: ___ temps, je n'ai pas fini. => Faute de | À cause | Grâce au
+choice[en=He was so tired that he fell asleep.|ru=Он так устал, что уснул.]: Il était ___ fatigué qu'il s'est endormi. => si | tant | tellement de
+choice[en=There were so many people that I left.|ru=Было столько народу, что я ушёл.]: Il y avait ___ monde que je suis parti. => tellement de | si | tant que
+choice[en=consequently (formal)|ru=следовательно (книжн.)]: Les prix augmentent ; ___, on consomme moins. => par conséquent | car | puisque
+choice[en=so that (purpose)|ru=чтобы (цель)]: Parle fort, de sorte qu'on t'___. => entende | entend | entendra
+gap[en=That's why I'm absent.|ru=Вот почему меня нет.]: C'est ___ je suis absent. => pourquoi
+gap[en=hence my delay|ru=отсюда моё опоздание]: ___ mon retard => d'où
+gap[en=I think, therefore I am.|ru=Мыслю, следовательно, существую.]: Je pense, ___ je suis. => donc

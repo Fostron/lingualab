@@ -1,0 +1,11 @@
+gap: Je suis content que tu ___ (venir). => sois venu | sois venue
+gap: Je doute qu'il ___ (comprendre). => ait compris
+gap: C'est dommage que vous n'___ pas ___ (pouvoir) venir. => ayez, pu | ayez pu
+gap: Bien qu'il ___ (travailler) beaucoup, il a échoué. => ait travaillé
+gap: Il faut que tu ___ (finir) avant midi. => aies fini
+gap: Je ne crois pas qu'elle ___ (partir) déjà. => soit partie
+gap: C'est le meilleur film que j'___ jamais ___ (voir). => aie, vu | aie vu
+gap: Je regrette qu'ils ___ (ne pas venir). => ne soient pas venus
+choice[en=I'm glad you came.|ru=Я рад, что ты пришёл.]: Je suis content que tu ___. => sois venu | viennes | es venu
+choice[en=I'm glad you're coming.|ru=Я рад, что ты придёшь.]: Je suis content que tu ___. => viennes | sois venu | viendras
+choice: Je doute qu'ils ___ la lettre hier. => aient reçu | reçoivent | ont reçu

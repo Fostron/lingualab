@@ -1,0 +1,12 @@
+gap[en=désirer|ru=désirer]: Les personnes ___ participer doivent s'inscrire. => désirant
+gap[en=savoir|ru=savoir]: Ne ___ pas quoi dire, il est parti. => sachant
+gap[en=être|ru=être]: ___ malade, elle n'est pas venue. => Étant
+gap[en=finir (compound)|ru=finir (сложная форма)]: ___ fini son travail, il est rentré. => Ayant
+gap[en=arriver (fem.)|ru=arriver (ж. р.)]: ___ à Paris, elle a appelé sa mère. => Arrivée
+choice: une journée ___ => fatigante | fatiguant | fatiguante
+choice: des arguments ___ => convaincants | convainquant | convaincant
+choice: des enfants ___ dans la rue => jouant | jouants | jouantes
+choice: le jour ___ son départ => précédant | précédent | précédente
+choice: la semaine ___ => précédente | précédant | précédent
+choice[en=sound films|ru=звуковые фильмы]: des films ___ => parlants | parlant | parlé
+transform[en=Use a present participle|ru=Используйте причастие]: Les étudiants qui veulent partir peuvent sortir. => Les étudiants voulant partir peuvent sortir.

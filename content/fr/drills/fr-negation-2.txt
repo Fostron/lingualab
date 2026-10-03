@@ -1,0 +1,12 @@
+gap[en=He hardly eats.|ru=Он почти не ест.]: Il ne mange ___. => guère
+gap[en=I can't find it anywhere.|ru=Я нигде не могу его найти.]: Je ne le trouve nulle ___. => part
+gap[en=He drinks neither wine nor beer.|ru=Он не пьёт ни вина, ни пива.]: Il ne boit ___ vin ni bière. => ni
+gap[en=Neither he nor she came.|ru=Ни он, ни она не пришли.]: Ni lui ni elle ___ sont venus. => ne
+gap[en=He only thinks of himself.|ru=Он думает только о себе.]: Il ne pense ___ à lui. => qu'
+gap[en=without sugar or milk|ru=без сахара и молока]: sans sucre ___ lait => ni
+gap[en=I'm not at all surprised.|ru=Я ничуть не удивлён.]: Je ne suis ___ surpris. => nullement | aucunement | pas du tout
+choice[en=He asked me not to smoke.|ru=Он попросил меня не курить.]: Il m'a demandé de ___ fumer. => ne pas | ne fumer pas | pas
+choice[en=I never say anything to anyone.|ru=Я никогда никому ничего не говорю.]: Je ne dis ___ à personne. => jamais rien | pas jamais rien | rien jamais pas
+choice[en=I'm afraid it's too late (expletive ne).|ru=Боюсь, что слишком поздно.]: J'ai peur qu'il ne ___ trop tard. => soit | soit pas | est
+choice[en=Money isn't everything (not only money).|ru=В жизни есть не только деньги.]: Il n'y a ___ l'argent dans la vie. => pas que | que | pas de
+choice[en=He's smarter than people think.|ru=Он умнее, чем думают.]: Il est plus intelligent qu'on ___ le croit. => ne | n' pas | ne pas
