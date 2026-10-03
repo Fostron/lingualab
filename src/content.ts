@@ -25,6 +25,15 @@ async function getJson<T>(url: string): Promise<T> {
   return r.json();
 }
 
+const PACK_FILES = ['course', 'lexicon', 'sentences', 'conj'];
+
+/** Re-request the packs of loaded courses once the service worker controls the page, so the first visit
+ *  also works offline later (the files come from the HTTP cache, no second download). */
+export function warmOfflineCache() {
+  for (const id of cache.keys())
+    for (const f of PACK_FILES) void fetch(`${import.meta.env.BASE_URL}content/${id}/${f}.json?v=${__BUILD__}`).catch(() => {});
+}
+
 export function loadCourse(id: string): Promise<LoadedCourse> {
   let p = cache.get(id);
   if (!p) {
