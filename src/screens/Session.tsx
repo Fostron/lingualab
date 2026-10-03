@@ -4,6 +4,7 @@ import { isGraded, type Ex } from '../exercises';
 import { t } from '../i18n';
 import { go } from '../router';
 import { getState } from '../store';
+import { scheduleSync, sync } from '../sync';
 import { stopSpeech } from '../tts';
 import { ExerciseView, type ExResult } from '../ui/ExerciseView';
 import { Icon, Progress } from '../ui/common';
@@ -73,6 +74,14 @@ export function SessionRunner({
     time.current.active += Math.min(now - time.current.mark, MAX_GAP);
     time.current.mark = now;
   };
+
+  useEffect(() => {
+    sync.busy++;
+    return () => {
+      sync.busy--;
+      scheduleSync(1500);
+    };
+  }, []);
 
   useEffect(
     () => () => {

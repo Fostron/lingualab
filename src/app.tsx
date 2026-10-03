@@ -1,4 +1,7 @@
+import { useEffect, useState } from 'preact/hooks';
 import { COURSES } from './content';
+import { LoginScreen, SyncBadge } from './screens/Account';
+import { loginSkipped, onSync, session } from './sync';
 import { t } from './i18n';
 import { useRoute } from './router';
 import { selectCourse, useStore } from './store';
@@ -14,6 +17,21 @@ export function App() {
   const st = useStore();
   const route = useRoute();
   const [head, a, b, extra] = route;
+  const [, rerender] = useState(0);
+  useEffect(() => {
+    const off = onSync(() => rerender((x) => x + 1));
+    return () => {
+      off();
+    };
+  }, []);
+
+  // first launch: sign in (or explicitly continue without an account)
+  if (!session() && !loginSkipped())
+    return (
+      <Shell nav={false}>
+        <LoginScreen />
+      </Shell>
+    );
 
   if (head === 'courses' || (!st.info && !st.loading)) return <Shell nav={false}><Welcome /></Shell>;
   if (st.loading || (!st.course && !st.error)) return <Loading />;
@@ -130,6 +148,7 @@ function Shell({ nav, active, children }: { nav: boolean; active?: string; child
                 <small>{info.ui.toUpperCase()}</small>
               </a>
             )}
+            <SyncBadge />
             <a class={`icon-btn ${active === 'settings' ? 'active' : ''}`} href="#/settings" title={t().settings}>
               <Icon name="gear" />
             </a>

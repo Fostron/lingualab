@@ -41,6 +41,7 @@ import { ta } from '../i18n-assess';
 import { applyPlacement } from '../progress';
 import { go } from '../router';
 import { bump, getState } from '../store';
+import { scheduleSync } from '../sync';
 import { say, stopSpeech } from '../tts';
 import type { LoadedCourse } from '../types';
 import { Icon, Loading, Progress, TargetInput } from '../ui/common';
@@ -220,6 +221,7 @@ export function Assessment({ c }: { c: LoadedCourse }) {
     if (!st || st.part !== 'done' || report) return;
     const r = buildReport(c, st);
     void addAssessment(id, r).then(() => {
+      scheduleSync(500);
       saveState(null, id);
       setReport(r);
       setSt(null);

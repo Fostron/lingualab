@@ -3,6 +3,7 @@ import { COURSES, loadCourse, type CourseInfo } from './content';
 import { DEFAULT_SETTINGS, getSettings, saveSettings, type Settings } from './db';
 import { setUi } from './i18n';
 import { setRetention } from './srs';
+import { scheduleSync } from './sync';
 import { configureTts, onVoicesChanged } from './tts';
 import type { LoadedCourse } from './types';
 
@@ -89,11 +90,12 @@ export async function selectCourse(id: string) {
   emit();
 }
 
-export async function updateSettings(patch: Partial<Settings>) {
-  state.settings = { ...state.settings, ...patch };
+export async function updateSettings(patch: Partial<Settings>, fromSync = false) {
+  state.settings = { ...state.settings, ...patch, updatedAt: fromSync ? patch.updatedAt ?? state.settings.updatedAt : Date.now() };
   await saveSettings(state.settings);
   configureTts(state.settings.rate, state.settings.voice);
   setRetention(state.settings.retention);
   applyTheme(state.settings.theme);
   emit();
+  if (!fromSync) scheduleSync(3000);
 }

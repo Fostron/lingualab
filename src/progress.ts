@@ -18,6 +18,7 @@ import {
   type UnitRec,
 } from './db';
 import type { Diff } from './exercises';
+import { scheduleSync } from './sync';
 import { lessonPassed, lessonsOf, nextLesson, PASS, unitComplete, type Lesson } from './lessons';
 import { knownCardRec, retrievability, review, Rating } from './srs';
 import type { LoadedCourse, Unit } from './types';
@@ -164,6 +165,7 @@ export async function applyPlacement(c: LoadedCourse, startIndex: number, level:
   const p = await getProgress(c.meta.id);
   p.placement = { level, vocab, ts: Date.now(), startUnit: startIndex, detail };
   await saveProgress(p);
+  scheduleSync(500);
 }
 
 // ---- adaptivity and weak spots ----

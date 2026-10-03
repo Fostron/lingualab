@@ -2,9 +2,13 @@ import { render } from 'preact';
 import { App } from './app';
 import { warmOfflineCache } from './content';
 import { initStore } from './store';
+import { initSync } from './sync';
 import './styles.css';
 
-void initStore().then(() => render(<App />, document.getElementById('app')!));
+void initStore().then(() => {
+  initSync();
+  render(<App />, document.getElementById('app')!);
+});
 
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => {

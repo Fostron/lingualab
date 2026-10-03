@@ -56,6 +56,31 @@ The app is fully static and runs in the browser. Progress lives in that browser'
   - Words use recordings from Wikimedia Commons / Lingua Libre (94 % of the top 3 000 for Spanish, 99 % for French).
   - Anything without a recording falls back to the browser's speech synthesis.
 
+## Account and sync
+
+- **Sign-in:** the first screen asks you to sign in with Telegram, using the official login at oauth.telegram.org and the bot @lingualibauth_bot. You can also continue without an account.
+- **What syncs:** each course's progress (cards, answer log, units and lessons, statistics, assessment reports) and the settings. They are stored as a compressed blob per course on a small server.
+- **How syncing works:** download, merge, upload. The merge never loses work, so two devices used offline both keep everything. Uploads carry the revision they started from; on a conflict the merge is redone.
+- **When it syncs:** after every lesson, review or assessment, when the app goes to the background, and every few minutes. It doesn't run while a lesson is in progress.
+- **Server:** `server/lingualab_sync.py` (standard-library Python + SQLite).
+  - It runs on the VPS as the systemd service `lingualab-sync`, from `/opt/lingualab-sync`.
+  - The token is in `/etc/lingualab-sync.env` (`BOT_TOKEN`, `PORT`, `DB`, `ORIGINS`, `MAX_USERS`, optional `ALLOWED_IDS`).
+  - It is reachable at `https://lk.frdsecure.co.uk/lingua/` through nginx.
+  - It checks the Telegram signature with the bot token and never calls the Telegram API.
+- **Bot setup:** the bot's domain must be set once in @BotFather: `/setdomain` → `fostron.github.io`.
+
+## Level assessment
+
+The assessment (`src/assessment.ts`, `src/screens/Assessment.tsx`) has six parts:
+1. Self-assessment.
+2. Vocabulary: a yes/no test with made-up words, plus meaning checks.
+3. Grammar (adaptive).
+4. Reading (adaptive).
+5. Listening (adaptive) with dictation.
+6. Writing: typed forms and a C-test.
+
+Scoring is item-response based: EAP with a guessing parameter, so each skill gets a level. The vocabulary size is corrected for guessing. The report lists results by question level, grammar topics behind mistakes, the mistakes themselves, the method and the history of past assessments. The item bank `assess.json` is built by `p05_build.py` via `pipeline/assess_bank.py`.
+
 ## Content pipeline
 
 The app's data is in `public/content/<course>/{course,lexicon,sentences,conj,dict}.json` (`dict.json`, the reference dictionary, is only fetched when someone searches). It is generated from open datasets plus the hand-written material in `content/`.

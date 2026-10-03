@@ -1986,3 +1986,62 @@ input.search,
 .small-level {
   font-size: 1.6rem;
 }
+
+/* ---------- account & sync ---------- */
+.login {
+  max-width: 560px;
+}
+.btn.tg {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #2aabee;
+  border-color: #2aabee;
+  color: #fff;
+}
+.btn.tg:hover {
+  background: #229ed9;
+}
+.acc-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+.sync-badge {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  color: var(--ok);
+}
+.sync-badge.busy {
+  color: var(--accent);
+  animation: pulse 1s ease-in-out infinite alternate;
+}
+.sync-badge.bad {
+  color: var(--bad);
+}
+.sync-badge.off {
+  color: var(--ink-3);
+}
+@keyframes pulse {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.bad {
+  color: var(--bad);
+}
+.set-row small {
+  display: block;
+  font-weight: 400;
+}

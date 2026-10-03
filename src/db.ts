@@ -62,6 +62,7 @@ export interface CourseProgress {
   newToday?: { day: string; n: number };
   time?: Record<string, number>; // seconds of active study per day
   lessonsDone?: Record<string, number>; // lessons finished per day
+  resetAt?: number; // course reset: older records are dropped when devices sync
 }
 
 export type Difficulty = 'auto' | 'easy' | 'normal' | 'hard';
@@ -79,6 +80,7 @@ export interface Settings {
   strictAccents: boolean;
   retention: number;
   theme: 'auto' | 'light' | 'dark';
+  updatedAt?: number; // for syncing settings between devices (later wins)
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -263,6 +265,55 @@ export async function resetCourse(course: string) {
       cur = await cur.continue();
     }
   }
-  await tx.objectStore('kv').delete(`progress|${course}`);
+  const now = Date.now();
+  await tx.objectStore('kv').put({ course, started: now, days: [], resetAt: now } as CourseProgress, `progress|${course}`);
   await tx.done;
+}
+
+/** Everything stored for one course (what gets synced between devices). */
+export interface CourseDump {
+  v: 1;
+  course: string;
+  cards: CardRec[];
+  logs: Omit<LogRec, 'id'>[];
+  units: UnitRec[];
+  progress: CourseProgress | null;
+  assess: unknown[];
+}
+
+export async function dumpCourse(course: string): Promise<CourseDump> {
+  const d = await db();
+  const [cards, logs, units, progress, assess] = await Promise.all([
+    d.getAllFromIndex('cards', 'course', course),
+    d.getAllFromIndex('logs', 'course', course),
+    d.getAllFromIndex('units', 'course', course),
+    d.get('kv', `progress|${course}`) as Promise<CourseProgress | undefined>,
+    d.get('kv', `assess|${course}`) as Promise<unknown[] | undefined>,
+  ]);
+  return { v: 1, course, cards, logs: logs.map(({ id: _id, ...l }) => l), units, progress: progress || null, assess: assess || [] };
+}
+
+/** Replace a course's local data with a merged dump (one transaction). */
+export async function replaceCourse(dump: CourseDump) {
+  const d = await db();
+  const tx = d.transaction(['cards', 'logs', 'units', 'kv'], 'readwrite');
+  for (const store of ['cards', 'logs', 'units'] as const) {
+    let cur = await tx.objectStore(store).index('course').openCursor(dump.course);
+    while (cur) {
+      await cur.delete();
+      cur = await cur.continue();
+    }
+  }
+  for (const c of dump.cards) await tx.objectStore('cards').put(c);
+  for (const l of dump.logs) await tx.objectStore('logs').add(l as LogRec);
+  for (const u of dump.units) await tx.objectStore('units').put(u);
+  if (dump.progress) await tx.objectStore('kv').put(dump.progress, `progress|${dump.course}`);
+  if (dump.assess.length) await tx.objectStore('kv').put(dump.assess, `assess|${dump.course}`);
+  await tx.done;
+}
+
+/** Courses that have anything stored locally. */
+export async function localCourses(): Promise<string[]> {
+  const keys = (await (await db()).getAllKeys('kv')).map(String);
+  return [...new Set(keys.filter((k) => k.startsWith('progress|') || k.startsWith('assess|')).map((k) => k.split('|')[1]))];
 }
