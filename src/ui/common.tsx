@@ -7,6 +7,11 @@ import { getState } from '../store';
 import { say, sayWord, speak } from '../tts';
 import type { Sentence, Word } from '../types';
 
+/** Attributes for text in the language being learned: its own lang, never machine-translated. */
+export function tl() {
+  return { lang: getState().course?.meta.target, translate: false };
+}
+
 export function Icon({ name, size = 20 }: { name: string; size?: number }) {
   const p: Record<string, JSX.Element> = {
     speaker: (
@@ -166,13 +171,18 @@ export function SentenceView({
     );
     if (sp) parts.push(<span> </span>);
   });
-  return <span class={`sentence ${big ? 'big' : ''}`}>{parts}</span>;
+  return (
+    <span class={`sentence ${big ? 'big' : ''}`} lang={c.meta.target} translate={false}>
+      {parts}
+    </span>
+  );
 }
 
 /** Grammar markdown with [[target phrases]] that can be clicked to hear them. */
 export function Markdown({ md }: { md: string }) {
   const html = useMemo(() => {
-    const pre = md.replace(/\[\[([^\]]+)\]\]/g, (_, x) => `<span class="tl" tabindex="0">${x}</span>`);
+    const lang = getState().course?.meta.target || '';
+    const pre = md.replace(/\[\[([^\]]+)\]\]/g, (_, x) => `<span class="tl" tabindex="0" lang="${lang}" translate="no">${x}</span>`);
     return marked.parse(pre, { async: false, gfm: true }) as string;
   }, [md]);
   const c = getState().course;

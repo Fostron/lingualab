@@ -114,6 +114,40 @@ export function App() {
   );
 }
 
+/** Browsers' page translation replaces the language being learned; warn if it happens anyway. */
+function useTranslated() {
+  const [on, setOn] = useState(false);
+  useEffect(() => {
+    const html = document.documentElement;
+    const test = () =>
+      setOn(
+        /translated-(ltr|rtl)/.test(html.className) ||
+          !!document.querySelector('#app font, #app [class*="yandex-translate"], #app yatranslate') ||
+          (html.getAttribute('translate') !== 'no' && html.hasAttribute('translate')),
+      );
+    const mo = new MutationObserver(test);
+    mo.observe(html, { attributes: true, attributeFilter: ['class', 'lang', 'translate'] });
+    mo.observe(document.getElementById('app')!, { childList: true, subtree: true });
+    test();
+    return () => mo.disconnect();
+  }, []);
+  return on;
+}
+
+function TranslateWarning() {
+  const on = useTranslated();
+  if (!on) return null;
+  return (
+    <div class="translate-warn">
+      <b>{t().translatedTitle}</b>
+      <span>{t().translatedHow}</span>
+      <button class="btn small" onClick={() => location.reload()}>
+        {t().translatedReload}
+      </button>
+    </div>
+  );
+}
+
 function Shell({ nav, active, children }: { nav: boolean; active?: string; children: preact.ComponentChildren }) {
   const st = useStore();
   const info = st.info;
@@ -128,6 +162,7 @@ function Shell({ nav, active, children }: { nav: boolean; active?: string; child
   const icons: Record<string, string> = { home: 'home', path: 'path', practice: 'dumbbell', grammar: 'book', dict: 'search', stats: 'chart' };
   return (
     <div class={`shell ${nav ? 'with-nav' : ''}`}>
+      <TranslateWarning />
       {nav && (
         <header class="topbar">
           <a class="brand-sm" href="#/">

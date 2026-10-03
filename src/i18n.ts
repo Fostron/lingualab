@@ -320,6 +320,9 @@ const en = {
   syncError: 'Sync error',
   syncedAt: 'Synced at',
   syncOn: 'Sync is on',
+  translatedTitle: 'Your browser is translating this page.',
+  translatedHow: 'It replaces the language you are learning, so lessons and tests stop making sense. Turn translation off for this site (Chrome: the translate icon in the address bar → “Never translate this site”; Safari: aA → Show Original; Yandex Browser: the translate icon → don’t translate this site) and reload.',
+  translatedReload: 'Reload',
   oxfordLookup: 'Look it up in {title}',
   oxfordNote: 'Every word page has a button that searches the word in',
   oxfordLoan: 'opens on archive.org; this edition is a library loan, so sign in there and borrow it free for an hour',
@@ -648,6 +651,9 @@ const ru: Dict = {
   syncError: 'Ошибка синхронизации',
   syncedAt: 'Синхронизировано в',
   syncOn: 'Синхронизация включена',
+  translatedTitle: 'Браузер переводит эту страницу.',
+  translatedHow: 'Перевод подменяет изучаемый язык, и уроки с тестами теряют смысл. Отключите перевод для этого сайта (Chrome: значок перевода в адресной строке → «Никогда не переводить этот сайт»; Яндекс Браузер: значок перевода → «Не переводить этот сайт» или выключите автоперевод в настройках; Safari: «аА» → «Показать оригинал») и перезагрузите страницу.',
+  translatedReload: 'Перезагрузить',
   oxfordLookup: 'Найти в {title}',
   oxfordNote: 'На странице каждого слова есть кнопка поиска этого слова в',
   oxfordLoan: 'открывается на archive.org; это библиотечный экземпляр — войдите там и возьмите книгу бесплатно на час',
@@ -661,6 +667,7 @@ export function setUi(lang: UiLang) {
   currentLang = lang;
   current = lang === 'ru' ? ru : en;
   document.documentElement.lang = lang;
+  document.documentElement.setAttribute('translate', 'no');
 }
 
 export function ui(): UiLang {

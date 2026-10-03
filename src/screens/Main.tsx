@@ -9,7 +9,7 @@ import { retrievability } from '../srs';
 import { bump, getState, selectCourse } from '../store';
 import { bestVoice, speak, ttsAvailable } from '../tts';
 import { LEVELS, type LoadedCourse, type Unit, type Word } from '../types';
-import { Icon, Loading, Markdown, Progress, SentenceView, SpeakBtn, WordLine } from '../ui/common';
+import { Icon, Loading, Markdown, Progress, SentenceView, SpeakBtn, WordLine, tl } from '../ui/common';
 import { lessonTitle } from './Study';
 import { ta } from '../i18n-assess';
 
@@ -743,7 +743,7 @@ export function WordPage({ c, id, tick }: { c: LoadedCourse; id: number; tick: n
         ← {t().dictionary}
       </a>
       <div class="intro-word">
-        <span class="big-word">{displayWord(w, c.meta.target)}</span> <SpeakBtn text={w.w} wa={w.wa} /> <SpeakBtn text={w.w} slow />
+        <span class="big-word" {...tl()}>{displayWord(w, c.meta.target)}</span> <SpeakBtn text={w.w} wa={w.wa} /> <SpeakBtn text={w.w} slow />
       </div>
       <div class="intro-meta">
         {t().pos[w.pos] || w.pos} {genderTag(w)} {w.ipa && <span class="ipa">{w.ipa}</span>}

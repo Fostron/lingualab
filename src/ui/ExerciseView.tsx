@@ -6,7 +6,7 @@ import { fmt, t } from '../i18n';
 import { getState } from '../store';
 import { say, sayWord, speak } from '../tts';
 import type { Sentence, Topic } from '../types';
-import { Markdown, SentenceView, SpeakBtn, TargetInput } from './common';
+import { Markdown, SentenceView, SpeakBtn, TargetInput, tl } from './common';
 
 export interface ExResult {
   ok: boolean;
@@ -301,7 +301,7 @@ function Intro({ ex }: { ex: Extract<Ex, { k: 'intro' }> }) {
     <div class="intro">
       <div class="ex-kicker">{t().newWord}</div>
       <div class="intro-word">
-        <span class="big-word">{displayWord(w, target)}</span>
+        <span class="big-word" {...tl()}>{displayWord(w, target)}</span>
         <SpeakBtn text={w.w} wa={w.wa} />
         <SpeakBtn text={w.w} slow />
       </div>
@@ -418,7 +418,7 @@ function Mcq({ ex, res, answer }: P<'mcq'>) {
       <div class="prompt">
         {ex.mode === 't2n' && (
           <>
-            <span class="big-word">{displayWord(w, target)}</span> <SpeakBtn text={w.w} wa={w.wa} />
+            <span class="big-word" {...tl()}>{displayWord(w, target)}</span> <SpeakBtn text={w.w} wa={w.wa} />
           </>
         )}
         {ex.mode === 'listen' && (
@@ -715,7 +715,7 @@ function DrillView({ ex, res, answer }: P<'drill'>) {
       </div>
       <div class="prompt left">
         {d.h && <div class="sub hint">{d.h}</div>}
-        <div class="sentence big">
+        <div class="sentence big" {...tl()}>
           {parts.length > 1 ? (
             <>
               {parts[0]}
@@ -759,7 +759,7 @@ function Conj({ ex, res, answer }: P<'conj'>) {
     <div>
       <div class="ex-kicker">{t().conjugate}</div>
       <div class="prompt">
-        <span class="big-word">{ex.verb}</span> <SpeakBtn text={ex.verb} small />
+        <span class="big-word" {...tl()}>{ex.verb}</span> <SpeakBtn text={ex.verb} small />
         <div class="conj-prompt">
           <span class="pill">{c.meta.tenseNames[ex.tense] || ex.tense}</span>
           <span class="pill strong">{c.meta.persons[ex.person]}</span>

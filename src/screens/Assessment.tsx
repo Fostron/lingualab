@@ -44,7 +44,7 @@ import { bump, getState } from '../store';
 import { scheduleSync } from '../sync';
 import { say, stopSpeech } from '../tts';
 import type { LoadedCourse } from '../types';
-import { Icon, Loading, Progress, TargetInput } from '../ui/common';
+import { Icon, Loading, Progress, TargetInput, tl } from '../ui/common';
 
 /** Examples shown in the part introductions, per target language. */
 const EX: Record<string, { real: [string, string]; fake: string; grammar: [string, string]; writing: [string, string]; ctest: [string, string] }> = {
@@ -365,7 +365,7 @@ export function Assessment({ c }: { c: LoadedCourse }) {
         <div class="ex-kicker">{ta().verifyTitle}</div>
         <p class="muted small">{ta().verifyIntro}</p>
         <div class="prompt">
-          <span class="big-word">{cur.w}</span>
+          <span class="big-word" {...tl()}>{cur.w}</span>
           <div class="sub">{ta().verifyQ}</div>
         </div>
         <Choices
@@ -392,7 +392,7 @@ export function Assessment({ c }: { c: LoadedCourse }) {
         {head(st.grammar.length, COUNTS.grammar)}
         <div class="ex-kicker">{ta().grammarQ}</div>
         <div class="prompt left">
-          <div class="sentence big">
+          <div class="sentence big" {...tl()}>
             {parts[0]}
             <span class="blank">_____</span>
             {parts.slice(1).join('_____')}
@@ -421,7 +421,7 @@ export function Assessment({ c }: { c: LoadedCourse }) {
         {head(part === 'listening' ? done + st.listening.filter((r) => r.key.startsWith('D:')).length : done, part === 'listening' ? COUNTS.listening + COUNTS.dictation : COUNTS.reading)}
         <div class="ex-kicker">{part === 'reading' ? ta().readingQ : ta().listeningQ}</div>
         <div class="prompt left">
-          {part === 'reading' ? <div class="sentence big tl-text">{it.t}</div> : <Listen key={it.key} text={it.t} au={it.au} lang={c.meta.tts} />}
+          {part === 'reading' ? <div class="sentence big tl-text" {...tl()}>{it.t}</div> : <Listen key={it.key} text={it.t} au={it.au} lang={c.meta.tts} />}
         </div>
         <Choices
           key={it.key}
@@ -463,7 +463,7 @@ export function Assessment({ c }: { c: LoadedCourse }) {
         {head(gaps, COUNTS.writing + COUNTS.ctest)}
         <div class="ex-kicker">{ta().writingQ}</div>
         <div class="prompt left">
-          <div class="sentence big">
+          <div class="sentence big" {...tl()}>
             {it.before}
             <span class="blank">_____</span>
             {it.after}
@@ -617,10 +617,10 @@ function PartIntro({ c, part, onStart, onSkip }: { c: LoadedCourse; part: PartId
         <div class="card example">
           <small class="muted">{T.example}</small>
           <div>
-            <b class="tl-text">{ex.real[0]}</b> → {T.know}
+            <b class="tl-text" {...tl()}>{ex.real[0]}</b> → {T.know}
           </div>
           <div>
-            <b class="tl-text">{ex.fake}</b> → {T.dontKnow} <span class="muted">({T.fakeWord})</span>
+            <b class="tl-text" {...tl()}>{ex.fake}</b> → {T.dontKnow} <span class="muted">({T.fakeWord})</span>
           </div>
           <p class="muted small">{T.vocabHelp}</p>
         </div>
@@ -628,7 +628,7 @@ function PartIntro({ c, part, onStart, onSkip }: { c: LoadedCourse; part: PartId
       {part === 'grammar' && (
         <div class="card example">
           <small class="muted">{T.example}</small>
-          <div class="tl-text">
+          <div class="tl-text" {...tl()}>
             {ex.grammar[0]} → <b>{ex.grammar[1]}</b>
           </div>
         </div>
@@ -638,10 +638,10 @@ function PartIntro({ c, part, onStart, onSkip }: { c: LoadedCourse; part: PartId
       {part === 'writing' && (
         <div class="card example">
           <small class="muted">{T.example}</small>
-          <div class="tl-text">
+          <div class="tl-text" {...tl()}>
             {ex.writing[0]} → <b>{ex.writing[1]}</b>
           </div>
-          <div class="tl-text">
+          <div class="tl-text" {...tl()}>
             {ex.ctest[0]} → <b>{ex.ctest[1]}</b>
           </div>
         </div>
@@ -711,7 +711,7 @@ function YesNoView({ word, onAnswer }: { word: string; onAnswer: (k: boolean) =>
   return (
     <div class="yesno">
       <div class="ex-kicker">{T.vocabQ}</div>
-      <div class="yesno-word tl-text">{word}</div>
+      <div class="yesno-word tl-text" {...tl()}>{word}</div>
       <div class="yesno-btns">
         <button class="btn primary big" onClick={() => answer(true)}>
           {T.know}
@@ -821,7 +821,7 @@ function CTest({ parts, tr, onSubmit }: { parts: CPart[]; tr: string; onSubmit: 
   let k = -1;
   return (
     <div class="ctest">
-      <div class="sentence big tl-text ctest-line">
+      <div class="sentence big tl-text ctest-line" {...tl()}>
         {parts.map((p) => {
           if (typeof p === 'string') return <span>{p}</span>;
           k++;
@@ -1018,7 +1018,7 @@ export function ReportView({ c, r, fresh, onRetake }: { c: LoadedCourse; r: ARep
           <ul class="mistakes">
             {(showAll ? r.mistakes : r.mistakes.slice(0, 8)).map((m) => (
               <li>
-                <span class="pill">{LV[m.lvl]}</span> <span class="tl-text">{m.part === 'reading' || m.part === 'listening' ? m.q : m.q.replace(/_{2,}/, '___')}</span>
+                <span class="pill">{LV[m.lvl]}</span> <span class="tl-text" {...tl()}>{m.part === 'reading' || m.part === 'listening' ? m.q : m.q.replace(/_{2,}/, '___')}</span>
                 <div class="small">
                   <span class="ok">
                     {T.rightAnswer}: <b>{m.a}</b>
