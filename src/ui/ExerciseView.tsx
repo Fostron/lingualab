@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from 'preact/hooks';
+import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { check, diff, normalize, stripAccents, type Verdict } from '../answer';
 import { displayWord, genderTag, sentText } from '../content';
 import { sectionFor, sectionForDrill, sectionsOf, type Ex } from '../exercises';
+import { explain } from '../explain';
 import { fmt, t } from '../i18n';
 import { getState } from '../store';
 import { say, sayWord, speak } from '../tts';
@@ -137,11 +138,12 @@ export function ExerciseView({ ex, onResult, onNext, hints = true, exam = false,
             </div>
           )}
           {(ex.k === 'mcq' || ex.k === 'type') && <WordMini w={ex.word} />}
+          <ExplainBlock ex={ex} given={res.given} ok={res.ok || overridden} />
           {why && rule && <RuleSheet {...rule} />}
           <div class="ex-actions">
-            {rule && !why && (!res.ok || res.hinted) && (
+            {rule && !why && (
               <button class="btn ghost" onClick={() => setWhy(true)}>
-                {t().why}
+                {t().exMore}
               </button>
             )}
             {!res.ok && !overridden && res.given && res.verdict !== 'choice' && (
@@ -172,6 +174,32 @@ function WordMini({ w }: { w: Extract<Ex, { k: 'mcq' }>['word'] }) {
       <b>{displayWord(w, c.meta.target)}</b> {genderTag(w)} — {w.tr}
       {w.ipa && <span class="ipa"> {w.ipa}</span>}
       {w.note && <div class="muted small">{w.note}</div>}
+    </div>
+  );
+}
+
+/** Why the right answer is right; after a mistake, what the chosen answer actually is. */
+function ExplainBlock({ ex, given, ok }: { ex: Ex; given?: string; ok: boolean }) {
+  const c = getState().course!;
+  const e = useMemo(() => explain(c, ex, given), [ex, given]);
+  if (!e.why && !(e.yours && !ok) && !e.rule) return null;
+  return (
+    <div class="explain">
+      {e.why && (
+        <div class="ex-line">
+          <span class="ex-tag">{t().exWhy}</span> <Markdown md={e.why} inline />
+        </div>
+      )}
+      {e.yours && !ok && (
+        <div class="ex-line yours">
+          <span class="ex-tag">{t().exYours}</span> <Markdown md={e.yours} inline />
+        </div>
+      )}
+      {e.rule && (
+        <div class="ex-line">
+          <span class="ex-tag">{t().exRule}</span> <Markdown md={e.rule.md} inline />
+        </div>
+      )}
     </div>
   );
 }

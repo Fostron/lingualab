@@ -179,16 +179,16 @@ export function SentenceView({
 }
 
 /** Grammar markdown with [[target phrases]] that can be clicked to hear them. */
-export function Markdown({ md }: { md: string }) {
+export function Markdown({ md, inline }: { md: string; inline?: boolean }) {
   const html = useMemo(() => {
     const lang = getState().course?.meta.target || '';
     const pre = md.replace(/\[\[([^\]]+)\]\]/g, (_, x) => `<span class="tl" tabindex="0" lang="${lang}" translate="no">${x}</span>`);
-    return marked.parse(pre, { async: false, gfm: true }) as string;
-  }, [md]);
+    return (inline ? marked.parseInline(pre, { async: false, gfm: true }) : marked.parse(pre, { async: false, gfm: true })) as string;
+  }, [md, inline]);
   const c = getState().course;
   return (
     <div
-      class="md"
+      class={inline ? 'md md-inline' : 'md'}
       dangerouslySetInnerHTML={{ __html: html }}
       onClick={(e) => {
         const el = (e.target as HTMLElement).closest('.tl') as HTMLElement | null;
