@@ -853,6 +853,10 @@ export function PracticeMenu() {
       <h2>{t().practice}</h2>
       <p class="muted">{t().practiceNote}</p>
       <div class="choice-cards">
+        <a class="choice-card primary" href="#/essays">
+          <b>✍️ {t().essays}</b>
+          <small>{t().essaysNote}</small>
+        </a>
         {items.map(([k, label, note]) => (
           <a class="choice-card" href={`#/practice/${k}`}>
             <b>{label}</b>

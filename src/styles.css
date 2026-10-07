@@ -2248,3 +2248,87 @@ input.search,
 .as-head .as-steps {
   grid-row: 1;
 }
+
+/* ---------- essays ---------- */
+.essay-text {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 220px;
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-tl);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  resize: vertical;
+}
+.essay-editor .chars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 8px 0 6px;
+}
+.essay-editor .chars button {
+  min-width: 34px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+.sugg .chip {
+  border: 1px solid var(--line);
+  cursor: pointer;
+  font: inherit;
+}
+.row-gap {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+.row-gap .search {
+  flex: 1;
+  margin: 0;
+}
+.essay-marked {
+  margin-top: 10px;
+  white-space: pre-wrap;
+  line-height: 1.7;
+  font-family: var(--font-tl);
+}
+mark.err {
+  background: transparent;
+  color: inherit;
+  text-decoration: underline wavy var(--bad);
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+mark.err.cat-misspelling {
+  text-decoration-color: #d4a017;
+}
+.essay-errors {
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+}
+.chip.fix {
+  border: 1px solid var(--ok);
+  color: var(--ok);
+  cursor: pointer;
+  font: inherit;
+}
+.essay-fixed {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--ok-soft);
+  white-space: pre-wrap;
+  font-family: var(--font-tl);
+}
+.ok {
+  color: var(--ok);
+}

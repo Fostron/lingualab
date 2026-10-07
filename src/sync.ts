@@ -296,6 +296,12 @@ export function mergeDumps(a: CourseDump, b: CourseDump): CourseDump {
     const o = units.get(u.key);
     units.set(u.key, o ? mergeUnit(o, u) : u);
   }
+  // essays: the later edit of each wins (a deletion is an edit too)
+  const essays = new Map<string, { id: string; updated: number }>();
+  for (const e of [...(a.essays || []), ...(b.essays || [])]) {
+    const o = essays.get(e.id);
+    if (!o || e.updated > o.updated) essays.set(e.id, e);
+  }
   const assess = new Map<number, unknown>();
   for (const r of [...a.assess, ...b.assess] as { ts: number }[]) assess.set(r.ts, r);
   return {
@@ -306,6 +312,7 @@ export function mergeDumps(a: CourseDump, b: CourseDump): CourseDump {
     units: [...units.values()].sort((x, y) => (x.key < y.key ? -1 : 1)),
     progress,
     assess: [...assess.values()].sort((x: any, y: any) => x.ts - y.ts).slice(-20),
+    essays: [...essays.values()].sort((x, y) => (x.id < y.id ? -1 : 1)),
   };
 }
 
@@ -319,6 +326,7 @@ function fingerprint(d: CourseDump) {
     d.units.map((u) => [u.key, u.status, u.learned.length, u.topicsRead.length, Object.entries(u.lessons || {}).sort().map(([k, v]) => [k, v.passed, v.best, v.tries])]).sort(),
     d.progress && [d.progress.days.length, d.progress.placement?.ts, d.progress.resetAt, Object.values(d.progress.time || {}).reduce((a, b) => a + b, 0), d.progress.newToday],
     d.assess.length,
+    (d.essays || []).map((e) => [e.id, e.updated]),
   ]);
   for (let i = 0; i < s.length; i++) h = (Math.imul(31, h) + s.charCodeAt(i)) | 0;
   return `${s.length}:${h}`;
