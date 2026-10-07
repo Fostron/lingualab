@@ -152,7 +152,7 @@ def PACK(n, level):
 UNITS = [
     # ---------------- A1 ----------------
     U(1, "A1", T("Hello! Sounds and greetings", "Здравствуйте! Звуки и приветствия"), ["fr-sounds"],
-      "bonjour,bonsoir,salut:intj,au revoir,merci:intj,merci beaucoup,s'il vous plaît,s'il te plaît,oui,non,pardon:intj,excusez-moi,de rien,à bientôt,à demain,enchanté,ça va,monsieur,madame,ami"),
+      "bonjour:intj,bonsoir,salut:intj,au revoir,merci:intj,merci beaucoup,s'il vous plaît,s'il te plaît,oui,non,pardon:intj,excusez-moi,de rien,à bientôt,à demain,enchanté,ça va,monsieur,madame,ami"),
     U(2, "A1", T("Who are you? Pronouns and être", "Кто вы? Местоимения и être"), ["fr-etre"],
       "je,tu,il,elle,on,nous,vous,ils,elles,être,de:prep,et,étudiant,professeur,médecin,français:adj,anglais:adj,russe:adj,nom,s'appeler"),
     U(3, "A1", T("Things around us: gender and articles", "Предметы вокруг: род и артикли"), ["fr-articles", "fr-indef"],

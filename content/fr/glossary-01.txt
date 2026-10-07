@@ -292,7 +292,8 @@ elles|pron|they (fem.)|они (ж. р.)
 devenir|verb|to become|становиться
 vite|adv|quickly, fast|быстро
 mort|noun|death; dead person|смерть; мертвец
-bonjour|noun|hello; good morning|здравствуйте; добрый день
+bonjour|intj|hello; good morning|здравствуйте; добрый день
+bonjour|noun|-|-
 maman|noun|mum, mom|мама
 amour|noun|love|любовь
 trois|num|three|три
@@ -445,7 +446,7 @@ rencontrer|verb|to meet|встречать
 long|adj|long|длинный, долгий
 hé|intj|!hey|!эй
 ensemble|adv|together|вместе
-salut|noun|hi; bye (informal)|привет; пока
+salut|noun|-|-
 bras|noun|arm|рука
 plutôt|adv|rather|скорее, довольно
 jeter|verb|to throw (away)|бросать, выбрасывать

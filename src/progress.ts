@@ -210,32 +210,49 @@ export function topicStats(logs: LogRec[]): Map<string, TopicStat> {
 }
 
 export function weakTopics(logs: LogRec[]): TopicStat[] {
-  return [...topicStats(logs).values()].filter((s) => s.n >= 4 && s.acc < 0.7).sort((a, b) => a.acc - b.acc);
+  const lastThree = new Map<string, boolean[]>();
+  for (const l of logs) {
+    if (!l.cid.startsWith('g:')) continue;
+    const k = l.cid.slice(2);
+    lastThree.set(k, [...(lastThree.get(k) || []), l.ok].slice(-3));
+  }
+  // weak while accuracy is low, unless the latest three answers were all right
+  return [...topicStats(logs).values()]
+    .filter((s) => s.n >= 4 && s.acc < 0.7 && !((lastThree.get(s.id) || []).length === 3 && lastThree.get(s.id)!.every(Boolean)))
+    .sort((a, b) => a.acc - b.acc);
 }
 
 /**
- * Words that keep slipping: forgotten after a long interval more than once, or missed
- * repeatedly in the last three weeks (two wrong answers, or the latest answer wrong).
+ * Words that are still being missed: the latest answer was wrong, or two of the latest three were.
+ * Two right answers in a row take a word off the list — older mistakes and the lifetime lapse count
+ * no longer keep it there forever. A word forgotten after a long interval (low recall probability)
+ * counts too until it is answered right again. One entry per word (the writing card if both exist).
  */
 export function weakWords(cards: CardRec[], logs: LogRec[] = []): CardRec[] {
   const now = new Date();
   const since = Date.now() - 21 * 86400000;
-  const misses = new Map<string, { wrong: number; lastOk: boolean }>();
+  const recent = new Map<string, boolean[]>(); // answers per word, oldest first
   for (const l of logs) {
     if (l.ts < since || !(l.cid.startsWith('wp:') || l.cid.startsWith('wr:'))) continue;
-    const m = misses.get(l.cid) || { wrong: 0, lastOk: true };
-    if (!l.ok) m.wrong++;
-    m.lastOk = l.ok;
-    misses.set(l.cid, m);
+    const ref = l.cid.slice(3);
+    if (!recent.has(ref)) recent.set(ref, []);
+    recent.get(ref)!.push(l.ok);
   }
-  const score = (x: CardRec) => x.lapses * 2 + (misses.get(x.cid)?.wrong || 0);
-  return cards
-    .filter((x) => {
-      if (x.kind !== 'wp' && x.kind !== 'wr') return false;
-      const m = misses.get(x.cid);
-      return x.lapses >= 2 || (x.lapses >= 1 && retrievability(x, now) < 0.8) || (m && (m.wrong >= 2 || (m.wrong >= 1 && !m.lastOk)));
-    })
-    .sort((a, b) => score(b) - score(a) || a.stability - b.stability);
+  const misses = (ref: string) => (recent.get(ref) || []).slice(-3).filter((ok) => !ok).length;
+  const isWeak = (x: CardRec) => {
+    const r = recent.get(x.ref) || [];
+    const lastOk = r.length ? r[r.length - 1] : undefined;
+    if (lastOk === false) return true;
+    if (r.length && misses(x.ref) >= 2) return true;
+    return lastOk === undefined && x.lapses >= 1 && retrievability(x, now) < 0.8;
+  };
+  const best = new Map<string, CardRec>();
+  for (const x of cards) {
+    if ((x.kind !== 'wp' && x.kind !== 'wr') || !isWeak(x)) continue;
+    const o = best.get(x.ref);
+    if (!o || (o.kind === 'wr' && x.kind === 'wp')) best.set(x.ref, x);
+  }
+  return [...best.values()].sort((a, b) => misses(b.ref) - misses(a.ref) || b.lapses - a.lapses || a.stability - b.stability);
 }
 
 export async function loadLogs(c: LoadedCourse) {

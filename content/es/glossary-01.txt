@@ -201,7 +201,7 @@ mirar|verb|to look (at); to watch
 gustar|verb|to please (me gusta = I like)
 señor|noun|Mr; sir; gentleman
 uno|pron|one
-gracias|noun|thanks; thank you
+gracias|noun|-
 parecer|verb|to seem; to look like
 noche|noun|night; evening
 también|adv|also; too
@@ -438,7 +438,7 @@ comenzar|verb|to begin
 recibir|verb|to receive
 bebé|noun|baby
 teléfono|noun|telephone
-adiós|noun|goodbye
+adiós|noun|-
 adiós|intj|goodbye
 mayor|adj|older; bigger; main; elderly
 sangre|noun|blood

@@ -62,7 +62,7 @@ tal|pron|such (a thing); (¿qué tal? = how are you?)
 cual|pron|which (el cual, lo cual)
 fuego|noun|fire
 música|noun|music
-perdón|noun|sorry; excuse me; pardon
+perdón|noun|forgiveness, pardon (¡perdón! = sorry!)
 anoche|adv|last night
 increíble|adj|incredible; unbelievable
 permitir|verb|to allow; to permit

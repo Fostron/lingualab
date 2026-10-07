@@ -549,3 +549,6 @@ musical|adj|musical|музыкальный
 contempler|verb|to contemplate|созерцать
 chouette|adj|great, nice (colloq.)|классный (разг.)
 langage|noun|language (way of speaking)|язык (манера речи)
+# greetings: the noun readings are not what learners need (2026-10-08)
+bravo|noun|-|-
+bienvenue|noun|welcome, warm reception (souhaiter la bienvenue = to welcome)|радушный приём (souhaiter la bienvenue = приветствовать; Bienvenue ! = добро пожаловать)
