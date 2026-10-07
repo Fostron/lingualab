@@ -89,7 +89,7 @@ export function skipLogin() {
   emit();
 }
 
-async function api(path: string, init: RequestInit = {}) {
+export async function api(path: string, init: RequestInit = {}) {
   const s = session();
   const headers = new Headers(init.headers);
   if (s) headers.set('Authorization', `Bearer ${s.token}`);

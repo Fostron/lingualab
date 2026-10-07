@@ -12,6 +12,7 @@ import { speak, voicesFor } from '../tts';
 import { LEVELS, type LoadedCourse } from '../types';
 import { Loading } from '../ui/common';
 import { AccountBlock } from './Account';
+import { MyReportsBlock } from './Reports';
 import { lessonsPassedCount, streakOf } from './Main';
 
 const DAY = 86400000;
@@ -383,6 +384,7 @@ export function SettingsPage({ c }: { c: LoadedCourse | null }) {
     <div class="page settings">
       <h2>{t().settings}</h2>
       <AccountBlock />
+      <MyReportsBlock />
       <label class="set-row">
         <span>
           {t().settingsDifficulty}

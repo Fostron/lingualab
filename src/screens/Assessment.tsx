@@ -46,6 +46,7 @@ import { scheduleSync } from '../sync';
 import { say, stopSpeech } from '../tts';
 import type { LoadedCourse } from '../types';
 import { ConfirmDialog, Icon, Loading, Progress, TargetInput, tl } from '../ui/common';
+import { ReportDialog } from './Reports';
 
 /** Examples shown in the part introductions, per target language. */
 const EX: Record<string, { real: [string, string]; fake: string; grammar: [string, string]; writing: [string, string]; ctest: [string, string] }> = {
@@ -89,6 +90,7 @@ export function Assessment({ c }: { c: LoadedCourse }) {
   const [reports, setReports] = useState<AReport[] | null>(null);
   const [report, setReport] = useState<AReport | null>(null);
   const [ask, setAsk] = useState<null | 'quit' | 'restart'>(null);
+  const [reporting, setReporting] = useState(false);
   const mark = useRef(Date.now());
 
   useEffect(() => {
@@ -332,6 +334,10 @@ export function Assessment({ c }: { c: LoadedCourse }) {
       <button class="icon-btn" title={t().quit} onClick={() => setAsk('quit')}>
         <Icon name="close" />
       </button>
+      <button class="icon-btn small as-flag" title={t().reportButton} onClick={() => setReporting(true)}>
+        <Icon name="flag" size={16} />
+      </button>
+      {reporting && <ReportDialog extra={{ assessment: { part: st.part, question: st.cur } }} onClose={() => setReporting(false)} />}
       <div class="as-steps">
         {[1, 2, 3, 4, 5, 6].map((k) => (
           <span class={k < n ? 'on' : k === n ? 'cur' : ''} />

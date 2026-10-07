@@ -2184,3 +2184,67 @@ input.search,
   display: inline;
   margin: 0;
 }
+
+/* ---------- bug reports ---------- */
+.report-dialog .reasons {
+  margin-bottom: 8px;
+}
+.report-dialog .reasons .chip {
+  border: 1px solid var(--line);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+}
+.report-text {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  resize: vertical;
+}
+.report-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: grid;
+  gap: 10px;
+}
+.report-list li {
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--surface-2);
+}
+.report-q {
+  margin: 6px 0 4px;
+  white-space: pre-wrap;
+}
+.report-note {
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+}
+.pill.st-fixed {
+  background: var(--ok-soft);
+  color: var(--ok);
+}
+.pill.st-progress {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.pill.st-wontfix {
+  background: var(--surface);
+  color: var(--ink-3);
+}
+.as-head {
+  grid-template-columns: auto auto 1fr;
+}
+.as-head small,
+.as-head .as-steps {
+  grid-column: 3;
+}
+.as-head .as-steps {
+  grid-row: 1;
+}

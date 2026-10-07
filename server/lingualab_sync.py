@@ -9,6 +9,13 @@ Storage: opaque blobs (gzip JSON made by the app) per user and key, with a revis
 devices can't overwrite each other blindly (PUT with a stale ?base= gets 409; the app merges and
 retries).
 
+Bug reports: the app posts reports (text + the exercise and app version) to /reports; each user
+sees their own with a status. Reports are handled on the server with the command line:
+  python3 lingualab_sync.py reports [all]            list (open ones by default)
+  python3 lingualab_sync.py report <id>              show one in full
+  python3 lingualab_sync.py status <id> <status> [note] [version]
+statuses: new, progress, fixed, wontfix
+
 Environment:
   BOT_TOKEN    token of the login bot (required)
   PORT         default 8095
@@ -17,7 +24,7 @@ Environment:
   ALLOWED_IDS  optional: only these Telegram user ids may sign in (comma-separated)
   MAX_USERS    default 6
 """
-import hashlib, hmac, json, os, re, secrets, sqlite3, threading, time
+import hashlib, hmac, json, os, re, secrets, sqlite3, sys, threading, time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
 
@@ -53,6 +60,9 @@ def init_db():
     create table if not exists sessions (token_hash text primary key, uid integer, created integer, last_used integer);
     create table if not exists blobs (uid integer, key text, rev integer, updated integer, data blob,
                                       primary key (uid, key));
+    create table if not exists reports (id integer primary key autoincrement, uid integer, created integer,
+                                        text text, context text, status text default 'new', note text,
+                                        fixed_in text, updated integer);
     """)
     c.commit()
 
@@ -156,6 +166,10 @@ class H(BaseHTTPRequestHandler):
             return self.send(401, {"error": "auth"})
         if u.path == "/me":
             return self.send(200, self.user_json(uid))
+        if u.path == "/reports":
+            rows = db().execute("select id, created, text, status, note, fixed_in, updated from reports where uid=? order by id desc limit 100", (uid,)).fetchall()
+            return self.send(200, [{"id": i, "created": cr, "text": tx, "status": st, "note": no, "fixedIn": fi, "updated": up}
+                                   for i, cr, tx, st, no, fi, up in rows])
         if u.path == "/data":
             rows = db().execute("select key, rev, updated, length(data) from blobs where uid=?", (uid,)).fetchall()
             return self.send(200, [{"key": k, "rev": r, "updated": t, "size": n} for k, r, t, n in rows])
@@ -196,6 +210,26 @@ class H(BaseHTTPRequestHandler):
             c.execute("insert into sessions values (?,?,?,?)", (hashlib.sha256(token.encode()).hexdigest(), tid, now, now))
             c.commit()
             return self.send(200, {"token": token, "user": self.user_json(tid)})
+        if u.path == "/reports":
+            uid = self.user()
+            if uid is None:
+                return self.send(401, {"error": "auth"})
+            try:
+                data = json.loads(self.body(60000) or b"{}")
+            except ValueError:
+                return self.send(400, {"error": "json"})
+            text = str(data.get("text", "")).strip()[:4000]
+            if not text:
+                return self.send(400, {"error": "empty"})
+            c = db()
+            day_ago = int(time.time()) - 86400
+            if c.execute("select count(*) from reports where uid=? and created>?", (uid, day_ago)).fetchone()[0] >= 50:
+                return self.send(429, {"error": "too many reports today"})
+            now = int(time.time())
+            ctx = json.dumps(data.get("context") or {}, ensure_ascii=False)[:40000]
+            cur = c.execute("insert into reports (uid, created, text, context, status, updated) values (?,?,?,?, 'new', ?)", (uid, now, text, ctx, now))
+            c.commit()
+            return self.send(200, {"id": cur.lastrowid})
         if u.path == "/auth/logout":
             auth = self.headers.get("Authorization", "")
             if auth.startswith("Bearer "):
@@ -244,7 +278,45 @@ class H(BaseHTTPRequestHandler):
         self.send(200, {"ok": True})
 
 
+def cli(args):
+    """Handle reports from the server's command line (see the module docstring)."""
+    import datetime
+    init_db()
+    c = db()
+    fmt = lambda ts: datetime.datetime.fromtimestamp(ts).strftime("%Y-%m-%d %H:%M")
+    if args[0] == "reports":
+        q = "select r.id, r.created, u.name, r.status, r.text, r.fixed_in from reports r left join users u on u.id=r.uid"
+        if not (len(args) > 1 and args[1] == "all"):
+            q += " where r.status in ('new','progress')"
+        for i, cr, name, st, tx, fi in c.execute(q + " order by r.id"):
+            print(f"#{i} [{st}{' ' + fi if fi else ''}] {fmt(cr)} {name}: {tx[:160]!r}")
+    elif args[0] == "report":
+        r = c.execute("select r.*, u.name from reports r left join users u on u.id=r.uid where r.id=?", (int(args[1]),)).fetchone()
+        if not r:
+            raise SystemExit("no such report")
+        cols = [d[0] for d in c.execute("select r.*, u.name from reports r left join users u on u.id=r.uid limit 0").description]
+        for k, v in zip(cols, r):
+            if k == "context" and v:
+                v = json.dumps(json.loads(v), ensure_ascii=False, indent=1)
+            print(f"{k}: {v}")
+    elif args[0] == "status":
+        rid, st = int(args[1]), args[2]
+        if st not in ("new", "progress", "fixed", "wontfix"):
+            raise SystemExit("status: new | progress | fixed | wontfix")
+        note = args[3] if len(args) > 3 else None
+        ver = args[4] if len(args) > 4 else None
+        c.execute("update reports set status=?, note=coalesce(?, note), fixed_in=coalesce(?, fixed_in), updated=? where id=?",
+                  (st, note, ver, int(time.time()), rid))
+        c.commit()
+        print("ok")
+    else:
+        raise SystemExit("commands: reports [all] | report <id> | status <id> <status> [note] [version]")
+
+
 if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        cli(sys.argv[1:])
+        raise SystemExit(0)
     if not BOT_TOKEN:
         raise SystemExit("BOT_TOKEN is not set")
     init_db()

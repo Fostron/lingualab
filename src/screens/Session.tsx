@@ -8,6 +8,7 @@ import { scheduleSync, sync } from '../sync';
 import { stopSpeech } from '../tts';
 import { ExerciseView, type ExResult } from '../ui/ExerciseView';
 import { ConfirmDialog, Icon, Progress } from '../ui/common';
+import { ReportDialog } from './Reports';
 
 export interface SessionItem {
   ex: Ex;
@@ -68,6 +69,7 @@ export function SessionRunner({
   const [pos, setPos] = useState(0);
   const [, rerender] = useState(0);
   const [askQuit, setAskQuit] = useState(false);
+  const [reporting, setReporting] = useState(false);
   const [finishing, setFinishing] = useState(false); // exam: "finish the test?" screen
   const results = useRef<SessionResult[]>([]);
   const answered = useRef(new Set<number>()); // entry keys already answered (skipped when moving forward again)
@@ -225,6 +227,9 @@ export function SessionRunner({
         <span class="session-count" title={left > 0 ? `${left}` : ''}>
           {Math.min(done, graded)}/{graded}
         </span>
+        <button class="icon-btn small" title={t().reportButton} onClick={() => setReporting(true)}>
+          <Icon name="flag" size={16} />
+        </button>
       </div>
       {(backTo >= 0 || isRevisit) && !finishing && (
         <div class="session-nav">
@@ -267,6 +272,7 @@ export function SessionRunner({
           />
         </>
       )}
+      {reporting && <ReportDialog ex={cur.item.ex} result={exam ? examAnswers.current.get(cur.key) : last.current} onClose={() => setReporting(false)} />}
       {askQuit && (
         <ConfirmDialog
           title={qt[0]}
