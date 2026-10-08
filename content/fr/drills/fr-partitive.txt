@@ -1,9 +1,15 @@
 choice: Je mange ___ pain. => du | de la | le
+why[en=An unspecified amount of something uncountable → partitive: *du* (masculine).|ru=Неопределённое количество неисчисляемого → частичный артикль: *du* (м. р.).]
+why.le[en=*le pain* = bread in general ("I like bread"); eating some bread → *du*.|ru=*le pain* — хлеб вообще («люблю хлеб»); есть немного хлеба → *du*.]
 choice: Tu veux ___ eau ? => de l' | du | de la
 choice: Elle achète ___ viande. => de la | du | des
 choice: Il fait ___ sport. => du | de la | le
 choice: J'aime ___ fromage. => le | du | de
+why[en=After verbs of liking (*aimer, adorer, détester*) → the general article *le*.|ru=После глаголов вкуса (*aimer, adorer, détester*) → определённый артикль *le*.]
+why.du[en=*du* = some cheese; *aimer* talks about cheese in general → *le*.|ru=*du* — «немного сыра»; *aimer* говорит о сыре вообще → *le*.]
 choice: Je ne bois pas ___ café. => de | du | le
+why[en=After a negation, *du/de la/des* become *de*: *pas de café*.|ru=После отрицания *du/de la/des* превращаются в *de*: *pas de café*.]
+why.du[en=In a negative sentence the partitive becomes *de*.|ru=В отрицании частичный артикль становится *de*.]
 choice: Il n'y a pas ___ eau. => d' | de l' | de la
 choice: Beaucoup ___ gens pensent ça. => de | des | du
 choice: Un peu ___ sucre, s'il vous plaît. => de | du | le

@@ -244,6 +244,10 @@ export function explain(c: LoadedCourse, ex: Ex, given: string | undefined): Exp
     const verb = art ? null : verbReason(c, right, g, hint, ex.topic);
     const tsec = verb ? tableSection(ex.topic, right) : -1;
     const out: Explanation = { ...(art || verb || {}), rule: ruleLine(ex.topic, right, tsec >= 0 ? tsec : sec, nounAfter(c, next)?.w.w) };
+    // hand-written explanations in the drill file come first
+    if (d.w) out.why = d.w;
+    const mine = g && d.wo && Object.entries(d.wo).find(([o]) => norm(o) === norm(g))?.[1];
+    if (mine) out.yours = mine;
     // a wrong pick that is a real word of its own (pero / perro): say what it means
     if (!out.yours && g && norm(g) !== norm(right) && !/\s/.test(g)) {
       const w = c.words.find((x) => norm(x.w) === norm(g) || norm(displayWord(x, c.meta.target)) === norm(g));

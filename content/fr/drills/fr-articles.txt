@@ -1,7 +1,11 @@
 choice: ___ maison est grande. => La | Le | L'
 choice: ___ livre est intéressant. => Le | La | L'
 choice: ___ homme est grand. => L' | Le | La
+why[en=Before a vowel or mute h, *le/la* become *l'*: *l'homme*.|ru=Перед гласной и немым h *le/la* сокращаются до *l'*: *l'homme*.]
+why.Le[en=*le* drops its e before a vowel or mute h.|ru=*le* теряет e перед гласной или немым h.]
 choice: ___ eau est froide. => L' | La | Le
+why[en=*eau* is feminine, but before a vowel *la* becomes *l'*.|ru=*eau* — женского рода, но перед гласной *la* становится *l'*.]
+why.La[en=Right gender, but *la* elides before a vowel: *l'eau*.|ru=Род верный, но перед гласной *la* сокращается: *l'eau*.]
 choice: ___ enfants jouent. => Les | Le | La
 choice: ___ voiture est rouge. => La | Le | Les
 choice: ___ problème est difficile. => Le | La | L'

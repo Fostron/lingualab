@@ -1,7 +1,15 @@
 choice[en=He's clever.]: ___ muy listo. => Es | Está
+why[en=*ser listo* = to be clever (a trait).|ru=*ser listo* — быть умным (черта характера).]
+why.Está[en=*estar listo* = to be ready.|ru=*estar listo* — быть готовым.]
 choice[en=Are you ready?]: ¿___ listo? => Estás | Eres
+why[en=*estar listo* = to be ready (a state).|ru=*estar listo* — быть готовым (состояние).]
+why.Eres[en=*ser listo* = to be clever.|ru=*ser listo* — быть умным.]
 choice[en=The film is boring.]: La película ___ aburrida. => es | está
+why[en=*ser aburrido* = to be boring (a quality).|ru=*ser aburrido* — быть скучным (качество).]
+why.está[en=*estar aburrido* = to be bored (a feeling).|ru=*estar aburrido* — скучать (чувство).]
 choice[en=I'm bored.]: ___ aburrido. => Estoy | Soy
+why[en=*estar aburrido* = to be bored (how you feel now).|ru=*estar aburrido* — скучать (как вы себя чувствуете сейчас).]
+why.Soy[en=*soy aburrido* = I am a boring person.|ru=*soy aburrido* — я скучный человек.]
 choice[en=The paella is delicious.]: La paella ___ muy rica. => está | es
 choice[en=They're a rich family.]: ___ una familia rica. => Son | Están
 choice[en=The banana is unripe.]: El plátano ___ verde. => está | es

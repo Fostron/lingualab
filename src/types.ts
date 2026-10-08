@@ -40,6 +40,8 @@ export interface Drill {
   a: string[]; // accepted answers (first = canonical)
   o?: string[]; // options (choice) – include the right one
   h?: string; // hint (shown in the learner's language or target)
+  w?: string; // hand-written: why the right answer is right
+  wo?: Record<string, string>; // hand-written: why a wrong option is wrong
 }
 
 /** Auto-generated cloze over a corpus sentence: blank token i. */

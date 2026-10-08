@@ -9,8 +9,12 @@ gap: Ma grand-mère ___ (naître) en 1940. => est née
 gap: Elle ___ (se lever) à six heures. => s'est levée
 gap: Nous nous ___ (se promener). => sommes promenés | sommes promenées
 choice: Elle ___ partie. => est | a | s'est
+why[en=Verbs of motion like *partir* form the passé composé with *être*, and the participle agrees: *partie*.|ru=Глаголы движения, как *partir*, образуют passé composé с *être*, а причастие согласуется: *partie*.]
+why.a[en=*avoir* is for most verbs, but *partir* is one of the *être* verbs.|ru=*avoir* — для большинства глаголов, но *partir* — из списка глаголов с *être*.]
 choice: J'___ mangé. => ai | suis | me suis
 choice[en=I took the dog out.|ru=Я вывел собаку.]: J'___ sorti le chien. => ai | suis | me suis
+why[en=With a direct object, *sortir* takes *avoir*: *j'ai sorti le chien*.|ru=С прямым дополнением *sortir* спрягается с *avoir*: *j'ai sorti le chien*.]
+why.suis[en=*je suis sorti* = I went out; here you take something out → *avoir*.|ru=*je suis sorti* — «я вышел»; здесь вы выводите кого-то → *avoir*.]
 choice: Elles sont ___. => arrivées | arrivé | arrivés
 choice: Ils se sont ___ à Paris. => rencontrés | rencontré | rencontrées
 transform[en=Put it in the passé composé|ru=Поставьте в passé composé]: Elle va à Rome. => Elle est allée à Rome.

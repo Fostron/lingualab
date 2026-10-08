@@ -1,8 +1,11 @@
 choice: ___ casa es grande. => La | El | Los
 choice: ___ libro es interesante. => El | La | Las
 choice: ___ día es largo. => El | La | Los
+why[en=*día* ends in -a but is masculine: *el día*.|ru=*día* оканчивается на -a, но мужского рода: *el día*.]
 choice: ___ mano está fría. => La | El | Los
+why[en=*mano* ends in -o but is feminine: *la mano*.|ru=*mano* оканчивается на -o, но женского рода: *la mano*.]
 choice: ___ problema es difícil. => El | La | Las
+why[en=Most nouns in *-ma* from Greek are masculine: *el problema, el tema, el idioma*.|ru=Большинство слов на *-ma* греческого происхождения — мужского рода: *el problema, el tema, el idioma*.]
 choice: ___ ciudad es bonita. => La | El | Los
 choice: ___ canción es nueva. => La | El | Las
 choice: ___ agua está fría. => El | La | Lo

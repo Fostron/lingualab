@@ -5,12 +5,19 @@ gap: Nosotros ___ cansados. => estamos
 gap: Ellos ___ en el parque. => están
 gap: Vosotros ___ muy contentos. => estáis
 choice: Mi hermana ___ médica. => es | está
+why[en=Profession = what someone is → *ser*.|ru=Профессия — кем человек является → *ser*.]
 choice: Mi hermana ___ en el hospital. => está | es
+why[en=Location of a person or thing → *estar*.|ru=Где находится человек или предмет → *estar*.]
 choice: La sopa ___ fría. => está | es
+why[en=A current state (it has gone cold) → *estar*.|ru=Состояние сейчас (остыл) → *estar*.]
+why.es[en=*es fría* would describe soup that is cold by nature, like gazpacho.|ru=*es fría* — суп холодный по своей природе, как гаспачо.]
 choice: Ana ___ alta y simpática. => es | está
 choice: La fiesta ___ en mi casa. => es | está
+why[en=Where an event *takes place* uses *ser*, unlike the location of things.|ru=Где *проходит* событие — *ser*, в отличие от местонахождения предметов.]
+why.está[en=*estar* gives where things or people are; events "are held" → *ser*.|ru=*estar* — где находятся люди и предметы; события «проходят» → *ser*.]
 choice: ¿Dónde ___ el baño? => está | es
 choice: Hoy ___ lunes. => es | está
+why[en=Days, dates and time → *ser*.|ru=Дни, даты и время → *ser*.]
 choice: Yo ___ de México. => soy | estoy
 choice[en=The children are bored.]: Los niños ___ aburridos. => están | son
 choice[en=The film is boring.]: La película ___ aburrida. => es | está

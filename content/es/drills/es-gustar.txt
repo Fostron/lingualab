@@ -1,7 +1,16 @@
 choice: Me ___ el chocolate. => gusta | gustan | gusto
+why[en=With *gustar* the thing liked is the subject: *el chocolate* is singular → *gusta*.|ru=У *gustar* подлежащее — то, что нравится: *el chocolate* в единственном числе → *gusta*.]
+why.gusto[en=*gusto* is "I please" (yo); here the chocolate does the pleasing.|ru=*gusto* — «я нравлюсь» (yo); здесь нравится шоколад.]
+why.gustan[en=*gustan* is plural; *el chocolate* is one thing.|ru=*gustan* — множественное число, а *el chocolate* — единственное.]
 choice: Me ___ los gatos. => gustan | gusta | gusto
+why[en=*los gatos* is plural, so the verb is plural: *gustan*.|ru=*los gatos* — множественное число, значит и глагол *gustan*.]
+why.gusta[en=*gusta* agrees with one thing; *los gatos* are several.|ru=*gusta* согласуется с одним предметом, а *los gatos* — несколько.]
 choice: ¿Te ___ bailar? => gusta | gustan | gustas
+why[en=An infinitive (*bailar*) counts as singular → *gusta*.|ru=Инфинитив (*bailar*) считается единственным числом → *gusta*.]
+why.gustas[en=*gustas* = "you are liked"; the subject here is *bailar*, not you.|ru=*gustas* — «ты нравишься»; подлежащее здесь *bailar*, а не «ты».]
 choice: A Juan ___ gusta el fútbol. => le | lo | se
+why[en=The person who likes takes the indirect pronoun *le* (to him).|ru=Тот, кому нравится, — косвенное дополнение: *le* («ему»).]
+why.lo[en=*lo* is a direct object (him/it); *gustar* needs "to him" → *le*.|ru=*lo* — прямое дополнение («его»); *gustar* требует «ему» → *le*.]
 choice: A nosotros ___ gusta viajar. => nos | os | les
 choice: A mis padres ___ gustan las películas. => les | le | los
 choice[en=I love Spain.]: Me ___ España. => encanta | encantan | encanto

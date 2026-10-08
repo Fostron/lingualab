@@ -1,9 +1,20 @@
 choice: Este regalo es ___ ti. => para | por
+why[en=*para* marks who something is for (the recipient).|ru=*para* — для кого предназначено (получатель).]
+why.por[en=*por ti* means "because of you / on your behalf", not "for you" as a recipient.|ru=*por ti* — «из-за тебя / вместо тебя», а не «для тебя».]
 choice: Gracias ___ tu ayuda. => por | para
+why[en=After *gracias*, the reason you thank for takes *por*.|ru=После *gracias* причина благодарности — с *por*.]
+why.para[en=*para* would mean a purpose or recipient; thanks are always *gracias por*.|ru=*para* — цель или получатель; благодарят всегда *gracias por*.]
 choice: Estudio ___ ser médico. => para | por
+why[en=*para* + infinitive = in order to (a goal).|ru=*para* + инфинитив = чтобы (цель).]
+why.por[en=*por* + infinitive gives a cause ("because of being"), not a goal.|ru=*por* + инфинитив — причина («из-за того, что»), а не цель.]
 choice: Paseamos ___ el parque. => por | para
+why[en=*por* = through / around a place.|ru=*por* = по, через (движение по месту).]
+why.para[en=*para el parque* = towards the park (destination), not walking around in it.|ru=*para el parque* — «в сторону парка» (направление), а не «гуляем по парку».]
 choice: Lo compré ___ veinte euros. => por | para
+why[en=Price and exchange take *por*: *por veinte euros*.|ru=Цена и обмен — с *por*: *por veinte euros*.]
 choice: Necesito el informe ___ el viernes. => para | por
+why[en=A deadline takes *para*: by Friday.|ru=Срок — с *para*: «к пятнице».]
+why.por[en=*por el viernes* would mean "around Friday", a vague time.|ru=*por el viernes* — «где-то в пятницу», примерное время.]
 choice: Hablo con mi madre ___ teléfono. => por | para
 choice: Trabajo ___ la mañana. => por | para
 choice: ___ mí, el español es fácil. => Para | Por

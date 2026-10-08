@@ -12,3 +12,4 @@ gap[en=manger|ru=manger]: Des pommes ? J'en ai ___. => mangé
 gap[en=écrire|ru=écrire]: J'ai ___ une lettre. => écrit
 gap[en=ouvrir|ru=ouvrir]: La porte ? Je l'ai ___. => ouverte
 choice[en=She had her hair cut.|ru=Она подстриглась.]: Elle s'est ___ couper les cheveux. => fait | faite | faits
+why[en=*fait* followed by an infinitive never agrees.|ru=*fait* перед инфинитивом никогда не согласуется.]

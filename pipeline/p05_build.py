@@ -149,12 +149,34 @@ def parse_drills(path):
          gap: Yo ___ (hablar) inglés. => hablo | hablo yo
          choice: ___ agua está fría. => El | La | Los
          transform[en=Make it negative|ru=Сделайте отрицательным]: Je mange. => Je ne mange pas.
-    For choice, the first option after => is the right one."""
+    For choice, the first option after => is the right one.
+    Optional explanation lines right below a drill (shown after the answer):
+         why[en=agua is feminine but takes el|ru=…]        why the right answer is right
+         why.La[en=la is not used before stressed a-|ru=…]  why that wrong option is wrong"""
     drills = []
     if not path.exists():
         return drills
+
+    def langs(block):
+        out = {}
+        for part in block.split("|"):
+            if "=" in part:
+                k, v = part.split("=", 1)
+                out[k.strip()] = v.strip()
+        return out
+
     for line in open(path, encoding="utf-8"):
         line = line.strip()
+        mw = re.match(r"^why(?:\.([^\[]+))?\[(.*)\]$", line)
+        if mw:
+            if not drills:
+                print("  why line before any drill:", line)
+                continue
+            if mw.group(1):
+                drills[-1].setdefault("_wo", {})[mw.group(1).strip()] = langs(mw.group(2))
+            else:
+                drills[-1]["_w"] = langs(mw.group(2))
+            continue
         if not line or line.startswith("#") or "=>" not in line:
             continue
         m = re.match(r"^(gap|choice|transform|order)(\[[^\]]*\])?\s*:\s*(.*?)\s*=>\s*(.*)$", line)
@@ -489,6 +511,12 @@ def main(course):
             h = d.pop("_h", None)
             if h and h.get(native):
                 d["h"] = h[native]
+            w = d.pop("_w", None)
+            if w and (w.get(native) or w.get("en")):
+                d["w"] = w.get(native) or w["en"]
+            wo = {k: v.get(native) or v.get("en") for k, v in d.pop("_wo", {}).items() if v.get(native) or v.get("en")}
+            if wo:
+                d["wo"] = wo
         title = tdef["title"][native] if isinstance(tdef["title"], dict) else tdef["title"]
         topic = {"id": tid, "level": tdef["level"], "title": title, "md": md, "drills": drills, "auto": auto,
                  "ex": [a["s"] for a in auto[:10]]}

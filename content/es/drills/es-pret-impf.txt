@@ -1,8 +1,13 @@
 choice: Cuando era niño, ___ al parque todos los días. => iba | fui
+why[en=A habit in the past (every day as a child) → imperfect.|ru=Привычка в прошлом (каждый день в детстве) → imperfecto.]
+why.fui[en=The preterite is for one completed event, not a repeated habit.|ru=Претерит — для одного завершённого события, а не для привычки.]
 choice: Ayer ___ al parque con mi hermano. => fui | iba
+why[en=One completed event at a given time (yesterday) → preterite.|ru=Одно завершённое событие в конкретное время (вчера) → претерит.]
 choice: ___ las nueve cuando empezó la película. => Eran | Fueron
 choice: Mientras yo ___, sonó el teléfono. => cocinaba | cociné
+why[en=The background action in progress → imperfect; the interruption → preterite.|ru=Фоновое действие в процессе → imperfecto; то, что его прервало → претерит.]
 choice: Mientras yo cocinaba, ___ el teléfono. => sonó | sonaba
+why[en=The event that interrupts the background → preterite.|ru=Событие, которое прерывает фон → претерит.]
 choice: El año pasado ___ a Perú. => viajé | viajaba
 choice: Antes ___ en Londres, ahora vivo en Madrid. => vivía | viví
 choice: ___ a mi novia en una fiesta en 2018. => Conocí | Conocía
