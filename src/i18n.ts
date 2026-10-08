@@ -223,6 +223,7 @@ const en = {
   practiceReadingNote: 'Read and understand',
   practiceConjNote: 'Verbs in the tenses you know',
   noWeak: 'No weak spots right now — well done.',
+  practiceEmpty: 'Nothing to practise here yet: first study a few lessons in the course.',
   // lessons
   lesson: 'Lesson',
   lessonWords: 'Words',
@@ -423,6 +424,8 @@ const en = {
     misspelling: 'Spelling', grammar: 'Grammar', typographical: 'Typography', style: 'Style', other: 'Remark',
     agreement: 'Agreement', verbs: 'Verb form',
   } as Record<string, string>,
+  essayHintAccent: 'Accent mark: write «{w}».',
+  essayHintCase: 'Capital/small letter: write «{w}».',
   // XP, achievements, leaderboard
   gameTitle: 'Rating & achievements',
   xpWeek: 'XP this week',
@@ -705,6 +708,7 @@ const ru: Dict = {
   practiceReadingNote: 'Прочитать и понять',
   practiceConjNote: 'Глаголы в изученных временах',
   noWeak: 'Сейчас слабых мест нет — отлично.',
+  practiceEmpty: 'Здесь пока нечего тренировать: сначала пройдите несколько уроков курса.',
   // lessons
   lesson: 'Занятие',
   lessonWords: 'Слова',
@@ -905,6 +909,8 @@ const ru: Dict = {
     misspelling: 'Опечатка', grammar: 'Грамматика', typographical: 'Оформление', style: 'Стиль', other: 'Замечание',
     agreement: 'Согласование', verbs: 'Форма глагола',
   },
+  essayHintAccent: 'Знак над буквой (ударение): пишется «{w}».',
+  essayHintCase: 'Заглавная/строчная буква: пишется «{w}».',
   // XP, achievements, leaderboard
   gameTitle: 'Рейтинг и достижения',
   xpWeek: 'XP за неделю',

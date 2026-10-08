@@ -25,6 +25,15 @@ function catLabel(m: LTMatch) {
   return T[m.type] || T.other;
 }
 
+/** LanguageTool explains in the text's language; for the two commonest cases add a plain hint in the learner's. */
+function plainHint(orig: string, rep?: string) {
+  if (!rep || rep === orig) return '';
+  const bare = (x: string) => x.normalize('NFD').replace(/[̀-ͯ]/g, '');
+  if (bare(orig).toLowerCase() === bare(rep).toLowerCase() && orig.toLowerCase() !== rep.toLowerCase()) return fmt(t().essayHintAccent, { w: rep });
+  if (orig.toLowerCase() === rep.toLowerCase()) return fmt(t().essayHintCase, { w: rep });
+  return '';
+}
+
 export function EssaysHome({ c }: { c: LoadedCourse }) {
   const [list, setList] = useState<Essay[] | null>(null);
   useEffect(() => void getEssays(c.meta.id).then(setList), [c]);
@@ -255,7 +264,10 @@ export function EssayEditor({ c, id }: { c: LoadedCourse; id: string }) {
                 {matches.map((m, i) => (
                   <li id={`m${i}`}>
                     <span class="pill">{catLabel(m)}</span> <b class="bad" {...tl()}>«{text.slice(m.o, m.o + m.l)}»</b>
-                    <div class="small">{m.msg}</div>
+                    {plainHint(text.slice(m.o, m.o + m.l), m.rep[0]) && <div class="small">💡 {plainHint(text.slice(m.o, m.o + m.l), m.rep[0])}</div>}
+                    <div class="small muted" {...tl()}>
+                      {m.msg}
+                    </div>
                     {m.rep.length > 0 && (
                       <div class="chips">
                         {m.rep.map((r) => (

@@ -30,6 +30,15 @@ interface Props {
 
 let hintsOn = true;
 
+/**
+ * Which option is the right one: an exact match first (options may differ only by punctuation or
+ * accents, e.g. "¿Cómo estás?" / "Cómo estás¿"), a normalized match only if nothing matches exactly.
+ */
+function rightOption(options: string[], answers: string[]) {
+  const exact = options.findIndex((o) => answers.some((a) => a.trim() === o.trim()));
+  return exact >= 0 ? exact : options.findIndex((o) => answers.some((a) => normalize(a) === normalize(o)));
+}
+
 export function ExerciseView({ ex, onResult, onNext, hints = true, exam = false, prevAnswer }: Props) {
   const [res, setRes] = useState<ExResult | null>(null);
   const [overridden, setOverridden] = useState(false);
@@ -635,7 +644,7 @@ function Cloze({ ex, res, answer }: P<'cloze'>) {
     done.current = true;
     if (ex.options) {
       // a picked option is either the right one or not: no typo/accent tolerance (había vs habría, el vs él)
-      answer({ ok: ex.answers.some((a) => normalize(a) === normalize(val)), verdict: 'choice', given: val });
+      answer({ ok: ex.options.indexOf(val) === rightOption(ex.options, ex.answers), verdict: 'choice', given: val });
       return;
     }
     const r = check(val, ex.answers, { strictAccents: st.strictAccents, strictForm: !ex.word });
@@ -654,7 +663,7 @@ function Cloze({ ex, res, answer }: P<'cloze'>) {
       {ex.options ? (
         <Options
           options={ex.options}
-          answerIdx={ex.options.findIndex((o) => ex.answers.some((a) => normalize(o) === normalize(a)))}
+          answerIdx={rightOption(ex.options, ex.answers)}
           res={res}
           onPick={(i) => submit(ex.options![i])}
           target
@@ -807,9 +816,9 @@ function DrillView({ ex, res, answer }: P<'drill'>) {
       {d.t === 'choice' ? (
         <Options
           options={opts}
-          answerIdx={opts.findIndex((o) => normalize(o) === normalize(d.a[0]))}
+          answerIdx={rightOption(opts, [d.a[0]])}
           res={res}
-          onPick={(i) => answer({ ok: d.a.some((a) => normalize(a) === normalize(opts[i])), verdict: 'choice', given: opts[i] })}
+          onPick={(i) => answer({ ok: i === rightOption(opts, [d.a[0]]), verdict: 'choice', given: opts[i] })}
           target
           speakAs={fill}
         />

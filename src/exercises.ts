@@ -36,9 +36,14 @@ function glossOptions(c: LoadedCourse, w: Word, n = 3): string[] {
     (x) => x.id !== w.id && x.pos === w.pos && Math.abs(x.r - w.r) < 600 && x.tr && x.tr !== w.tr && !shareGloss(x, w),
   );
   const pool = near.length >= n ? near : c.words.filter((x) => x.id !== w.id && x.tr !== w.tr && !shareGloss(x, w));
+  // no two options that read the same (case, punctuation and accents aside), none equal to the right one
+  const key = (s: string) => s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+  const seen = new Set([key(w.tr)]);
   const out: string[] = [];
   for (const x of shuffle(pool)) {
-    if (!out.includes(x.tr)) out.push(x.tr);
+    if (seen.has(key(x.tr))) continue;
+    seen.add(key(x.tr));
+    out.push(x.tr);
     if (out.length >= n) break;
   }
   return out;

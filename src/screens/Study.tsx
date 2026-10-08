@@ -420,10 +420,17 @@ export function Practice({ c, kind }: { c: LoadedCourse; kind: string }) {
   if (!items.length)
     return (
       <div class="page center">
-        <p>{kind === 'weak' ? t().noWeak : t().noResults}</p>
-        <button class="btn" onClick={() => go('/practice')}>
-          {t().back}
-        </button>
+        <p>{kind === 'weak' ? t().noWeak : t().practiceEmpty}</p>
+        <div class="ex-actions center">
+          {kind !== 'weak' && (
+            <button class="btn primary" onClick={() => go('/continue')}>
+              {t().continue}
+            </button>
+          )}
+          <button class="btn" onClick={() => go('/practice')}>
+            {t().back}
+          </button>
+        </div>
       </div>
     );
   return <SessionRunner items={items} retry={(ex, a) => retryFor(c, ex, a)} quit="practice" exitTo="/practice" onComplete={setSummary} />;

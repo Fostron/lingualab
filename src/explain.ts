@@ -243,7 +243,13 @@ export function explain(c: LoadedCourse, ex: Ex, given: string | undefined): Exp
     const art = articleReason(c, right, g, next);
     const verb = art ? null : verbReason(c, right, g, hint, ex.topic);
     const tsec = verb ? tableSection(ex.topic, right) : -1;
-    return { ...(art || verb || {}), rule: ruleLine(ex.topic, right, tsec >= 0 ? tsec : sec, nounAfter(c, next)?.w.w) };
+    const out: Explanation = { ...(art || verb || {}), rule: ruleLine(ex.topic, right, tsec >= 0 ? tsec : sec, nounAfter(c, next)?.w.w) };
+    // a wrong pick that is a real word of its own (pero / perro): say what it means
+    if (!out.yours && g && norm(g) !== norm(right) && !/\s/.test(g)) {
+      const w = c.words.find((x) => norm(x.w) === norm(g) || norm(displayWord(x, c.meta.target)) === norm(g));
+      if (w) out.yours = fmt(t().exWordMeans, { w: displayWord(w, c.meta.target), tr: w.tr });
+    }
+    return out;
   }
   if (ex.k === 'cloze' && !ex.word) {
     const right = ex.answers[0];

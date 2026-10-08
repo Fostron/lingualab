@@ -745,7 +745,22 @@ input.search,
   border: 1px solid var(--line);
   padding: 6px 10px;
   text-align: left;
-  white-space: nowrap;
+}
+/* cells wrap only at spaces, so forms stay whole while long descriptions fit a phone screen */
+.md td {
+  min-width: 3.5em;
+}
+@media (max-width: 420px) {
+  .md table {
+    font-size: 0.86rem;
+  }
+  .md th,
+  .md td {
+    padding: 5px 6px;
+  }
+  .md td {
+    min-width: 0;
+  }
 }
 .md th {
   background: var(--surface-2);
@@ -2389,6 +2404,7 @@ mark.err.cat-misspelling {
 .ach .progress {
   height: 5px;
   margin-top: 4px;
+  background: var(--line); /* the card itself is surface-2: keep the track visible */
 }
 .xp-earned {
   font-weight: 700;

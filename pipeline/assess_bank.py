@@ -44,8 +44,12 @@ def pick_distractors(item, cands, rng, n=3):
         scored.append((abs(overlap - 0.2) + abs(1 - ratio) * 0.5 + rng.random() * 0.3, c["tr"]))
     scored.sort()
     out = []
+    # options must not read the same apart from case and punctuation ("Вас"/"вас", "!"/".")
+    seen = {" ".join(re.findall(r"\w+", item["tr"].lower()))}
     for _, tr in scored:
-        if tr not in out:
+        k = " ".join(re.findall(r"\w+", tr.lower()))
+        if k not in seen:
+            seen.add(k)
             out.append(tr)
         if len(out) >= n:
             break
