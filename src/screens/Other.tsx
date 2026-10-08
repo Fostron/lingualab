@@ -370,6 +370,9 @@ export function Stats({ c }: { c: LoadedCourse }) {
           </div>
           <a class="btn small" href="#/practice/weak">
             {t().practiceWeak}
+          </a>{' '}
+          <a class="btn small" href="#/mistakes">
+            📒 {t().mkTitle}
           </a>
         </div>
       )}

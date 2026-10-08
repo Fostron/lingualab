@@ -146,7 +146,7 @@ export interface Achievement {
   goal: number;
 }
 
-export function achievements(c: LoadedCourse, info: ProgressInfo, logs: LogRec[], essays: Essay[], assessments: unknown[]): Achievement[] {
+export function achievements(c: LoadedCourse, info: ProgressInfo, logs: LogRec[], essays: Essay[], assessments: unknown[], fixedMistakes = 0): Achievement[] {
   const lessons: { kind: string; best: number; tries: number; level: string }[] = [];
   for (const u of c.units) {
     const r = info.units.get(u.id);
@@ -181,6 +181,7 @@ export function achievements(c: LoadedCourse, info: ProgressInfo, logs: LogRec[]
     a('essay', '✍️', checked, 1),
     a('essay-10', '📝', checked, 10),
     a('assessment', '🧭', assessments.length, 1),
+    a('fix-10', '📒', fixedMistakes, 10),
     ...exams,
   ];
 }

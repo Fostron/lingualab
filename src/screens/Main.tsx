@@ -856,6 +856,10 @@ export function PracticeMenu() {
           <b>✍️ {t().essays}</b>
           <small>{t().essaysNote}</small>
         </a>
+        <a class="choice-card" href="#/mistakes">
+          <b>📒 {t().mkTitle}</b>
+          <small>{t().mkNote}</small>
+        </a>
         {items.map(([k, label, note]) => (
           <a class="choice-card" href={`#/practice/${k}`}>
             <b>{label}</b>

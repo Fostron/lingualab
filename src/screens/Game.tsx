@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'preact/hooks';
 import { getAssessments, type LogRec } from '../db';
 import { getEssays, type Essay } from '../essays';
+import { getMistakes, isFixed, shown } from '../mistakes';
 import { achievements, leaderboard, newlyUnlocked, profileLevel, pushStats, streakInfo, weekXp, xpEvents, xpTotals, type Achievement, type Board } from '../gamify';
 import { fmt, t } from '../i18n';
 import { lessonPassed, lessonsOf } from '../lessons';
@@ -25,12 +26,12 @@ export function useGame(c: LoadedCourse, tick: number): Game | null {
   useEffect(() => {
     let alive = true;
     void (async () => {
-      const [info, logs, essays, assess] = await Promise.all([loadProgress(c), loadLogs(c), getEssays(c.meta.id), getAssessments<{ ts: number }>(c.meta.id)]);
+      const [info, logs, essays, assess, mistakes] = await Promise.all([loadProgress(c), loadLogs(c), getEssays(c.meta.id), getAssessments<{ ts: number }>(c.meta.id), getMistakes(c.meta.id)]);
       const ev = xpEvents(c, info, logs as LogRec[], essays as Essay[], assess, getState().settings.dailyGoal);
       const xp = xpTotals(ev);
       const level = profileLevel(xp.total);
       const streak = streakInfo(info.prog.days);
-      const ach = achievements(c, info, logs, essays, assess);
+      const ach = achievements(c, info, logs, essays, assess, mistakes.filter((m) => shown(m) && isFixed(m)).length);
       const fresh = newlyUnlocked(c.meta.id, ach);
       const lessons = c.units.reduce((n, u) => n + lessonsOf(c, u).filter((l) => lessonPassed(l, info.units.get(u.id))).length, 0);
       if (alive) setG({ info, xp, level, streak, ach, fresh });

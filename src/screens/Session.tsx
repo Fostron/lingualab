@@ -11,6 +11,7 @@ import { ConfirmDialog, Icon, Progress } from '../ui/common';
 import { ReportDialog } from './Reports';
 import { Confetti } from './Game';
 import { XP } from '../gamify';
+import { noteAnswer } from '../mistakes';
 
 export interface SessionItem {
   ex: Ex;
@@ -83,7 +84,8 @@ export function SessionRunner({
   const [closing, setClosing] = useState(false);
   const graded = useMemo(() => items.filter((i) => isGraded(i.ex)).length, [items]);
   const done = exam ? examAnswers.current.size : results.current.length;
-  const course = getState().course?.meta.id;
+  const c = getState().course;
+  const course = c?.meta.id;
 
   const tickTime = () => {
     const now = Date.now();
@@ -131,6 +133,7 @@ export function SessionRunner({
       if (!isGraded(e.item.ex)) continue;
       const r: ExResult = examAnswers.current.get(e.key) || { ok: false, verdict: 'wrong', given: '' };
       e.item.onResult?.(r, false);
+      if (c && examAnswers.current.has(e.key)) noteAnswer(c, e.item.ex, r.ok, r.given);
       res.push({ ex: e.item.ex, ok: r.ok, score: r.ok ? 1 : 0 });
     }
     complete(res);
@@ -152,6 +155,8 @@ export function SessionRunner({
         }
       } else results.current.push({ ex: cur.item.ex, ok: r.ok && !r.hinted, score: r.ok ? (r.hinted ? 0.5 : 1) : 0 });
       cur.item.onResult?.(r, override);
+      // mistakes notebook (a hinted answer neither adds nor fixes a mistake)
+      if (c && (override || !r.hinted)) noteAnswer(c, cur.item.ex, override ? 'override' : r.ok, r.given);
     }
     answered.current.add(cur.key);
     last.current = override ? { ...r, ok: true, hinted: false } : r;
@@ -336,6 +341,9 @@ export function SessionDone({
               <li>{describe(r.ex)}</li>
             ))}
           </ul>
+          <a class="btn small" href="#/mistakes">
+            📒 {t().mkTitle}
+          </a>
         </div>
       )}
       <div class="ex-actions center wrap">{actions}</div>

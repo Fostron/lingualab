@@ -20,7 +20,7 @@ import {
 } from '../exercises';
 import { fmt, t } from '../i18n';
 import { lessonBySlug, lessonPassed, lessonsOf, lessonUnlocked, nextLesson, PASS, unitUnlocked, type Lesson } from '../lessons';
-import { finishLessonRun, loadLogs, loadProgress, resolveDiff, weakTopics, weakWords, type Answer, type ProgressInfo } from '../progress';
+import { finishLessonRun, loadLogs, loadProgress, resolveDiff, reviewQueue, weakTopics, weakWords, type Answer, type ProgressInfo } from '../progress';
 import { go } from '../router';
 import { Rating, review } from '../srs';
 import { bump, getState } from '../store';
@@ -290,7 +290,7 @@ export function Review({ c }: { c: LoadedCourse }) {
   useEffect(() => {
     if (!data || items) return;
     const { info, logs } = data;
-    const due = info.due.slice(0, 50);
+    const due = reviewQueue(info.cards, info.due, logs);
     const planned = buildReview(c, due, exOpts(resolveDiff(getState().settings.difficulty, logs)), info.known, info.tenses.length ? info.tenses : ['pres']);
     setItems(
       planned.map(({ ex, card }) => ({

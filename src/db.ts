@@ -280,19 +280,21 @@ export interface CourseDump {
   progress: CourseProgress | null;
   assess: unknown[];
   essays?: { id: string; updated: number }[];
+  mistakes?: { id: string; updated: number }[];
 }
 
 export async function dumpCourse(course: string): Promise<CourseDump> {
   const d = await db();
-  const [cards, logs, units, progress, assess, essays] = await Promise.all([
+  const [cards, logs, units, progress, assess, essays, mistakes] = await Promise.all([
     d.getAllFromIndex('cards', 'course', course),
     d.getAllFromIndex('logs', 'course', course),
     d.getAllFromIndex('units', 'course', course),
     d.get('kv', `progress|${course}`) as Promise<CourseProgress | undefined>,
     d.get('kv', `assess|${course}`) as Promise<unknown[] | undefined>,
     d.get('kv', `essays|${course}`) as Promise<{ id: string; updated: number }[] | undefined>,
+    d.get('kv', `mistakes|${course}`) as Promise<{ id: string; updated: number }[] | undefined>,
   ]);
-  return { v: 1, course, cards, logs: logs.map(({ id: _id, ...l }) => l), units, progress: progress || null, assess: assess || [], essays: essays || [] };
+  return { v: 1, course, cards, logs: logs.map(({ id: _id, ...l }) => l), units, progress: progress || null, assess: assess || [], essays: essays || [], mistakes: mistakes || [] };
 }
 
 /** Replace a course's local data with a merged dump (one transaction). */
@@ -312,11 +314,12 @@ export async function replaceCourse(dump: CourseDump) {
   if (dump.progress) await tx.objectStore('kv').put(dump.progress, `progress|${dump.course}`);
   if (dump.assess.length) await tx.objectStore('kv').put(dump.assess, `assess|${dump.course}`);
   if (dump.essays && dump.essays.length) await tx.objectStore('kv').put(dump.essays, `essays|${dump.course}`);
+  if (dump.mistakes && dump.mistakes.length) await tx.objectStore('kv').put(dump.mistakes, `mistakes|${dump.course}`);
   await tx.done;
 }
 
 /** Courses that have anything stored locally. */
 export async function localCourses(): Promise<string[]> {
   const keys = (await (await db()).getAllKeys('kv')).map(String);
-  return [...new Set(keys.filter((k) => /^(progress|assess|essays)\|/.test(k)).map((k) => k.split('|')[1]))];
+  return [...new Set(keys.filter((k) => /^(progress|assess|essays|mistakes)\|/.test(k)).map((k) => k.split('|')[1]))];
 }

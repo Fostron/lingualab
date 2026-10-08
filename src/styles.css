@@ -2461,3 +2461,21 @@ mark.err.cat-misspelling {
     display: none;
   }
 }
+
+/* mistakes notebook */
+.mk .mk-q {
+  margin: 8px 0 4px;
+  font-size: 1.05rem;
+}
+.mk-line {
+  margin: 2px 0;
+}
+.mk-line.bad {
+  color: var(--bad);
+}
+.mk-line.ok {
+  color: var(--ok);
+}
+.mk .ex-actions {
+  margin-top: 8px;
+}

@@ -235,7 +235,10 @@ function autoEx(c: LoadedCourse, topic: Topic, known?: Set<number>): Ex | null {
     return s.tk.filter(([, wid]) => wid && !known.has(wid)).length <= 2;
   });
   if (!autos.length) return null;
-  const a = pick(autos);
+  return autoFrom(c, topic, pick(autos));
+}
+
+function autoFrom(c: LoadedCourse, topic: Topic, a: Topic['auto'][number]): Ex {
   const s = c.sents.get(a.s)!;
   const n = a.n || 1;
   const ans = s.tk.slice(a.i, a.i + n).map(([w, , sp], j) => w + (sp && j < n - 1 ? ' ' : '')).join('');
@@ -263,6 +266,77 @@ export function conjExercise(c: LoadedCourse, verb: string, tenses: string[], to
   const persons = forms.map((f, i) => (f ? i : -1)).filter((i) => i >= 0);
   const person = pick(persons);
   return { k: 'conj', verb, tense, person, answers: forms[person].split('/'), cid: `c:${verb}`, topic };
+}
+
+// ---------- the same question again (mistakes notebook) ----------
+
+/** Short stable hash, so a drill keeps its key when drills are added to the topic file. */
+function hash(s: string) {
+  let h = 5381;
+  for (let i = 0; i < s.length; i++) h = (Math.imul(h, 33) ^ s.charCodeAt(i)) | 0;
+  return (h >>> 0).toString(36);
+}
+
+const drillHash = (d: Drill) => hash(`${d.q}|${d.a[0]}|${d.h || ''}`);
+
+/** A stable key for one question, or null for what isn't a question (word cards, explanations). */
+export function itemKey(ex: Ex): string | null {
+  switch (ex.k) {
+    case 'mcq':
+    case 'type': {
+      // free practice drops the card id: recognition is choosing the meaning, the rest is production
+      const kind = ex.cid ? ex.cid.slice(0, 2) : ex.k === 'mcq' && ex.mode !== 'n2t' ? 'wr' : 'wp';
+      return `w:${ex.word.id}:${kind}`;
+    }
+    case 'cloze':
+      if (ex.word) return `w:${ex.word.id}:wp`;
+      return ex.topic ? `a:${ex.topic.id}:${ex.sent.id}:${ex.i}` : null;
+    case 'drill':
+      return `d:${ex.topic.id}:${drillHash(ex.drill)}`;
+    case 'conj':
+      return `c:${ex.verb}:${ex.tense}:${ex.person}`;
+    case 'translate':
+    case 'dictation':
+    case 'build':
+    case 'read':
+      return `s:${ex.sent.id}:${ex.k}`;
+    default:
+      return null;
+  }
+}
+
+/** Build the question behind an itemKey again (null if the course no longer has it). */
+export function exFromKey(c: LoadedCourse, key: string, o: ExOpts, known?: Set<number>): Ex | null {
+  const p = key.split(':');
+  switch (p[0]) {
+    case 'w': {
+      const w = c.wordById.get(Number(p[1]));
+      return w ? wordExercise(c, w, p[2] === 'wr' ? 'wr' : 'wp', 2, o, known) : null;
+    }
+    case 'a': {
+      const topic = c.topicById.get(p[1]);
+      const a = topic?.auto.find((x) => x.s === Number(p[2]) && x.i === Number(p[3]));
+      return topic && a && c.sents.has(a.s) ? autoFrom(c, topic, a) : null;
+    }
+    case 'd': {
+      const topic = c.topicById.get(p[1]);
+      const d = topic?.drills.find((x) => drillHash(x) === p[2]);
+      return topic && d ? drillEx(topic, d) : null;
+    }
+    case 'c': {
+      const forms = c.conj[p[1]]?.[p[2]];
+      const f = forms?.[Number(p[3])];
+      return f ? { k: 'conj', verb: p[1], tense: p[2], person: Number(p[3]), answers: f.split('/'), cid: `c:${p[1]}` } : null;
+    }
+    case 's': {
+      const s = c.sents.get(Number(p[1]));
+      if (!s) return null;
+      if (p[2] === 'build') return buildEx(s);
+      if (p[2] === 'read') return readEx(c, s);
+      return { k: p[2] === 'dictation' ? 'dictation' : 'translate', sent: s };
+    }
+  }
+  return null;
 }
 
 const drillRank = (d: Drill) => (d.t === 'choice' ? 0 : d.t === 'gap' ? 1 : 2);

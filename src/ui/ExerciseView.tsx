@@ -188,10 +188,10 @@ function WordMini({ w }: { w: Extract<Ex, { k: 'mcq' }>['word'] }) {
 }
 
 /** Why the right answer is right; after a mistake, what the chosen answer actually is. */
-function ExplainBlock({ ex, given, ok }: { ex: Ex; given?: string; ok: boolean }) {
+export function ExplainBlock({ ex, given, ok, fallback }: { ex: Ex; given?: string; ok: boolean; fallback?: string }) {
   const c = getState().course!;
   const e = useMemo(() => explain(c, ex, given), [ex, given]);
-  if (!e.why && !(e.yours && !ok) && !e.rule) return null;
+  if (!e.why && !(e.yours && !ok) && !e.rule) return fallback ? <p class="muted small">{fallback}</p> : null;
   return (
     <div class="explain">
       {e.why && (

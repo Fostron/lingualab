@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { CardRec, LogRec } from '../src/db';
 import { profileLevel, streakInfo } from '../src/gamify';
-import { weakWords } from '../src/progress';
+import { reviewQueue, weakWords } from '../src/progress';
 
 const DAY = 86400000;
 const NOW = new Date('2026-10-08T12:00:00').getTime(); // a Thursday
@@ -79,5 +79,22 @@ describe('streak', () => {
 
   it('remembers the best run', () => {
     expect(streakInfo([day(0), day(10), day(11), day(12), day(13)]).best).toBe(4);
+  });
+});
+
+describe('smart review', () => {
+  it('puts words being missed first, then the most forgotten', () => {
+    const fresh = card('wp:1', 0, 1, 30); // reviewed yesterday, stable
+    const old = card('wp:2', 0, 40, 10); // likely forgotten
+    const missed = card('wp:3', 0, 1, 30);
+    const q = reviewQueue([fresh, old, missed], [fresh, old, missed], answers('wp:3', [false]), 50, 0);
+    expect(q.map((c) => c.cid)).toEqual(['wp:3', 'wp:2', 'wp:1']);
+  });
+
+  it('tops up a short review with weak words that are not due', () => {
+    const due = card('wp:1', 0, 40, 10);
+    const weakNotDue = card('wr:9', 1, 0, 30);
+    const q = reviewQueue([due, weakNotDue], [due], answers('wr:9', [false]), 50, 12);
+    expect(q.map((c) => c.cid)).toEqual(['wp:1', 'wr:9']);
   });
 });

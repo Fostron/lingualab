@@ -67,6 +67,15 @@ describe('mergeDumps', () => {
     expect(m.essays).toEqual([{ id: 'e1', updated: 20, deleted: true }]);
   });
 
+  it('the later state of each notebook mistake wins', () => {
+    const m1 = { id: 'd:es-ser:abc', updated: 10, streak: 0 };
+    const m2 = { id: 'd:es-ser:abc', updated: 30, streak: 2 };
+    const x = dump({ mistakes: [m1, { id: 'w:5:wp', updated: 5 }] });
+    const y = dump({ mistakes: [m2] });
+    expect(mergeDumps(x, y).mistakes).toEqual([m2, { id: 'w:5:wp', updated: 5 }]);
+    expect(mergeDumps(y, x)).toEqual(mergeDumps(x, y));
+  });
+
   it('a course reset on one device drops older records everywhere', () => {
     const reset = dump({ progress: { course: C, started: 4000, days: [], resetAt: 4000 } });
     const r = mergeDumps(m, reset);

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'preact/hooks';
 import { COURSES } from './content';
 import { LoginScreen, SyncBadge } from './screens/Account';
 import { essayRoute } from './screens/Essays';
+import { mistakesRoute } from './screens/Mistakes';
 import { GamePage } from './screens/Game';
 import { loginSkipped, onSync, session } from './sync';
 import { t } from './i18n';
@@ -105,6 +106,9 @@ export function App() {
       break;
     case 'essays':
       body = essayRoute(c, a);
+      break;
+    case 'mistakes':
+      body = mistakesRoute(c, a, tick);
       break;
     case 'stats':
       body = <Stats c={c} />;

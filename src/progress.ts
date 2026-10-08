@@ -255,6 +255,27 @@ export function weakWords(cards: CardRec[], logs: LogRec[] = []): CardRec[] {
   return [...best.values()].sort((a, b) => misses(b.ref) - misses(a.ref) || b.lapses - a.lapses || a.stability - b.stability);
 }
 
+/**
+ * What to review now, hardest first: words being missed lately, then by how likely they are
+ * forgotten. A short review is topped up with weak words that aren't due yet, so the hard ones
+ * come back more often than their schedule alone would bring them.
+ */
+export function reviewQueue(cards: CardRec[], due: CardRec[], logs: LogRec[], max = 50, min = 12): CardRec[] {
+  const now = new Date();
+  const weak = weakWords(cards, logs);
+  const weakKeys = new Set(weak.map((x) => x.key));
+  const out = [...due].sort((a, b) => Number(weakKeys.has(b.key)) - Number(weakKeys.has(a.key)) || retrievability(a, now) - retrievability(b, now)).slice(0, max);
+  const have = new Set(out.map((x) => x.key));
+  const refs = new Set(out.filter((x) => x.kind === 'wp' || x.kind === 'wr').map((x) => x.ref));
+  for (const w of weak) {
+    if (out.length >= min) break;
+    if (have.has(w.key) || refs.has(w.ref)) continue;
+    out.push(w);
+    refs.add(w.ref);
+  }
+  return out;
+}
+
 export async function loadLogs(c: LoadedCourse) {
   return logsFor(c.meta.id);
 }
