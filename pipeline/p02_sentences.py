@@ -36,10 +36,10 @@ def main(lang):
             natives_users.add(row[2])
     print(lang, "native users:", len(natives_users))
 
-    audio = {}
+    audio = {}  # sentence id -> (audio id, author, licence); columns: sentence id, audio id, username, license, attribution
     for row in read_tsv(RAW / "sentences_with_audio.csv"):
         if len(row) >= 4:
-            audio.setdefault(row[1], (row[0], row[2], row[3]))
+            audio.setdefault(row[0], (row[1], row[2], row[3]))
 
     sents = {}
     for row in read_tsv(RAW / f"{t3}_sentences_detailed.tsv"):
