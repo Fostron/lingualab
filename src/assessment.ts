@@ -359,7 +359,8 @@ export function damage(text: string): CPart[] {
 }
 
 export function scoreGap(gap: CGap, typed: string) {
-  return check(typed, [gap.rest], {}).ok || check(gap.prefix + typed, [gap.prefix + gap.rest], {}).ok;
+  // the missing part, or the whole word typed into the gap
+  return check(typed, [gap.rest], {}).ok || check(gap.prefix + typed, [gap.prefix + gap.rest], {}).ok || check(typed, [gap.prefix + gap.rest], {}).ok;
 }
 
 /** Share of reference words reproduced (order-aware, accent- and punctuation-tolerant). */

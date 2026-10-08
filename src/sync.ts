@@ -235,8 +235,8 @@ function mergeUnit(a: UnitRec, b: UnitRec): UnitRec {
   return {
     ...a,
     status: UNIT_ORDER[a.status] >= UNIT_ORDER[b.status] ? a.status : b.status,
-    learned: [...new Set([...a.learned, ...b.learned])],
-    topicsRead: [...new Set([...a.topicsRead, ...b.topicsRead])],
+    learned: [...new Set([...a.learned, ...b.learned])].sort((x, y) => x - y),
+    topicsRead: [...new Set([...a.topicsRead, ...b.topicsRead])].sort(),
     lessons: a.lessons || b.lessons ? lessons : undefined,
     test,
     updated: Math.max(a.updated, b.updated),

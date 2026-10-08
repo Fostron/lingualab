@@ -30,12 +30,31 @@ export function isGraded(ex: Ex) {
   return ex.k !== 'intro' && ex.k !== 'teach';
 }
 
+const byForm = new WeakMap<LoadedCourse, Map<string, Word[]>>();
+
+/** All entries written the same way (cualquiera: "any; anyone" and "anyone; anybody"). */
+function sameForm(c: LoadedCourse, x: Word): Word[] {
+  let m = byForm.get(c);
+  if (!m) {
+    m = new Map();
+    for (const y of c.words) {
+      const k = y.w.toLowerCase();
+      if (!m.has(k)) m.set(k, []);
+      m.get(k)!.push(y);
+    }
+    byForm.set(c, m);
+  }
+  return m.get(x.w.toLowerCase()) || [x];
+}
+
 /** Distractor glosses: same POS, similar frequency, different meaning. */
 function glossOptions(c: LoadedCourse, w: Word, n = 3): string[] {
-  const near = c.words.filter(
-    (x) => x.id !== w.id && x.pos === w.pos && Math.abs(x.r - w.r) < 600 && x.tr && x.tr !== w.tr && !shareGloss(x, w),
-  );
-  const pool = near.length >= n ? near : c.words.filter((x) => x.id !== w.id && x.tr !== w.tr && !shareGloss(x, w));
+  // the shown word may have another meaning under another part of speech (tarde: afternoon / late):
+  // a gloss matching any of them would be a second right answer
+  const homs = sameForm(c, w);
+  const ok = (x: Word) => x.id !== w.id && !!x.tr && x.tr !== w.tr && x.w.toLowerCase() !== w.w.toLowerCase() && !homs.some((y) => shareGloss(x, y));
+  const near = c.words.filter((x) => x.pos === w.pos && Math.abs(x.r - w.r) < 600 && ok(x));
+  const pool = near.length >= n ? near : c.words.filter(ok);
   // no two options that read the same (case, punctuation and accents aside), none equal to the right one
   const key = (s: string) => s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
   const seen = new Set([key(w.tr)]);
@@ -56,8 +75,16 @@ function shareGloss(a: Word, b: Word) {
 }
 
 function wordOptions(c: LoadedCourse, w: Word, n = 3): Word[] {
-  const near = c.words.filter((x) => x.id !== w.id && x.pos === w.pos && Math.abs(x.r - w.r) < 600 && !shareGloss(x, w) && x.w !== w.w);
-  return sample(near.length >= n ? near : c.words.filter((x) => x.id !== w.id && x.w !== w.w), n);
+  // a synonym (escuela / colegio: school) would be a second right answer, so never offer one,
+  // nor a word that has such a meaning under another part of speech
+  const ok = (x: Word) => x.id !== w.id && x.w.toLowerCase() !== w.w.toLowerCase() && !sameForm(c, x).some((y) => shareGloss(y, w));
+  const near = c.words.filter((x) => x.pos === w.pos && Math.abs(x.r - w.r) < 600 && ok(x));
+  const out: Word[] = [];
+  for (const x of shuffle(near.length >= n ? near : c.words.filter(ok))) {
+    if (!out.some((y) => y.w.toLowerCase() === x.w.toLowerCase())) out.push(x);
+    if (out.length >= n) break;
+  }
+  return out;
 }
 
 function mcq<T>(right: T, wrong: T[]): { options: T[]; answer: number } {

@@ -85,18 +85,41 @@ def auto_gloss(item, native):
         agreed = {x.lower() for x in wd}
         cands = kk[:1] + [g for g in kk[1:] if g.lower() in agreed] + wd
     out = []
+    seen = set()  # meanings already given ("to watch" and "watch" are the same one)
+    taken = 0  # a partly repeated gloss still uses up its slot: further, rarer senses are mostly noise
+    full = set()
     for g in cands:
-        g = g.strip(" ,.;")
-        if not g or len(g) > 40 or BAD_AUTO_GLOSS.search(g):
+        if BAD_AUTO_GLOSS.search(g) or g.count("(") != g.count(")"):
+            continue  # usage notes and broken fragments ("get used , à faire )")
+        g = re.sub(r"\s+,", ",", g).strip(" ,.;")
+        for bad, good in GLOSS_TYPOS.items():
+            g = g.replace(bad, good)
+        if not g or len(g) > 40:
             continue
         if native == "en" and item["pos"] == "verb" and not g.startswith("to ") and " " not in g and g.isalpha():
+            if g.lower() == item["w"].lower():
+                continue  # the infinitive itself, not a translation ("boxer" -> "to boxer")
             g = "to " + g
-        key = g.lower()
-        if key not in [o.lower() for o in out]:
-            out.append(g)
-        if len(out) >= 3:
+        if g.lower() in full:
+            continue  # the very same gloss again doesn't use a slot
+        full.add(g.lower())
+        parts = [x.strip() for x in re.split(r",(?![^()]*\))", g) if x.strip()]
+        parts = [x for i, x in enumerate(parts) if gloss_core(x) not in seen and gloss_core(x) not in map(gloss_core, parts[:i])]
+        taken += 1
+        if parts:
+            seen.update(gloss_core(x) for x in parts)
+            out.append(", ".join(parts))
+        if taken >= 3:
             break
     return out
+
+
+# misspellings in the source dictionaries
+GLOSS_TYPOS = {"перевеворачивать": "переворачивать"}
+
+
+def gloss_core(x):
+    return re.sub(r"^(to|a|an|the)\s+", "", x.lower().strip())
 
 
 def read_glossary(lang):
