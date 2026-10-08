@@ -11,6 +11,8 @@ import { bestVoice, speak, ttsAvailable } from '../tts';
 import { LEVELS, type LoadedCourse, type Unit, type Word } from '../types';
 import { Icon, Loading, Markdown, Progress, SentenceView, SpeakBtn, WordLine, tl } from '../ui/common';
 import { lessonTitle } from './Study';
+import { streakInfo } from '../gamify';
+import { AchievementToast, useGame, XpCard } from './Game';
 import { ta } from '../i18n-assess';
 
 export function Welcome() {
@@ -53,17 +55,11 @@ function useInfo(c: LoadedCourse, tick: number, withLogs = false) {
   return { info, logs };
 }
 
+/** Days in a row, with the weekly freeze (see gamify.streakInfo). */
 export function streakOf(days: string[]) {
-  const set = new Set(days);
-  let n = 0;
-  const d = new Date();
-  if (!set.has(today(d))) d.setDate(d.getDate() - 1);
-  while (set.has(today(d))) {
-    n++;
-    d.setDate(d.getDate() - 1);
-  }
-  return n;
+  return streakInfo(days).current;
 }
+
 
 export function lessonsPassedCount(c: LoadedCourse, info: ProgressInfo) {
   let n = 0;
@@ -112,6 +108,7 @@ function Onboarding({ c }: { c: LoadedCourse }) {
 
 export function Home({ c, tick }: { c: LoadedCourse; tick: number }) {
   const { info, logs } = useInfo(c, tick, true);
+  const game = useGame(c, tick);
   if (!info || !logs) return <Loading />;
   const prog = info.prog;
   if (!prog.placement && info.units.size === 0) return <Onboarding c={c} />;
@@ -152,6 +149,8 @@ export function Home({ c, tick }: { c: LoadedCourse; tick: number }) {
         <small class="muted">{fmt(t().unitsOfLevel, { a: levelDone, b: levelUnits.length, level: unit.level })}</small>
       </div>
 
+      {game && <AchievementToast list={game.fresh} />}
+      {game && <XpCard c={c} g={game} />}
       <div class="goal card">
         <div class={`goal-ring ${lessonsToday >= goal ? 'met' : ''}`} style={{ '--p': `${Math.min(100, (100 * lessonsToday) / Math.max(1, goal))}` } as any}>
           <span>

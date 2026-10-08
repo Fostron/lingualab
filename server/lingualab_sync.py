@@ -60,6 +60,7 @@ def init_db():
     create table if not exists sessions (token_hash text primary key, uid integer, created integer, last_used integer);
     create table if not exists blobs (uid integer, key text, rev integer, updated integer, data blob,
                                       primary key (uid, key));
+    create table if not exists stats (uid integer, course text, data text, updated integer, primary key (uid, course));
     create table if not exists reports (id integer primary key autoincrement, uid integer, created integer,
                                         text text, context text, status text default 'new', note text,
                                         fixed_in text, updated integer);
@@ -166,6 +167,16 @@ class H(BaseHTTPRequestHandler):
             return self.send(401, {"error": "auth"})
         if u.path == "/me":
             return self.send(200, self.user_json(uid))
+        if u.path == "/leaderboard":
+            rows = db().execute("select s.uid, u.name, u.username, u.photo, s.course, s.data, s.updated from stats s join users u on u.id=s.uid").fetchall()
+            out = {}
+            for sid, name, username, photo, course, data, upd in rows:
+                e = out.setdefault(sid, {"id": sid, "name": name, "username": username, "photo": photo, "me": sid == uid, "courses": {}})
+                try:
+                    e["courses"][course] = {**json.loads(data), "updated": upd}
+                except ValueError:
+                    pass
+            return self.send(200, list(out.values()))
         if u.path == "/reports":
             rows = db().execute("select id, created, text, status, note, fixed_in, updated from reports where uid=? order by id desc limit 100", (uid,)).fetchall()
             return self.send(200, [{"id": i, "created": cr, "text": tx, "status": st, "note": no, "fixedIn": fi, "updated": up}
@@ -243,6 +254,16 @@ class H(BaseHTTPRequestHandler):
         uid = self.user()
         if uid is None:
             return self.send(401, {"error": "auth"})
+        ms = re.match(r"^/stats/([a-z]{2}-[a-z]{2})$", u.path)
+        if ms:
+            try:
+                data = json.loads(self.body(4000) or b"{}")
+            except ValueError:
+                return self.send(400, {"error": "json"})
+            keep = {k: data[k] for k in ("xpWeek", "xpTotal", "week", "streak", "best", "words", "level", "lessons", "achievements") if k in data}
+            db().execute("insert or replace into stats values (?,?,?,?)", (uid, ms.group(1), json.dumps(keep), int(time.time())))
+            db().commit()
+            return self.send(200, {"ok": True})
         m = re.match(r"^/data/([^/]+)$", u.path)
         if not m or not KEY_RE.match(m.group(1)):
             return self.send(404, {"error": "path"})

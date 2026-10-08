@@ -2,6 +2,7 @@ import { useEffect, useState } from 'preact/hooks';
 import { COURSES } from './content';
 import { LoginScreen, SyncBadge } from './screens/Account';
 import { essayRoute } from './screens/Essays';
+import { GamePage } from './screens/Game';
 import { loginSkipped, onSync, session } from './sync';
 import { t } from './i18n';
 import { useRoute } from './router';
@@ -98,6 +99,9 @@ export function App() {
       break;
     case 'practice':
       body = a ? <Practice key={a} c={c} kind={a} /> : <PracticeMenu />;
+      break;
+    case 'game':
+      body = <GamePage c={c} tick={tick} />;
       break;
     case 'essays':
       body = essayRoute(c, a);

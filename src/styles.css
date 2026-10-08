@@ -2332,3 +2332,116 @@ mark.err.cat-misspelling {
 .ok {
   color: var(--ok);
 }
+
+/* ---------- XP, achievements, leaderboard ---------- */
+.xp-card {
+  display: block;
+  color: var(--ink);
+}
+.xp-card:hover {
+  text-decoration: none;
+  border-color: var(--accent);
+}
+.xp-card .progress {
+  margin: 8px 0 6px;
+}
+.xp-num {
+  font-size: 1.25rem;
+}
+.mini-board {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 0.9rem;
+}
+.mini-board .me {
+  font-weight: 700;
+}
+.game-link {
+  display: block;
+  color: var(--ink);
+}
+.board tr.me td {
+  font-weight: 700;
+}
+.ach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+}
+.ach {
+  display: grid;
+  gap: 2px;
+  padding: 10px;
+  border-radius: 12px;
+  background: var(--surface-2);
+  opacity: 0.55;
+  filter: grayscale(0.8);
+}
+.ach.done {
+  opacity: 1;
+  filter: none;
+  background: var(--accent-soft);
+}
+.ach-icon {
+  font-size: 1.6rem;
+}
+.ach .progress {
+  height: 5px;
+  margin-top: 4px;
+}
+.xp-earned {
+  font-weight: 700;
+  color: var(--accent);
+}
+.ach-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 84px;
+  z-index: 90;
+  transform: translateX(-50%);
+  display: grid;
+  gap: 4px;
+  min-width: 240px;
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  cursor: pointer;
+  animation: toast-in 0.3s ease-out;
+}
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+}
+.confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 95;
+  overflow: hidden;
+}
+.confetti i {
+  position: absolute;
+  top: -12px;
+  width: 8px;
+  height: 14px;
+  border-radius: 2px;
+  animation: confetti-fall 2.4s ease-in forwards;
+}
+@keyframes confetti-fall {
+  to {
+    top: 105%;
+    opacity: 0.2;
+    transform: rotate(540deg) translateX(40px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .confetti {
+    display: none;
+  }
+}

@@ -14,6 +14,7 @@ import { Loading } from '../ui/common';
 import { AccountBlock } from './Account';
 import { MyReportsBlock } from './Reports';
 import { lessonsPassedCount, streakOf } from './Main';
+import { streakInfo } from '../gamify';
 
 const DAY = 86400000;
 
@@ -149,12 +150,15 @@ export function Stats({ c }: { c: LoadedCourse }) {
   return (
     <div class="page stats">
       <h2>{t().stats}</h2>
+      <a class="card game-link" href="#/game">
+        🏆 <b>{t().gameTitle}</b> <span class="muted">→</span>
+      </a>
       <div class="result-grid">
         <div class="stat">
           <small>{t().streak}</small>
           <b>{streakOf(prog.days)}</b>
           <small class="muted">
-            {t().bestStreak}: {bestStreak(prog.days)}
+            {t().bestStreak}: {streakInfo(prog.days).best}
           </small>
         </div>
         <div class="stat">

@@ -9,6 +9,8 @@ import { stopSpeech } from '../tts';
 import { ExerciseView, type ExResult } from '../ui/ExerciseView';
 import { ConfirmDialog, Icon, Progress } from '../ui/common';
 import { ReportDialog } from './Reports';
+import { Confetti } from './Game';
+import { XP } from '../gamify';
 
 export interface SessionItem {
   ex: Ex;
@@ -316,12 +318,14 @@ export function SessionDone({
   return (
     <div class="done-screen">
       <h2>{title}</h2>
+      {passed && <Confetti />}
       <div class={`big-stat ${passed === false ? 'bad' : passed ? 'ok' : ''}`}>
         <span>{pct}%</span>
         <small>
           {t().accuracy} · {mins} {t().mins}
         </small>
       </div>
+      <p class="xp-earned">⚡ +{summary.results.reduce((s, r) => s + (r.score >= 1 ? XP.answer : r.score > 0 ? XP.hinted : XP.tried), 0) + (passed ? XP.lesson + (summary.score >= 1 ? XP.perfect : 0) : 0)} XP</p>
       {passed !== undefined && <p class={`pass-note ${passed ? 'ok' : 'bad'}`}>{passed ? t().lessonPassed : fmtNeed(pass!)}</p>}
       {extra}
       {wrong.length > 0 && (
